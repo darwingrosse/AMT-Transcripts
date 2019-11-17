@@ -1,0 +1,12 @@
+{
+  "name": "tr-parse",
+  "version": "1.0.0",
+  "description": "Parse AMT transcriptions into HTML",
+  "main": "tr-parse.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node tr-parse.js"
+  },
+  "author": "Darwin Grosse",
+  "license": "ISC"
+}
