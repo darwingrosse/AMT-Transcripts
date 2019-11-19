@@ -32,7 +32,7 @@ class Speaker {
 // formatDate(new Date('2013-10-14')) // for a particular date
 // formatDate() // for today
 function formatDate(d=new Date()) {
-  return "January February March April May June July August September Octover November December"
+  return "January February March April May June July August September October November December"
     .split(' ')[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear()
 }
 
