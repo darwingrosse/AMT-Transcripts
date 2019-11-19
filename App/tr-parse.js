@@ -61,7 +61,7 @@ const argv = require('yargs')
   .argv
 
 speakers = argv.speaker.map( (i) => new Speaker(i) )
-guests = speakers.slice(1)
+guests = argv.speaker.slice(1)
 
 var isErrored = false;
 var fn = argv.json
@@ -98,7 +98,7 @@ var start_text =
   '' + '\n' +
   '<body>' + '\n' +
   '  <div class="container">' + '\n' +
-  '    <h2>Transcription: ' + guests.map( (i) => i.getFullName() ).join(", ") + '</h2>' + '\n' +
+  '    <h2>Transcription: ' + guests.join(", ") + '</h2>' + '\n' +
   '    <h3>Released: ' + argv.released + '</h3>' + '\n'
 
 var this_year = new Date().getFullYear();
