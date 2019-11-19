@@ -32,7 +32,7 @@ class Speaker {
 // formatDate(new Date('2013-10-14')) // for a particular date
 // formatDate() // for today
 function formatDate(d=new Date()) {
-  return "January February March April May June July August September Octover November December"
+  return "January February March April May June July August September October November December"
     .split(' ')[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear()
 }
 
@@ -101,8 +101,11 @@ var start_text =
   '    <h2>Transcription: ' + guests.map( (i) => i.getFullName() ).join(", ") + '</h2>' + '\n' +
   '    <h3>Released: ' + argv.released + '</h3>' + '\n'
 
+var this_year = new Date().getFullYear();
+var release_year = new Date(argv.released).getFullYear();
+
 var end_text =
-  '<p><i>Copyright ' + new Date(argv.released).getFullYear() + ' by Darwin Grosse. All right reserved.</i></p>' +
+  '<p><i>Copyright ' + release_year + (this_year != release_year ? ('-' + this_year) : '' ) + ' by Darwin Grosse. All right reserved.</i></p>' +
   '</div>' + '\n' +
   '<!-- jQuery (necessary for the Bootstrap JavaScript plugins) -->' + '\n' +
   '<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>' + '\n' +
