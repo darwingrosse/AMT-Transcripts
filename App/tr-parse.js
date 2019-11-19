@@ -1,8 +1,70 @@
+#!/usr/bin/env node
+
+// this class provides a method getName(), which on first invocation returns the full name,
+// on subsequent invocations returns only the first name.
+class Speaker {
+
+  constructor(name) {
+    this.full_name = name;
+    this.first_name = name.split(/\s/).shift();
+    this.first = true;
+  }
+
+  // always returns full name
+  getFullName() {
+    return this.full_name;
+  }
+
+  // on first invocation returns the full name,
+  // on subsequent invocations returns only the first name.
+  getName() {
+    if (this.first) {
+      this.first = false;
+      return this.full_name;
+    } else {
+      return this.first_name;
+    }
+  }
+
+}
+
+// Usage:
+// formatDate(new Date('2013-10-14')) // for a particular date
+// formatDate() // for today
+function formatDate(d=new Date()) {
+  return "January February March April May June July August September Octover November December"
+    .split(' ')[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear()
+}
+
 // setup
 const fs = require('fs');
+const argv = require('yargs')
+  .command('$0 <json>', 'generate html from json, filtering out cruft', (yargs) => {
+    yargs.positional('json', {
+      describe: 'the stem of the json file as found in the ../JSON/ directory (but lacking ".json" extension)',
+      default: 'transcript-0005',
+    })
+    .option('speaker', {
+      alias: 's',
+      describe: 'speaker',
+      default: 'Darwin Grosse',
+      demandOption: true,
+      array: true,
+    })
+    .option('released', {
+      alias: 'r',
+      describe: 'release date',
+      default: formatDate(),
+    })
+  })
+  .help()
+  .argv
+
+speakers = argv.speaker.map( (i) => new Speaker(i) )
+guests = speakers.slice(1)
 
 var isErrored = false;
-var fn = 'transcript-0005';
+var fn = argv.json
 
 var inFileName = '../JSON/' + fn;
 var outFileName = '../HTML/' + fn;
@@ -36,11 +98,11 @@ var start_text =
   '' + '\n' +
   '<body>' + '\n' +
   '  <div class="container">' + '\n' +
-  '    <h2>Transcription: **</h2>' + '\n' +
-  '    <h3>Released: **</h3>' + '\n'
+  '    <h2>Transcription: ' + guests.map( (i) => i.getFullName() ).join(", ") + '</h2>' + '\n' +
+  '    <h3>Released: ' + argv.released + '</h3>' + '\n'
 
 var end_text =
-  '<p><i>Copyright 20** by Darwin Grosse. All right reserved.</i></p>' +
+  '<p><i>Copyright ' + new Date(argv.released).getFullYear() + ' by Darwin Grosse. All right reserved.</i></p>' +
   '</div>' + '\n' +
   '<!-- jQuery (necessary for the Bootstrap JavaScript plugins) -->' + '\n' +
   '<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>' + '\n' +
@@ -62,7 +124,8 @@ console.log("data.monologues[0] attempting build-up...");
 para = para + start_text;
 
 for (var x=0; x<data.monologues.length; x++) {
-  para = para + "<p>" + '\n' + "<b>Speaker " + data.monologues[x].speaker + ": </b>";
+  
+  para = para + "<p>" + '\n' + "<b>" + speakers[data.monologues[x].speaker].getName() + ": </b>";
   chunk = data.monologues[x].elements;
 
   for (i=0; i<chunk.length; i++) {
