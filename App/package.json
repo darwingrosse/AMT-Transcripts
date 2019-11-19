@@ -8,5 +8,8 @@
     "start": "node tr-parse.js"
   },
   "author": "Darwin Grosse",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "yargs": "^15.0.2"
+  }
 }
