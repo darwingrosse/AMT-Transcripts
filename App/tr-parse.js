@@ -61,15 +61,15 @@ const argv = require('yargs')
   .argv
 
 speakers = argv.speaker.map( (i) => new Speaker(i) )
-guests = speakers.slice(1)
+guests = argv.speaker.slice(1)
 
 var isErrored = false;
 var fn = argv.json
 
-var inFileName = '../JSON/' + fn;
-var outFileName = '../HTML/' + fn;
+var inFileName = '../JSON/' + fn + '.json';
+var outFileName = '../HTML/' + fn + '.html';
 
-var fileContent = fs.readFileSync(inFileName + '.json', 'utf-8');
+var fileContent = fs.readFileSync(inFileName, 'utf-8');
 var data = JSON.parse(fileContent);
 var chunk, i;
 
@@ -98,7 +98,7 @@ var start_text =
   '' + '\n' +
   '<body>' + '\n' +
   '  <div class="container">' + '\n' +
-  '    <h2>Transcription: ' + guests.map( (i) => i.getFullName() ).join(", ") + '</h2>' + '\n' +
+  '    <h2>Transcription: ' + guests.join(", ") + '</h2>' + '\n' +
   '    <h3>Released: ' + argv.released + '</h3>' + '\n'
 
 var this_year = new Date().getFullYear();
@@ -124,45 +124,61 @@ console.log("Parse complete, " + data.monologues.length + " entries.");
 // console.log();
 
 console.log("data.monologues[0] attempting build-up...");
-para = para + start_text;
+para += start_text;
 
 for (var x=0; x<data.monologues.length; x++) {
   
-  para = para + "<p>" + '\n' + "<b>" + speakers[data.monologues[x].speaker].getName() + ": </b>";
+  speaker_idx = data.monologues[x].speaker;
+  if (speaker_idx >= speakers.length) {
+    throw inFileName + " contains more speakers (>= " + (speaker_idx + 1) + ") than were provided via -s (" + speakers.length + ")";
+  }
+  para += "<p>" + '\n' + "<b>" + speakers[speaker_idx].getName() + ": </b>";
   chunk = data.monologues[x].elements;
 
   for (i=0; i<chunk.length; i++) {
     if (chunk[i].type == "text") {
       setColorStart(chunk[i].confidence);
-      para = para + chunk[i].value;
+      para += chunk[i].value;
       setColorEnd();
     } else if (chunk[i].type == "punct") {
       setColorStart(chunk[i].confidence);
-      para = para + chunk[i].value;
+      para += chunk[i].value;
       setColorEnd();
     } else if (chunk[i].type == "unknown") {
       setColorStart(0);
-      para = para + "***" + chunk[i].value + "***";
+      para += "***" + chunk[i].value + "***";
       setColorEnd();
     } else {
       setColorStart(0);
-      para = "[" + chunk[i].type + "]"
+      para += "[" + chunk[i].type + "]"
       setColorEnd();
     }
   }
 
-  para = para + '\n' + "</p>" + '\n' + '\n'
+  para += '\n' + "</p>" + '\n' + '\n'
 }
 
 // post-processing
 console.log("post-processing...");
-para = replaceAll(para, '__um__,', '');
-para = replaceAll(para, '__um__', '');
-para = replaceAll(para, '__uh__,', '');
-para = replaceAll(para, '__uh__', '');
 
-para = para + end_text;
-fs.writeFileSync(outFileName + '.html', para);
+para = replaceAll(para, /__um__, /, '');
+para = replaceAll(para, /\bum, /, '');
+para = replaceAll(para, /__um__ /, '');
+para = replaceAll(para, /\bum /, '');
+para = replaceAll(para, /__uh__, /, '');
+para = replaceAll(para, /\buh, /, '');
+para = replaceAll(para, /__uh__ /, '');
+para = replaceAll(para, /\buh /, '');
+para = para.replace(/Um, (\w)/, (m,p) => p.toUpperCase() )
+para = para.replace(/Uh, (\w)/, (m,p) => p.toUpperCase() )
+
+para = replaceAll(para, '(?:Maximus|[Mm]aximize) P', '<a href="https://en.wikipedia.org/wiki/Max_(software)">Max/MSP</a>');
+para = replaceAll(para, '__Macs__', '<a href="https://en.wikipedia.org/wiki/Max_(software)">Max</a>');
+para = replaceAll(para, 'PD', '<a href="https://en.wikipedia.org/wiki/Pure_Data">PD</a>');
+
+para += end_text;
+fs.writeFileSync(outFileName, para);
+console.log('created ' + outFileName);
 console.log('complete');
 
 
@@ -172,16 +188,16 @@ console.log('complete');
 
 function setColorStart(v) {
   if ((v < 0.5) && (!isErrored)) {
-    // para = para + '<span style="color:red">';
-    para = para + '__';
+    // para += '<span style="color:red">';
+    para += '__';
     isErrored = true;
   }
 }
 
 function setColorEnd() {
   if (isErrored) {
-    // para = para + '</span>';
-    para = para + '__';
+    // para += '</span>';
+    para += '__';
     isErrored = false;
   }
 }
