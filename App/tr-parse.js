@@ -38,11 +38,12 @@ class Speaker {
 }
 
 // setup
+const path = require('path');
 const fs = require('fs');
 const argv = require('yargs')
   .command('$0 <json>', 'generate html from json, filtering out cruft', (yargs) => {
     yargs.positional('json', {
-      describe: 'the stem of the json file as found in the ../JSON/ directory (but lacking ".json" extension)',
+      describe: 'the json file as found in the ../JSON/ directory',
       default: 'transcript-0005',
     })
     .option('speaker', {
@@ -57,6 +58,14 @@ const argv = require('yargs')
       describe: 'release date',
       default: formatDate(),
     })
+    .option('audio_file', {
+      alias: 'a',
+      describe: 'audio file',
+    })
+    .option('audio_offset', {
+      alias: 'o',
+      describe: 'audio file offset when speech starts',
+    }) // TODO: The audio_offset should be mandatory, but only when an audio_file is passed on the command line.
   })
   .help()
   .argv
@@ -65,7 +74,7 @@ const speakers = argv.speaker.map( i => new Speaker(i) )
 const guests = argv.speaker.slice(1)
 
 var isErrored = false;
-const fn = argv.json.replace(/\.json$/, '')
+const fn = path.basename(argv.json, '.json'); // gets rid of optional .json extension and optional directory
 
 const inFileName = '../JSON/' + fn + '.json';
 const outFileName = '../HTML/' + fn + '.html';
@@ -75,47 +84,82 @@ const fileContent = fs.readFileSync(inFileName, 'utf-8');
 const data = JSON.parse(fileContent);
 var chunk, i;
 
-const start_text =
-  '<!DOCTYPE html>' + '\n' +
-  '<html lang="en">' + '\n' +
-  '' + '\n' +
-  '<head>' + '\n' +
-  '  <meta charset="utf-8">' + '\n' +
-  '  <meta http-equiv="X-UA-Compatible" content="IE=edge">' + '\n' +
-  '  <meta name="viewport" content="width=device-width, initial-scale=1">' + '\n' +
-  '  <!-- The above 3 meta tags *must* come first in the head; any other head ' +
-  'content must come *after* these tags -->' + '\n' +
-  '  <title>Bootstrap 101 Template</title>' + '\n' +
-  '' + '\n' +
-  '  <!-- Bootstrap -->' + '\n' +
-  '  <link href="css/bootstrap.min.css" rel="stylesheet">' + '\n' +
-  '' + '\n' +
-  '  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->' + '\n' +
-  '  <!-- WARNING: Respond.js does not work if you view the page via file:/' + '/ -->' + '\n' +
-  '  <!--[if lt IE 9]>' + '\n' +
-  '      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>' + '\n' +
-  '      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>' + '\n' +
-  '    <![endif]-->' + '\n' +
-  '</head>' + '\n' +
-  '' + '\n' +
-  '<body>' + '\n' +
-  '  <div class="container">' + '\n' +
-  '    <h2>Transcription: ' + guests.join(", ") + '</h2>' + '\n' +
-  '    <h3>Released: ' + argv.released + '</h3>' + '\n'
+const start_text = `\
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Transcription: Podcast ${episode} - ${guests.join(", ")}</title>
+
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js does not work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <h2>Transcription: ${guests.join(", ")}</h2>
+    <h3>Released: ${argv.released}</h3>
+`
 
 const this_year = new Date().getFullYear();
 const release_year = new Date(argv.released).getFullYear();
 
-const end_text =
-  '<p><i>Copyright ' + release_year + (this_year != release_year ? ('-' + this_year) : '' ) + ' by Darwin Grosse. All right reserved.</i></p>' +
-  '</div>' + '\n' +
-  '<!-- jQuery (necessary for the Bootstrap JavaScript plugins) -->' + '\n' +
-  '<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>' + '\n' +
-  '<!-- Include all compiled plugins (below), or include individual files as needed -->' + '\n' +
-  '<script src="js/bootstrap.min.js"></script>' + '\n' +
-  '</body>' + '\n' +
-  '' + '\n' +
-  '</html>' + '\n'
+var end_text =`\
+<p><i>Copyright ${release_year + (this_year != release_year ? ('-' + this_year) : '' )} by Darwin Grosse. All right reserved.</i></p></div>
+<!-- jQuery (necessary for the Bootstrap JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+`
+
+if (argv.audio_file) {
+  end_text += `\
+<script>
+
+  audio_thing = {}
+
+  setAudioFile('${argv.audio_file}')
+
+  audio_thing.audioElement.addEventListener('loadeddata', () => {
+    let duration = audio_thing.audioElement.duration;
+    audio_thing.duration = duration;
+    // The duration variable now holds the duration (in seconds) of the audio clip
+  })
+
+  function play(from_time) {
+    from_time = parseFloat(from_time) + ${argv.audio_offset}
+    if (audio_thing.audioElement.paused) {
+      audio_thing.audioElement.currentTime = from_time
+      audio_thing.audioElement.play()
+    } else {
+      audio_thing.audioElement.pause()
+      audio_thing.audioElement.currentTime = from_time
+    }
+  }
+
+
+  function setAudioFile(path){
+    audio_thing.audioElement = new Audio(path);
+  }
+</script>
+`
+}
+
+end_text += `
+</body>
+</html>
+`;
 
 var para = '';
 
@@ -208,26 +252,32 @@ function surround(chunk, func, prefunc) {
   if (prefunc) {
     prefunc(chunk)
   }
-  return setColorStart(chunk) + func(chunk) + setColorEnd();
+  return setColorStart(chunk) + func(chunk) + setColorEnd(chunk);
 }
 
 function setColorStart(chunk) {
   const v = chunk.confidence
   let text = ''
+  if (argv.audio_file && chunk.type === 'text') {
+    text += '<span data-ts="' + chunk.ts + '" data-end_ts="' + chunk.end_ts + '" id="' + chunk.ts + '" onclick="play(\'' + chunk.ts + '\')">';
+  }
   if ((v < 0.5) && (!isErrored)) {
-//    text += '<span style="color:red">';
+    text += '<span style="color:red" data-ts="' + chunk.ts + '" data-end_ts="' + chunk.end_ts + '" title="' + chunk.ts + '" id=c_"' + chunk.ts + '">';
     text += '__';
     isErrored = true;
   }
   return text
 }
 
-function setColorEnd() {
+function setColorEnd(chunk) {
   let text = ''
   if (isErrored) {
     text += '__';
-//    text += '</span>';
+    text += '</span>';
     isErrored = false;
+  }
+  if (argv.audio_file && chunk.type === 'text') {
+    text += '</span>';
   }
   return text
 }
@@ -250,10 +300,14 @@ function replaceAll(str, find, replace) {
  * @return {string} The fixed text
  */
 function fix_products(text) {
-  text = replaceAll(text, '(?:Maximus|[Mm]aximize) P', '<a href="https://en.wikipedia.org/wiki/Max_(software)">Max/MSP</a>');
-  text = replaceAll(text, '__Macs__', '<a href="https://en.wikipedia.org/wiki/Max_(software)">Max</a>');
-  text = replaceAll(text, 'PD', '<a href="https://en.wikipedia.org/wiki/Pure_Data">PD</a>');
-  text = text.replace(/cycling 74/i, '<a href="https://en.wikipedia.org/wiki/Cycling_%2774">Cycling \'74</a>');
+  const MAX = '<a href="https://en.wikipedia.org/wiki/Max_(software)">Max/MSP</a>';
+  const PD = '<a href="https://en.wikipedia.org/wiki/Pure_Data">PD</a>';
+  const CYCLING74 = '<a href="https://en.wikipedia.org/wiki/Cycling_%2774">Cycling \'74</a>';
+  text = text.replace(/(?:maximus|maximize) P/i, MAX);
+  text = text.replace(/maximum is P/i, MAX);
+  text = text.replace(/__Macs__/, MAX);
+  text = text.replace(/PD/, PD);
+  text = text.replace(/cycling 74/i, CYCLING74);
   return text
 }
 
@@ -264,16 +318,18 @@ function fix_products(text) {
  * @return {string} The fixed text
  */
 function um(text) {
-  text = replaceAll(text, /__um__, /g, '');
-  text = replaceAll(text, /\bum, /g, '');
-  text = replaceAll(text, /__um__ /g, '');
-  text = replaceAll(text, /\bum /g, '');
-  text = replaceAll(text, /__uh__, /g, '');
-  text = replaceAll(text, /\buh, /g, '');
-  text = replaceAll(text, /__uh__ /g, '');
-  text = replaceAll(text, /\buh /g, '');
+  text = text.replace(/\<span[^>]*?\>__um__\<\/span\>, /g, '');
+  text = text.replace(/\bum, /g, '');
+  text = text.replace(/\<span[^>]*?\>__um__\<\/span\> /g, '');
+  text = text.replace(/\bum /g, '');
+  text = text.replace(/\<span[^>]*?\>__uh__\<\/span\>, /g, '');
+  text = text.replace(/\buh, /g, '');
+  text = text.replace(/\<span[^>]*?\>__uh__\<\/span\> /g, '');
+  text = text.replace(/\buh /g, '');
   text = text.replace(/Um, (\w)/g, (m,p) => p.toUpperCase() )
   text = text.replace(/Uh, (\w)/g, (m,p) => p.toUpperCase() )
+  text = text.replace(/\<span.[^>]*?\>__Um__\<\/span\>, (\w)/g, (m,p) => p.toUpperCase() )
+  text = text.replace(/\<span.[^>]*?\>__Uh__\<\/span\>, (\w)/g, (m,p) => p.toUpperCase() )
   return text
 }
 
