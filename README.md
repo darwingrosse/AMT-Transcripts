@@ -30,18 +30,20 @@ cd AMT-Transcripts/App
   --audio_offset, -o  audio file offset when speech starts in seconds [float]
 ```
 
-To generate an HTML file with the ability to play the audio file 
+To generate an HTML file with the ability to play the audio podcast:
 
 ```bash
 ./tr-parse.js transcript-0005.json -s Darwin 'Barry Moon' -r November 10, 2013 -a path_to_podcast_audio/Podcast_005_BMoon.mp3 -o 6.1
 ```
-* transcript-0005.json: The name of the json source file.
-* -s: an array of speakers in order of their appearance (usually 2).
-* -r: release date of the podcast
-* -a: path to the audio file of the podcast.
-* -o: offset where the spoken word part begins in seconds
+* `transcript-0005.json`: The name of the json source file.
+* `-s`: an array of speakers in order of their appearance (usually two).
+* `-r`: release date of the podcast
+* `-a`: path to the audio file of the podcast
+* `-o`: offset where the spoken word part begins in seconds
 
-**Note**: options -a and -o are to be used only while fixing the transcriptions.
+**Note**: The audio play/stop interface is minimal: Clicking on a word anywhere starts playing the podcast from that point on. But clicking also toggles between playing and pausing. You'll get the hang of it. The audio files of the podcast are available [here](http://artmusictech.libsyn.com/).
+
+**Note**: options `-a` and `-o` are to be used only while fixing the transcriptions.
 When done with fixing, the HTML should be generated without tose two options,
 e.g.:
 
@@ -52,8 +54,8 @@ e.g.:
 The generated html file will have the same stem as the provided json file but with the
 .html extension and it will be stored in the HTML directory. E.g. 
 `HTML/transcript-0005.html`
-If the -a option is passed, the generated audio file will have the same name with \_audio
-appended before the extension, e.g. HTML/transcript-0005\_audio.html
+If the `-a` option is passed, the generated html file will have the same name with \_audio
+appended before the extension, e.g. `HTML/transcript-0005\_audio.html`
 
 ## Running the Tests
 
@@ -77,9 +79,9 @@ TBD
 
 ## Authors
 
-* Darwin Grosse - initiator and main author
+* [Darwin Grosse](http://www.darwingrosse.com/) - initiator and main author
 
-* Bernhard Wagner - contributions to code and transcriptions
+* [Bernhard Wagner](http://bernhardwagner.net) - contributions to code and transcriptions
 
 ## License All files are copyright 2019 by Darwin Grosse. All right reserved.
 
