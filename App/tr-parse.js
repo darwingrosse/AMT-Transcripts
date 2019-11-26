@@ -55,7 +55,7 @@ const argv = require('yargs')
     })
     .option('released', {
       alias: 'r',
-      describe: 'release date',
+      describe: 'release date, e.g. \'November 25, 2019\'',
       default: formatDate(),
     })
     .option('audio_file', {
@@ -64,7 +64,7 @@ const argv = require('yargs')
     })
     .option('audio_offset', {
       alias: 'o',
-      describe: 'audio file offset when speech starts',
+      describe: 'audio file offset when speech starts in seconds [float]',
     }) // TODO: The audio_offset should be mandatory, but only when an audio_file is passed on the command line.
   })
   .help()
@@ -77,12 +77,18 @@ var isErrored = false;
 const fn = path.basename(argv.json, '.json'); // gets rid of optional .json extension and optional directory
 
 const inFileName = '../JSON/' + fn + '.json';
-const outFileName = '../HTML/' + fn + '.html';
+const outFileName = '../HTML/' + fn + (argv.audio_file ? '_audio' : '') + '.html';
 const episode = fn.replace(/\D/g, '')
 
 const fileContent = fs.readFileSync(inFileName, 'utf-8');
 const data = JSON.parse(fileContent);
 var chunk, i;
+
+if (argv.audio_file && !fs.existsSync(argv.audio_file)){
+  throw argv.audio_file + " does not exist.";
+}
+
+const html_title = episode + ' - ' + guests.join(", ") + (argv.audio_file ? ' - with audio ' : '')
 
 const start_text = `\
 <!DOCTYPE html>
@@ -93,7 +99,7 @@ const start_text = `\
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Transcription: Podcast ${episode} - ${guests.join(", ")}</title>
+  <title>Transcription: Podcast ${html_title}</title>
 
   <!-- Bootstrap -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -108,7 +114,7 @@ const start_text = `\
 
 <body>
   <div class="container">
-    <h2>Transcription: ${guests.join(", ")}</h2>
+    <h2>Transcription: ${html_title}</h2>
     <h3>Released: ${argv.released}</h3>
 `
 
@@ -172,6 +178,43 @@ console.log("Parse complete, " + data.monologues.length + " entries.");
 console.log("data.monologues[0] attempting build-up...");
 para += start_text;
 
+var chunkStartTimeToIdx = {}
+
+// Collect indices to chunks with chunk.ts as the key.
+// We can implement a step in between to handle/delete/coalesce chunks
+// right within the json before rendering to HTML.
+// Already in this pass we get rid of um, uh.
+for (var x=0; x<data.monologues.length; x++) {
+  chunk = data.monologues[x].elements;
+  var i = 0
+  var j = 0
+  chunks_to_delete = []
+  while ( i < chunk.length ) {
+    var this_chunk = chunk[i]
+    if (this_chunk.value.match(/^u[mh]$/i)) {
+      chunks_to_delete.push(i++) // u[mh]
+      if (i <chunk.length) {
+        chunks_to_delete.push(i++) // , 
+      }
+      if (i <chunk.length) {
+        chunks_to_delete.push(i++) // blank
+      }
+      if (this_chunk.value[0] == 'U' && i <chunk.length) {
+        chunk[i].value = chunk[i].value[0].toUpperCase() + chunk[i].value.substring(1)
+      }
+    } else {
+      chunkStartTimeToIdx[ this_chunk.ts ] = [x, j++]
+      i++
+    }
+  }
+  chunks_to_delete = chunks_to_delete.reverse() // delete from the end, so indices remain valid
+  for (i = 0; i < chunks_to_delete.length; ++i) {
+    chunk.splice(chunks_to_delete[i], 1)
+  }
+}
+
+episode_specific_json_fixes(episode)
+
 for (var x=0; x<data.monologues.length; x++) {
   
   speaker_idx = data.monologues[x].speaker;
@@ -191,10 +234,9 @@ for (var x=0; x<data.monologues.length; x++) {
 // post-processing
 console.log("post-processing...");
 
-para = um(para)
 para = recoverGuestCapitalization(para)
 para = fix_products(para)
-para = episode_specific_fixes(para, episode)
+para = episode_specific_html_fixes(para, episode)
 
 
 para += end_text;
@@ -258,11 +300,15 @@ function surround(chunk, func, prefunc) {
 function setColorStart(chunk) {
   const v = chunk.confidence
   let text = ''
-  if (argv.audio_file && chunk.type === 'text') {
-    text += '<span data-ts="' + chunk.ts + '" data-end_ts="' + chunk.end_ts + '" id="' + chunk.ts + '" onclick="play(\'' + chunk.ts + '\')">';
+  if (argv.audio_file && chunk.type === 'text' && v >= 0.5) { // uncertain chunks will not be marked up for being playable
+    text += '<span data-ts="' + chunk.ts + '" data-end_ts="' + chunk.end_ts + 
+            '" id="' + chunk.ts + '" title="' + chunk.ts + '" onclick="play(\'' +
+            chunk.ts + '\')">';
   }
   if ((v < 0.5) && (!isErrored)) {
-    text += '<span style="color:red" data-ts="' + chunk.ts + '" data-end_ts="' + chunk.end_ts + '" title="' + chunk.ts + '" id=c_"' + chunk.ts + '">';
+    text += '<span style="color:red" data-ts="' + chunk.ts +
+            '" data-end_ts="' + chunk.end_ts + '" title="' +
+            chunk.ts + '" id=c_"' + chunk.ts + '">';
     text += '__';
     isErrored = true;
   }
@@ -276,7 +322,8 @@ function setColorEnd(chunk) {
     text += '</span>';
     isErrored = false;
   }
-  if (argv.audio_file && chunk.type === 'text') {
+  const v = chunk.confidence
+  if (argv.audio_file && chunk.type === 'text' && v >= 0.5) { // uncertain chunks will not be marked up for being playable
     text += '</span>';
   }
   return text
@@ -294,6 +341,18 @@ function replaceAll(str, find, replace) {
 }
 
 /**
+ * Fixes the chunk at startTime, applying the func
+ *
+ * @param {string} startTime The start time of the chunk to fix
+ * @param {function} func The function to apply to the chunk
+ */
+function patch_json(startTime, func){
+  monologue_chunks = chunkStartTimeToIdx[startTime]
+  chunk = data.monologues[monologue_chunks[0]].elements[monologue_chunks[1]]
+  func(chunk)
+}
+
+/**
  * Replaces product names with corrections and adds links.
  *
  * @param {string} text The text to fix
@@ -303,47 +362,50 @@ function fix_products(text) {
   const MAX = '<a href="https://en.wikipedia.org/wiki/Max_(software)">Max/MSP</a>';
   const PD = '<a href="https://en.wikipedia.org/wiki/Pure_Data">PD</a>';
   const CYCLING74 = '<a href="https://en.wikipedia.org/wiki/Cycling_%2774">Cycling \'74</a>';
+  const UNITY3D = '<a href="https://en.wikipedia.org/wiki/Unity_(game_engine)">Unity3d</a>';
   text = text.replace(/(?:maximus|maximize) P/i, MAX);
   text = text.replace(/maximum is P/i, MAX);
   text = text.replace(/__Macs__/, MAX);
   text = text.replace(/PD/, PD);
   text = text.replace(/cycling 74/i, CYCLING74);
+  text = text.replace(/unity three D/i, UNITY3D);
   return text
 }
 
 /**
- * Deletes all 'um, uh'.
+ * Looks for episode-specific json fixes and invokes them if found.
  *
- * @param {string} text The text to fix
- * @return {string} The fixed text
- */
-function um(text) {
-  text = text.replace(/\<span[^>]*?\>__um__\<\/span\>, /g, '');
-  text = text.replace(/\bum, /g, '');
-  text = text.replace(/\<span[^>]*?\>__um__\<\/span\> /g, '');
-  text = text.replace(/\bum /g, '');
-  text = text.replace(/\<span[^>]*?\>__uh__\<\/span\>, /g, '');
-  text = text.replace(/\buh, /g, '');
-  text = text.replace(/\<span[^>]*?\>__uh__\<\/span\> /g, '');
-  text = text.replace(/\buh /g, '');
-  text = text.replace(/Um, (\w)/g, (m,p) => p.toUpperCase() )
-  text = text.replace(/Uh, (\w)/g, (m,p) => p.toUpperCase() )
-  text = text.replace(/\<span.[^>]*?\>__Um__\<\/span\>, (\w)/g, (m,p) => p.toUpperCase() )
-  text = text.replace(/\<span.[^>]*?\>__Uh__\<\/span\>, (\w)/g, (m,p) => p.toUpperCase() )
-  return text
-}
-
-/**
- * Looks for episode-specific fixes and invokes them if found.
- *
- * @param {string} text The text to fix
+ * @param {string} text The html text to fix
  * @param {int} episode The episode this fix is pertaining to
- * @return {string} The fixed text.
+ * @return {string} The fixed html text.
  */
-function episode_specific_fixes(text, episode) {
-  func_name = 'fix_' + episode
+function episode_specific_json_fixes(episode) {
+  func_name = 'fix_json_' + episode
   if (eval("typeof " + func_name) === "function") {
-    console.log('applying episode ' + episode + '-specific fixes')
+    console.log('applying episode ' + episode + '-specific json fixes')
+    eval(func_name + "()")
+  }
+}
+
+function fix_json_0005() {
+  patch_json('367.74', chunk => chunk.confidence = 1)
+  patch_json('1311.56', chunk => chunk.confidence = 1)
+  patch_json('1480.08', chunk => chunk.confidence = 1)
+  patch_json('1483.36', chunk => chunk.confidence = 1)
+  patch_json('2179.68', chunk => chunk.value = 'looked')
+}
+
+/**
+ * Looks for episode-specific html fixes and invokes them if found.
+ *
+ * @param {string} text The html text to fix
+ * @param {int} episode The episode this fix is pertaining to
+ * @return {string} The fixed html text.
+ */
+function episode_specific_html_fixes(text, episode) {
+  func_name = 'fix_html_' + episode
+  if (eval("typeof " + func_name) === "function") {
+    console.log('applying episode ' + episode + '-specific html fixes')
     eval("text = " + func_name + "(text)")
   }
   return text
@@ -351,15 +413,49 @@ function episode_specific_fixes(text, episode) {
 
 /**
  * Fixes specific to episode 0005.
- * Invoked by the function episode_specific_fixes()
+ * Invoked by the function episode_specific_html_fixes()
  *
  * @param {string} text The text to fix
  * @return {string} The fixed text.
  */
-function fix_0005(text) {
+function fix_html_0005(text) {
+  const JITTER = '<a href="https://en.wikipedia.org/wiki/Max_(software)">Max/MSP/Jitter</a>';
+  text = text.replace(/\<span[^>]*?\>BAS\<\/span\>, \<span[^>]*?\>BAS Z BAS\<\/span\> \<span[^>]*?\>tutorials\<\/span\>/gi, 'Baz, <a href="https://www.youtube.com/user/BazTutorials">Baz Tutorials</a>')
   text = text.replace(/Ba[zs] tutorials/gi, '<a href="https://www.youtube.com/user/BazTutorials">Baz Tutorials</a>')
   text = text.replace(/Highbury hi/gi, 'Hi Barry')
   text = text.replace(/member of the urn, /gi, '')
+  text = text.replace(/Shortly/, 'Short')
+  text = text.replace(/I first ran into, well I won't say I first ran into him, /, '')
+  text = text.replace(/(on the, )+/, 'on the')
+  text = text.replace(/I was, I was/, 'I was')
+  text = text.replace(/\<span[^>]*?\>__who__\<\/span\>/g, 'who');
+  text = text.replace(/econ/g, 'IRCAM');
+  text = text.replace(spanifyRX('ice PW'), 'ISPW');
+  text = text.replace(spanifyRX('__yeah__'), '');
+  text = text.replace(spanifyRX('__furs__'), 'for');
+  text = text.replace(/So I like, yeah. /g, '');
+  text = text.replace(/\<span[^>]*?\>__Maximus PGA__\<\/span\> there/g, JITTER);
+  text = text.replace(spanifyRX('__corrode__'), 'code');
+  text = text.replace(spanifyRX('__will__'), 'will');
+  text = text.replace(spanifyRX('__till__'), 'till it\'s');
+  text = text.replace(spanifyRX('It\'s kind of'), 'It\'s kind of curious.');
+  text = text.replace(spanifyRX('but I __don.t__ like to, I'), 'but I\'d like to'); // FIXME
+  text = text.replace(spanifyRX('And we started when we started'), 'And when we started');
+  text = text.replace(spanifyRX('all taker'), '<a href="https://en.wikipedia.org/wiki/Autechre">Autechre</a>');
+  text = text.replace(spanifyRX('sort of walk prey codes scene'), '<a href="https://en.wikipedia.org/wiki/Warp_(record_label)">Warp Records</a> scene');
+  text = text.replace(spanifyRX('You.re talking about __or__ we.ll take her'), 'You know, talking about <a href="https://en.wikipedia.org/wiki/Autechre">Autechre</a>');
+  return text
+}
+
+function spanifyRX(text) {
+  var arr = text.split(/\s+/)
+  var text = arr.map(spanify).join(' ')
+  return new RegExp(text, 'g');
+
+}
+
+function spanify(text) {
+  text = '(?:\\<span[^>]*?\\>)?'+ text + '(?:\\<\\/span\\>)?';
   return text
 }
 
