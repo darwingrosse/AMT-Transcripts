@@ -1,4 +1,4 @@
-const utils = require('./utils');
+const utils = require('./transcriptionJsonToHtml');
 
 test('formats date correctly', () => {
   expect(utils.formatDate(new Date('2013-10-14'))).toBe('October 14, 2013');

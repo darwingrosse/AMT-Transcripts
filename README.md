@@ -41,7 +41,7 @@ To generate an HTML file with the ability to play the audio podcast:
 * `-a`: path to the audio file of the podcast
 * `-o`: offset where the spoken word part begins in seconds
 
-**Note**: The audio play/stop interface is minimal: Clicking on a word anywhere starts playing the podcast from that point on. But clicking also toggles between playing and pausing. You'll get the hang of it. The audio files of the podcast are available [here](http://artmusictech.libsyn.com/).
+**Note**: The audio play/stop interface is minimal: Clicking on a word anywhere starts playing the podcast from that point on. But clicking also toggles between playing and pausing. You'll get the hang of it. You can also toggle play/pause by pressing the space bar. The audio files of the podcast are available [here](http://artmusictech.libsyn.com/). The rendered file is yellowish when it is connected to the audio podcast. The text with lighter background is clickable and the podcast will be played from there. Also the cursor changes to a hand when hovering above a word from where the podcast can be started.
 
 **Note**: options `-a` and `-o` are to be used only while fixing the transcriptions.
 When done with fixing, the HTML should be generated without tose two options,
@@ -59,7 +59,7 @@ appended before the extension, e.g. `HTML/transcript-0005\_audio.html`
 
 ## Running the Tests
 
-TBD
+npm test
 
 ### Coding Style Tests
 
@@ -68,6 +68,7 @@ TBD
 ## Built With
 
 * [yargs](https://github.com/yargs/yargs) - For command line options
+* [jest](https://jestjs.io/) - For testing
 
 ## Contributing
 
