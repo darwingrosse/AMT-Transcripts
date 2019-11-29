@@ -54,14 +54,14 @@ e.g.:
 The generated html file will have the same stem as the provided json file but with the
 .html extension and it will be stored in the HTML directory. E.g. 
 `HTML/transcript-0005.html`
-If the `-a` option is passed, the generated html file will have the same name with \_audio
-appended before the extension, e.g. `HTML/transcript-0005\_audio.html`
+If the `-a` option is passed, the generated html file will have the same name with `_audio`
+appended before the extension, e.g. `HTML/transcript-0005_audio.html`
 
 ## Repo Contents
 
-/App - Contains the conversation application (written in Node.js) used for a transcription aid.
-/HTML - Contains the transcribed and completed HTML for the podcast episodes.
-/JSON - Contains the raw JSON files created by the https://rev.ai conversion system
+- `/App` - Contains the conversation application (written in Node.js) used for a transcription aid.
+- `/HTML` - Contains the transcribed and completed HTML for the podcast episodes.
+- `/JSON` - Contains the raw JSON files created by the [https://rev.ai](https://rev.ai) conversion system
 
 ## Run Tests
 
@@ -98,3 +98,4 @@ All files are copyright 2019 by Darwin Grosse. All right reserved.
 
 * Bernhard Wagner for an amazing level of help with the app.
 * Billie Thompson for the [README template](https://gist.github.com/PurpleBooth).
+
