@@ -1,11 +1,10 @@
-# AMT-Transcripts
-The Transcription project for the Art + Music + Technology podcast
+# AMT-Transcripts Transcription App
 
-Want to read the transcriptions? Give this a try:
+Transcriptions for the AMT Podcast are completed using the https://rev.ai service, which produces a JSON file with timestamp, punctuation, spacing and timing for every word in the transcribed document. But like all auto-transcribing tools, it misses a lot of stuff. For example, MIDI is often transcribed as "mini", or "Mitty" or even "Mindy". So it still have to be cleaned up manually.
 
-[http://darwingrosse.com/AMT/transcriptions.html](http://darwingrosse.com/AMT/transcriptions.html))
+The tr-parse application runs through the JSON document, ID's poorly transcribed words, labels the speaker, formats things into manageable HTML paragraphs, and installs some boilerplate around the HTML. It also, optionally, can create a document that provides direct access to the audio file for verification of the words (which is proving to be a great timesaver).
 
-All files are copyright 2019 by Darwin Grosse. All right reserved.
+Huge thanks to Bernhard Wagner, who took a minimal Node.js program and is turning it into a powerhouse!
 
 ## Getting Started
 
@@ -41,31 +40,25 @@ To generate an HTML file with the ability to play the audio podcast:
 * `-a`: path to the audio file of the podcast
 * `-o`: offset where the spoken word part begins in seconds
 
-**Note**: The audio play/stop interface is minimal: Clicking on a word anywhere starts playing the podcast from that point on. But clicking also toggles between playing and pausing. You'll get the hang of it. You can also toggle play/pause by pressing the space bar. The audio files of the podcast are available [here](http://artmusictech.libsyn.com/). The background of the rendered html file is yellowish when it is connected to the audio podcast. The text with lighter background is clickable and the podcast will be played from there. Also the cursor changes to a hand when hovering above a word from where the podcast can be started.
+**Note**: The audio play/stop interface is minimal: Clicking on a word anywhere starts playing the podcast from that point on. But clicking also toggles between playing and pausing. You'll get the hang of it. The audio files of the podcast are available [here](http://artmusictech.libsyn.com/).
 
 **Note**: options `-a` and `-o` are to be used only while fixing the transcriptions.
-When done with fixing, the HTML should be generated without tose two options,
+When done with fixing, the HTML should be generated without those two options,
 e.g.:
 
 ```bash
 ./tr-parse.js transcript-0005.json -s Darwin 'Barry Moon' -r November 10, 2013
 ```
 
-The generated html file will have the same stem as the provided json file but with the
-.html extension and it will be stored in the HTML directory. E.g. 
+The generated html file will have the same stem as the provided JSON file but with the
+.html extension and it will be stored in the HTML directory. E.g.
 `HTML/transcript-0005.html`
 If the `-a` option is passed, the generated html file will have the same name with \_audio
 appended before the extension, e.g. `HTML/transcript-0005\_audio.html`
 
-## Repo Contents
+## Running the Tests
 
-/App - Contains the conversation application (written in Node.js) used for a transcription aid.
-/HTML - Contains the transcribed and completed HTML for the podcast episodes.
-/JSON - Contains the raw JSON files created by the https://rev.ai conversion system
-
-## Run Tests
-
-npm test
+TBD
 
 ### Coding Style Tests
 
@@ -74,7 +67,6 @@ TBD
 ## Built With
 
 * [yargs](https://github.com/yargs/yargs) - For command line options
-* [jest](https://jestjs.io/) - For testing
 
 ## Contributing
 
@@ -90,11 +82,8 @@ TBD
 
 * [Bernhard Wagner](http://bernhardwagner.net) - contributions to code and transcriptions
 
-## License
-
-All files are copyright 2019 by Darwin Grosse. All right reserved.
+## License: All files are copyright 2019 by Darwin Grosse. All right reserved.
 
 ## Acknowledgments
 
-* Bernhard Wagner for an amazing level of help with the app.
 * Billie Thompson for the [README template](https://gist.github.com/PurpleBooth).
