@@ -5,3 +5,4 @@
 /HTML/js/
 *.zip
 node_modules
+/HTML/*_audio.html
