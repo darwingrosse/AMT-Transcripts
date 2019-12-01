@@ -41,7 +41,6 @@ const argv = require('yargs')
           })
       },
       argv => { // handler
-        const URL = 'http://artmusictech.libsyn.com/'
         if(!argv.audioFile) {
           find_audio_file(argv)
         }
@@ -63,19 +62,22 @@ json2html.doit();
  * @param {Object} argv The argv in which to find the episode information and which to update with the found audio file
  */
 function find_audio_file(argv) {
+  const URL = 'http://artmusictech.libsyn.com/'
   const fn = path.basename(argv.json, '.json'); // gets rid of optional .json extension and optional directory
-  const episode = fn.replace(/\D/g, '')
-  const episode_glob = episode.replace(/^0(\d+)/, '?(0)$1')
-  const AUDIO_DIR = '../AUDIO'
+  const episode = fn.replace(/\D/g, '');
+  const episode_glob = episode.replace(/^0(\d+)/, '?(0)$1');
+  const AUDIO_DIR = '../AUDIO';
   podcast = glob.sync(`${AUDIO_DIR}/*${episode_glob}*`) // NOTE: glob notation is OS agnostic, so "/" in paths works across all platforms
   if (!podcast.length) {
-    throw `no audio file given with -a and no suitable audio file found for episode ${episode} in ${AUDIO_DIR}.\n` +
-      `Download episodes into ${AUDIO_DIR} from here: ${URL}`
+    console.log(`no audio file given with -a and no suitable audio file found for episode ${episode} in ${AUDIO_DIR}.\n` +
+      `Please download episodes into ${AUDIO_DIR} from here: ${URL}`);
+    process.exit(1);
   }
   if (podcast.length > 1) {
-    throw `multiple candidates (${podcast.join(', ')}) found in ${AUDIO_DIR} for episode ${episode}.\n` +
-      `Either pass a unique name via -a or clean up ${AUDIO_DIR}`
+    console.log(`multiple candidates (${podcast.join(', ')}) found in ${AUDIO_DIR} for episode ${episode}.\n` +
+      `Either pass a unique name via -a or clean up ${AUDIO_DIR}`);
+    process.exit(2);
   }
-  argv.audioFile = podcast[0]
-  console.log('no audio file provided, using: ' + argv.audioFile)
+  argv.audioFile = podcast[0];
+  console.log('no audio file provided, using: ' + argv.audioFile);
 }
