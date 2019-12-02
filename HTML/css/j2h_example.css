@@ -1,0 +1,8 @@
+body {
+  background-color : #f1fD9D
+}
+span[onclick] {
+  background-color : #f6ffdf;
+  cursor: pointer;
+}
+
