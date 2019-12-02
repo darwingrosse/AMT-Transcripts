@@ -473,7 +473,7 @@ function fix_html_0005(text) {
   text = replace_span(text, 'I was, I was', 'I was')
   text = replace_span(text, '__who__', 'who'); 
   text = replace_span(text, 'econ', '<a href="https://en.wikipedia.org/wiki/IRCAM">IRCAM</a>'); 
-  text = replace_span(text, 'ice PW', 'ISPW');
+  text = replace_span(text, 'ice PW', '<a href="https://en.wikipedia.org/wiki/ISPW">ISPW</a>');
   text = replace_span(text, '__yeah__', ''); 
   text = replace_span(text, '__furs__', 'for'); 
   text = replace_span(text, '__Maximus PGA__ there', JITTER);
@@ -544,7 +544,7 @@ function fix_html_0005(text) {
   text = replace_span(text, 'for those of you have just about everybody who was too old to know for __a__ bird', 'Most of you are probably too young to remember those.'); 
   text = replace_span(text, 'workstation', 'workstation.'); 
   text = replace_span(text, 'I, I was supposedly the system ', 'I was supposedly the system administrator '); 
-  text = replace_span(text, 'for the next, there.ll be, we.re running', 'for the <a href="https://en.wikipedia.org/wiki/NeXT_Computer">NeXT</a> computer that we were running'); 
+  text = replace_span(text, 'for the next, there.ll be, we.re running', 'for the <a href="https://en.wikipedia.org/wiki/NeXT_Computer">NeXT</a> computers that we were running'); 
   text = replace_span(text, 'next operating system', '<a href="https://en.wikipedia.org/wiki/NeXTSTEP">NeXT operating system</a>.'); 
   text = replace_span(text, 'about, some of, some of', 'about some of'); 
   text = replace_span(text, 'kind of talk', 'talk'); 
@@ -568,19 +568,43 @@ function fix_html_0005(text) {
   text = replace_span(text, 'Luke Dubois', '<a href="https://en.wikipedia.org/wiki/R._Luke_DuBois">Luke Dubois</a>'); 
   text = replace_span(text, 'dying at', 'doing that.'); 
   text = replace_span(text, 'to, use', 'to use'); 
+  text = replace_span(text, 'court Libby', '<a href="https://www.cortlippe.com/">Cort Lippe</a>'); 
+  text = replace_span(text, 'court lippy', '<a href="https://www.cortlippe.com/">Cort Lippe</a>'); 
+  text = replace_span(text, '(__)?court(__)?', '<a href="https://www.cortlippe.com/">Cort</a>'); 
+  text = replace_span(text, 'on. You know what.*93', 'on. I mean \'92 or \'93'); 
+  text = replace_span(text, 'TA work', '<a href="https://en.wikipedia.org/wiki/Teaching_assistant">TA work</a>'); 
+  text = replace_span(text, 'tutorials, video tutorials', 'video tutorials'); 
+  text = replace_span(text, 'I, you know, as, as a', 'As a'); 
+  text = replace_span(text, 'yeah, I just didn.t, my', 'my'); 
+  text = replace_span(text, 'learned, which are just, you know, there.s', 'learned, there\'s'); 
+  text = replace_span(text, 'And you know, and', 'And'); 
+  text = replace_span(text, ', you know, ', ''); 
 
   return text
 }
 
 /**
+ * Changes the text by replacing 'search' with 'replacement', in a text
+ * that may be marked up with html span elements.
+ * 
+ * @param {string} text The text to change
+ * @param {string} search The pattern to search. Can contain regex syntax.
+ * @param {string} replacement The replacement text.
+ *
  * ATTENTION: commas are filtered out in the search term!
+ * So when specifying a search term where commas are to be replaced/repositioned,
+ * make sure that they are enclosed by words surrounding them, i.e. that the 
+ * commas are not at the boundary of the search term.
  */
 function replace_span(text, search, replacement) {
   const spanned_regex = spanifyRX(search)
-  if (!text.match(spanned_regex)) {
-    console.log(`**** search "${search}" was not found in text`)
-  } else {
-    text = text.replace(spanned_regex, replacement);
+  //text = text.replace(spanned_regex, replacement);
+  let count = 0
+  text = text.replace(spanned_regex, () => { count++; return replacement });
+  if (count > 1) {
+    console.log(`${count} matches for search "${search}"`)
+  } else if (count === 0) {
+    console.log(`**** search "${search}" was not found in text.`)
   }
   return text
 }
