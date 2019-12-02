@@ -92,6 +92,10 @@ The generated html file will have the same stem as the provided json file but wi
 If the `audio` subcommand is used, the generated `html` file will have the same
 name with `_audio` appended before the extension, e.g.
 `HTML/transcript-0005_audio.html`
+The generated `HTML/transcript-0005_audio.html` has a default style to facilitate
+distinguishing it from the plain `html`generated when omitting the `audio`
+subcommand. The `audio` default style can be overridden by providing a `css` file
+named `../HTML/j2h.css`. There's an example file `../HTML/j2h_example.css`.
 
 **Note**: If no audio file is passed via the `-a` option, the `audio`
 subcommand will look for an audio file in the folder `../AUDIO` based on the

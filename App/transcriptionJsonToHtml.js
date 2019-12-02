@@ -2,6 +2,7 @@
 // classes
 // -------
 const path = require('path');
+const glob = require('glob');
 const fs = require('fs');
 
 /**
@@ -51,10 +52,10 @@ class TranscriptionJsonToHtml {
     }
 
     this.audio_offset = audio_offset;
-    const fn = path.basename(json, '.json'); // gets rid of optional .json extension and optional directory
-    this.episode = fn.replace(/\D/g, '');
-    this.inFileName = '../JSON/' + fn + '.json';
-    this.outFileName = '../HTML/' + fn + (audio_file ? '_audio' : '') + '.html';
+    const FN = path.basename(json, '.json'); // gets rid of optional .json extension and optional directory
+    this.episode = FN.replace(/\D/g, '');
+    this.inFileName = '../JSON/' + FN + '.json';
+    this.outFileName = '../HTML/' + FN + (audio_file ? '_audio' : '') + '.html';
     this.fileContent = fs.readFileSync(this.inFileName, 'utf-8');
     this.chunkStartTimeToIdx = {};
 
@@ -88,18 +89,18 @@ class TranscriptionJsonToHtml {
 
     for (let x=0; x<this.data.monologues.length; x++) {
       
-      const speaker_idx = this.data.monologues[x].speaker;
-      if (speaker_idx >= this.speakers.length) {
-        throw this.inFileName + " contains more speakers (>= " + (speaker_idx + 1) + ") than were provided via -s (" + this.speakers.length + ")";
+      const SPEAKER_IDX = this.data.monologues[x].speaker;
+      if (SPEAKER_IDX >= this.speakers.length) {
+        throw this.inFileName + " contains more speakers (>= " + (SPEAKER_IDX + 1) + ") than were provided via -s (" + this.speakers.length + ")";
       }
-      this.para += '<p>\n<b>' + this.speakers[speaker_idx].getName() + ": </b>" + (speaker_idx == 0 ? '<I>' : '');
-      const chunk = this.data.monologues[x].elements;
+      this.para += '<p>\n<b>' + this.speakers[SPEAKER_IDX].getName() + ": </b>" + (SPEAKER_IDX == 0 ? '<I>' : '');
+      const CHUNK = this.data.monologues[x].elements;
 
-      for (let i=0; i<chunk.length; i++) {
-        this.para += this.handleChunk(chunk[i]);
+      for (let i=0; i<CHUNK.length; i++) {
+        this.para += this.handleChunk(CHUNK[i]);
       }
 
-      this.para += '\n</p>\n\n' + (speaker_idx == 0 ? '</I>' : '');
+      this.para += '\n</p>\n\n' + (SPEAKER_IDX == 0 ? '</I>' : '');
     }
 
   }
@@ -148,10 +149,19 @@ class TranscriptionJsonToHtml {
    */
   append_html_start_text() {
 
-    const html_title = this.episode + ' - ' + this.guests.join(", ") + (this.audio_file ? ' - with audio' : '')
-    console.log("'" + html_title + "'")
+    const HTML_TITLE = this.episode + ' - ' + this.guests.join(", ") + (this.audio_file ? ' - with audio' : '')
+    console.log("'" + HTML_TITLE + "'")
 
-    const audio_style = `
+    const CUSTOM_CSS_PATH = '../HTML/css/j2h.css';
+
+    const CUSTOM_CSS_PRESENT = glob.sync(CUSTOM_CSS_PATH).length
+    const AUDIO_STYLE = CUSTOM_CSS_PRESENT ? 
+    `
+      <link rel="stylesheet" type="text/css" href="${CUSTOM_CSS_PATH}">
+    `
+    :
+    `
+    <style>
       body {
         background-color : #f1fD9D
       }
@@ -159,11 +169,18 @@ class TranscriptionJsonToHtml {
         background-color : #f6ffdf;
         cursor: pointer;
       }
+    </style>
     `
 
-    const html_style = this.audio_file ? audio_style : ''
+    if (CUSTOM_CSS_PRESENT && this.audio_file) {
+      console.log(`Using custom css: ${CUSTOM_CSS_PATH}`)
+    } else {
+      console.log(`Using default css`)
+    }
 
-    const start_text = `<!DOCTYPE html>
+    const HTML_STYLE = this.audio_file ? AUDIO_STYLE : ''
+
+    const START_TEXT = `<!DOCTYPE html>
     <html lang="en">
 
     <head>
@@ -171,7 +188,7 @@ class TranscriptionJsonToHtml {
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-      <title>Transcription: Podcast ${html_title}</title>
+      <title>Transcription: Podcast ${HTML_TITLE}</title>
 
       <!-- Bootstrap -->
       <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -182,17 +199,15 @@ class TranscriptionJsonToHtml {
           <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-    <style>
-      ${html_style}
-    </style>
+      ${HTML_STYLE}
     </head>
 
     <body>
       <div class="container">
-        <h2>Transcription: ${html_title}</h2>
+        <h2>Transcription: ${HTML_TITLE}</h2>
         <h3>Released: ${this.releaseDate}</h3>
     `
-    this.para = start_text;
+    this.para = START_TEXT;
   }
 
   /**
