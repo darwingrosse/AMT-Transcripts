@@ -7,6 +7,14 @@ Want to read the transcriptions? Give this a try:
 
 All files are copyright 2019 by Darwin Grosse. All right reserved.
 
+# AMT-Transcripts Transcription App
+
+Transcriptions for the AMT Podcast are completed using the [https://rev.ai](https://rev.ai) service, which produces a JSON file with timestamp, punctuation, spacing and timing for every word in the transcribed document. But like all auto-transcribing tools, it misses a lot of stuff. For example, MIDI is often transcribed as "mini", or "Mitty" or even "Mindy". So it still have to be cleaned up manually.
+
+The tr-parse application runs through the JSON document, ID's poorly transcribed words, labels the speaker, formats things into manageable HTML paragraphs, and installs some boilerplate around the HTML. It also, optionally, can create a document that provides direct access to the audio file for verification of the words (which is proving to be a great timesaver).
+
+Huge thanks to Bernhard Wagner, who took a minimal Node.js program and is turning it into a powerhouse!
+
 ## Getting Started
 
 These instructions will get you a copy of the project up on your local machine for cleaning up automatic transcriptions.
@@ -23,6 +31,7 @@ npm install
 ```bash
 cd AMT-Transcripts/App
 ./tr-parse.js --help
+
 tr-parse.js <json>
 
 generate plain html from json, filtering out cruft
@@ -36,30 +45,26 @@ Positionals:
   json  the json file as found in the ../JSON/ directory
 
 Options:
-  --help              Show help                                        [boolean]
+  --version           Show version number                              [boolean]
   --speakers, -s      speakers                                [array] [required]
   --release-date, -r  release date, e.g. 'November 25, 2019'          [required]
+  --help, -h, -?      Show help                                        [boolean]
 
-  # unfortunately, passing --help to the audio subcommand doesn't provide the
-  # subcommand-specific help output! However, calling tr-parse.js audio without
-  # further (required!) arguments triggers the usage text which displays all
-  # options of the audio subcommand:
-
-./tr-parse.js audio
+./tr-parse.js audio --help
 
 tr-parse.js audio <json>
 
 generate html with audio support
 
-Positionals:
-  json  the json file as found in the ../JSON/ directory
-
 Options:
-  --help              Show help                                        [boolean]
+  --version           Show version number                              [boolean]
   --speakers, -s      speakers                                [array] [required]
   --release-date, -r  release date, e.g. 'November 25, 2019'          [required]
+  --help, -h, -?      Show help                                        [boolean]
   --audio-file, -a    audio file
   --audio-offset, -o  audio file offset when speech starts in seconds [float]
+                                                                      [required]
+
                                                                       [required]
 ```
 
@@ -147,6 +152,4 @@ All files are copyright 2019 by Darwin Grosse. All right reserved.
 
 ## Acknowledgments
 
-* Bernhard Wagner for an amazing level of help with the app.
 * Billie Thompson for the [README template](https://gist.github.com/PurpleBooth).
-
