@@ -4,4 +4,5 @@
 /HTML/fonts/
 /HTML/js/
 *.zip
-node_modules
+node_modules/
+/HTML/*_audio.html
