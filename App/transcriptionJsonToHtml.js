@@ -553,6 +553,21 @@ function fix_html_0005(text) {
   text = replace_span(text, 'blender', '<a href="https://en.wikipedia.org/wiki/Blender_(software)">Blender</a>'); 
   text = replace_span(text, 'they.re not even, you know, in any way, you know, teaching and through __their__, they have no experience teaching as far as I know.', 'they don\'t even have any teaching experience, as far as I know.'); 
   text = replace_span(text, '__they__', 'to'); 
+  text = replace_span(text, 'learn __to__, you can.t ', ''); 
+  text = replace_span(text, 'and until', 'until'); 
+  text = replace_span(text, 'birth', 'Bath.'); 
+  text = replace_span(text, 'POTUS head', '<a href="https://en.wikipedia.org/wiki/Portishead_(band)">Portishead</a>'); 
+  text = replace_span(text, 'massive attack', '<a href="https://en.wikipedia.org/wiki/Massive_Attack">Massive Attack</a>'); 
+  text = replace_span(text, 'Minnesota', ''); 
+  text = replace_span(text, '__she__, the sorts of thing, the ', 'the'); 
+  text = replace_span(text, 'me to, for the, Arizona', 'me to the Arizona'); 
+  text = replace_span(text, 'they, it.s', 'it\'s'); 
+  text = replace_span(text, 'not, you know, sort of ', ''); 
+  text = replace_span(text, 'for, I mean, it.s ', 'for. It\'s '); 
+  text = replace_span(text, 'Yeah. My.*maybe, maybe', 'I think maybe '); 
+  text = replace_span(text, 'Luke Dubois', '<a href="https://en.wikipedia.org/wiki/R._Luke_DuBois">Luke Dubois</a>'); 
+  text = replace_span(text, 'dying at', 'doing that.'); 
+  text = replace_span(text, 'to, use', 'to use'); 
 
   return text
 }
