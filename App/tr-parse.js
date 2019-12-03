@@ -9,12 +9,15 @@ const argv = require('yargs')
     describe: 'speakers',
     demandOption: true,
     array: true,
+    global: true,
+
   })
   .option('release-date', { // (will be renamed to releaseDate)
     alias: 'r',
     describe: 'release date, e.g. \'November 25, 2019\'',
     demandOption: true,
     nargs: 1,
+    global: true,
   })
   .command(['plain <json>', '$0'], 'generate plain html from json, filtering out cruft', yargs => {
     return build_positional(yargs)
