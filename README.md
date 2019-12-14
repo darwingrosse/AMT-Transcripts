@@ -23,7 +23,7 @@ These instructions will get you a copy of the project up on your local machine f
 
 ```bash
 git clone https://github.com/darwingrosse/AMT-Transcripts.git
-cd AMT-Transcripts
+cd AMT-Transcripts/App
 npm install
 ```
 
@@ -71,7 +71,7 @@ Options:
 To generate an HTML file with the ability to play the audio podcast:
 
 ```bash
-./tr-parse.js audio transcript-0005.json -s Darwin 'Barry Moon' -r November 10, 2013 -a path_to_podcast_audio/Podcast_005_BMoon.mp3 -o 6.1
+./tr-parse.js audio transcript-0005.json -s Darwin 'Barry Moon' -r 'November 10, 2013' -a path_to_podcast_audio/Podcast_005_BMoon.mp3 -o 6.1
 ```
 * `audio`: This invokes the `audio` subcommand
 * `transcript-0005.json`: The name of the json source file.
@@ -88,7 +88,7 @@ be generated without the `audio` command and its two options,
 e.g.:
 
 ```bash
-./tr-parse.js transcript-0005.json -s Darwin 'Barry Moon' -r November 10, 2013
+./tr-parse.js transcript-0005.json -s Darwin 'Barry Moon' -r 'November 10, 2013'
 ```
 
 The generated html file will have the same stem as the provided json file but with the
@@ -106,7 +106,7 @@ named `../HTML/j2h.css`. There's an example file `../HTML/j2h_example.css`.
 subcommand will look for an audio file in the folder `../AUDIO` based on the
 episode number, e.g.
 ```bash
-./tr-parse.js audio transcript-0005.json -s Darwin 'Barry Moon' -r November 10, 2013 -o 6.1
+./tr-parse.js audio transcript-0005.json -s Darwin 'Barry Moon' -r 'November 10, 2013' -o 6.1
 ```
 will look for an mp3 file in `../AUDIO/` that has `0005` or `005` in its file name. E.g. for episode
 `0005` `Podcast_005_BMoon.mp3` will be found if present in the `../AUDIO/` directory. You need to
