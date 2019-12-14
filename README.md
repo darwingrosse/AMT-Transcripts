@@ -92,7 +92,7 @@ e.g.:
 ```
 
 The generated html file will have the same stem as the provided json file but with the
-`.html` extension and it will be stored in the `HTML` directory. E.g. 
+`.html` extension and it will be stored in the `HTML` directory. E.g.
 `HTML/transcript-0005.html`
 If the `audio` subcommand is used, the generated `html` file will have the same
 name with `_audio` appended before the extension, e.g.
