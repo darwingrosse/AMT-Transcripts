@@ -440,16 +440,21 @@ function recoverGuestCapitalization(text, guests){
  * @return {string} The fixed text
  */
 function fix_products(text) {
+  const JITTER = '<a href="https://en.wikipedia.org/wiki/Max_(software)">Max/MSP/Jitter</a>';
+  const JITTER_SHORT = '<a href="https://en.wikipedia.org/wiki/Max_(software)">Jitter</a>';
   const MAX = '<a href="https://en.wikipedia.org/wiki/Max_(software)">Max/MSP</a>';
   const PD = '<a href="https://en.wikipedia.org/wiki/Pure_Data">PD</a>';
   const CYCLING74 = '<a href="https://en.wikipedia.org/wiki/Cycling_%2774">Cycling \'74</a>';
   const UNITY3D = '<a href="https://en.wikipedia.org/wiki/Unity_(game_engine)">Unity3d</a>';
-  text = text.replace(/(?:maximus|maximize) P/i, MAX);
-  text = text.replace(/maximum is P/i, MAX);
-  text = text.replace(/__Macs__/, MAX);
-  text = text.replace(/PD/, PD);
-  text = text.replace(/cycling 74/i, CYCLING74);
-  text = text.replace(/unity three D/i, UNITY3D);
+  text = replace_span(text, '__Maximus PGA__ there', JITTER);
+  text = replace_span(text, 'gender', JITTER_SHORT);
+  text = replace_span(text, 'Maximus P', MAX, 7);
+  text = replace_span(text, 'Maximize P', MAX);
+  text = replace_span(text, 'maximum is P', MAX);
+  text = replace_span(text, '__Macs__', MAX);
+  text = replace_span(text, 'PD', PD);
+  text = replace_span(text, 'cycling 74', CYCLING74);
+  text = replace_span(text, 'unity three D', UNITY3D, 3);
   return text
 }
 
@@ -461,13 +466,12 @@ function fix_products(text) {
  * @return {string} The fixed text.
  */
 function fix_html_0005(text) {
-  const JITTER = '<a href="https://en.wikipedia.org/wiki/Max_(software)">Max/MSP/Jitter</a>';
+  text = replace_span(text, 'Shortly', 'Short') 
   text = replace_span(text, 'BAS, BAS Z BAS tutorials', 'Baz, <a href="https://www.youtube.com/user/BazTutorials">Baz Tutorials.</a>')
   text = replace_span(text, '__BAS__ tutorials', '<a href="https://www.youtube.com/user/BazTutorials">Baz Tutorials.</a>')
   text = replace_span(text, 'Ba[zs] tutorials', '<a href="https://www.youtube.com/user/BazTutorials">Baz Tutorials</a>')
   text = replace_span(text, 'Highbury hi', 'Hi Barry')
   text = replace_span(text, 'member of the urn', '')
-  text = replace_span(text, 'Shortly', 'Short') 
   text = replace_span(text, 'I first ran into, well I won.t say I first ran into him', '')
   text = replace_span(text, 'on the, on the, on the, ', 'on the')
   text = replace_span(text, 'I was, I was', 'I was')
@@ -476,7 +480,6 @@ function fix_html_0005(text) {
   text = replace_span(text, 'ice PW', '<a href="https://en.wikipedia.org/wiki/ISPW">ISPW</a>');
   text = replace_span(text, '__yeah__', ''); 
   text = replace_span(text, '__furs__', 'for'); 
-  text = replace_span(text, '__Maximus PGA__ there', JITTER);
   text = replace_span(text, '__corrode__', 'code'); 
   text = replace_span(text, '__will__', 'will'); 
   text = replace_span(text, '__till__', 'till it\'s'); 
@@ -490,10 +493,10 @@ function fix_html_0005(text) {
   text = replace_span(text, '__art__', 'art'); 
   text = replace_span(text, 'I.m a question', 'a question'); 
   text = replace_span(text, 'as having a pH D', 'having a PhD'); 
-  text = replace_span(text, 'Hillary harp', '<a href="http://hilaryharp.com/">Hilary Harp</a> '); 
+  text = replace_span(text, 'Hillary harp', '<a href="http://hilaryharp.com/">Hilary Harp</a> ', 2); 
   text = replace_span(text, 'things that __their__ __death__ ', 'things. Our '); 
   text = replace_span(text, 'got. Some', 'got some '); 
-  text = replace_span(text, 'as a, as a', 'as a '); 
+  text = replace_span(text, 'as a, as a', 'as a ', 3); 
   text = replace_span(text, 'the whole, how, along with', ''); 
   text = replace_span(text, 'on the, on the', 'on the'); 
   text = replace_span(text, 'it.s Barry Moon', 'it\'s Barry Moon,'); 
@@ -511,11 +514,11 @@ function fix_html_0005(text) {
   text = replace_span(text, 'then, so, yeah, I mean, did, ', 'then '); 
   text = replace_span(text, 'SUNY Buffalo', '<a href="https://en.wikipedia.org/wiki/University_at_Buffalo">SUNY Buffalo</a>'); 
   text = replace_span(text, 'which was, which I got that', 'which I got in'); 
-  text = replace_span(text, 'awhile', 'a while'); 
+  text = replace_span(text, 'awhile', 'a while', 2); 
   text = replace_span(text, 'Brown university', '<a href="https://en.wikipedia.org/wiki/Brown_University">Brown University</a>'); 
   text = replace_span(text, 'Brown for', '<a href="https://en.wikipedia.org/wiki/Brown_University">Brown</a> for'); 
-  text = replace_span(text, 'Todd Winkler', '<a href="https://vivo.brown.edu/display/twinkler">Todd Winkler</a>'); 
-  text = replace_span(text, 'for a while', 'for a while.'); 
+  text = replace_span(text, 'Todd Winkler', '<a href="https://vivo.brown.edu/display/twinkler">Todd Winkler</a>', 2); 
+  text = replace_span(text, 'for a while', 'for a while.', 2); 
   text = replace_span(text, 'then, it.s, you know, England', 'then England'); 
   text = replace_span(text, 'bath baths by university', 'Bath, <a href="https://en.wikipedia.org/wiki/Bath_Spa_University">Bath Spa University</a>'); 
   text = replace_span(text, 'and then England', ', England'); 
@@ -525,14 +528,17 @@ function fix_html_0005(text) {
   text = replace_span(text, 'pick Kushan', 'percussion'); 
   text = replace_span(text, 'a, clarinet', 'a clarinet'); 
   text = replace_span(text, 'the CZ', 'Assisi.'); 
-  text = replace_span(text, 'so doing the, of doing ', 'so doing '); 
+  text = replace_span(text, 'yeah, so doing the, of doing that side of things, the', 'on the'); 
   text = replace_span(text, 'I work with, at the moment ', 'At the moment I\'m '); 
   text = replace_span(text, 'doing, instrumental', 'doing instrumental'); 
   text = replace_span(text, 'doing, public', 'doing public'); 
-  text = replace_span(text, 'that.s, that.s', 'that\'s'); 
+  text = replace_span(text, 'that.s, that.s', 'that\'s', 3); 
   text = replace_span(text, 'kind of had', 'had'); 
   text = replace_span(text, 'when they, when they', 'when they'); 
   text = replace_span(text, 'clarinet festival', '<a href="https://www.accademiaitalianaclarinetto.com/the-festival/">clarinet festival</a>'); 
+  text = replace_span(text, ' certainly the, computation ', ' certainly the computation '); 
+  text = replace_span(text, 'on a court lippy', 'with <a href="https://www.cortlippe.com/">Cort Lippe</a>'); 
+  text = replace_span(text, 'that, that', 'that'); 
   text = replace_span(text, 'largest influence on the greatest', 'greatest'); 
   text = replace_span(text, 'over and from, from your comp', 'over from <a href="https://en.wikipedia.org/wiki/IRCAM">IRCAM</a>.'); 
   text = replace_span(text, 'be introduced', 'introduced'); 
@@ -549,8 +555,8 @@ function fix_html_0005(text) {
   text = replace_span(text, 'about, some of, some of', 'about some of'); 
   text = replace_span(text, 'kind of talk', 'talk'); 
   text = replace_span(text, 'about, these', 'about these'); 
-  text = replace_span(text, 'a blender', 'blender'); 
-  text = replace_span(text, 'blender', '<a href="https://en.wikipedia.org/wiki/Blender_(software)">Blender</a>'); 
+  text = replace_span(text, 'a blender', 'blender', 1); 
+  text = replace_span(text, 'blender', '<a href="https://en.wikipedia.org/wiki/Blender_(software)">Blender</a>', 3); 
   text = replace_span(text, 'they.re not even, you know, in any way, you know, teaching and through __their__, they have no experience teaching as far as I know.', 'they don\'t even have any teaching experience, as far as I know.'); 
   text = replace_span(text, '__they__', 'to'); 
   text = replace_span(text, 'learn __to__, you can.t ', ''); 
@@ -567,10 +573,9 @@ function fix_html_0005(text) {
   text = replace_span(text, 'Yeah. My.*maybe, maybe', 'I think maybe '); 
   text = replace_span(text, 'Luke Dubois', '<a href="https://en.wikipedia.org/wiki/R._Luke_DuBois">Luke Dubois</a>'); 
   text = replace_span(text, 'dying at', 'doing that.'); 
-  text = replace_span(text, 'to, use', 'to use'); 
+  text = replace_span(text, 'to, use', 'to use', 3); 
   text = replace_span(text, 'court Libby', '<a href="https://www.cortlippe.com/">Cort Lippe</a>'); 
-  text = replace_span(text, 'court lippy', '<a href="https://www.cortlippe.com/">Cort Lippe</a>'); 
-  text = replace_span(text, '(__)?court(__)?', '<a href="https://www.cortlippe.com/">Cort</a>'); 
+  text = replace_span(text, '(__)?court(__)?', '<a href="https://www.cortlippe.com/">Cort</a>', 3); 
   text = replace_span(text, 'on. You know what.*93', 'on. I mean \'92 or \'93'); 
   text = replace_span(text, 'TA work', '<a href="https://en.wikipedia.org/wiki/Teaching_assistant">TA work</a>'); 
   text = replace_span(text, 'tutorials, video tutorials', 'video tutorials'); 
@@ -578,7 +583,8 @@ function fix_html_0005(text) {
   text = replace_span(text, 'yeah, I just didn.t, my', 'my'); 
   text = replace_span(text, 'learned, which are just, you know, there.s', 'learned, there\'s'); 
   text = replace_span(text, 'And you know, and', 'And'); 
-  text = replace_span(text, ', you know, ', ''); 
+  text = replace_span(text, ', you know, ', ' '); 
+  text = replace_span(text, 'I.d say I', 'I'); 
 
   return text
 }
@@ -596,15 +602,14 @@ function fix_html_0005(text) {
  * make sure that they are enclosed by words surrounding them, i.e. that the 
  * commas are not at the boundary of the search term.
  */
-function replace_span(text, search, replacement) {
+function replace_span(text, search, replacement, expected_matches = 1) {
   const spanned_regex = spanifyRX(search)
   //text = text.replace(spanned_regex, replacement);
   let count = 0
   text = text.replace(spanned_regex, () => { count++; return replacement });
-  if (count > 1) {
-    console.log(`${count} matches for search "${search}"`)
-  } else if (count === 0) {
-    console.log(`**** search "${search}" was not found in text.`)
+  if (count !== expected_matches) {
+    let count_str = count.toString().padStart(4, ' ');
+    console.log(`**** ${count_str} instead of expected ${expected_matches} matches for search "${search}"`)
   }
   return text
 }

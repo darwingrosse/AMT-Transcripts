@@ -9,24 +9,22 @@ const argv = require('yargs')
     describe: 'speakers',
     demandOption: true,
     array: true,
+    global: true,
+
   })
   .option('release-date', { // (will be renamed to releaseDate)
     alias: 'r',
     describe: 'release date, e.g. \'November 25, 2019\'',
     demandOption: true,
     nargs: 1,
+    global: true,
   })
   .command(['plain <json>', '$0'], 'generate plain html from json, filtering out cruft', yargs => {
-    yargs
-    .positional('json', {
-      describe: 'the json file as found in the ../JSON/ directory',
-      nargs: 1,
-      global: true, // used for both plain and audio commands
-    })
+    return build_positional(yargs)
   })
   .command('audio <json>', 'generate html with audio support', 
     yargs => { // builder
-      return yargs
+      return build_positional(yargs)
         .option('audio-file', {
           alias: 'a',
           describe: 'audio file',
@@ -60,6 +58,18 @@ json2html.doit();
 // ---------
 // functions
 // ---------
+
+/**
+ * Creates a positional for the json file. It is realized as a factory
+ * in order to avoid code duplication.
+ * See: https://github.com/yargs/yargs/issues/1500#issuecomment-560500177
+ */
+function build_positional(yargs) {
+  return yargs.positional('json', {
+    describe: 'the json file as found in the ../JSON/ directory',
+    nargs: 1,
+  })
+}
 
 /**
  * Looks for an audio file of the episode determined from the json file name in ../AUDIO
