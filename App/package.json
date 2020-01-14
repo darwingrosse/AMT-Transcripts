@@ -10,10 +10,11 @@
   "author": "Darwin Grosse",
   "license": "ISC",
   "dependencies": {
-    "glob": "^7.1.6",
-    "yargs": "^15.0.2"
+    "docopt": "^0.6.2",
+    "glob": "^7.1.6"
   },
   "devDependencies": {
-    "jest": "^24.9.0"
+    "jest": "^24.9.0",
+    "shellwords": "^0.1.1"
   }
 }
