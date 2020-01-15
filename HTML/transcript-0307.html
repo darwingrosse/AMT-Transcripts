@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Transcription: Podcast 0307 - Eric Schlappi</title>
+
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js does not work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+</head>
+
+<body>
+  <div class="container">
+    <h2>Transcription: 0307 - Eric Schlappi XX</h2>
+    <h3>Released: December 22, 2019</h3>
+    <p>
+      <b>Darwin: </b>
+      <i>Okay. Today I have a chance to talk to somebody who's new to me but whose work I've been watching for a little while. His name's Eric Schlappi and he is the brains behind Schlappi Engineering, who is the maker of some really interesting modules. Initially I was going to say "home workshop-related modules" since he has one called 100 Grit and another one called Angle Grinder. I was sure the next one was going to be something like Drill Press or something. But no, we have Interstellar Radio so we have to throw a little space into action as well. But these are three pretty amazing little devices and we'll get into a little bit about what they do. But first let me shut up and say hello to Eric. Hey Eric. How's it going? Thank you so much for taking the time to be on the podcast. </i>
+    </p>
+
+    <p>
+      <i>I really appreciate it. I know you have got to be busy because you are practically everybody I know has, has got, one of your modules, particularly the Angle Grinder I see everywhere. I think some of it was because Tim held gives it a lot of coverage on his podcast, but it's, it's a module that has got people talking. They should talk to me more. Oh, well there you go. Okay. That's, that's the shout out to everyone out there in the stock. Let's talk to Eric about, about stuff. So for people who aren't familiar with, with your modules, why don't you give us a quick rundown of, of the stuff that you're doing? </i>
+    </p>
+
+    <p>
+      <b>Eric Schlappi: </b>So I have three out so far. They're all analog. The first one actually is the Interstellar Radio, which is... I'm never sure how far to go on technicalities, but it's a FM-based noise maker/processor. There's the Angle Grinder, which is a quadrature sine wave oscillator and a waveshaper, which you can think of as sort of a complex feedback network that does filtering oscillation and a wave shaping. And then the 100 grit is the most recent one, which is ostensibly a distortion module, but it consists of a transistor ladder filter, a vintage styled VCA, and then a distortion (which is related to the headphone output of a certain vintage synth) and touchpoints, brass touchpoints on the front, but are connected throughout the circuit again in sort of a complex feedback network aimed at audio rate modulation - which sounds like distortion.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Right. Well, it's interesting because in all three cases, your description of the module, has to include the word "complex" because it seems like maybe you're one of those guys that just can't be stopped at good enough; because from what I can see each one of these things has these extra tweaks that takes it a little bit over the top. I mean, in the case of the Angle Grinder, which is the one that I'm most familiar with, it would've been great to have a quadrature oscillator with some way of shaping, but then you have this whole Grind circuitry stuff - which is a little unknowable, but I'd love to hear more about it. And you actually have built in filtering, which typically would not be something that you would see in a sine wave oscillator, except that the wave shaping can get so significant that having that filter right at hand is really pretty valuable. So explain a little bit about your thought process and taking the basics of a quadrature oscillator and turning it into kind of a monstrosity. I mean, a great one, but that. </i>
+    </p>
+
+    <p>
+      <b>Eric: </b>There's a lot of experimentation in my process. There's usually some sort of original inspiration. And in the case of the Angle Grinder, the original inspiration was quadrature oscillators were interesting to me. I'd never actually played with one before I made one - no, that's not true. I had played with, the Nonlinear Circuits one, but yeah, exploring quadrature. And then, at the same time, I was also exploring more traditional oscillators. The pulse width modulation circuitry is such a simple effect - or actually a pretty complex effect, theoretically in the frequency domain, but a very simple one to implement. And the original inspiration there was this kind of "What would quadrature pulse with modulation sound like?"
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Oh, I see. Okay. Oh, interesting. That's pretty cool. What in fact is the Grind circuitry doing? </i>
+    </p>
+
+    <p>
+      <b>Eric: </b>
+      So it's four comparitors, each normal to one of the output phases of the quadrature sine wave oscillators. So each one of these competitors is 90 degrees out of phase, and then each one is running into a VCA to control the level. It's compared against either the second output of the sine wave oscillator, also the band pass output or anything you put into the input Jack. But then it's not just compared, it's subtracted from whatever signal is there. So instead of getting, square waves, like if you put in triangle wave there you get these little castles, real sawtooth-y or triangle wave type wave forms, but periodic based on the oscillator.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>That must make for some pretty fascinating, oscilloscope shots. I remember when I was talking to Dan Snazelle about some of his chaotic stuff, it was really clear that a lot of the stuff he did, when he saw a great oscilloscope shot, that was when he knew he was onto something. </i>
+    </p>
+
+    <p>
+      <b>Eric: </b>
+      Right. It's easy to get lost in there for a long time.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>So now let's talk about the Interstellar Radio. You said that that was your first module. To what extent is that... I haven't experienced it, although it's funny because normally anything with the word Radio in it, I'm like a zombie headed towards it because I always like stuff that channels the old school radio sounds, you know, especially the side-banding and all that stuff. </i>
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Anything that can can channel that is always something that I'm in love with. And taking a peek at this, what it looks like is you have a self-modulating FM tweak machine. Is it a, am I pretty much on track with that? </i>
+    </p>
+
+    <p>
+      <b>Eric: </b>
+      Yeah, that's a pretty good description actually.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>So since this is your first module, this was obviously the thing that made you say, "Oh my God, I got to make modules! I got to do this thing!" </i>
+    </p>
+
+    <p>
+      <b>Eric: </b>
+      Well, that one is based on a circuit that came from freelance work I was doing outside related to a circuit I was doing in the medical field. It uses these chips from the automotive industry that are VDF converters, oscillators basically, but it takes a analog voltage and modulates it onto a high frequency pulse train.
+    </p>
+
+    <p>
+      And then you can demodulate that high frequency pulse train by wrapping another one of these chips in a PLL loop, which has lots of interesting properties. By running these at different clock rates. I was originally thought I'd get something more like bit-crushing. It is not like that at all actually. After spending some time thinking about what's happening, there's definitely stacks and stacks of FM. The original thought was more as a processor, and some people actually use it that way to to great effect if you like broken Radio sounds, but I tend to use it as a FM sound signal generator.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Right. Well it's really interesting and I'll tell you, my listenership, there's a bunch of them that... a lot of times in podcasting, if you get, if you too technical, people just say, "I'm clicking out!"</i>
+    </p>
+
+    <p>
+      <i>In my podcast, I think [when] you start talking about pipeing stuff into a PLL, it's just like they push their glasses up, sit back in their chair and say, "Let's go man!" </i>
+    </p>
+
+    <p>
+      <i>It seems some really interesting stuff, but I also am fascinated, and I have to say I love this, you're almost misusing industrial electronics to make artwork. I love the sound of that. You drop a hint here that you were doing freelance work in the medical electronics field and that sounds interesting. And also you're using parts from the automotive field.
+      That sounds really interesting too. One of the things I like doing in my podcast is I like talking to people about how they got to where they are, how they got to be the creator that they are. In your case, the maker that you are, but also someone who has - I would say from looking at your modules - has an opinionated idea of what interesting music sounds like. So I'm curious how, where are you coming from man? Where do you get the electronics chops and, and how much, you know, what was your growth curve from the electronic side, but also from the art side? Where are you coming from? What were the things that influenced you and drew you into things like, broken radio sounds and something where probably the most apt name you could come up with was "Angle Grinder", right? What are the things that led you to that? </i>
+    </p>
+
+    <p>
+      <b>Eric: </b>
+      That's a good question. I think I'm a pretty consistent person. These have been my interests since I was a preteen - just horrible noises. And I've always wanted to build my own things that make horrible noises. I was not one of those people that was able to do that right out of the gate. I did circuit bending as a teenager, started making music with Fruity Loops, played in various death metal bands, spent my twenties going to noise shows in Brooklyn and got my electrical engineering degree to finally make things work. I've worked in two different vintage keyboard stores when I was relatively young. Like I've been obsessed with monosynths since I was, you know, 15. But also obsessed with monosynths and listening to early nineties death metal. I dunno if that makes sense or not, but that's part of where I come from.
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>It's interesting. Well, what was it that got you into synths in the first place? Did you just have an aptitude for noisy stuff or did you hear something that caught your attention and there was no going back?</i>
+    </p>
+
+    <p>
+      <b>Eric: </b>I can't remember a time when I wasn't into synthesizers! I remember the Wipe Out XL soundtrack was a big deal, that "We Have Explosive" [from] Future Sound of London. Sounds on that track - amazing. But I, I don't really remember getting into synths; the first hardware synth I got was a [Casio] CZ1000 that my uncle gave me when I was maybe 15, but I'd already spent years staring at vintagesynth.org. I was already obsessed by then and then I got a Waldorf Pulse and... you don't want to know about all the synths I've burned through.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>It's interesting that that you mentioned death metal is a touch point as well. Was it just the way that it embraced noise-as-music or was there also something about that attitude that aligned with where you were at, too? </i>
+    </p>
+
+    <p>
+      <b>Eric: </b>I mean, probably as a teenager that attitude aligned with mine over time. The attitude. I don't know. That's a complicated thing, but I really like the sounds like all the Obituary albums just sound wonderful.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Interesting. And how about the electronic side of it? Was it just literally from working your way through circuits that you found online? </i>
+    </p>
+
+    <p>
+      <b>Eric: </b>
+      So I tried to do that and nothing worked. So I went and got my electrical engineering degree and I've worked briefly in the defense industry, in the medical industry, in the industrial industry. And that is letting me build up the skills so that now the things I build work. And also I think there's a lot to be said for taking influences outside of the Canon of synthesizer circuits. I still think there's a lot to be gained by going back to original principles. If you go back to Bob Moog patents... well, old synth circuits certainly have more to give, but if the only thing you're looking at is old synth circuits, you're probably not gonna do anything particularly new.
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>Right. Well, I would think that especially if you've had some interaction with both defense and medical, I'm sure that you got a chance to see a lot of circuits in use that, if you just took that output and scaled it properly, it would make one hell of a modulator. Right? </i>
+    </p>
+
+    <p>
+      <b>Eric: </b>Yeah. And it gives you a different perspective on the circuits themselves. And also a lot more respect for these self-taught synth designers doing really, really amazing things.
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>Sure.  Now, one of the things I'm curious about: a long time ago, I was talking to somebody about electrical engineering and getting electrical engineering degrees, and what they said at the time was that an electrical engineering degree that you would get now - other than the basic mathematics and the basic understanding of the electronics - would actually not be all that useful because it's a lot more oriented towards consumer devices or cell phones or stuff like this. And a lot less oriented towards the kinds of things that you would... it's almost like the synthesis technology is almost too crude for what a lot of electrical engineering teaching is about today. Is that something that you felt was true or do you think that that's just too overly simplifies the situation? </i>
+    </p>
+
+    <p>
+      <b>Eric: </b>So I would agree with the second half, but not the first half. I felt like my degree was all math and physics and very little... it's a language but it doesn't have a lot of direct applications. The thing that actually teaches you to design electronics that works is doing it for eight hours a day. And you know, you, you get that first job and you might barely know how to make an op amp circuit work, but people that hire someone with a bachelor's degree and no experience - they basically just expect you to have common sense, and work your way through the literature. And you know, you do it for eight hours a day and you get there, and there are people who have done that without the degree that just started pounding on the electronics eight hours a day.
+    </p>
+
+    <p>
+      I have a lot of respect for that too. You definitely don't need the degree, but the degree is helpful in some ways. Like, there weren't many analog electronic classes offered, but there was a lot of DSP in communications theory and signal processing theory and I didn't use them for a long time. But, I'm working my way back towards that stuff and finding it useful. I don't know that a Z transform would be as intuitive to me if I hadn't gone through the traditional EE degree .
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>What, what's interesting is that, having had that background, you have thus far avoided DSP in any of your modules, right? All of your stuff is all analog? </i>
+    </p>
+
+    <p>
+      <b>Eric: </b>
+      This is true so far right now, my current development process - and I can't promise anything released anytime soon, but I'm going down a black hole of open source FPGAs. And we'll hopefully... yeah, traditionally I have not been impressed by almost any digital synth I've ever played with it. Or even polyphonic synth, the good stuff is always analog monosynths in my bizarre opinion, but reasonably informed opinion as well, I think. But I've been thinking about that a lot and you have to provide reasons for it. So I feel like if I can do my digital processing at really extreme sample rates and bit depths, maybe I can do something that sounds as good as an analog monosynth does.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Right. So I was going to ask, I mean, you mentioned it almost right at the beginning and, and mentioning it again, the thing that for you is Valhalla is the monolsynth, the analogue monosynth. What is it? If what you're playing with in terms of digital is the idea of high sample rates and stuff, it sounds to me like it's the actual construct of the waveforms and the sound itself that you find particularly appealing. </i>
+    </p>
+
+    <p>
+      <b>Eric: </b>
+      So my favorite synths, like the ARP Odyssey or one of the earliest ones I got was a Micromoog that lets you audio rate modulate the filter with the oscillator. That sound, that's my favorite sound. And I've never heard audio rate modulation on most digital since it's not that great. And, even on poly synths for the most part, as they moved away from more discreet architectures towards these all in one type chips, like the Curtis chips, they don't sound nearly as good as those earlier monosynths do.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>And do you think that's because one of the things is, as things become more digital or more encapsulated in something like a chip, they also become in a way more uniform. And maybe that uniformity is some of what's what you're missing when you're listening to it. I mean, you're getting into voodoo, but I think in a very real way, there's gotta be something in that voodoo. But I came up through the ranks when, I mean the first synth I owned was an Odyssey and it was because I had that David Friend book and I was like, "Well, if I'm ever going to learn how to use a synthesis synthesizer, this book is going to teach me." And this book tells you how to use an Odyssey, so I better get an Odyssey. </i>
+    </p>
+
+    <p>
+      <i>You know, I came up through that and I came up through the wonder of, "Oh my God, look, you can have this..." I remember the first time I saw a real digital synth, it was a 360 Systems thing that had chip-based samples and I was like, "Oh my God, that sounds so much like a nylon string guitar!" Well, it didn't sound anything actually like a nylon string guitar - but it sounded more like a nylon string guitar then I was going to make my ARP Odyssey sound, you know? And so it was like, "Oh, that's so amazing!" But despite the fact that there were these technological gewgaws that were showing up and were very exciting at the same time that there was a core set of people that never wanted to let go of analog. </i>
+    </p>
+
+    <p>
+      <i>And particularly the analog monosynths, you know, I mean, a lot of people bailed out of them, but very few of them ended up going to landfill. There were people that were just like, "I can do something with this. I love the sound of this. I love the feel of it." And I think it's not only the sound, but it's the accessibility - like you talk about with the Micromoog. So it's not only that you can do this amplitude modulation thing, but it's the fact that it's accessible from right there, you know, that actually makes it so that that exploration is viable as well. And so I think that there is voodoo, but I'm not always sure for each individual where the voodoo lies. </i>
+    </p>
+
+    <p>
+      <i>I actually have the feeling if somebody would have - way back in the day - slipped me a Casio CZ101 with the front panel of an Odyssey, I would have really got into the control of it. And I think that as long as moving those sliders would mean some kind of visceral difference in the sound, I would have been like, "Aw, I really love these analogs. You know? I think that my discernment came more from the feel of it than the sound of it. But I know that there are a lot of people that are really dedicated to the sound side of it, to the purity of the analog sound. And it sounds like that's something that's really important to you. </i>
+    </p>
+
+    <p>
+      <b>Eric: </b>
+      Yeah, I think a lot of it is the type of sounds I'm interested in, which is often audio rate modulation, both frequency and amplitude modulation. But yeah, once again, those CZ series - that phase distortion - I really wish they'd figured out a better control scheme for the those synths. But, that's a really, really cool form of synthesis I've been paying more attention to. And some people, like Scott Jaeger, have done some really amazing things with that.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>So given that you really have a joyful embrace of the monosynths, for you seeing the come-on of modular must've really been exciting, because in a way it's sort of like a "Write Your Own Adventure Story" for monosynths, right? It really is the way to build things up from building blocks. That must have been a really big winner for you. </i>
+    </p>
+
+    <p>
+      <b>Eric: </b>
+      Yeah, I was really excited by it. It took me a while, in my own music to stay... Like I took a couple of whacks at it and made a lot of explorations in the studio I really enjoyed, but pretty much until I had a system of my own modules that I designed, I found it really difficult to put together a live case that I could perform with consistently.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Oh, that's, that really surprises me because with you mentioned that you've had an awful lot of synths over your days. It seems to me like you would not have a problem wrapping your head around most of what you see in modular. </i>
+    </p>
+
+    <p>
+      <b>Eric: </b>
+      It wasn't so much wrapping my head around it. I feel like I did. I feel like when I started in modular synths I was like, I've been playing monosynths forever. I know everything. And then you very quickly realize that you do not. My first couple stabs at the modular synth, like either you... I just didn't like all the choice, the design choices some people made or I... one of my versions I built this giant DIY synth made of Nonlinear Circuit stuff, which I still have and I love, but trying to take 6U - you need 36U of that stuff and you need it on all the time talking to spaceships, you don't want to try and put together a 30 minute set. But I'm not telling anyone else what to do, but...
+    </p>
+
+    <p>
+      I found it difficult to make a live system with that and the same with most of the other manufacturers stuff. But with the things that I designed, I can put together a 6U that's two mono synth voices and some percussion that all cross-modulate each other and play a solid set kind of based on what I'm used to doing with monosynths; one on lead, one on bass, but modulating each other and themselves. I dunno. It's just hard to build your own instrument and then learn to play it. It's nice having an SH-101 and an Odyssey and knowing that they're always going to do what they say they're going to do.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Right. What it says on the tin. Well, it's interesting though because you know, I have had a very strangled existence with both DIY and design and other than the one thing that I did that I really loved, which was the ArdCore, I built a sequencing tool for the ArdCore. Other than that, every time I build something, I was so cognizant of the shortcuts or the stupidity of certain parts of it that I would sort of brow beat myself into saying that it wasn't good enough. It encourages me that you love your design so much that that's how you put together your optimal system.</i>
+    </p>
+
+    <p>
+      <b>Eric: </b>I don't understand any other reason why you would be making this
+      stuff! If you're not making it to make your optimal system, there is definitely, better ways to spend your time.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>That's great. Now, when you talk about putting together a little monosynth system out of your modules, what does that look like? I mean, if I take a peek, I'm gonna jump over here to your website. When I take a peek at your modules, I mean, each one of these things
+      has a curious multi-life, right? So the Angle Grinder does have this combination of filtering and generation, the Interstellar Radio definitely has a lot of generation to it. And the a 100 grit is for me is potentially a little unknowable other than it's got those cool little brass touchplates.</i>
+    </p>
+
+    <p>
+      <i>Which, I can imagine that is, becomes a real part of your, performance characteristic. But when you're putting together a voice with your modules, what does that voice look like and what is the interface patching that you're doing that makes it satisfying to you?</i>
+    </p>
+
+    <p>
+      <b>Eric: </b>
+      The way I currently have things set up in my rig - because I have, some analog oscillators I've designed, I don't know if they'll ever be released or not, but I use them. So I have an analog triangle core oscillator running into both voices, running into the Angle Grinder is a waveshaper. I find the Angle Grinder's ability just running into the Grind section and back out. This is the most basic use of the Angle Grinder, but you can create these really animated wave forms on bass. I keep it low and it can create this huge, super soft pulse width-modulated, distorted bass tone on lead. I push into audio rate a lot and maybe use an envelope to modulate or to bring in the different Grind sliders. And I've gotten some really good chorusy strings out of it that are not, that don't register as distorted so much, but you can get some pretty washed sounds out of it. Actually then on my bass voice, I run into the 100 Grit. And between the Angle Grinder and the a 100 Grit, I can get a really obscene distorted bass tones out of it. But then also with the a 100 Grit, I can pull the input and do noise solos with it. Among other things,
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>It's really interesting too, to think about, the, kind of modulating the, the wave shaping and the Angle Grinders being ga a lush effect. You know, I think, I had always thought of waveshaping and wave manipulation like that primarily as a form of distortion. And in my head it always seemed like it was a distortion type gimmick. And it wasn't until, the first time I worked with a Surge system and it's Triple Wave Shaper, which
+      isn't like, it's nice, it's not overwhelming in terms of its effect. But I just remember all of a sudden when I started animating it, how it completely changed my vision of what wave shaping could actually provide for a sound. It's a really different way to think of what's going on rather than thinking of a static clipping or folding. All of a sudden now you get this, you get this movement that is just really difficult to give a single adjective to.</i>
+    </p>
+
+    <p>
+      <b>Eric: </b>
+      You were at the most recent Knobcon...?
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>I never get to go to knob con because that's the same weekend as my wedding anniversary. And my wife does not have a desire to go to Schaumburg for our anniversary. So I'm always out of luck on that.</i>
+    </p>
+
+    <p>
+      <b>Eric: </b>
+      Schaumburg is awful. But Dr. Chowning spoke at the most recent one and I encourage everyone to check out the recording online. But during his talk there, there was a lot of things to get out of that talk. But one thing I got out of it was that, and he was talking about FM, but it's, I think it applies to musical synthesis in general, is that it's not really what
+      so much what harmonics are present in the sound, but the movement in the of the harmonics over time. That's interesting. Right? So in this case with waveshaping, any static wave form is boring, but once you start modulating the wave shape over time, you can get all sorts of really interesting sounds out of it that are not always clearly linked back to the shape, the spectral content of something is not always clear from the shape of the wave. But, by changing the shape of the waveform over time, you can get, I don't know, that's where all the good stuff is as well. And that's, that's when all of a sudden, the complexity of these things really works.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>It always gives me a chuckle. Not always, but when I see this, it gives me a chuckle when people will have a quote complex oscillator and they aren't modulating any of the complexity in it. Right? It's, it's sort of like, well, okay, I guess you have a static FM thing and I guess that's complex, but you're, you're missing out on so much of the depth of this
+      module that you have. And I'm not sure that, you know, that. </i>
+    </p>
+
+    <p>
+      <b>Eric: </b>Agreed.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>So you say that you, that you're able to perform with a 6U box of modules. Do you have to, well, first of all, you said that you have a percussive section. What do you use for the percussion part of it?</i>
+      </p>
+
+    <p>
+      <b>Eric: </b>
+      I actually played a show last night in Portland, but 6U plus I'm using the Monome with the Ansible for sequencing. So I dunno if that's cheating a little bit, but the Monome lives outside the case and I use an external mixer. But, my percussion section is just a Hexinverter Mutant Bass Drum DIY that I built six years ago, running into the DPW Limit, which is crucial, I think - compress that bass drum and it sounds wonderful. And then the Interstellar Radio for all of the other percussion, just changing, modulating it and changing the envelope of the amplitude can get it from weird things that function like high hats to snares and cymbals and noise washes and drones. And I think if you're using big sounds, and you're constantly modulating things, that's enough percussion.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Well, yeah. You know, it's interesting you say that because, I was talking to a friend who has a relatively small rig, and he was like, if the sounds are right, you don't need a lot of them. And it sounds like you live by that too. You get the right sound and then just maximize the use of that.</i>
+    </p>
+
+    <p>
+      <b>Eric: </b>
+      Yeah. And you know, you get some giant distorted sound and it's going to take up all the bandwidth anyway. So, it's all the noise, right? It's all of that noise. And also part of this setup is that I'm trying to do the sequencing with the Monome which only has four channels, which is something that I get frustrated with. And then I find out that it's... I also find it really liberating like not trying to use more channels in that. I do have another percussion sequencer coming soon and we'll see if I expand my rig. But that's been really inspiring for me.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>So in using the Ansible, which of the scenes do you use? Do you use the thing that basically is like the White Whale module, the sequencing scene? </i>
+    </p>
+
+    <p>
+      <b>Eric: </b>
+      Kria. Yup.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Oh really? Interesting. That's funny because I have an Ansible too. I love it. But I have been an Earthsea user since the original module came out and I actually really loved the Earthsea implementation that's on the Ansible - but it's also nice to know if I want to shake things up, I can always switch into a different program and have something else to do. It's cool. When you're working, when you're working live you said you have an external mixer for mixing things out. Do you use a lot of effects as well or do you pretty much stick
+      with the raw sound of the synth?</i>
+    </p>
+
+    <p>
+      <b>Eric: </b>
+      So I have 4ms DLD in my case, and I keep that on the aux send from the mixer and that's my only effects. This is maybe one of my quirks, but reverb has to be very carefully applied. Otherwise it just takes up space. But delays always sound awesome on synthesizers. So yeah, I actually do a lot of... I think I use the DLB in a basic way, but it's very hands on. I physically play the divisions and the feedback amount - and the send amount - quite a bit over the course of my set, and that's all I need.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Oh, that's interesting. Well, it's interesting too that [the DLD] is not a small module, so you're willing to give up a fair amount of real estate for it. It must be a significant part of your performance work then. </i>
+    </p>
+
+    <p><i>Well, crap, I just looked at the time and I see that our time is already racked up here, but before I let you go, I'm curious what you might have on the bench that might be coming out soon...?</i>
+    </p>
+
+    <p>
+      <b>Eric: </b>
+      I have a number of partially, basically working analog modules, but I mentioned earlier, this open source FPGA tool chain, relatively modern, but that's sort of taken over my brain. So I'm not sure if I'm going to be able to take a break from diving into that to release any of my mostly finished analog ideas. It's hard to tell and it's hard to commit to what
+      I'm going to end up releasing with the FPGA in it, but that is a whole world of, entertaining possibilities.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>I would imagine. It's interesting because the whole FPGA thing, when it first came out, the toolchains were so expensive that unless you were a cell phone developer, you just couldn't even afford the programming tools to be able to work with that. Now, you say, there's a whole open source chain that's workable?</i>
+    </p>
+
+    <p>
+      <b>Eric: </b>
+      Yeah. I've been wanting to dive into them for years, but each time I tried to use the vendor tools, they're awful. Sometime I guess in the last - they've been out for a couple of years - but they've been getting traction maybe [since] late last year. They don't support very many. It's this thing called Icestorm. There's, I'm forgetting the name for the larger, there's a set of these tools now. Icestorm just supports the Lattice iCE40, which is a relatively small FPGA, and they've got support for the ECP5 now. And they're working on some Xilinx things, but the thing is that, to release these open source tool chains, they have to reverse engineer the FPGA, which is a pretty obscene task.
+    </p>
+
+    <p>
+      But I think it's really cool. So like my development platform for it is just using a text editor and Linux and a make script. I don't have to use any of the giant vendor things. The thing that sucks about it is you don't have any of the vendor specific IP. So if you want to instantiate a multiplier or something, then go go read up on multiplication algorithms.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>All right, well now I can see why you're not sure you're gonna - it doesn't seem like you're going to have a way to take time to microwave your TV dinner if that's what you're having to go through? I'm like, God - well, good luck with that! I'll check in with you in a couple of years to make sure that somebody's been feeding you along the way! But it sounds like a hell of a lot of work there. You said you just performed last night. Do you perform a fair amount in the neighborhood there?</i>
+    </p>
+
+    <p>
+      <b>Eric: </b>
+      I'm trying to. I'm also performing next week and a week or two as part of the Tacoma Noise rodeo. The Seattle modular synth community has been really, really nice. Nice to me. And that's what I actually am: KVLT Meadery, which seems like a heavy metal themed Mead restaurant. I'm also trying to, (I don't know if this is a weird thing to put out there) but next year I'm planning to go to Machina Bristronica in Bristol in the UK and also Super Booth, which is about a month later in Berlin. And I don't know tons about booking shows or tours in Europe, but if anyone out there is listening and has any idea about keeping me out there for a month playing shows, that is something that I very much want to do.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>That'd be really great. We have a really great international listenership, so I'm hoping that you'll get some great feedback. If anyone has ideas, make sure you check the show notes. We'll have ways to get in contact with Eric. And with that, my friend, I'm going to have to let you go. Thank you so much again for taking the time. As expected,
+      I have a whole sheet of questions here that are going to have to wait for the next time that we talk, but thank you so much for your time. I really appreciate it.</i>
+    </p>
+
+    <p>
+      <b>Eric: </b>Thank you so much.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Alright, with that, we'll say goodbye.</i>
+    </p>
+
+    <p><i>Copyright 2019 by Darwin Grosse. All right reserved.</i></p>
+  </div>
+  <!-- jQuery (necessary for the Bootstrap JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
