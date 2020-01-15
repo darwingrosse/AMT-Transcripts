@@ -31,64 +31,55 @@ npm install
 ```bash
 cd AMT-Transcripts/App
 ./tr-parse.js --help
-
-tr-parse.js <json>
-
 generate plain html from json, filtering out cruft
 
+Usage:
+  tr-parse.js plain <json> -s <speaker>... -r <release-date>
+  tr-parse.js audio <json> -s <speaker>... -r <release-date> -o <audio-offset> [ -a <audio-file> ]
+  tr-parse.js --help | -h
+  tr-parse.js --version | -v
+
 Commands:
-  tr-parse.js plain <json>  generate plain html from json, filtering out cruft
-                                                                       [default]
-  tr-parse.js audio <json>  generate html with audio support
-
-Positionals:
-  json  the json file as found in the ../JSON/ directory
+  plain                             Generates html only.
+  audio                             Generates html with audio embedded.
 
 Options:
-  --version           Show version number                              [boolean]
-  --speakers, -s      speakers                                [array] [required]
-  --release-date, -r  release date, e.g. 'November 25, 2019'          [required]
-  --help, -h, -?      Show help                                        [boolean]
+  --speaker -s <speaker>...         speaker(s) 
+                                    NOTE: Each speaker needs to be preceded by '-s' (or '--speaker')
+  --release-date -r <release-date>  e.g. 'November 13, 2019'
+  --help -h                         Display help
+  --version -v                      Show version number
+  --audio-offset -o <audio-offset>  only valid and required for 'audio' command. Offset when speech
+                                    starts in seconds (float, e.g. "-o 6.1").
+  --audio-file -a <audio-file>      only valid and optional for 'audio' command.
+                                    If not provided, the respective audio file
+                                    is searched for in ../AUDIO according to
+                                    episode number retrieved from json file name.
 
-./tr-parse.js audio --help
 
-tr-parse.js audio <json>
-
-generate html with audio support
-
-Options:
-  --version           Show version number                              [boolean]
-  --speakers, -s      speakers                                [array] [required]
-  --release-date, -r  release date, e.g. 'November 25, 2019'          [required]
-  --help, -h, -?      Show help                                        [boolean]
-  --audio-file, -a    audio file
-  --audio-offset, -o  audio file offset when speech starts in seconds [float]
-                                                                      [required]
-
-                                                                      [required]
 ```
 
 To generate an HTML file with the ability to play the audio podcast:
 
 ```bash
-./tr-parse.js audio transcript-0005.json -s Darwin 'Barry Moon' -r 'November 10, 2013' -a path_to_podcast_audio/Podcast_005_BMoon.mp3 -o 6.1
+./tr-parse.js audio transcript-0005.json -s Darwin -s 'Barry Moon' -r 'November 10, 2013' -a path_to_podcast_audio/Podcast_005_BMoon.mp3 -o 6.1
 ```
 * `audio`: This invokes the `audio` subcommand
 * `transcript-0005.json`: The name of the json source file.
-* `-s`: an array of speakers in order of their appearance (usually two).
+* `-s`: (repeated) speakers in order of their appearance (usually two).
 * `-r`: release date of the podcast
 * `-a`: path to the audio file of the podcast
 * `-o`: offset where the spoken word part begins in seconds
 
-**Note**: The audio play/stop interface is minimal: Clicking on a word anywhere starts playing the podcast from that point on. But clicking also toggles between playing and pausing. You'll get the hang of it. You can also toggle play/pause by pressing the space bar. The audio files of the podcast are available [here](http://artmusictech.libsyn.com/). The background of the rendered html file is yellowish when it is connected to the audio podcast. The text with lighter background is clickable and the podcast will be played from there. Also the cursor changes to a hand when hovering above a word from where the podcast can be started.
+**Note**: The audio play/stop interface is minimal: Clicking on a word anywhere starts playing the podcast from that point on. But clicking also toggles between playing and pausing. You'll get the hang of it. You can also toggle play/pause by pressing the space bar. The audio files of the podcast are available [here](http://artmusictech.libsyn.com/). The background of the rendered html file is yellowish when it is connected to the audio podcast. The text with lighter background is clickable and the podcast will be played from there. Also, the cursor changes to a hand when hovering above a word from where the podcast can be started.
 
 **Note**: the `audio` subcommand and its options `-a` and `-o` are to be used
 only while fixing the transcriptions. When done with fixing, the HTML should
-be generated without the `audio` command and its two options,
+be generated using the `plain` command devoid of the two audio options -a, -o,
 e.g.:
 
 ```bash
-./tr-parse.js transcript-0005.json -s Darwin 'Barry Moon' -r 'November 10, 2013'
+./tr-parse.js plain transcript-0005.json -s Darwin -s 'Barry Moon' -r 'November 10, 2013'
 ```
 
 The generated html file will have the same stem as the provided json file but with the
@@ -98,7 +89,7 @@ If the `audio` subcommand is used, the generated `html` file will have the same
 name with `_audio` appended before the extension, e.g.
 `HTML/transcript-0005_audio.html`
 The generated `HTML/transcript-0005_audio.html` has a default style to facilitate
-distinguishing it from the plain `html`generated when omitting the `audio`
+distinguishing it from the plain `html`generated when using the `plain`
 subcommand. The `audio` default style can be overridden by providing a `css` file
 named `../HTML/j2h.css`. There's an example file `../HTML/j2h_example.css`.
 
@@ -106,7 +97,7 @@ named `../HTML/j2h.css`. There's an example file `../HTML/j2h_example.css`.
 subcommand will look for an audio file in the folder `../AUDIO` based on the
 episode number, e.g.
 ```bash
-./tr-parse.js audio transcript-0005.json -s Darwin 'Barry Moon' -r 'November 10, 2013' -o 6.1
+./tr-parse.js audio transcript-0005.json -s Darwin -s 'Barry Moon' -r 'November 10, 2013' -o 6.1
 ```
 will look for an mp3 file in `../AUDIO/` that has `0005` or `005` in its file name. E.g. for episode
 `0005` `Podcast_005_BMoon.mp3` will be found if present in the `../AUDIO/` directory. You need to
@@ -129,8 +120,10 @@ TBD
 
 ## Built With
 
-* [yargs](https://github.com/yargs/yargs) - For command line options
+* [docopt](https://github.com/stuartcarnie/docopt.coffee) - For command line options
+* [glob](https://github.com/isaacs/node-glob#readme) - For command line options
 * [jest](https://jestjs.io/) - For testing
+* [shellwords](https://github.com/jimmycuadra/shellwords) - For testing
 
 ## Contributing
 

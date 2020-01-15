@@ -16,6 +16,9 @@ const transcriptionJsonToHtml = require('./transcriptionJsonToHtml');
 //       When changing the following doc string, best display it on console
 //       to make sure you're getting what you expect. (or write a test!)
 const doc = `
+
+generate plain html from json, filtering out cruft
+
 Usage:
   tr-parse.js plain <json> -s <speaker>... -r <release-date>
   tr-parse.js audio <json> -s <speaker>... -r <release-date> -o <audio-offset> [ -a <audio-file> ]
@@ -32,7 +35,8 @@ Options:
   --release-date -r <release-date>  e.g. 'November 13, 2019'
   --help -h                         Display help
   --version -v                      Show version number
-  --audio-offset -o <audio-offset>  only valid and required for 'audio' command.
+  --audio-offset -o <audio-offset>  only valid and required for 'audio' command. Offset when speech
+                                    starts in seconds (float, e.g. "-o 6.1").
   --audio-file -a <audio-file>      only valid and optional for 'audio' command.
                                     If not provided, the respective audio file
                                     is searched for in ../AUDIO according to
