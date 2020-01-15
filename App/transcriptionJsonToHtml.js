@@ -88,19 +88,19 @@ class TranscriptionJsonToHtml {
   render_conversation() {
 
     for (let x=0; x<this.data.monologues.length; x++) {
-      
+
       const SPEAKER_IDX = this.data.monologues[x].speaker;
       if (SPEAKER_IDX >= this.speakers.length) {
         throw this.inFileName + " contains more speakers (>= " + (SPEAKER_IDX + 1) + ") than were provided via -s (" + this.speakers.length + ")";
       }
-      this.para += '<p>\n<b>' + this.speakers[SPEAKER_IDX].getName() + ": </b>" + (SPEAKER_IDX == 0 ? '<I>' : '');
+      this.para += '<p>\n<b>' + this.speakers[SPEAKER_IDX].getName() + ": </b>" + (SPEAKER_IDX == 0 ? '<i>' : '');
       const CHUNK = this.data.monologues[x].elements;
 
       for (let i=0; i<CHUNK.length; i++) {
         this.para += this.handleChunk(CHUNK[i]);
       }
 
-      this.para += '\n</p>\n\n' + (SPEAKER_IDX == 0 ? '</I>' : '');
+      this.para += (SPEAKER_IDX == 0 ? '</i>' : '') + '\n</p>\n\n';
     }
 
   }
@@ -123,7 +123,7 @@ class TranscriptionJsonToHtml {
         if (this_chunk.value.match(/^u[mh]$/i)) {
           chunks_to_delete.push(i++) // u[mh]
           if (i <chunk.length) {
-            chunks_to_delete.push(i++) // , 
+            chunks_to_delete.push(i++) // ,
           }
           if (i <chunk.length) {
             chunks_to_delete.push(i++) // blank
@@ -155,7 +155,7 @@ class TranscriptionJsonToHtml {
     const CUSTOM_CSS_PATH = '../HTML/css/j2h.css';
 
     const CUSTOM_CSS_PRESENT = glob.sync(CUSTOM_CSS_PATH).length
-    const AUDIO_STYLE = CUSTOM_CSS_PRESENT ? 
+    const AUDIO_STYLE = CUSTOM_CSS_PRESENT ?
     `
       <link rel="stylesheet" type="text/css" href="${CUSTOM_CSS_PATH}">
     `
@@ -292,15 +292,15 @@ class TranscriptionJsonToHtml {
    */
   handleChunk(chunk) {
     const dispatch = {
-      "text" : 
+      "text" :
         chunk => this.surround(chunk,
           chunk => chunk.value
         ),
-      "punct" : 
+      "punct" :
         chunk => this.surround(chunk,
           chunk => chunk.value
         ),
-      "unknown" : 
+      "unknown" :
         chunk => this.surround(chunk,
           chunk => "***" + chunk.value + "***",
           chunk => chunk.confidence = 0
@@ -336,7 +336,7 @@ class TranscriptionJsonToHtml {
     const v = chunk.confidence
     let text = ''
     if (this.audio_file && chunk.type === 'text' && v >= 0.5) { // uncertain chunks will not be marked up for being playable
-      text += '<span data-ts="' + chunk.ts + '" data-end_ts="' + chunk.end_ts + 
+      text += '<span data-ts="' + chunk.ts + '" data-end_ts="' + chunk.end_ts +
               '" id="' + chunk.ts + '" title="' + chunk.ts + '" onclick="play(\'' +
               chunk.ts + '\')">';
     }
@@ -466,7 +466,7 @@ function fix_products(text) {
  * @return {string} The fixed text.
  */
 function fix_html_0005(text) {
-  text = replace_span(text, 'Shortly', 'Short') 
+  text = replace_span(text, 'Shortly', 'Short')
   text = replace_span(text, 'BAS, BAS Z BAS tutorials', 'Baz, <a href="https://www.youtube.com/user/BazTutorials">Baz Tutorials.</a>')
   text = replace_span(text, '__BAS__ tutorials', '<a href="https://www.youtube.com/user/BazTutorials">Baz Tutorials.</a>')
   text = replace_span(text, 'Ba[zs] tutorials', '<a href="https://www.youtube.com/user/BazTutorials">Baz Tutorials</a>')
@@ -475,116 +475,116 @@ function fix_html_0005(text) {
   text = replace_span(text, 'I first ran into, well I won.t say I first ran into him', '')
   text = replace_span(text, 'on the, on the, on the, ', 'on the')
   text = replace_span(text, 'I was, I was', 'I was')
-  text = replace_span(text, '__who__', 'who'); 
-  text = replace_span(text, 'econ', '<a href="https://en.wikipedia.org/wiki/IRCAM">IRCAM</a>'); 
+  text = replace_span(text, '__who__', 'who');
+  text = replace_span(text, 'econ', '<a href="https://en.wikipedia.org/wiki/IRCAM">IRCAM</a>');
   text = replace_span(text, 'ice PW', '<a href="https://en.wikipedia.org/wiki/ISPW">ISPW</a>');
-  text = replace_span(text, '__yeah__', ''); 
-  text = replace_span(text, '__furs__', 'for'); 
-  text = replace_span(text, '__corrode__', 'code'); 
-  text = replace_span(text, '__will__', 'will'); 
-  text = replace_span(text, '__till__', 'till it\'s'); 
+  text = replace_span(text, '__yeah__', '');
+  text = replace_span(text, '__furs__', 'for');
+  text = replace_span(text, '__corrode__', 'code');
+  text = replace_span(text, '__will__', 'will');
+  text = replace_span(text, '__till__', 'till it\'s');
   text = replace_span(text, 'It.s kind of', 'It\'s kind of curious.');
   text = replace_span(text, 'but I __don.t__ like to, I', 'but I\'d like to');
   text = replace_span(text, 'And we started when we started', 'And when we started');
   text = replace_span(text, 'all taker', '<a href="https://en.wikipedia.org/wiki/Autechre">Autechre</a>');
   text = replace_span(text, 'sort of walk prey codes scene', '<a href="https://en.wikipedia.org/wiki/Warp_(record_label)">Warp Records</a> scene');
   text = replace_span(text, 'You.re talking about __or__ we.ll take her', 'You know, talking about <a href="https://en.wikipedia.org/wiki/Autechre">Autechre</a>');
-  text = replace_span(text, 'I.m doing __a__', 'I\m doing'); 
-  text = replace_span(text, '__art__', 'art'); 
-  text = replace_span(text, 'I.m a question', 'a question'); 
-  text = replace_span(text, 'as having a pH D', 'having a PhD'); 
-  text = replace_span(text, 'Hillary harp', '<a href="http://hilaryharp.com/">Hilary Harp</a> ', 2); 
-  text = replace_span(text, 'things that __their__ __death__ ', 'things. Our '); 
-  text = replace_span(text, 'got. Some', 'got some '); 
-  text = replace_span(text, 'as a, as a', 'as a ', 3); 
-  text = replace_span(text, 'the whole, how, along with', ''); 
-  text = replace_span(text, 'on the, on the', 'on the'); 
-  text = replace_span(text, 'it.s Barry Moon', 'it\'s Barry Moon,'); 
-  text = replace_span(text, 'that he is', 'that he has'); 
-  text = replace_span(text, 'electro acoustic', 'electroacoustic'); 
-  text = replace_span(text, 'burying moon', 'Barry Moon'); 
-  text = replace_span(text, 'yourself, what you.re', 'yourself,'); 
-  text = replace_span(text, 'what I sort of', 'what I'); 
-  text = replace_span(text, 'sort of failed', 'of failed'); 
-  text = replace_span(text, 'a, a, a', 'a'); 
-  text = replace_span(text, 'get a, get a', 'get a'); 
-  text = replace_span(text, ' and sort of fall into as a, ', '. '); 
-  text = replace_span(text, 'that went ', ''); 
-  text = replace_span(text, 'was in an', 'was an'); 
-  text = replace_span(text, 'then, so, yeah, I mean, did, ', 'then '); 
-  text = replace_span(text, 'SUNY Buffalo', '<a href="https://en.wikipedia.org/wiki/University_at_Buffalo">SUNY Buffalo</a>'); 
-  text = replace_span(text, 'which was, which I got that', 'which I got in'); 
-  text = replace_span(text, 'awhile', 'a while', 2); 
-  text = replace_span(text, 'Brown university', '<a href="https://en.wikipedia.org/wiki/Brown_University">Brown University</a>'); 
-  text = replace_span(text, 'Brown for', '<a href="https://en.wikipedia.org/wiki/Brown_University">Brown</a> for'); 
-  text = replace_span(text, 'Todd Winkler', '<a href="https://vivo.brown.edu/display/twinkler">Todd Winkler</a>', 2); 
-  text = replace_span(text, 'for a while', 'for a while.', 2); 
-  text = replace_span(text, 'then, it.s, you know, England', 'then England'); 
-  text = replace_span(text, 'bath baths by university', 'Bath, <a href="https://en.wikipedia.org/wiki/Bath_Spa_University">Bath Spa University</a>'); 
-  text = replace_span(text, 'and then England', ', England'); 
-  text = replace_span(text, 'then, yeah, came back to to', 'then came back to'); 
-  text = replace_span(text, 'sort of instrumental', 'instrumental'); 
-  text = replace_span(text, 'yeah, live, you know, live', 'live'); 
-  text = replace_span(text, 'pick Kushan', 'percussion'); 
-  text = replace_span(text, 'a, clarinet', 'a clarinet'); 
-  text = replace_span(text, 'the CZ', 'Assisi.'); 
-  text = replace_span(text, 'yeah, so doing the, of doing that side of things, the', 'on the'); 
-  text = replace_span(text, 'I work with, at the moment ', 'At the moment I\'m '); 
-  text = replace_span(text, 'doing, instrumental', 'doing instrumental'); 
-  text = replace_span(text, 'doing, public', 'doing public'); 
-  text = replace_span(text, 'that.s, that.s', 'that\'s', 3); 
-  text = replace_span(text, 'kind of had', 'had'); 
-  text = replace_span(text, 'when they, when they', 'when they'); 
-  text = replace_span(text, 'clarinet festival', '<a href="https://www.accademiaitalianaclarinetto.com/the-festival/">clarinet festival</a>'); 
-  text = replace_span(text, ' certainly the, computation ', ' certainly the computation '); 
-  text = replace_span(text, 'on a court lippy', 'with <a href="https://www.cortlippe.com/">Cort Lippe</a>'); 
-  text = replace_span(text, 'that, that', 'that'); 
-  text = replace_span(text, 'largest influence on the greatest', 'greatest'); 
-  text = replace_span(text, 'over and from, from your comp', 'over from <a href="https://en.wikipedia.org/wiki/IRCAM">IRCAM</a>.'); 
-  text = replace_span(text, 'be introduced', 'introduced'); 
-  text = replace_span(text, 'max FTS', '<a href="https://en.wikipedia.org/wiki/Max_(software)">Max/FTS</a>'); 
-  text = replace_span(text, 'so. __It__ was', 'so was'); 
-  text = replace_span(text, 'any of the, the', 'any of the'); 
-  text = replace_span(text, 'you are', 'you were'); 
-  text = replace_span(text, 'to yes', 'to, yes.'); 
-  text = replace_span(text, 'for those of you have just about everybody who was too old to know for __a__ bird', 'Most of you are probably too young to remember those.'); 
-  text = replace_span(text, 'workstation', 'workstation.'); 
-  text = replace_span(text, 'I, I was supposedly the system ', 'I was supposedly the system administrator '); 
-  text = replace_span(text, 'for the next, there.ll be, we.re running', 'for the <a href="https://en.wikipedia.org/wiki/NeXT_Computer">NeXT</a> computers that we were running'); 
-  text = replace_span(text, 'next operating system', '<a href="https://en.wikipedia.org/wiki/NeXTSTEP">NeXT operating system</a>.'); 
-  text = replace_span(text, 'about, some of, some of', 'about some of'); 
-  text = replace_span(text, 'kind of talk', 'talk'); 
-  text = replace_span(text, 'about, these', 'about these'); 
-  text = replace_span(text, 'a blender', 'blender', 1); 
-  text = replace_span(text, 'blender', '<a href="https://en.wikipedia.org/wiki/Blender_(software)">Blender</a>', 3); 
-  text = replace_span(text, 'they.re not even, you know, in any way, you know, teaching and through __their__, they have no experience teaching as far as I know.', 'they don\'t even have any teaching experience, as far as I know.'); 
-  text = replace_span(text, '__they__', 'to'); 
-  text = replace_span(text, 'learn __to__, you can.t ', ''); 
-  text = replace_span(text, 'and until', 'until'); 
-  text = replace_span(text, 'birth', 'Bath.'); 
-  text = replace_span(text, 'POTUS head', '<a href="https://en.wikipedia.org/wiki/Portishead_(band)">Portishead</a>'); 
-  text = replace_span(text, 'massive attack', '<a href="https://en.wikipedia.org/wiki/Massive_Attack">Massive Attack</a>'); 
-  text = replace_span(text, 'Minnesota', ''); 
-  text = replace_span(text, '__she__, the sorts of thing, the ', 'the'); 
-  text = replace_span(text, 'me to, for the, Arizona', 'me to the Arizona'); 
-  text = replace_span(text, 'they, it.s', 'it\'s'); 
-  text = replace_span(text, 'not, you know, sort of ', ''); 
-  text = replace_span(text, 'for, I mean, it.s ', 'for. It\'s '); 
-  text = replace_span(text, 'Yeah. My.*maybe, maybe', 'I think maybe '); 
-  text = replace_span(text, 'Luke Dubois', '<a href="https://en.wikipedia.org/wiki/R._Luke_DuBois">Luke Dubois</a>'); 
-  text = replace_span(text, 'dying at', 'doing that.'); 
-  text = replace_span(text, 'to, use', 'to use', 3); 
-  text = replace_span(text, 'court Libby', '<a href="https://www.cortlippe.com/">Cort Lippe</a>'); 
-  text = replace_span(text, '(__)?court(__)?', '<a href="https://www.cortlippe.com/">Cort</a>', 3); 
-  text = replace_span(text, 'on. You know what.*93', 'on. I mean \'92 or \'93'); 
-  text = replace_span(text, 'TA work', '<a href="https://en.wikipedia.org/wiki/Teaching_assistant">TA work</a>'); 
-  text = replace_span(text, 'tutorials, video tutorials', 'video tutorials'); 
-  text = replace_span(text, 'I, you know, as, as a', 'As a'); 
-  text = replace_span(text, 'yeah, I just didn.t, my', 'my'); 
-  text = replace_span(text, 'learned, which are just, you know, there.s', 'learned, there\'s'); 
-  text = replace_span(text, 'And you know, and', 'And'); 
-  text = replace_span(text, ', you know, ', ' '); 
-  text = replace_span(text, 'I.d say I', 'I'); 
+  text = replace_span(text, 'I.m doing __a__', 'I\m doing');
+  text = replace_span(text, '__art__', 'art');
+  text = replace_span(text, 'I.m a question', 'a question');
+  text = replace_span(text, 'as having a pH D', 'having a PhD');
+  text = replace_span(text, 'Hillary harp', '<a href="http://hilaryharp.com/">Hilary Harp</a> ', 2);
+  text = replace_span(text, 'things that __their__ __death__ ', 'things. Our ');
+  text = replace_span(text, 'got. Some', 'got some ');
+  text = replace_span(text, 'as a, as a', 'as a ', 3);
+  text = replace_span(text, 'the whole, how, along with', '');
+  text = replace_span(text, 'on the, on the', 'on the');
+  text = replace_span(text, 'it.s Barry Moon', 'it\'s Barry Moon,');
+  text = replace_span(text, 'that he is', 'that he has');
+  text = replace_span(text, 'electro acoustic', 'electroacoustic');
+  text = replace_span(text, 'burying moon', 'Barry Moon');
+  text = replace_span(text, 'yourself, what you.re', 'yourself,');
+  text = replace_span(text, 'what I sort of', 'what I');
+  text = replace_span(text, 'sort of failed', 'of failed');
+  text = replace_span(text, 'a, a, a', 'a');
+  text = replace_span(text, 'get a, get a', 'get a');
+  text = replace_span(text, ' and sort of fall into as a, ', '. ');
+  text = replace_span(text, 'that went ', '');
+  text = replace_span(text, 'was in an', 'was an');
+  text = replace_span(text, 'then, so, yeah, I mean, did, ', 'then ');
+  text = replace_span(text, 'SUNY Buffalo', '<a href="https://en.wikipedia.org/wiki/University_at_Buffalo">SUNY Buffalo</a>');
+  text = replace_span(text, 'which was, which I got that', 'which I got in');
+  text = replace_span(text, 'awhile', 'a while', 2);
+  text = replace_span(text, 'Brown university', '<a href="https://en.wikipedia.org/wiki/Brown_University">Brown University</a>');
+  text = replace_span(text, 'Brown for', '<a href="https://en.wikipedia.org/wiki/Brown_University">Brown</a> for');
+  text = replace_span(text, 'Todd Winkler', '<a href="https://vivo.brown.edu/display/twinkler">Todd Winkler</a>', 2);
+  text = replace_span(text, 'for a while', 'for a while.', 2);
+  text = replace_span(text, 'then, it.s, you know, England', 'then England');
+  text = replace_span(text, 'bath baths by university', 'Bath, <a href="https://en.wikipedia.org/wiki/Bath_Spa_University">Bath Spa University</a>');
+  text = replace_span(text, 'and then England', ', England');
+  text = replace_span(text, 'then, yeah, came back to to', 'then came back to');
+  text = replace_span(text, 'sort of instrumental', 'instrumental');
+  text = replace_span(text, 'yeah, live, you know, live', 'live');
+  text = replace_span(text, 'pick Kushan', 'percussion');
+  text = replace_span(text, 'a, clarinet', 'a clarinet');
+  text = replace_span(text, 'the CZ', 'Assisi.');
+  text = replace_span(text, 'yeah, so doing the, of doing that side of things, the', 'on the');
+  text = replace_span(text, 'I work with, at the moment ', 'At the moment I\'m ');
+  text = replace_span(text, 'doing, instrumental', 'doing instrumental');
+  text = replace_span(text, 'doing, public', 'doing public');
+  text = replace_span(text, 'that.s, that.s', 'that\'s', 3);
+  text = replace_span(text, 'kind of had', 'had');
+  text = replace_span(text, 'when they, when they', 'when they');
+  text = replace_span(text, 'clarinet festival', '<a href="https://www.accademiaitalianaclarinetto.com/the-festival/">clarinet festival</a>');
+  text = replace_span(text, ' certainly the, computation ', ' certainly the computation ');
+  text = replace_span(text, 'on a court lippy', 'with <a href="https://www.cortlippe.com/">Cort Lippe</a>');
+  text = replace_span(text, 'that, that', 'that');
+  text = replace_span(text, 'largest influence on the greatest', 'greatest');
+  text = replace_span(text, 'over and from, from your comp', 'over from <a href="https://en.wikipedia.org/wiki/IRCAM">IRCAM</a>.');
+  text = replace_span(text, 'be introduced', 'introduced');
+  text = replace_span(text, 'max FTS', '<a href="https://en.wikipedia.org/wiki/Max_(software)">Max/FTS</a>');
+  text = replace_span(text, 'so. __It__ was', 'so was');
+  text = replace_span(text, 'any of the, the', 'any of the');
+  text = replace_span(text, 'you are', 'you were');
+  text = replace_span(text, 'to yes', 'to, yes.');
+  text = replace_span(text, 'for those of you have just about everybody who was too old to know for __a__ bird', 'Most of you are probably too young to remember those.');
+  text = replace_span(text, 'workstation', 'workstation.');
+  text = replace_span(text, 'I, I was supposedly the system ', 'I was supposedly the system administrator ');
+  text = replace_span(text, 'for the next, there.ll be, we.re running', 'for the <a href="https://en.wikipedia.org/wiki/NeXT_Computer">NeXT</a> computers that we were running');
+  text = replace_span(text, 'next operating system', '<a href="https://en.wikipedia.org/wiki/NeXTSTEP">NeXT operating system</a>.');
+  text = replace_span(text, 'about, some of, some of', 'about some of');
+  text = replace_span(text, 'kind of talk', 'talk');
+  text = replace_span(text, 'about, these', 'about these');
+  text = replace_span(text, 'a blender', 'blender', 1);
+  text = replace_span(text, 'blender', '<a href="https://en.wikipedia.org/wiki/Blender_(software)">Blender</a>', 3);
+  text = replace_span(text, 'they.re not even, you know, in any way, you know, teaching and through __their__, they have no experience teaching as far as I know.', 'they don\'t even have any teaching experience, as far as I know.');
+  text = replace_span(text, '__they__', 'to');
+  text = replace_span(text, 'learn __to__, you can.t ', '');
+  text = replace_span(text, 'and until', 'until');
+  text = replace_span(text, 'birth', 'Bath.');
+  text = replace_span(text, 'POTUS head', '<a href="https://en.wikipedia.org/wiki/Portishead_(band)">Portishead</a>');
+  text = replace_span(text, 'massive attack', '<a href="https://en.wikipedia.org/wiki/Massive_Attack">Massive Attack</a>');
+  text = replace_span(text, 'Minnesota', '');
+  text = replace_span(text, '__she__, the sorts of thing, the ', 'the');
+  text = replace_span(text, 'me to, for the, Arizona', 'me to the Arizona');
+  text = replace_span(text, 'they, it.s', 'it\'s');
+  text = replace_span(text, 'not, you know, sort of ', '');
+  text = replace_span(text, 'for, I mean, it.s ', 'for. It\'s ');
+  text = replace_span(text, 'Yeah. My.*maybe, maybe', 'I think maybe ');
+  text = replace_span(text, 'Luke Dubois', '<a href="https://en.wikipedia.org/wiki/R._Luke_DuBois">Luke Dubois</a>');
+  text = replace_span(text, 'dying at', 'doing that.');
+  text = replace_span(text, 'to, use', 'to use', 3);
+  text = replace_span(text, 'court Libby', '<a href="https://www.cortlippe.com/">Cort Lippe</a>');
+  text = replace_span(text, '(__)?court(__)?', '<a href="https://www.cortlippe.com/">Cort</a>', 3);
+  text = replace_span(text, 'on. You know what.*93', 'on. I mean \'92 or \'93');
+  text = replace_span(text, 'TA work', '<a href="https://en.wikipedia.org/wiki/Teaching_assistant">TA work</a>');
+  text = replace_span(text, 'tutorials, video tutorials', 'video tutorials');
+  text = replace_span(text, 'I, you know, as, as a', 'As a');
+  text = replace_span(text, 'yeah, I just didn.t, my', 'my');
+  text = replace_span(text, 'learned, which are just, you know, there.s', 'learned, there\'s');
+  text = replace_span(text, 'And you know, and', 'And');
+  text = replace_span(text, ', you know, ', ' ');
+  text = replace_span(text, 'I.d say I', 'I');
 
   return text
 }
@@ -592,14 +592,14 @@ function fix_html_0005(text) {
 /**
  * Changes the text by replacing 'search' with 'replacement', in a text
  * that may be marked up with html span elements.
- * 
+ *
  * @param {string} text The text to change
  * @param {string} search The pattern to search. Can contain regex syntax.
  * @param {string} replacement The replacement text.
  *
  * ATTENTION: commas are filtered out in the search term!
  * So when specifying a search term where commas are to be replaced/repositioned,
- * make sure that they are enclosed by words surrounding them, i.e. that the 
+ * make sure that they are enclosed by words surrounding them, i.e. that the
  * commas are not at the boundary of the search term.
  */
 function replace_span(text, search, replacement, expected_matches = 1) {
@@ -618,7 +618,7 @@ function replace_span(text, search, replacement, expected_matches = 1) {
  * surrounds each word in a blank separated string by optional html span element regex.
  * @param {string} text The text to process
  * @param {boolean} ignoreCase Whether to ignore case
- * @return {string}     The processed text 
+ * @return {string}     The processed text
  */
 function spanifyRX(text, ignoreCase = false) {
 
@@ -643,7 +643,7 @@ function spanifyRX(text, ignoreCase = false) {
  * Returns formatted date.
  *
  * @param {date} d The date to format. If omitted: Today. ( E.g.
- *  formatDate(new Date('2013-10-14')) ) 
+ *  formatDate(new Date('2013-10-14')) )
  * @return {string} The string representation of the date.
  */
 function formatDate(d=new Date()) {
