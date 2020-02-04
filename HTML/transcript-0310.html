@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Transcription: Podcast 0310 - Nick Demopoulos</title>
+
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js does not work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+</head>
+
+<body>
+  <div class="container">
+    <h2>Transcription: 0310 - Nick Demopoulos</h2>
+    <h3>Released: January 19,2020</h3>
+    <p>
+      <b>Darwin: </b>
+      <i>Okay, today I get a chance to meet somebody new, but someone whose work I'm pretty excited to hear more about. His name is Nick Demopoulos. He reached out to me as a fan of the podcast, but also somebody who's got some release work in play and is doing some instrument design that is pretty jaw-dropping. So with no further ado, let's talk to Nick. Hey, Nick, how's it going?  </i>
+    </p>
+
+    <p>
+      <i>
+      Thanks a lot for taking the time to have this chat. So why don't we start off by having you talk a little bit about your work. I know from just your site and from looking at some of your social media stuff, you're, you've got some releases out, but a lot of that is really based off of a focus on instrument building, right? </i>
+    </p>
+
+    <p>
+      <b>Nick Demopoulos: </b>
+      Yes, that's correct. I have been designing MIDI controllers that I play music with and some of them actually are instruments now where they're not really MIDI controllers. They actually emit sound and yeah, I've been writing music and releasing music with those instruments.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Right now the one that is on a lot of your media and - in fact, there's a lot of connections to email addresses you use and stuff is something called a SMOMID. Can you explain what that is? </i>
+    </p>
+
+    <p>
+      <b>Nick: </b>
+      Yeah, so that instrument, the name is an acronym for a String Modeling MIDI Device. It's a way for a guitar player to interface with music software. So it's like a MIDI controller that's shaped like a guitar. It's not necessarily played like a guitar, but a guitar player could pick it up and probably play music with it instantly.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Sure. I will right off the bat say if you're listening to this and you're near a web browser, jump over to http://www.smomid.com. And the big picture at the top will give you a sense of what we're talking about, which is a large strapped-on type instrument, but one that has a nect, but it also has a lot of hand controls. The neck... [those are] not strings on there, right? Is that some sort of button pad or something like that? </i>
+    </p>
+
+    <p>
+      <b>Nick: </b>
+      Those are called membrane potentiometers. So they're big long resistors that are location sensitive.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Oh, very interesting. And so, if I touch each "string", then is that one resistor or is it a bunch of them stretched out? I guess it would have to be one, right? </i>
+    </p>
+
+    <p>
+      <b>Nick: </b>
+      Yeah, each one is one resistor. So it's basically like a poteniometer...
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>I see. Okay. How do you interface that to... you said that you use it as a bridge to be able to work with many devices and I assume DAW's and stuff like that. How do you make that connection? </i>
+    </p>
+
+    <p>
+      <b>Nick: </b>
+      So all those sensors are plugged into either an Arduino or a Teensy and they're changing the resistance from the sensors into MIDI data; and the MIDI data is coming as control change data and it's going into either Max or Pure Data and then all the mapping and all the sound is coming out of Max and Pure Data.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Ah, I see. Now how many different controls and how many different lanes of data are coming out of that thing? </i>
+    </p>
+
+    <p>
+      <b>Nick: </b>
+      Hmm, that's a good question. So on the guitar controller, I have two Teensys inside of that and there's about 12 control change... there's about 24 control change things between those two Teensys. They're coming out on too MIDI channels, and then there's MIDI coming back from the computer or from Max or Pure Data to the LEDs on the instrument. So there's 12 LEDs on there too. And then there're also digital inputs - which are like buttons. So there's 16 buttons too.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>And now one of the things is in looking at it, it doesn't look... so I like using the phrase "opinionated", as in one that makes a lot of decisions for you (the user). This does not look like a particularly opinionated controller because it looks like, if you wanted to, you could take any of these controls and define it to run anything that you want. Now some of the things like the string-like potentiometers probably are going to be obvious for pitch-like control because that's what a guitarist is going to be used to doing. But you have tons of knobs and buttons available. Do you have sort of an imagined vision of what those should be mapped to, or do you leave it open on a performance-by-performance basis? </i>
+    </p>
+
+    <p>
+      <b>Nick: </b>
+      I do try and think of interesting ways to use those strings. So I do use them like a fretted guitar where it's mapped-out pitches. I also use it like a fretless guitar, or like a cello
+      or a violin. So you're just playing it without the fret. And then I have two tunings that I use. One is like standard tuning - 12 notes to the octave, and one is a 36 notes to the octave. And then I have a arpeggiator mode for all those different things. So, if I play a note, it will arpeggiate different patterns based on that. And then I also use it to play percussion samples. So on a string, as you go higher, the frequency gets higher. So I took that concept and as I go higher, the rhythms get faster and it's mapped to 16th notes, 32nd notes, then triplets and things like that. And then, I also use it to take the audio
+      file and I'll map it to the length of a string and, I could [use] a long sample and I can just kinda touch it and trigger the sample from that point.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Sure, sure. So literally it's like you're touching the play head of the sample almost. That's really cool. To what extent does this give you the ability to run your system hands off? I mean, as a guitar player myself, one of the real frustrations in using a guitar on-stage with a DAW or something. I mean, I literally don't do it because I find myself frustrated: because I want to control a bunch of things and I just find it very difficult. So I end up just falling back to stock guitars, stock pedal boards and loopers and I live with the rather limited result I can get out of that. So, obviously this gives you the ability to maybe do a lot more control. Do you feel like you can mostly work hands off of the computer with this? </i>
+    </p>
+
+    <p>
+      <b>Nick: </b>
+      Yeah, definitely. Because I feel the exact same way as you. I don't really want to look at a computer when I'm playing music. So I have these other controllers that I made that are, - I call them Pyramidis, and they're kind of inspired... They're triangular, they're not like a pyramid, but they're like triangular in shape and they have a lot of LEDs on them. And I use
+      those to select sounds and trigger effects and things like that. And, because of the LEDs, they have a lot of visual feedback. So I can press a button, a light will turn on and I know that that's on. And then I have a tap tempo delay and things that where the lights are blinking so I know what's happening. So I don't have to look at my, my computer and I have another one, another Pyramidi that I use that's a really fancy looper. So I use that mostly for looping. So, yeah, I really don't have to look at the computer when I'm playing.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Right. And then on the computer, are you just running Max or <a href="https://en.wikipedia.org/wiki/Pure_Data">PD</a> or do or is that also feeding into a DAW like [Ableton] Live or, or Logic or something like that? </i>
+    </p>
+
+    <p>
+      <b>Nick: </b>
+      No, it's just purely max. I used to do it actually before Max for Live came out. I was using live Max into [Ableton] Live, but then I just abandoned it and just use Max mostly.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Sure. Fewer moving parts.  Well this is pretty amazing because this Pyramidi thing, I noticed that on your website as well and I was curious about it. It seems like you've got your hands pretty full as an instrument builder and a controller builder, but some of your release work is on the site. And frankly, I was pretty surprised because I was expecting...
+      </i>
+    </p>
+
+    <p>
+      <i>A lot of times, with experimental instruments like this, people tend to move into ambient territory because, first of all it's maybe not as aggressive in terms of pitch tracking requirements or some of that kind of stuff. But secondly, because especially with things that have arbitrary tuning options, it's a little easier to be open with your tuning choices. But you pretty much are willing to just dive into almost any kind of style and take it on. So it's clear that you have some really significant musical chops, but you also have the kind of chops - the kind of builder chops that allow you to make an instrument that is clearly a complex build, and also the software interaction chops to be able to make Max and <a href="https://en.wikipedia.org/wiki/Pure_Data">PD</a> pieces that are fulfilling all of your software needs. Where do you come from where all of these things are somewhere in your comfort level? It's, it sounds like an amazing combination of skills. </i>
+    </p>
+
+    <p>
+      <b>Nick: </b>
+      Well, I guess my background is as a guitar player. I started as a guitar player and I was using lots of pedals and things like that, loopers and devices. And then I was using Max, but I was using it with a keyboard-type MIDI controller. I mean my background is in jazz
+      guitar and I guess I'm bringing that to electronic music. I don't know if that makes any sense, but...
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>It does. But it's also pretty much a non-sequitur. I don't know that many serious jazz players that are comfortable approaching and attacking electronic music. They'll seem to be almost polar opposite ends of the world. Right?</i>
+    </p>
+
+    <p>
+      <b>Nick: </b>
+      I think, I think you're right about that. I love jazz and I love the jazz tradition and the music and bebop and all that, but it's very rooted in history and tradition, and electronic music is so focused on the future and what hasn't happened and the possibilities. So that's why I kinda like playing electronic music.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Right on. So what is, what in your background got you into jazz? It sounds like that was where you really kicked things off. Did you grow up studying it or was it something you picked up in college or something like that? Where did the jazz thing come from for you? </i>
+    </p>
+
+    <p>
+      <b>Nick: </b>
+      Okay, so I, as a teenager, I grew up in LA and I was typical teenager - into metal. So I was into heavy metal, into Malmsteen and just shredding guitar. And then from there I got into Al Di Meola, his work with Chick Corea's Return To Forever. And then from there I was like, "Oh, who's this Chick Corea person?" Then I studied him and I saw he played with Miles Davis and then I checked out Miles Davis' electric projects. And then from there I was like, what did this Miles Davis person do? So then I saw he played with Charlie Parker and then I got hooked on Charlie Parker and by high school that - that was what I was super into.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>That's really interesting. To what extent did you pursue that? Because I mean [there are] some parallels with me and especially the connection to Al Di Meola, that was a person that was a real touchstone for me. As a guitarist going from my interest in highly in technical and hyper-capable guitar playing, into the world of jazz players. It was a really great starting point. But there was also this sense that tracking jazz was also like tracking something that was purposefully difficult to learn, and in a way it represented a challenge that I really loved. Is that something that was [important] for you or was it very natural for you? </i>
+    </p>
+
+    <p>
+      <b>Nick: </b>
+      I think I was attracted to the kind of mental exercises of jazz as well. Like, it is getting from point A to point B by doing all these harmonic melodic manipulations and patterns and stuff. I think that I was really attracted to that. I think that that kind of mindset comes into place in maybe in chess, and maybe in mathematics. It's something you're doing like an operation to get from point A to point B. And I was really into math and into chess to at different points in my life.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>And obviously then also electronics since it seems from looking at looking at this device and then hearing you talk about interfaces into Teensys and Arduinos, you have no fear of taking on electronics either. When did that come into play for you? </i>
+    </p>
+
+    <p>
+      <b>Nick: </b>
+      So, I guess the first MIDI controller I made... So I had a band called Exegesis and there were three of us: guitar, bass and drums. I was using Max on stage and using all these live looping devices and pedals playing guitar and keyboard. And the bass player was doing the same thing, doing live looping and triggering all this stuff. But the drummer was playing just acoustic drums. That always bothered me. So I wanted to make a drum controller for our
+      drummer. I researched it a little bit and I saw that there was a class how to make a MIDI controller at the Lemurplex in Brooklyn. And the Lemurplex is, run by Eric Singer. And so I took this class, there was a guy named Leif Krinkle who was teaching the class and he's really intelligent and - he could speak on how to make mini controllers for forever.
+    </p>
+
+    <p>
+      He knows everything about it. And he just had a lot of confidence that he could just teach us how to do this in a couple of hours. I was amazed with that approach. But he figured we could do it. And so I figured I could do it if he had that confidence. And, we used a thing called a Miditron that Eric singer made. And as soon as I saw the membrane potentiometer in that class, which is the string- type thing I use, I forgot about the drum controller and I was like, "Oh, that looks like a string!" So I was like, "I could make a guitar controller with this."
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>
+        That's amazing. Wow. And how many iterations did it take for you to get your first, sort of playable instrument? </i>
+    </p>
+
+    <p>
+      <b>Nick: </b>
+      So the first one I made was really ambitious. I got a wireless Miditron and I made it. It was wireless. I made it out of plexiglass and it actually worked for two weeks - and then it just burned out because, I think, the resistors I had in it weren't large enough. So they burned the sensors out. And then I tried another one and that didn't work. And then I was like, "Okay, I'll try one more time." So I made a third one and that one actually worked, [but] it only had four strings on it. And as soon as I made that I was like, "Okay, now I want to make a bigger one, one with six strings." So that took me a while to research. So the first one I made was in 2010.
+    </p>
+
+    <p>
+      And then, after doing some research and figuring out, I actually emailed Eric: "Is there something I could do with it [that] has more inputs?" And he's like, "You should look into getting an Arduino." And I didn't really know how to program in Arduino or anything, so he said, "Why don't you get in touch with  NYC Resistor?" - which is a hacker space/maker space in Galanis, Brooklyn, right? So I reached out to their mailing list, and through that I met this guy named Ranjit Bhatnagar. I don't know if you know him, but he's made a bazillion instruments. Like he for a couple of years, in February, he would make an instrument every single day. He's a really high level programmer. So I connected with him and he wrote some Arduino code that basically just takes analog input or digital input and outputs, control change data on an Arduino.
+    </p>
+
+    <p>
+      So I took that and I made... actually at that point in Brooklyn, there was a lot of things going on. So, I had a friend who was a woodworker and there was this huge facility called Third Ward, where he had a studio. So I went there and with him, I collaborated with him and he made the wood body. And then I took those two things and put everything together and I assembled it and did all the electronics, which is a lot of work, but
+      it's not that complicated - it's just like soldering a sensor to resistor into the Arduino. And I had my first six string version of this instrument.
+    </p>
+
+    <p>
+      That was in 2012. And then as soon as I had that done, I was like, "Okay, I need more!" So then I made two Pyramidis, which are the first versions of those; [they] were like these wooden triangular boxes with LEDs on them. And those are also Arduino-based. And then I started getting into working with these LED displays which are, if you see on my most recent Pyramidi, they're in there - they're like these matrices of LED squares or seven segment displays. So I figured out how to use those. And by this point I was kind of learning Arduino coding by myself. So I was doing all the Arduino coding and I put those into my instruments. And, also, I wanted to be able to make instruments faster and be able to repeat them.
+    </p>
+
+    <p>
+      So I started studying three D modeling. My latest instruments are modeled in Rhino and they're just cut out of wood or Corean - those are the two materials I use.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>So are these things that then you make, either custom or commercially for sale?
+
+      </i>
+    </p>
+
+    <p>
+      <b>Nick: </b>
+      So what started happening is, I just started making them so that I could play them, but I would show up to places and people would say, "Oh, can I buy one?" I didn't have anything for sale. But it kept happening, so I finally started thinking I should make something I could sell. So I've been, for the last couple of years, pursuing how to sell something. My concept for that is, instead of being a mini controller where you need a computer to play it, just having it be a freestanding device. I started using Raspberry PI running Pure
+      Data and I'm working on something [where]] the Raspberry PI will be embedded in the instrument and you just have a audio output. You just turn it on and plug it into an amp or something and just start playing.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Oh, right. But that would be the SMOMID and not the Pyramidi, right? Or both ... or either? </i>
+    </p>
+
+    <p>
+      <b>Nick: </b>
+      What I did, a couple of years ago I made a kind of a table version of an instrument and you play it like a lap steel guitar. So there's strings on it, but you play it sitting down and I'm going to make a Pyramidi box with those in it, so it'll be a small version. I think it'll be something you can put in a case and fly around in an airplane with and it'll be small and you could still play melodies on it.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Right. Well that makes a lot of sense because one of the things I was wondering is the SMOMID that you use, you use it in your own performance, right? How do you make it so that it is really functional on stage without being a constant breakdown? I mean, my experience with building bespoke instruments is that I take take onto stage... </i>
+      </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>I mean, there's actually two problems for me. First of all, making them so that they really are strong enough and robust enough to work on stage actually represents almost as much work as getting them to work in the first place. And then, secondly, I know what I did and so then I start ending up with these weird head games where I'm like, "Oh, this thing's gonna fail. Oh, this thing's going to fail." And if it doesn't fail, I work myself into a bit of lather worrying about it. Where if I'm using instruments that someone else built, I don't know what's going to fail. So I just play it. How do you cope with making the instruments that actually represent your performance instruments? </i>
+    </p>
+
+    -----
+
+    <p>
+      <b>Nick: </b>
+      Well, for one thing, I practice with them a lot. So they do fail and I try and figure out why, and I try to fix them. But one thing that I learned from making instruments is that you have to make them serviceable. So, in other words, you should be able to take it apart and be able to get to any component in there, and be able to change the wires or change a resistor or something. Because things do get loose, or wires will, like if two wires touch, maybe the resistance value will change on a sensor. So you have to make them - like the latest guitar controller I made, it comes apart into three pieces and I can have access to any of it. Whereas the first one I made, the stuff is buried in there and it's really hard to get to, you know. So that's one thing I've learned a lot. Actually, [in] the latest guitar controller I made, I tried to save myself some time by using these - I forget what
+      you call them - but they're a bunch of jumper cables that are all stuck together and they're kind of color-coded. So it saved me a lot of time using those. But because the Teensy is such a powerful microcontroller that the gauge of wire you use actually affects the thing.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah. But you're saying that that this thing was putting out so much amperage. It was actually troublesome with those small wires. </i>
+    </p>
+
+    <p>
+      <b>Nick: </b>
+      I had to change all those wires because they were getting electronic noise, like the values were bouncing around a little bit. I learned something else is that the Teensy a really powerful microcontroller. It's so fast that when you take your finger off of a string, it actually measures the value of it going back to zero. That's how fast it is while it's going back. So I had to do some programming in Max and stuff to limit that. Also I had to add some capacitors just to have a little bit of power down there because it's super super sensitive
+      instrument.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>So one of the things that you talked about, when you talked about learning jazz is that you were drawn - not only to sort of the complexity in the chess game of it, but also that you recognize that there was a jazz tradition, and you seem to embrace that. And part of the tradition of jazz or really any music is that instruments themselves have a traditional way of being played, a tradition of how you sit or stand with them. You know, what's a good finish with them and all this kind of junk, right? There's a lot of tradition tied into instruments, but when you're making your own instrument there's none of that. You say you practice a lot but do you think of it as an extended guitar or do you think of as as its own thing? If you think about it as its own thing, how are you developing its own tradition out of nothing? </i>
+    </p>
+
+    <p>
+      <b>Nick: </b>
+      I try and think of musical ideas. I don't really think of the instrument as much. I think of musical ideas and I try and make them happen somehow on the instrument. Like one time I had something where instead of an arpeggiator I had a 12 tone row and I could trigger it from any note on the instrument. Then I had ways to play it backwards, upside down or upside down and backwards, and I messed with that for awhile. I do the percussion stuff, I just try and think of music, I don't think of what I can play on an instrument. Even on guitar, because I practice guitar and play guitar, I [just] think of ideas, I try not to be limited by the instrument and it's kind of impossible because there's certain things you can play on piano that you just can't play on guitar. But you could find a way to do a lot of things, you know?
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Oh, but there's also the thought process. Whenever I'm doing something musically that is sort of theory oriented I always need to be working on a keyboard. Because the way that a musical keyboard is laid out, it's sort of music theory sitting right there in front of you right? On the guitar, it's a little less or it's a lot less of that. So for me the layout of the guitar is more one of convenience of being able to do certain kinds of physical motion or whatever, as opposed to being really theory oriented. What do you find with the SMOMID, what do you find is the thing that it draws you into? Is it really good for, playing off of sound design? Is it really good for working at with really fast activity? Or is it more oriented towards harmonic development than melodic development? What do you find it is that this instrument draws you into doing? </i>
+    </p>
+
+    <p>
+      <b>Nick: </b>
+      Yeah, that's a really good question. I think coming from the guitar, one thing that about it is when you pluck a note, it immediately starts to decay. Whereas on this instrument I could just hold a note forever and it will just play like a organ or something. So that's one thing I really like about it. And you can shape the note with a joystick which is mostly a filter, and have another joystick that's like a pitch bend. So I like being able to shape notes and have that sustain. I also liked the fact that I can control the whole musical landscape of whatever I'm performing just from my instruments, triggering sections of a song, changing the beats putting effects on the drums, so most of those potentiometer knobs on my guitar controller are LFOs and ring modulators and things like that, that the drums go through. So I have all the effects for everything on one or two instruments.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>So you're a sort of, not only playing the lead guitar leg instrument, but you're also mixing the whole band simultaneously. I bet you need to take a nap after a gig. That's a lot of work. </i>
+    </p>
+
+    <p>
+      <b>Nick: </b>
+      Well, the thing that happens is, sometimes people have told me, "why is there such drastic volume changes?" And it's a mistake, but sometimes drums will just pop up or something or the
+      base. But yeah, it's actually, I don't know. It's not that complicated.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Okay. So the work that you're doing, it sounds like you play with a band. Are you still working a three piece band? Because again, it seems like then you have a lot of Sonic land space to fill. It's one of the things with the trio, it's always amazing to me is sort of the amount of space that everyone is sort of responsible for filling. </i>
+    </p>
+
+    <p>
+      <b>Nick: </b>
+      Well, once this project got going I incorporated this into the band. I was playing with Exegesis, but just got going. Also those guys were getting really busy, playing in all these other projects. So for us to either tour or to perform even locally was getting more difficult. So I started just playing a solo with this instrument. Now I don't really play with a band, but I do collaborate with people as an instrumentalist. So I mostly perform solo.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Oh, that's really interesting. That again, then it just feels like it's putting a lot of pressure on yourself. Although again, I imagined by having an instrument where the layout and the functionality is under your control, it also means that you can make it as convenient as you need to in order to be able to pull off a solo set. </i>
+    </p>
+
+    <p>
+      <b>Nick: </b>
+      Yeah, and in a way it's very liberating because I can, I dunno, it's a lot of fun. I don't know how to explain it, but it's kind of liberating playing solo. I do miss collaborating
+      with people and I still do that in other things. But just from a logistic point of view, if you get a gig you don't have to check with these other people, If they can do it. You could just say, yeah, I'll do it. You know?
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Absolutely. Now, one of the things you mentioned earlier is that on this system you have two different tuning standards. You have one that's a 12 note per octave tune tuning system and the one that's, I think you said 36 note Proctor. For you, what is the draw into microtonal? Is it something that you naturally heard or is it something you started exploring with and fell in love with? What's the difficulty involved in making music that uses a 36 note Proctor scale? </i>
+    </p>
+
+    <p>
+      <b>Nick: </b>
+      The way I got into that was, in 2008, the band that I was playing with Exegesis auditioned and got selected to be in this program that the state department has that are like a musical ambassadors. So we got sent to the Middle East to play, to be cultural ambassadors and play jazz and talk about American culture. And one of the things you do is you perform with local musicians. So I went to Bahrain and started playing with these oud players and I was like, wow, this is really, really, really cool music. And then I went to Yemen and was playing with these people in Yemen and this guy was playing alto sax doing quarter steps and stuff. And all these oud players, I was like, "I have to check this out." So I bought an oud in Yemen and I shipped it back to New York. Then, when I got back to New York, I walked into this falafel place and I saw a guy holding a oud I just said, Hey, can you give me lessons?.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i> Sorry. But that is like that story just took a left turn, you know. I was in Yemin, I shipped an oud back and then I was in a falafel place. And I was like, wait, what?</i>
+    </p>
+
+    <p>
+      <b>Nick: </b>
+      Well, this is really interesting. So I walked into this falafel place and not far from my apartment and I see this kind of grumpy looking old man. I said, can you give me some oud lessons? And he was like, "yeah, sure." Not too excited about it. So I go to his apartment and, this guy is a Najib Shaheen and his brother is Simon Shaheen, who's one of the most prominent virtuostic oud players that I've ever heard. So these
+      guys come from this tradition, like their dad play oud, their whole family plays oud.
+      So I studied with him for awhile and we got into the quarter steps and the micro tonality of it, and I was really getting the hang of it. Then I started playing with Chico Hamilton, who's a jazz drummer, right around that same time, and he was a really kind of, demanding of what I would play.
+    </p>
+
+    <p>
+      <b>Nick: </b>
+      So I kinda realized I had to stop playing because I couldn't pursue it as fully as I wanted to, and not just embarrass myself in front of my teacher. So I put it down and I just focus more back to guitar. But what happened was, once I made these guitar mini controllers, I realized I could bring it back into my music. And it was easier to play than playing on an oud, which you have to really have a command of the instrument,
+      use your ear to play it in tune. It's really hard. But on my mini controller, it's easy cause I could just press a note and it's like, there it is. So I wanted it to also do something a little different. I have a friend who, who plays a MIDI controller.
+      Leon gruenbaum, and he has an instrument called Samchillian, and as I was watching him and he's played some crazy stuff and I was like, "what is that?
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Seeing him in action with that thing, it's ridiculous. </i>
+    </p>
+
+    <p>
+      <b>Nick: </b>
+      Yeah, and he has a tuning that's 40 notes to the octave and it just was mind blowing to listen to him play that. So, I wanted to get something a little smaller in resolution than 24 notes. So I did 36 notes and I still think of it like tonally, so I still play notes, but then I'll go a little bit flat or a little bit sharp.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah. What's interesting about choosing 36 notes is that you have the 12 note per octave thing is still sitting there, but you have two stepping points in between each semitone, which I can imagine even for doing pattern-based things, doing patterns that just slide up or down one of these increments would be an interesting way of adding tension and doing tension and release kind of feelings - pretty naturally. </i>
+    </p>
+
+    <p>
+      <b>Nick: </b>
+      Yeah, that's great. And with the arpeggiator you can get some amazing patterns. I actually started researching scales and I found this book, I can't remember the name of it, but there's a book - or a treatise - from 1200 A.D. that's based on another treatise from 700 A.D. of ancient Arabic and Greek scales. So I took that and I kind of adopted it a little bit to the scales that I have in my arpeggiator and I play a lot of those. So that's kind cool. And then I made some of my own patterns too.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Well that sounds really interesting. Then it makes me wonder... it seems like you're in a position where, between experimenting with instrument building and experimenting with things like scale development and scale experiments and stuff like that, you could sort of be in "experiment-all-the-time" mode. But that's a trap that a lot of people get into when they become a builder. Or if they get into modular synths or they get into Max or <a href="https://en.wikipedia.org/wiki/Pure_Data">PD</a>, it's really tempting to just all of a sudden become a full time experimenter. And you forget that the original impetus was actually to make music. How do you stay connected to the music making? </i>
+    </p>
+
+    <p>
+      <b>Nick: </b>
+      I know I definitely fall into that experimenting thing and there's been so much stuff that I've spent weeks of my life on that I just threw away, you know? One of the things I do is that, once I have a scale or a tuning or arpeggiator or a drum sequencer, I can keep it and just use that (hopefully) for the rest of my life. So I made a really good drum sequencer that I use for 80% of the stuff. A lot of the synths that I use, I've been using for a long, long time. So I am consistent with a lot of the things I do. And I just kinda change the harmonic or the melodic parts of the music I play.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Sure. Now it sounds like you are considering moving everything to be located on the hardware itself. You mentioned using a Raspberry PI as the driver for that. So unlike some of the things you could get off of VST instruments or even things you might do on a standard laptop, do you find it at all limiting and have you been exploring much like some of the other sound making systems like Chuck or Supercollider or any of that stuff? </i>
+    </p>
+
+    <p>
+      <b>Nick: </b>
+      I looked into supercollider and I think at the time I did, it was a little above me cause it's a text-based programming.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>It's quite different if you're used to Max and <a href="https://en.wikipedia.org/wiki/Pure_Data">PD</a>, that's for sure. </i>
+    </p>
+
+    <p>
+      <b>Nick: </b>
+      Yeah, I started getting into Processing though, mostly for video animations and so maybe I could come back to Supercollider. I do find it extremely limiting working on a Raspberry PI. I mean I'm always hitting the ceiling of Processing power.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>And you mentioned visuals. Do you actually do visuals when you do your shows and if so, are they in some way connected to these instruments as well? </i>
+    </p>
+
+    <p>
+      <b>Nick: </b>
+      Yeah, I started incorporating visuals like last year and it's pretty awesome. I got to say I'm taking in either Max or <a href="https://en.wikipedia.org/wiki/Pure_Data">PD</a>, and I'm sending out... what is it? OSC? Yeah, OSC messages - and they go into Processing. I'm driving the animations from the same controls that are making the music. So it's fully,
+      ingrained together, you know?
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Well, what's interesting about that - actually I had a discussion with William Fields a couple of weeks ago and he does something similar. He has got a whole JavaScript based system that he uses to produce things and he uses the OSC messages to drive the visuals.  What he says is that, unlike systems that are listening to the music and then reacting, these are using basically the same messages at the same time that the music making occurs. It doesn't feel like it has any lag. And it feels like it's a really tightly-connected to the music that you're making. </i>
+    </p>
+
+    <p>
+      <b>Nick: </b>
+      Oh yeah, totally. You can probably an induce a seizure from this stuff!
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>And then you have to fall back to ambient music just to bring your audience back! </i>
+      </p>
+
+      <p>
+        <i>Well, Nick, I am afraid our time is already up. I can't believe it. But before we go, why don't I have you fill people in on where they can go to learn more about both your music and these MIDI controllers and instruments that you're building. </i>
+    </p>
+
+    <p>
+      <b>Nick: </b>
+      Okay. I think that a good place is my website, which is http://www.smomid.com. And there's also a Facebook page @smomid. Instagram (@smomid)...
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>All right. And you're based out of the East coast. When you're playing live, do you go under the name Smomid? Or how would people know that you're doing a gig in their town? </i>
+    </p>
+
+    <p>
+      <b>Nick: </b>
+      Yeah, I guess if you follow one of my social media sites, I usually post on that. But you can also send me an email. And also... I mean, I'm taking orders. If anyone wants to buy an instrument, send me an email and I'll just put you on the list. But I'm kind of taking orders from people. Cause when I actually sell this thing hopefully it'd be somebody who wants to buy it.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>With that I want to thank you for your time and I'll let you out. And good luck with continuing to build this stuff. It's really amazing! </i>
+    </p>
+
+    <p>
+      <b>Nick: </b>
+      Thank you. Thank you very much.
+    </p>
+
+    <p><i>Copyright 2020 by Darwin Grosse. All right reserved.</i></p>
+  </div>
+  <!-- jQuery (necessary for the Bootstrap JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
