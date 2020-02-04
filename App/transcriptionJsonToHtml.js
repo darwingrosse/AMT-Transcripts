@@ -97,9 +97,6 @@ class TranscriptionJsonToHtml {
 
     let unknown_speaker_no = 0
     let original_speaker_count = this.speakers.length
-    console.log("------------------")
-    console.log(this.speakers)
-    console.log("------------------")
 
     for (let x=0; x<this.data.monologues.length; x++) {
 
