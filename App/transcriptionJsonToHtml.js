@@ -53,16 +53,24 @@ class TranscriptionJsonToHtml {
 
     this.audio_offset = audio_offset;
     const FN = path.basename(json, '.json'); // gets rid of optional .json extension and optional directory
-    this.episode = FN.replace(/\D/g, '');
-    this.inFileName = '../JSON/' + FN + '.json';
-    this.outFileName = '../HTML/' + FN + (audio_file ? '_audio' : '') + '.html';
-    this.fileContent = fs.readFileSync(this.inFileName, 'utf-8');
+    this.episode = FN.replace(/\D/g, ''); // extract digits, e.g. episode005withxy.json -> 005
+    this.inFileName = this.normalize_json_filename(FN);
+    this.outFileName = this.normalize_html_filename(FN);
     this.chunkStartTimeToIdx = {};
 
     this.isErrored = false;
   }
 
+  normalize_json_filename(stem) {
+    return '../JSON/' + stem + '.json';
+  }
+
+  normalize_html_filename(stem) {
+    return '../HTML/' + stem + (this.audio_file ? '_audio' : '') + '.html';
+  }
+
   doit() {
+    this.fileContent = fs.readFileSync(this.inFileName, 'utf-8');
     this.data = JSON.parse(this.fileContent);
     console.log("Parse complete, " + this.data.monologues.length + " entries.");
 
@@ -87,11 +95,19 @@ class TranscriptionJsonToHtml {
 
   render_conversation() {
 
+    let unknown_speaker_no = 0
+    let original_speaker_count = this.speakers.length
+    console.log("------------------")
+    console.log(this.speakers)
+    console.log("------------------")
+
     for (let x=0; x<this.data.monologues.length; x++) {
 
       const SPEAKER_IDX = this.data.monologues[x].speaker;
       if (SPEAKER_IDX >= this.speakers.length) {
-        throw this.inFileName + " contains more speakers (>= " + (SPEAKER_IDX + 1) + ") than were provided via -s (" + this.speakers.length + ")";
+        unknown_speaker_no += 1
+//        this.speakers.append(new Speaker(`UNKNOWN_SPEAKER_${unknown_speaker_no.toString().padStart(2, "0")}`))
+        this.speakers[ this.speakers.length ] = new Speaker(`UNKNOWN_SPEAKER_${unknown_speaker_no.toString().padStart(2, "0")}`)
       }
       this.para += '<p>\n<b>' + this.speakers[SPEAKER_IDX].getName() + ": </b>" + (SPEAKER_IDX == 0 ? '<i>' : '');
       const CHUNK = this.data.monologues[x].elements;
@@ -101,6 +117,10 @@ class TranscriptionJsonToHtml {
       }
 
       this.para += (SPEAKER_IDX == 0 ? '</i>' : '') + '\n</p>\n\n';
+    }
+
+    if (unknown_speaker_no > 0) {
+      console.log(`json contains more speakers (${unknown_speaker_no+original_speaker_count}) than were provided via -s (${original_speaker_count})`)
     }
 
   }

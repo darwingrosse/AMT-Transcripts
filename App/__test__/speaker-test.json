@@ -1,0 +1,118 @@
+{
+  "monologues": [
+    {
+      "speaker": 0,
+      "elements": [
+        {
+          "type": "text",
+          "value": "Shortly",
+          "ts": 0.03,
+          "end_ts": 0.35,
+          "confidence": 0.54
+        },
+        {
+          "type": "punct",
+          "value": " "
+        }
+      ]
+    },
+    {
+      "speaker": 1,
+      "elements": [
+        {
+          "type": "text",
+          "value": "All",
+          "ts": 63.3,
+          "end_ts": 63.42,
+          "confidence": 0.84
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "right",
+          "ts": 63.42,
+          "end_ts": 63.66,
+          "confidence": 0.84
+        }
+      ]
+    },
+    {
+      "speaker": 2,
+      "elements": [
+        {
+          "type": "text",
+          "value": "Okay",
+          "ts": 105.66,
+          "end_ts": 106.2,
+          "confidence": 1.0
+        },
+        {
+          "type": "punct",
+          "value": "."
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "Uh",
+          "ts": 106.65,
+          "end_ts": 107.04,
+          "confidence": 0.99
+        }
+      ]
+    },
+    {
+      "speaker": 3,
+      "elements": [
+        {
+          "type": "text",
+          "value": "Shortly",
+          "ts": 0.03,
+          "end_ts": 0.35,
+          "confidence": 0.54
+        },
+        {
+          "type": "punct",
+          "value": " "
+        }
+      ]
+    },
+    {
+      "speaker": 2,
+      "elements": [
+        {
+          "type": "text",
+          "value": "Shortly",
+          "ts": 0.03,
+          "end_ts": 0.35,
+          "confidence": 0.54
+        },
+        {
+          "type": "punct",
+          "value": " "
+        }
+      ]
+    },
+    {
+      "speaker": 3,
+      "elements": [
+        {
+          "type": "text",
+          "value": "Shortly",
+          "ts": 0.03,
+          "end_ts": 0.35,
+          "confidence": 0.54
+        },
+        {
+          "type": "punct",
+          "value": " "
+        }
+      ]
+    }
+  ]
+}
