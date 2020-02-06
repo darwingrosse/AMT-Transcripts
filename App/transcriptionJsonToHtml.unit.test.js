@@ -31,7 +31,7 @@ test('mocking normalize json and html file names', () => {
   expect(j2h.outFileName).toBe(HTML)
 });
 
-test('wrong number of speakers handled properly', () => {
+test('surplus number of speakers in json handled properly', () => {
   const cc = new consolecapturer.ConsoleCapturer
   cc.mock_log()
   const JSON = '__test__/speaker-test.json';
@@ -67,6 +67,33 @@ test('wrong number of speakers handled properly', () => {
   expect(indices01[0]).toBeLessThan(indices02[0]) // 1st UNKNOWN_SPEAKER_01 occurs before 1st UNKNOWN_SPEAKER_02
   expect(indices02[0]).toBeLessThan(indices01[1]) // 1st UNKNOWN_SPEAKER_02 occurs before 2nd UNKNOWN_SPEAKER_01
   expect(indices01[1]).toBeLessThan(indices02[1]) // 2nd UNKNOWN_SPEAKER_01 occurs before 2nd UNKNOWN_SPEAKER_02
+
+  cc.unmock_log()
+});
+
+test('surplus number of speakers on command line handled properly', () => {
+  const cc = new consolecapturer.ConsoleCapturer
+  cc.mock_log()
+  const JSON = '__test__/speaker-test-surplus-cmdline.json';
+  const HTML = '__test__/speaker-test-surplus-cmdline.html';
+
+  fs.unlink(HTML, (err) => {}); // ignore if deletion failed.
+
+  const speakers = ['Darwin Grosse', 'Barry Moon', 'John Doe', 'Jane Doe'] 
+
+  transcriptionJsonToHtml.TranscriptionJsonToHtml.prototype.normalize_json_filename = jest.fn( () => JSON)
+  transcriptionJsonToHtml.TranscriptionJsonToHtml.prototype.normalize_html_filename = jest.fn( () => HTML)
+  j2h = new transcriptionJsonToHtml.TranscriptionJsonToHtml(
+    'bla.json', 
+    speakers, 
+    'November 13, 2013', 
+    null, 
+    null, 
+  )
+  expect(j2h.inFileName).toBe(JSON)
+  expect(j2h.outFileName).toBe(HTML)
+  j2h.doit()
+  expect(cc.get_output()).toContain(`json contains fewer speakers (2) than were provided via -s (${speakers.length})`)
 
   cc.unmock_log()
 });

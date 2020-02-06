@@ -96,14 +96,15 @@ class TranscriptionJsonToHtml {
   render_conversation() {
 
     let unknown_speaker_no = 0
-    let original_speaker_count = this.speakers.length
+    let max_speaker = -1
+    const ORIGINAL_SPEAKER_COUNT = this.speakers.length
 
     for (let x=0; x<this.data.monologues.length; x++) {
 
       const SPEAKER_IDX = this.data.monologues[x].speaker;
+      max_speaker = SPEAKER_IDX > max_speaker ? SPEAKER_IDX : max_speaker
       if (SPEAKER_IDX >= this.speakers.length) {
         unknown_speaker_no += 1
-//        this.speakers.append(new Speaker(`UNKNOWN_SPEAKER_${unknown_speaker_no.toString().padStart(2, "0")}`))
         this.speakers[ this.speakers.length ] = new Speaker(`UNKNOWN_SPEAKER_${unknown_speaker_no.toString().padStart(2, "0")}`)
       }
       this.para += '<p>\n<b>' + this.speakers[SPEAKER_IDX].getName() + ": </b>" + (SPEAKER_IDX == 0 ? '<i>' : '');
@@ -117,7 +118,10 @@ class TranscriptionJsonToHtml {
     }
 
     if (unknown_speaker_no > 0) {
-      console.log(`json contains more speakers (${unknown_speaker_no+original_speaker_count}) than were provided via -s (${original_speaker_count})`)
+      console.log(`json contains more speakers (${unknown_speaker_no+ORIGINAL_SPEAKER_COUNT}) than were provided via -s (${ORIGINAL_SPEAKER_COUNT})`)
+    }
+    if (ORIGINAL_SPEAKER_COUNT > max_speaker + 1) {
+      console.log(`json contains fewer speakers (${max_speaker + 1}) than were provided via -s (${ORIGINAL_SPEAKER_COUNT})`)
     }
 
   }
