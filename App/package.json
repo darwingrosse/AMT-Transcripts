@@ -8,6 +8,12 @@
     "start": "node tr-parse.js"
   },
   "author": "Darwin Grosse",
+  "contributors": [
+     {
+      "name": "Bernhard Wagner",
+      "url": "http://bernhardwagner.net"
+    }
+  ],
   "license": "ISC",
   "dependencies": {
     "docopt": "^0.6.2",

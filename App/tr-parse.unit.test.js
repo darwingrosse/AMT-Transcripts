@@ -3,17 +3,18 @@ const trparse = require('./tr-parse');
 const shellwords = require('shellwords');
 const docopt = require('docopt');
 const each = require('jest-each').default;
+const consolecapturer = require('./consolecapturer');
 
 let helper = null
 beforeAll( () => {
   helper = (() => {
-    this.orig_console = console.log
-    this.outputData = ''
-    this.storeLog = inputs => (this.outputData += inputs)
-    this.resetLog = () => (this.outputData = '')
-    this.unmock_log = () => { console.log = this.orig_console }
+    const cc = new consolecapturer.ConsoleCapturer
+    this.storeLog = cc.storeLog
+    this.resetLog = cc.resetLog
+    this.unmock_log = cc.unmock_log
     // https://stackoverflow.com/a/45423405/642750
-    this.mock_log = () => { console.log = jest.fn(this.storeLog) }
+    this.mock_log = cc.mock_log
+    this.get_output = cc.get_output
     this.help_output = trparse.doc.trim()
     this.expected_output_short = 
       this.help_output.substring(
@@ -92,15 +93,6 @@ test('command line parsing plain', () => {
   )
 });
 
-test('redirect output', () => {
-  const TEST_STRING = "SOME TEST string"
-  helper.mock_log()
-
-  console.log(TEST_STRING)
-  expect(helper.outputData).toBe(TEST_STRING)
-
-})
-
 test('command line default', () => {
   
   helper.mock_log()
@@ -113,7 +105,7 @@ test('command line default', () => {
   helper.unmock_log()
   expect(exit_spy).toHaveBeenCalledWith(1)
 
-  expect(helper.outputData).toBe(helper.expected_output_short)
+  expect(helper.get_output()).toBe(helper.expected_output_short)
 
   exit_spy.mockRestore()
 
@@ -135,7 +127,7 @@ test('wrong command line (plain + audio file) causes usage output', () => {
   helper.unmock_log()
   expect(exit_spy).toHaveBeenCalledWith(1)
 
-  expect(helper.outputData).toBe(helper.expected_output_short)
+  expect(helper.get_output()).toBe(helper.expected_output_short)
 
   exit_spy.mockRestore()
 
@@ -157,7 +149,7 @@ test('wrong command line (audio - offset) causes usage output', () => {
   helper.unmock_log()
   expect(exit_spy).toHaveBeenCalledWith(1)
 
-  expect(helper.outputData).toBe(helper.expected_output_short)
+  expect(helper.get_output()).toBe(helper.expected_output_short)
 
   exit_spy.mockRestore()
 
@@ -179,7 +171,7 @@ test('wrong command line (wrong command "bogus") causes usage output', () => {
   helper.unmock_log()
   expect(exit_spy).toHaveBeenCalledWith(1)
 
-  expect(helper.outputData).toBe(helper.expected_output_short)
+  expect(helper.get_output()).toBe(helper.expected_output_short)
 
   exit_spy.mockRestore()
 
@@ -195,7 +187,7 @@ each([['-h', trparse.doc.trim()], ['--help', trparse.doc.trim()]]).test(
     helper.mock_log()
     exit_spy.mockImplementation(number => number);
     trparse.get_argv([option])
-    expect(helper.outputData.trim()).toBe(expected)
+    expect(helper.get_output().trim()).toBe(expected)
     expect(exit_spy).toHaveBeenCalled()
     exit_spy.mockRestore()
     helper.unmock_log()
