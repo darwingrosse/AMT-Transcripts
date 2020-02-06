@@ -121,7 +121,7 @@ class TranscriptionJsonToHtml {
       console.log(`json contains more speakers (${unknown_speaker_no+ORIGINAL_SPEAKER_COUNT}) than were provided via -s (${ORIGINAL_SPEAKER_COUNT})`)
     }
     if (ORIGINAL_SPEAKER_COUNT > max_speaker + 1) {
-      console.log(`json contains fewer speakers (${max_speaker + 1}) than were provided via -s (${ORIGINAL_SPEAKER_COUNT})`)
+      console.log(`WARNING: ${ORIGINAL_SPEAKER_COUNT- (max_speaker + 1) } surplus speakers were specified on the command line: ${(this.speakers.slice(max_speaker + 1)).map(s => s.full_name)} that did not occur in ${this.inFileName}`)
     }
 
   }

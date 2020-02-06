@@ -76,6 +76,7 @@ test('surplus number of speakers on command line handled properly', () => {
   cc.mock_log()
   const JSON = '__test__/speaker-test-surplus-cmdline.json';
   const HTML = '__test__/speaker-test-surplus-cmdline.html';
+  const SPEAKERS_IN_JSON = 2;
 
   fs.unlink(HTML, (err) => {}); // ignore if deletion failed.
 
@@ -93,7 +94,9 @@ test('surplus number of speakers on command line handled properly', () => {
   expect(j2h.inFileName).toBe(JSON)
   expect(j2h.outFileName).toBe(HTML)
   j2h.doit()
-  expect(cc.get_output()).toContain(`json contains fewer speakers (2) than were provided via -s (${speakers.length})`)
+  expect(cc.get_output()).toContain(
+    `WARNING: ${speakers.length-SPEAKERS_IN_JSON} surplus speakers were specified on the command line: ${speakers.slice(SPEAKERS_IN_JSON)} that did not occur in ${JSON}`
+  )
 
   cc.unmock_log()
 });
