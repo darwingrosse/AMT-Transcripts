@@ -469,13 +469,13 @@ function fix_products(text) {
   const UNITY3D = '<a href="https://en.wikipedia.org/wiki/Unity_(game_engine)">Unity3d</a>';
   text = replace_span(text, '__Maximus PGA__ there', JITTER);
   text = replace_span(text, 'gender', JITTER_SHORT);
-  text = replace_span(text, 'Maximus P', MAX, 7);
+  text = replace_span(text, 'Maximus P', MAX);
   text = replace_span(text, 'Maximize P', MAX);
   text = replace_span(text, 'maximum is P', MAX);
   text = replace_span(text, '__Macs__', MAX);
   text = replace_span(text, 'PD', PD);
   text = replace_span(text, 'cycling 74', CYCLING74);
-  text = replace_span(text, 'unity three D', UNITY3D, 3);
+  text = replace_span(text, 'unity three D', UNITY3D);
   return text
 }
 
@@ -623,12 +623,12 @@ function fix_html_0005(text) {
  * make sure that they are enclosed by words surrounding them, i.e. that the
  * commas are not at the boundary of the search term.
  */
-function replace_span(text, search, replacement, expected_matches = 1) {
+function replace_span(text, search, replacement, expected_matches = -1) {
   const spanned_regex = spanifyRX(search)
   //text = text.replace(spanned_regex, replacement);
   let count = 0
   text = text.replace(spanned_regex, () => { count++; return replacement });
-  if (count !== expected_matches) {
+  if (expected_matches != -1 && count !== expected_matches) {
     let count_str = count.toString().padStart(4, ' ');
     console.log(`**** ${count_str} instead of expected ${expected_matches} matches for search "${search}"`)
   }
