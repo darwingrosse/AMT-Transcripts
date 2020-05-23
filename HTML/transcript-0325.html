@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Transcription: Podcast 0325 - Thorsten Sideboard</title>
+
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js does not work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+</head>
+
+<body>
+  <div class="container">
+    <h2>Transcription: 0325 - Thorsten Sideboard</h2>
+    <h3>Released: May 10, 2020</h3>
+    <p>
+      <b>Darwin: </b>
+      <i>Okay. Today I have the great pleasure of getting to talk to somebody new - somebody who, has been bopping around in my peripheral vision for a while, mainly because of his efforts with some, with this really cool festival out in San Francisco that everybody has been talking about. But also as I've gotten to learn more about him: understanding his life as a live coder, and even a language developer. So it's very exciting to get a chance to talk to Thorsten Sideboard. Hey, Thorsten - how's it going? </i>
+    </p>
+
+    <p>
+      <b>Thorsten Sideboard: </b>
+      Hi there, Darwin. Very well, thanks for having me on your show.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Thank you so much for being here. Like I said, I am very excited to get a chance to talk to you because you're into a whole bunch of things that really fascinate me. So, to start off with, why don't we have you fill people in on all the different kinds of work that you do? </i>
+    </p>
+
+    <p>
+      <b>Thorsten: </b>Well, let me see. I'm trying to think of actually best place to start this, but I actually [can] think of one good part. So you can tell from the accent, I'm Scottish and I came out to San Francisco in the late nineties for awhile as kind of back and forth just after the first dotcom crash. I moved to London for a while, and in London the first job I ended up at was a small music distributors - a technical company who acted as a music distributor. This was 2002, so this was really just a birth of iTunes, the iTunes store itself and the start of MP3 downloads. And I got working with this music company - and that was actually where I met Alex McLean (who you know is behind TidalCycles), so I worked closely with Alex back then. And even back then he had a band called 'slug', him with this other guy, Dave. And Alex was already working on doing live coding in Perl at that time.
+    </p>
+
+    <p>
+      So that was very interesting. Another thing which quite a big influence on me, which was called Dorkbot - people doing strange things with electricity and he ran the London node for it - I think some other friends as well. I believe Dorkbot originally started in New York and it's still going on. There's actually, there's a Dorkbot still here in SF, which I go to, which was actually funnily inspired by going to the London Dorkbot, which was run by Alex. There's all these circular dependencies which open a feedback upon themselves. But at that time I was running a record label for 10 years called Highpoint Lowlife, which still exists but it's more the name of my radio show and it's the promotions name that I've been doing the Algorithmic Art Assembly under.
+    </p>
+
+    <p>
+      In fact, I put out the recent completion, which was the first record really since 2011, I believe. But back then I actually was doing an MP3 record label at the same time as the real record label - MP3 record label was because there was no overhead for it apart from your server hosting things, so you could start hosting things. Now it's actually, I did a release from Alex McLean and under the slub name, and my housemate at that point, in London was Leafcutter John whose a big Max/MSP user as well and so, I think that because of the connection from me, but Alex and Leafcutter John hit it off exceptionally well and would do collaborative gigs and it was very, it was a great time in London. I actually, between myself there was Alex, there was was Eric Nemour (https://www.borealisfestival.no/2019/artists/eric-namour-en/). There was the Slow Sound System (https://squareglasses.wordpress.com/2011/01/10/lie-down-and-be-counted/), there was Sprawl (http://www.sprawl.org.uk/AboutFrame.html). There was all these different organizers in London and we actually came together mostly in this one called the Foundry, which no longer exists. It was originally funded by Bill Drummond, a guy from The KLF and who burned a million pounds, and that was an amazing venue and that was where a lot of us got together and met up. Yeah, at that point as well. We were all of those organizers came together and this is actually one of Alex's ideas as well, which was the Placard Headphone Festival; that originated and France and I think there'd been some crack down on clubs. So what he started doing was doing gigs from the house and you could like tune in to live streaming.
+    </p>
+
+    <p>
+      So I started working with Alex around 2002, but I think more of these kind of festival type things evolved over the next couple of years. I think maybe like 2004 by this point. This is all a deep background, which actually doesn't take too much of a step forward, a bit more. But Alex doing the Perl live-coding was actually quite a big influence on me cause I did Perl coding myself at the time, but I'd never actually thought of doing music for it. I was using more at that time there was... was it Sony Acid? I believe it was that Sony that came over with that, I think Sonic Foundry sold it to Sony. So Sony would have been owning it at the time. So that was, I was making music and dabbling with electronic music at that point, but I was always using additional software and eventually moved on to using Ableton for years.
+    </p>
+
+    <p>
+      So, all this background, you know, with Alex live-coding and that, I was always aware... He moved away from London late two thousands back up to Sheffield to start studying. And when he actually started working on TidalCycles in earnest, that was always a background to me was just knowing that TidalCycles existed. But live-coding existed. But I wasn't pursuing that by myself. And it wasn't till I moved back to San Francisco in 2011. By that point, actually when I was moving back here, I was planning to give up the record label and focus on other more creative... like the record label was really good but it's a lot of organization, like you're almost more of the infrastructure. I wanted to focus more on doing my own art and at that point - and still it's actually one of my big artistic outputs - [is] as an illustration.
+    </p>
+
+    <p>
+      I do a lot of comic books and science fiction and just different sort of, I've always dabbled in music but music was never, it was never quite my creative focus. As I got back here and I changed from the jobs I was doing was much more... I changed more from being a systems administrator like on always in the technical side and writing Perl scripts but actually wanted to change to be more of a full time programmer. I took a job at Google Nest and then was doing this embedded hardware. And by this time actually I'd already started dabbling and doing audio stuff. And the first project that me and my friend had picked up was using NodeJS. I had no idea how to actually write audio softwares. My first idea for it was just a like a step sequencer and I wrote  a basic step sequence which was following clock time as opposed to actual sample times.
+    </p>
+
+    <p>
+      That would kind of drift strangely, but it gave certain interesting effects. And our first brute force approach to this was actually using RabbitMQ as a messaging server, which we could both connect to. And that was how we would synchronize - like me and a friend would, like, jam together. We'd drive these little NodeJS scripts which would trigger just like drum samples and other weird glitchy things. That was actually quite good. That was my first foray into actually making and recording our own music software. But then I took on this job that Google Nest and it was working with C and C++. So I'm going to switch to focus on trying to learn C very quickly. Looking for the best way to learn, of course, is to find like a good project you're interested in. And having been doing some audio stuff, I decided to write my own version of a live-coding language.
+    </p>
+
+    <p>
+      I didn't actually dig into how Tidal worked. It was more of just the idea of it was the inspiration. Like, "Oh, I should make a live-coding, you know, like a command line programming language for making music with!" - that was the start of SBShell, as it was originally called. It was literally, I'd taken the code, I'd actually been learning how to write a shell interpreter and then suddenly I had this insight that I would build and interactive shell so that you can actually interact with... Prior to that, with the Node stuff, I was launching little scripts, which would do their job and exit. But the idea of having this shell is like suddenly you could be inside audio when you could actually interact with the running process.
+    </p>
+
+    <p>
+      And so originally that was really just setting off like sine waves. Like it was FM synthesis. I could have like two different oscillators, one modulating the other. And I had basic commands just for changing the speed of them and the just the frequency of them - that obviously the first thing. And that's what was basically evolved into SBShell. Tying that back to Algorithmic Art Assembly, I've been working on SBShell for, I think it's actually coming up probably around five years. But the more I got on with that, the more I actually started interacting with the online TidalCycles community. And I became much closer to that. The closer I came to writing my own sort of working version of that. But the big moment for me was actually going out - I went out to the UK in 2018 and Alex was organizing a live-coding conference.
+    </p>
+
+    <p>
+      I think it had been the second live coding conference, and meeting everyone in person and all these people that I'd been interacting with on the chat and on the forums, meeting them all in person and it's just absolutely inspiring. But just so many different, although most people are using TidalCycles or Foxdot or there's a number of other people on the peripheral that are also making their own languages. Like, even though there are two larger languages, there's tons of people just making their own interpretations as well. And so actually meeting others like that was just wonderful. And actually just seeing the community around that, that was a big inspiration part and realizing that community doesn't spontaneously arise. It really takes a lot of work to foster that community and grow that community. And that's seeing that value - the amount of work Alex had been putting into this - that was the big inspiration.
+    </p>
+
+    <p>
+      So I came back from that holiday back to San Francisco and that was a burning thought in my head that why don't I - why isn't there a bigger life-coding scene here in San Francisco? You have so many programmers here, and creatives, but it really has been watered down in a sense. There's so many. You have all these big tech companies and you have a million great programmers but not many people that I bump into actually combine it with their creative outlet. When I first came to SF in the nineties it is much weirder. Everyone, tech people - I had purple hair and like just there were much more [of a] spectrum. Even my time in London, like every programmer I ever worked with had some weird project on the side, whether it was visuals or music or just like programming just as a creative endeavor.
+    </p>
+
+    <p>
+      So I wanted to bring some of that back to SF or revive or find some of that. I don't believe that there no one here doing it, but there's almost not like a beacon that pulls everyone together. And that was my idea for Algorithmic Art Assembly, and I wanted to showcase the live-coding movement, bring people into town, but also find to others around town who were doing it, you know, like from John Leidecker, like Kit Clayton and it's just, I dunno, I want to foster this very localized San Francisco [scene], like a clarion-call for others, it's going to come together as well. So that was where our Algorithmic Art Assembly came from. And it really was just a big inspiration from the sort of British live-coding scene, not even just Britain, that's where I'd experienced it. But there's pockets all over: the East coast, Japan, Europe, and I just wasn't aware of anything going on with that in San Francisco and I wanted to be that. I'd seen the opportunity to put on this event.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah. Well that's an event that actually caught a lot of people's attention. So the first one was last year, right? And then there was a second one that was going to be this year. And then our friend, Mr. Coronavirus came in and kind like bonked you on the head. But my assumption is from everything I heard, that first year was so amazingly successful, people were really excited about the follow-on. So my assumption is this is something you're gonna continue doing, right?
+      </i>
+    </p>
+
+    <p>
+      <b>Thorsten: </b>
+      Yeah. I'm not quite sure. We haven't come up with a full plan for what to do for this year. But definitely, yeah, there will be something again in the future. Like, we originally scheduled it for March 27th and 28th of this year. And we did reschedule it to June, but I don't see it; it's still too soon, so I don't think those dates are going to happen even. So the venue I've been doing at is Gray Area Foundation for the Arts, and they have a big Art Deco theater in the Mission which is absolutely perfect for it. The sound system was wonderful and they were just so good to work with. They were just so behind everything. And shout out to their sound guy, Ulrich, who was - like a lot of times when you're doing extreme kind of sound and computer music, not all people are into what you're doing to their sound system.
+    </p>
+
+    <p>
+      He would just encourage it. He say "Let's turn up this bit more!" And he was great. I think everyone was still like shocked to find this like super supportive guy. I think he was definitely a big part of why all the musicians enjoyed it so much, as well. The sound system is great and we cranked it fully up and like it's an eight channel sound system. There wer, I think, four or five people that used multichannel (either four or eight channels) last year to very good effect as well. So Gray Area - they've actually got their own Gray Area festival and that was scheduled for July this year, but they're planning to do it online. So I've still been in conversation with them and I haven't - we're still kinda discussing what to do for Algorithmic Art Assembly. Whether we may try and - none of this is certain, but - whether we'd maybe try and fold them together or try and just do Algorithmic Art Assembly online as well, or we're still kicking around ideas for now. Maybe I'll just punt on it until later in the year or next year again or...
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Well, one of the things that that I worry about, frankly, is how venues like Gray Area are going to be able to survive while we're waiting. You know, I actually did an informal discussion with people like, you know, how long is it before you're going to be comfortable going to a festival? You know, being in a place with 500 people in a 500 capacity venue, for example. And everybody's like, "Yeah, it's going to be awhile before I feel comfortable doing that, you know?" </i>
+    </p>
+
+    <p>
+      <b>Thorsten: </b>
+      Yeah, yeah. That could still be like we may gradually move back throughout, but it's certainly not going to be like, "Okay, everything's back to normal. Let's jump back together!" There's probably going to be at least a year or two I think of as we gradually find the "new normal", right?
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah, the "new normal". That's the way to put it. Well, Thorsten, I, I would love to learn more about your background because it sounds to me like you have this real deep history of technology, but you also sort of like play down your musical thing - except you've been running a label like forever. You have this history, I swear... I mean, "Oh, my flatmate was Leafcutter John and I was working with Alex..." I was just like, "Holy shit!" And you're right in the middle of, you know, a pile of gods here. So I'm guessing that there's more to the story than just, "Hey, I did Perl scripts for awhile." Tell me a little bit about your background and how you got comfortable with both technology and music so that when all of a sudden you were around these kinds of people and these kinds of opportunities presented themselves, you had the background to be able to do something with it. </i>
+    </p>
+
+    <p>
+      <b>Thorsten: </b>
+      Yep. No worries. I turned 16 in the January of 1990 and 1990 was the Year of Culture in Glasgow where all the clubs were open til six in the morning, 5:30 in the morning. This Acid House hit '88, '89. So by '89-'90, there was a lot of Belgian techno, like Belgium is one of those places that kinda get dropped from the history. There was actually a really good documentary I'd seen about Optimal was being interviewed, and like Keith from Optimal is what I was talking about [regarding] the history of sort of Belgian techno. I guess it was our R&S Records, it was like such a big sound at that point. There's a lot of techno and Glasgow's a massive tech city and I think there's a lot of the Detroit legends and such came over.
+    </p>
+
+    <p>
+      At that age - 16 - and I was big into skateboarding at that point. My whole trajectory was supposed to be going to art school, like all through school: "Oh, you're good at illustration. You go to art school." But come 19, I discovered clubbing. Going out to these late night techno clubs and the stimulants that you sort of discovered there as well. Between, with skateboarding as well, I didn't actually want to go to college or further my education. I decided to start working just so that I'd have more... I had other friends who'd left school early and growing up working class in Scotland, that's quite common. But I wanted funding just so I could afford to go traveling for skateboarding. I can afford nice clothes for going out to clubs. And that Glasgow sort of clubbing and rave scene was a massive influence.
+    </p>
+
+    <p>
+      It really was like punk rock. And I think at the time I remember reading about how this was a political thing that the government is scared - and at the time that as a young guy, I didn't see how this was political at all. But when you actually zoom out and you look at the fact that you have like thousands of kids every weekend going to these illegal parties, you can just like total disregard for the law. You see how, "Oh, that's how it's political." Your disregard for the law. This is where I kind of go into music, like buying lotsa records. And you know at that time no one had guitars. Everyone bought turntables when you were that age and you were getting into deejaying. I ended up working for the railway rather than going to art school and bummed around there for awhile.
+    </p>
+
+    <p>
+      But I somehow bluff my way into doing an IT job. This was '93 or '94. So it's doing like Windows
+      desktop support and it wasn't a creative pursuit. It was really just my job. But I found that quite, quite interesting, actually. And there was like these weird sort of hacker subcultures that you'd come across, and the people doing like IT support were not your usual office workers cause it really was the freaks and geeks of the place and I loved it. I fitted in perfectly. So that was when I kinda discovered, got into doing like Windows desktop support. This is Dos 3.3, Novell NetWare, right? I'm really going to date myself there. That was my sort of mid-nineties in Glasgow. And as I first first came out [here], the big influence was the Electric Kool-aid Acid Test book by Tom Wolfe.
+    </p>
+
+    <p>
+      And I think that was what put the bug in my head for coming to San Francisco. And so when I first came to San Francisco, I figured I was moving away from doing tech work. Like I first came out in like '96 and I thought, you know, I'm going to come out and do art music full time. But then I ended up coming out here and I had to find some work, ended up at Stanford Research Institute just in a contract position doing Windows desktop support. But the guy who was working with had just discovered Red Hat Linux, like 4.2, I suppose in '96 or '97 I think. And he was like, "Oh, I'm stuck trying to get this like Xwindows system running." And so I started helping him with that and I fell down the rabbit hole of Linux, which was actually way more interesting than doing Windows desktop support.
+    </p>
+
+    <p>
+      Suddenly the work you were doing, you actually were learning things as opposed to just reinstalling something until it worked again, you'd actually have to work out what was wrong and you learn so much about it and - you know, like late nineties, if you knew Linux and you knew Perl, you knew Apache Web Server, suddenly you were in demand. And that was the first kind of dotcom boom. And so that was where I got more of my technical background. That was all kind of self-taught; everyone was self taught at that point. It wasn't like the computer science degrees taught you anything about Linux or Perl or Apache or any of these necessary skills for all the startups around. So that was kinda where I got... Even during that time we were putting on DJ nights as well. There's still more experimental electronic music: Boards of Canada type stuff and like some of the Warp stuff as well.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>You were doing this as a consumer, right? You were listening to it and deejaying it, but not necessarily making music. </i>
+    </p>
+
+    <p>
+      <b>Thorsten: </b>
+      Yeah, exactly. That. There was actually the first label I got involved with, within the Tenderloin here in San Francisco. It was a friend. We were using a software called Mixman - that was it. And it was like, you can basically drop...
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>I forgot about that. Yeah. Yeah. </i>
+    </p>
+
+    <p>
+      <b>Thorsten: </b>
+      That was the first time I made music was with that software. And then it was after that I discovered that Sony Acid and Sound Forge and others, but not having that kind of musical background, it did just feel more like an extension of DJing, in that you jam tracks together. But it was still using the software that looks... the interface for it, the whole metaphor for it is deejaying...
+    </p>
+
+    <p>
+      So the dotcom crash came and, you know, I had to go back to Europe. I didn't want to go back to Glasgow, so that's when I moved to London. And that was when I ended up in the job working with
+      Alex McLain and how can I meet Leafcutter John. He was just on the scene and he was looking for a housemate just as I was needing like a space kind of thing.
+    </p>
+
+    <p>
+      So I didn't know him too well when I moved in, we did sort of knew each other. There was a lot of other artists around. There's a whole very burgeoning electronic scene in London. I mean there always is, but specifically those early two-thousands was a great crowd that I fell in with the guys doing Addaadat Records (http://www.adaadat.co.uk/) and there was like Josh [Doherty] - Posthuman(https://www.residentadvisor.net/dj/posthuman), there was like Skam parties (https://en.wikipedia.org/wiki/Skam_Records). There's a lot of Warp stuff going on still as well. So then moving to East London, just incredible actually. Then I remember when I first moved to Hackney in East London when I was moving into the house with John; East London, and especially Hackney, is not on the tube line, so it wasn't as touristy at all. And I remember it did have somewhat of a scary reputation, as well. Like, it probably was more deserved maybe in the eighties and nineties. By the early two thousands, it wasn't so much - but I remember still being cautious getting in there and the first night going out to meet someone. It's a beautiful summer night and walking along and there was just this massive sound system in someone's house that played this incredibly good ragga music. And now I was like, "Alright, this place is fucking brilliant!" Such a great neighborhood. That's the formative background of music and technology. It took me into those kind of London days of meeting Alex and Leafcutter and just being part of that scene.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Amazing. That's wild. So when did you first find yourself moving away from things like Acid and Sound Forge into live-coding? Because... So I had a chance, you shared something you did I think just like last weekend, which was you, playing, doing a live gig at a virtual performance called Further In. And you know, I watch you and you're super adept at using this language that you built. But it seems like there's a long distance from a guy who had a label and was goofing around with Acid and Sound Forge into being a guy who not only is capable of developing his own musical programming language, but also is comfortable enough to do performances with it. What is the bridge there? And when did you first start cracking live-coding for yourself? </i>
+    </p>
+
+    <p>
+      <b>Thorsten: </b>
+      Yeah, so from five years ago actually starting to learn the C programming side of things - like up to that point, it had been more lot of scripting, so from Perl, Python, like NodeJS type stuff. Then I actually stuck at dabbling with Gulp, which was what took me down to a lower level and got into doing C and C++. And there was a number of formative books which really educated me in ways of just writing audio software itself. One of them, there's a guy called Will Pirkle, and he has one massive book for doing [it]. Well there's one on the VST plugins and there's one on writing your own synthesizers. So the synthesizers one, I basically spent a year implementing all of that. So like that whole book, I basically implemented my own versions of the synthesizers that he put in there as well.
+    </p>
+
+    <p>
+      There's two in particular. There's one, it's a subtractive synthesizer based on a Minimoog and there was a FM synthesizer based on a DX-100 and building the core from them has... That book is written in C++. And I was working in C at the time so - I wouldn't say I ported it, but I had to rewrite the innards for them. I wrote my own sort of object-oriented style of C coding, completely different interfaces, because once he writes about graphical interfaces... It was really more the core math for the actual synthesis engine which I was a part I relied on heavily. So they're two of the main instruments within my own interactive shell. I also have a step sequencer came up with myself but chooses libsnd to open samples.
+    </p>
+
+    <p>
+      And so I do sample playback. But one of the other bigger components of my system, which I wrote myself was a granular synthesis engine, which was very much taken from - there's two core references for that. One of them is the Curtis Roads Microsound book, which was incredible  background and just the whole understanding of how granular synthesis works. And the other one was Robert Henke. He actually had a really detailed blog post on the Ableton site for his Granulator II, I believe it is. And it was more how he was describing the interface to that. And so the combination of this blog post and from the Curtis Roads book, I might actually like iterate through my own implementation of granular synthesis. I feel that that's probably the most original aspect of my system itself.
+    </p>
+
+    <p>
+      The combination of all of them together as what my system is really about and the interface to it, it's quite unique as well. The fact that even though it's a live-coding language is quite different than metaphor than a TidalCycles or Foxdot, which you know... Your interface to the language is a text editor, which you then send to a backend sound engine like like SuperCollider. So the fact I come from the  sysadmin background, I was always interacting from a command shell (like SSH) into a server or just working within Bash itself. That was more of a metaphor that I had, which there was an interesting aspect to that because maybe just over a year ago, I stopped again and I was looking at it askew, like I was looking sideways at these other text editors and I was thinking, "Oh, maybe that's the more correct implementation."
+    </p>
+
+    <p>
+      Like maybe I should be more of a programming language. So actually for my original implementation of SBShell, the interpreter for it was just literally a massive If-Else string comparison sort of function: like if a string starts with "FM" then follow this loop, and so it became rather large and unwieldy and I decided to reimpiment the interpreter for it as a proper lexer/parser/executor, like a proper programming language. So it actually took almost a year, last year, I think it started after Algorithmic Assembly last year and I wasn't really done until just this past December there for my, my program was kind of out of action. Like I was still working on it, but I was lost more in the implementation of a programming language. Again, I actually followed a really good book for this.
+    </p>
+
+    <p>
+      My namesake was a guy called Thurston Ball who wrote a book, "How To Write an Interpreter in Go", and Go is such a clean language. Even though I was implementing it in C++ I could like read the Go code and then I just reimplant the version of it in C++. And so that became the interpreter for my shell. But as I was getting towards the end of this and it's like, it's kind of JavaScript-like syntax and it's like a proper programming language: like proper programming constructs that have first-class functions and closures. I got that working and starting to try and tie it back
+      together with my sound system as part... If you actually follow like a real programming language, like "blah equals such and such" and sort of longer functions, that's actually really hard to live-code.
+    </p>
+
+    <p>
+      Like that's very wordy to actually be performing with. So I ended up sort of realizing that I actually had quite a nice design even though the actual implementation of it before was unwieldy. The actual syntax for it was quite terse, and actually quite good for performing with and just for interacting with. I combine them together so it's become a more terse language, but in the backend it's like it goes through a proper abstract syntax tree parser-lexer-executor type thing that the benefit to that is that now the tokenizer can recognize tokens in any part of your commands so you can, you can combine commands much more. You're not tied into this top-down if-else kind of thing. So it's more recursive in its implementation.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>That's really interesting. And at the same time a little unnerving because when you start tearing things apart to that level, sometimes you just never come back. Right? Sometimes you can break it completely. But what's interesting is watching you, I full-screened when I watch your performance and if you don't mind, I'm going to share the link to the performance with the listeners in the show notes because I really get a sense of you working the system. And you talk about sort of terseness of the language and, and it's something that I also noticed about TidalCycles; in a way the terseness is valuable because it sort of has a graphical nature to it. When you look at a string that represents a functional entity, you don't necessarily like read it left-to-right and verbalize things in your head in order to understand what it's doing. You look at it and encapsulate chunks of it as you look at it, like, "Oh, there's the pattern." "Oh, there's the tie into an instrument." - or whatever. Right? It tends to be something that your eye brain combination can chunk at really quickly. And it seems like that's one of the things that really makes it valuable in a live performance situation. </i>
+    </p>
+
+    <p>
+      <b>Thorsten: </b>
+      Yeah, yeah, absolutely.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>So my question is: you have the syntax, [and] I don't know Tidal very well, but how different is it from TidalCycles? </i>
+    </p>
+
+    <p>
+      <b>Thorsten: </b>So it's very different from the overall Tidal, but there's one thing in common which is Tidal has this kind of mini-pattern language, which is the syntax which allows you to play this note or this thing to repeat a certain amount of times or to play every second loop or to switch between each of these, and that part I basically reimplanted that from Tidal and also, I think, Gibber - I think, Charlie Roberts also did the same sort of implementing that sort of Tidal mini-language and, but that's actually a smaller part of the overall center.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>I get that. But you know, that's the one thing when I saw you putting together patterns and stuff, I was thought some of those things look like what Tidal sort of looks like in the way you do these pieces. You talk about how often to do them, how often skip them and stuff like that. So that was implemented differently. Now I would say the one thing that was really clear, watching your performance, the extent to which you have the playback engine more completely integrated in your system where Tidal depends on this Super Dirt engine that's running in, in SuperCollider. From what I can tell, you have a bespoke sampler engine, granular engine and all that stuff, right? </i>
+    </p>
+
+    <p>
+      <b>Thorsten: </b>Yeah, that's what I did - just my own program layer. Like the shell itself is, so I have a number of different threads. There's the audio engine thread. There's the interpreter thread and there's the background worker thread, which is the processes when I read. Also there's two larger metaphors. One is the sound creator engines, which are the different synthesizers, and sample players, a granular synth. And then there are processes which can operate and the processes that are ones which, like every theme three bars, do this or like implant like reinterpret this pattern here. The shell itself, you can either create new sound generators or you can change or create these functions which operate over them. So there's a lot of thought went into this. Like what are the metaphors for actually understanding?
+    </p>
+
+    <p>
+      And my original implementation was, you know, there was no pattern. It was more of [that] you're just basically building in sort of like "exploratory". So actually when I rebuilt the engine last year, the UI for that was this was the pattern I might actually settle upon. And it's useful having that sort of pattern to then build upon it. It's a contrast to keep it more simple. And it's almost like trying to think how you would explain it to others and that sort of helps from there.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Oh, that's pretty smart. That's an interesting way of thinking about it. So now you have this, thing that you call the SB-Shell, which is the programming language that you've developed for your work. Is this something that you've shared with others or is it still your personal language? Because you talked before about how one of the things that's interesting about the live-coding world is there are a couple of groups that use things like TidalCycles as you know, and as a large group they move forward with that. But there's a fair number of people that are off doing their own, almost personal, languages. Do you imagine the SB-Shell stuff being your personal language or do you think it's something that at some point you're going to try and share more widely? </i>
+    </p>
+
+    <p>
+      <b>Thorsten: </b>
+      I have been leaning more towards that, but some of the more recent performances as a lot of people go contact me and like, "Oh, how do I try this and use this?" And I've been developing on Github, the source is up there and it's open, but it's not easy to - well it's not hard either - but there's not any instructions properly for how to install it. There are some instructions and I'm moving towards trying to make it more portable. The make file for building, it has a lot of variables which are pointing to locations within my home directory. In my particular setup, I've actually moved all of them into one place and I've made them all variable so it technically it should be possible for someone to, you'd need somewhat of a C or C++ background just to know what to change within the make file, but if you did have that background it shouldn't be too hard to build it at the moment.
+    </p>
+
+    <p>
+      There's a couple of other libraries that it uses, Portaudio, Portmidi, libsnd, and they're the main ones. One of the major libraries I built upon is from Ableton. It's Ableton Link. Well, maybe after a year or two of using Soundboard (or SB-Shell), I was wanting to jam with a friend. Then I looked up and found Ableton Link, this header only library that you could use, and that it actually solved a problem for me as well because I'm, at that point, my sample loopers were literally counting samples and trying to either slow down or speed up a sample so it would fit within this loop cycle for the BPM and I could never quite work out how to, if you have any sort of drift at all...
+    </p>
+
+    <p>
+      I had no solution for how to handle that. And Ableton Link basically, it was early on, it wasn't such a massive overhaul for me to replace my taming engine with Ableton Link. And it was one of the best decisions I made. It's really useful cause now I can jam with others using TidalCycles or I can have another friend install SB-Shell and we can just effortlessly sync up together across a network. And that's really nice. Actually, I think it was February, we heard that there is another small crowd of San Francisco live-coders. There was one guy uses, there's a light coding environment he's installed within Ableton, and there are other guys using TidalCycles. So we all came over to my house and we basically had a five person live-coding ensemble in my house, which was - I think all of us were totally stunned, like it sounded pretty good. Like it was, we were all totally in sync and it was like, "Shit, this is pretty good!"
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Well, I'll tell you, man, every time I get a chance to use Link, I just come away thinking that there's just magic in that library because it's surprising how well it works and how well it handles failure - what you would think of as like really clear failure points. It just seems to handle stuff. You know, with a lot of robustness; it's amazing to work with. </i>
+    </p>
+
+    <p>
+      <b>Thorsten: </b>
+      Yeah. Actually, I've never actually read the code. I should because it never complains. There's never any errors or droppers. It just seems to like do the right thing, like it's really nicely done. Like a super piece of engineering.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah, it is indeed. So, let's talk a little bit more about the Algorithmic Art Assembly because again, like I said, so many people, consider that something that was really a touchpoint of last year. And what's interesting is I've actually had an had a chance to talk to some of the people that were featured there. Most particularly, William Fields who was one of the people that performed there. I talked to him subsequently and he was quite pleased with what you had put together. How hard is it for you to develop something like that in the US? I mean, in a way I have been hearing about the live-coding community in London for ages and there's a pretty active live-coding community in Tokyo that's been around for quite a while. But it seems like in the States especially, it's all been individuals that would show up at other gigs and stuff. How hard was it for you to even find the people that would make sense to have as part of this conference? </i>
+    </p>
+
+    <p>
+      <b>Thorsten: </b>
+      Yeah. There was a number of people from the... how many people did we have from the UK before... So one of the via online, I got to know Spednar (Kevin Bednar) and Kindohm. They were, I think they were the first people that I'd approached from the States. And I had met, just perfect coincidence actually, the year before the 2018 Livecoding Conference I'd been out in the UK, was partly organized by Renick Bell as well as I actually got to meet Renick and sort of hang out in the UK. And he was actually coming on tour to the US at that point. So that was just like a complete nice overlap. I didn't have a short list of people. It wasn't super easy to find and fill up the schedule itself. Mark Fell was perfect.
+    </p>
+
+    <p>
+      He was almost - he's like the the grandfather of modern algorithmic music. And so excited to meet him as well. And actually I got his contact via Alex McClain because they both live in Sheffield
+      and have done things together as well. So getting Mark Fell, it was super nice getting him [involved]. The other one I was really excited for it was Kit Clayton. I've known Josh for years, like from SF in the nineties, but just to have someone sort of local who's such a legend as well. So actually that was partially why it became "Algorithmic Art", rather than particularly an Algorave or Live-coding: there wasn't enough live-coders that I could think of in the US like locally. So I actually wanted to like just expand the vision or a bit more, and it's just more algorithmic music in general. And then tends to be this larger split between like Max/MSP users and systems and the live-coding community. And it was actually, it worked really well at combining them together. So it wasn't like one Algorave night and one Max night - it was just now we switched it up in there and like lots of different people.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Well, I think that was brilliant though because it did open a door. You know, when I
+        talked to William Fields, he at first was like, "I'm not sure why they invited me to this because I don't do live coding, but what I do do really matched up with the idea of algorithmic arts." And I think that by doing it that way, you swung the door open to a more diverse set of people then folks who know what each other smell like already, you know? </i>
+    </p>
+
+    <p>
+      <b>Thorsten: </b>
+      Yeah, yeah. That, that works really well. And actually William Fields, I got that recommendation from Kindohm. Mike, he actually recommended Sebastian Camens and William Fields. So we have Kindohm to thank for that expansion of that sort of Northwest side of things as well.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah, he's incredible. He's such a community-builder. He's near me and he's just a fabulous character to have as part of any community. Well, unfortunately we are already out of time. I just looked up at the clock and I was a little shocked. But before we go, for people who want to learn a little bit more about you, your work, maybe hear some of your music or watch some of your performances, what's the best way for people to check out your work? </i>
+    </p>
+
+    <p>
+      <b>Thorsten: </b>
+      The B0ardside (http://theb0ardside.com/) is my website. If you search for that you'll find that, and it has links out to the Highpoint Lowlife radio show and my Github and Instagram, which is more sort of illustrations. But there was a Highpoint Lowlife Instagram as well, which has news about Algorithmic Art Assembly, the radio show. So I think like just starting
+      from theb0ardside.com.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah, man, I actually literally wrote notes here. I wanted to talk a little bit more about your comic book and illustration stuff. I wanted to talk about the label and the radio show, but we just ran out of time. I'm sorry about that, but maybe the next time we'll get a chance to swing on those. I want to thank you so much for taking the time out of your schedule to have this talk and, I hope we do get a chance to talk again soon. </i>
+    </p>
+
+    <p>
+      <b>Thorsten: </b>
+      Yeah, absolutely. Thanks again. Like I listen to your podcast regularly, it's fun to... I know your voice so well, but now to actually interact with it as well, it's kind of funny.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>All right, so with that I will, I will let you go, but, again, we will talk again soon. Have a good one. You as well. Thanks. Darvin. Alright, bye.</i>
+    </p>
+
+    <p><i>Copyright 2020 by Darwin Grosse. All right reserved.</i></p>
+  </div>
+  <!-- jQuery (necessary for the Bootstrap JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
