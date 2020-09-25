@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Transcription: Podcast 0008 - Nathan Wolek</title>
+
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js does not work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+          <script src="https://oss.Maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://oss.Maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+</head>
+
+<body>
+  <div class="container">
+    <h2>Transcription: 0008 - Nathan Wolek</h2>
+    <h3>Released: December 1, 2013</h3>
+    <p>
+      <b>Darwin: </b>
+      <i>Okay today, we're talking with Nathan Wolek. I first ran into Nathan when I was looking for some help in doing a project that required some granular processing. He had created a thing called the Granular Toolbox, which was incredibly helpful and opened the door for me to explore granular stuff without having to dive into the evils of mathematics and stuff. And so it was really helpful. Hi, Nathan, how are you? Thank you so much for joining the podcasts. This, the podcast is getting legs here and it's, it's really, really great to get a lot of positive feedback from, from the users. And you were one of the people that folks had mentioned that they would like to hear an interview with. So, welcome to the podcast. </i>
+    </p>
+
+    <p>
+      <b>Nathan Wolek: </b>
+      Thanks. Happy to be here. Yeah.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah. Why don't we kick this off by having you tell listeners a little bit about yourself, where did you come from? What are you doing currently? What kind of work do you consider your own? </i>
+    </p>
+
+    <p>
+      <b>Nathan: </b>
+      Well, I started Floridian by birth. So I'm one of the few down here that's actually a native of the state of Florida. Did my undergrad down here and really got started in music, coming up through high school, symphonic band, marching band, all that kind of stuff. I wanted to go on and study music, and it was when I was at my undergrad that I saw a course that was offered that said it was the title of the course
+      was simply "Computer Music". And I'd always had a fascination with computers and obviously I was deep into music and it seemed like a natural combination, but two words that I had never seen together before I I'd seen that course offering.
+    </p>
+
+    <p>
+      So even though it was a foreign level class and I was a sophomore, I talked my way into it. And, really never looked back since I just, it seemed like a natural place for me to be so went on from there and completed my four year degree in what at the time was digital arts, and went on and did my graduate work at Northwestern University, studied with some great people there. I learned a lot about coding, learned a lot about research methods, and, completed my PhD there, and taught a few different places. But then, actually when I found my way back to the same school that I did my undergrad at in University, so I'm now actually teaching in the program that I graduated from, which is a pretty cool place to be, to have, I don't know, the stewardship for the program passed off to you and, and be able to mentor a new group of students.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah, that's pretty amazing. Before computer, what was your primary instrument? </i>
+    </p>
+
+    <p>
+      <b>Nathan: </b>
+      It was actually French horn. So, playing French horn in the band and orchestra.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Interesting. Did you, did you, how did you find the transition from a very traditional, instrument with a lot of classical history to computer music where it seems like a new concept is developed every third day? </i>
+    </p>
+
+    <p>
+      <b>Nathan: </b>
+      I don't know. I certainly think that the rigors of practicing, that's true, whether you're using your computer as your instrument or whether you're using a traditional instruments. I think the idea of practicing your craft. I think that transitions very well from traditional music study into computer music, study the idea that you're kind of, you know,
+      woodshedding, and that instead of doing your scales, you're just learning keeping the basics fresh, from day to day, and make sure that you carve out time for it, on a consistent basis to just continually improve yourself and continually get better.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Sure. That's well said. I think it's something that people - I think people on the outside don't assume that there isn't a practice regimen when you're a computer musician and, it's unfortunate because there certainly is from my experience. </i>
+    </p>
+
+    <p>
+      <b>Nathan: </b>
+      Yeah. And it's, you've got to get in and I mean, it's different in that someone's not handing you the piece to practice and learn. You're sitting down and creating the piece a lot of the times, but just like a new, when a new piece of software does come, I think the best way. I mean, I often start by not reading the manual, but just diving in and trying to do a project in the vein of what I typically would have done. And I guess that tells me a lot about what's changed in the next iteration. I'm thinking in particular this year, there is a new version of Logic that came out and I teach Logic and Logic Pro in one of my classes, and it was, just making the determination, I just sit down and do a project with this and see what's different, what's changed. And that revealed quite a lot more changes quickly than if I'd just sat down and reading through the manual from left to right.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Sure. That makes a lot of sense. Now. As I said in the intro, where I've first ran across you was with your development of the Granular Toolkit. It was a great way for a Max user who who didn't want to sit around and figure out window, windows shapes and grain sizes and stuff, to be able to dip a toe in that world, and feel comfortable with it. But from my perspective, in order to present that kind of a library, it really meant that you had to spend a lot of time with window shapes and, and grain sizes and stuff. What was it about granular synthesis that caught you in the first place and what was the process that you went through internalizing that? </i>
+    </p>
+
+    <p>
+      <b>Nathan: </b>Well, it was actually being a graduate student, one of the things that you inevitably end up doing is getting assigned a graduate assistantship. So you're working effectively working with - and for - a faculty member on some project that they have defined basically. So there's teaching assistantships and your graduate assistantships. My graduate assistantship that I was assigned, was working for one of the composition professors named Amnon Wolman. And he was working on a project where you needed a lot of coding, a lot of Max work done basically to get this 90 minute song cycle that he wanted to produce. And it had everything from an eight channel speaker array to live processing on the vocalist to a Disklavier that he had rewired, so that we had to have MIDI talking to the Disklaviers to prepare and unprepared the piano in real time.
+    </p>
+
+    <p>
+      But it was a lot of stuff. And I think the beauty of that relationship is that he could dream and then I could go off for a week and woodshed and come back and say, "Okay, is this kind of what you're thinking about?" And he'd say, "Well, yeah." And sometimes you'd hear no, and I'll go back and work on it some more basically, and sometimes he's butting up against what's possible and I'm kinda trying to find the middle ground and that sort of stuff. But, it was in that process of working with him on that piece, which ended up being called Thomas and Beulah was actually released on Innova records eventually with Ursula Oppens on piano. And, Oh, I can't remember the sopranos name, Cynthia Haymon? I want to say that is her name. Yeah, it was released on Innova. And it was in the process of that, that he said, "I really like granular processing and I like using this little program called Mac Pod that one of the guys up at Simon Fraser University had used, but it's not a real time. Wouldn't it be great if I could process the soprano's voice in real time using granular processing." So it was one of those problems that he posed to me of like, go figure this out!
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>The barely viable project. Yeah. </i>
+    </p>
+
+    <p>
+      <b>Nathan: </b>
+      Well, let's see, this is circa 2001. So MSP is only what, four years old at that point, right? I mean, jitter wasn't even on the radar. I mean, we were committed to using Max/MSP for the project. That was the platform we were using and there were no good objects for doing granular stuff. And ensuring the kind of things that you needed to ensure for making sure that granular sounds. So I worked up some workable patches, basically. I was doing kind of a retrospective on this a few months ago and I was digging through some of those old patches. I still have them in my hard drive that do it all with straight ahead MSP objects, basically.
+    </p>
+
+    <p>
+      But it was clear that there were some things that weren't quite working properly that worked for the purposes of that piece, but it set off a chain reaction as things often do. And then I ended up thinking, well, some people are writing these externals for MSP, so couldn't I write my own externals that just handled their granular processing. So, I ended up asking for a summer grant application to work on learning how to code my own MSP externals, and what came out of that were the first set of externals that were at the core of the Granular Toolkit. And then it was just a matter of building patches on top of that, that would use the externals to get the actual effects basically. So I always saw the toolkit as existing at two low layers.
+    </p>
+
+    <p>
+      There were the externals that did the low level stuff, that ensured that you got the windows, right? That ensured that you didn't switch what sound source you were reading from in the middle of a grain, things like that. And then there were the higher-level patches that sat on our abstractions that sat on top of that, that could do things like just, okay, "I want to pitch up the voice using granular processing. So here's my input. Here's the pitch setting that I want. Here's the output that's going to be shifted." So, I think that was the key thing was having it at those two levels. So, I mean, over the years I guess the majority of people are using the high-level patches, but there's always, I guess, even the people that are using the high-level patches tell me that it's reassuring to know that they could dig down into the low level if they wanted to make a tweak or something like
+      that. And the fact that it's all Max means that they know how it works, and it's not some obscure code language that they're not familiar with.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Sure. You're so you're saying that based on a grant that you were able to get, over the course of a summer, you learned how to work with the Max SDK to make C externals? Did you have a lot of coding experience before that? </i>
+    </p>
+
+    <p>
+      <b>Nathan: </b>
+      I had a year of Java experience before that. And I had, let's see, I mean, Csound, if you wanted to talk about line coding environments. So I had that initial Computers Music course that I mentioned was taught in Csound. I had some exposure to line coding and that, but not a lot of C coding experience. And it was mainly in Computer Music Languages, not coding.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>General-use languages, basically </i>
+    </p>
+
+    <p>
+      <b>Nathan: </b>
+      After a year of learning Java, then I learned C coding.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Did you just get the SDK and just start hacking? Or did you have other people that knew more about it that you would tap into? How'd that work? I ask because a lot of people are interested in getting into the SDK and get frustrated quite quickly. It's clear that you, what you did, you did relatively quickly, but also it doesn't sound like there was a lot of frustration involved. </i>
+    </p>
+
+    <p>
+      <b>Nathan: </b>
+      Yeah. I mean, I'm trying to remember. It was certainly there was a sense that I was out there on my own, there wasn't anybody at... I'll put it this way. And there was nobody at Northwestern that was coding C externals for Max or MSP at that stage. So I was teaching myself to do something that none of my professors, none of my fellow graduate students were doing. And so there were some emails back and forth, and I think there was David's manual that came with the SDK, but there was also, there was Ichiro... I can't remember
+      his name exactly. He had like a bare bones, like getting started writing with the Max/MSP SDK, way back when yeah, I think that was a big help.
+    </p>
+
+    <p>
+      Because it effectively read like something he had set up a project for his students to do. And he had set up a tutorial for them that he put up on his website and I was able to pull that down and kind of engineered that way, come to think of it. Now I had let's see Java and the, I guess the third quarter we had gotten into VST's - or was that the next year? I can't remember. That was jumbled, now that I think about it. Because I was learning, I
+      was learning how to code VST plugins as well in one of my courses, so that will help me, that helped me with a lot of the structure like getting past a vector. Knowing what to do with that vector and then handing the vector back to the environment is the same with VST programming as it was with MSP and <a href="https://en.wikipedia.org/wiki/Pure_Data">PD</a> external coding.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>So conceptually they, they were aligned, </i>
+    </p>
+
+    <p>
+      <b>Nathan: </b>
+      Yeah. And that's more than anything is the biggest thing to get your head around that you're not working sample by sample, you're getting a chunk of samples. You need to do something with those chunk of samples and then you didn't hand them back to the environment as the process vector.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah. It's like one of those old bucket-brigade firefighting groups: just do what you have to do and then pass it to the next person in line. So we're a lot of people probably, interacted with your granular work was with the next project that I was aware of you as part of, which was the creation of the Hypno plugins. Did you actually use the Granular Toolkit for that or did you actually cook up new stuff when you were working on that? </i>
+    </p>
+
+    <p>
+      <b>Nathan: </b>
+      Definitely it was using the low level externals for the granular effects. So all of the granular effects in there using the C externals that I had produced, as part of the Granular Toolkit, but I was building new effects, new, different, granular effects in Hypno. Hypno was a time to play and think of new ways to use granular processing across these different plugins. And that really came about with Tim Place, Because he and I kinda knew of each other, we were going through graduate school around the same time, but it totally different institutions. But we were both students who had figured out how to program our own Max/MSP externals. And so we were aware of each other that way. And he had this idea of coming up with a set of plugins and one of the ideas was to also have some granular effects built into the set of plugins, and recruited me to work on those - that aspect of the overall package.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>So from there, and I assume based off of your interaction with Tim in that project, you became involved in the project that's known as Jamoma, which goes on to this day. Can you explain a little bit for people who aren't familiar with it with it? Could you, first of all, explain what Jamoma is? </i>
+    </p>
+
+    <p>
+      <b>Nathan: </b>Well, Jamoma operates at different levels. So I mean, getting back to that idea that the Granular Toolkit has a low level and a high level, basically there are libraries of software that can be used in different implementations. So, there are libraries that exist on the hard drive and you can use them as a Max implementation. You can use them as an audio unit implementation. And the idea is that they're the libraries of software that do different processing effects, both audio and multichannel, and some video processing as well, that those processing routines are abstracted enough away from any specific implementation that they could be used in different implementations in new environments like Max; I mean, eventually it'd be nice to have it running in PD. But it could also right now - Ruby works.
+    </p>
+
+    <p>
+      You could actually stream together processing effects in Ruby and have it work, to do audio processing and in different effects. So it's taking that low level/high level idea one step further. And the MSP externals that I wrote are our MSP externals. And if I wanted to rewrite them, I'd have to start from scratch. If I wanted to develop them for another environment. What one of the purposes, one of the huge advantages I see in Jamoma, one of the reasons why I wanted to get on board with is that the code for the specific processing effects is written far enough away from the environment that it could plug in and be used in a different environment at some point. And that ensures a little bit more longevity of the project overall in my mind.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>So where I've seen it has always been with sort of a Max application framework, and then you would drop components into the framework and utilize them. But the idea is that the individual modules themselves have some sort of abstraction layer that allows them to work in other environments. </i>
+    </p>
+
+    <p>
+      <b>Nathan: </b>
+      Yeah. That allows them to work in other environments. So you could just crack open, C++ and string them together. You could work in Ruby and string them together. And the idea is that that those implementations could go to other environments in the future.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah. That makes a lot of sense. Now, who else is involved in this project right now?
+      </i>
+    </p>
+
+    <p>
+      <b>Nathan: </b>Oh, it's a long list. Well it seems that way. Tim Place is certainly heavily involved with it. There's Trond Lossius, who's based in Norway, who's involved with it. There's several programmers - I'm going to forget a bunch of people basically, but we're scattered about, Nils Peters who's out in San Diego now has been involved with it. And there's been other people that have come into the project and left the project at various points in time. And I'm sure I'm forgetting somebody so apologies to whoever if you're out there listening, if I forgotten your name basically. But, yeah, I think that's the other cool part of the project is that there's really, I think there's only a few places where there's two people working on it in the same geographic location, we're all geographically distributed.
+    </p>
+
+    <p>
+      And so, there's opportunities there for, working, I don't know, whereas a project like this, you know, 20, 30 years ago would have required a university or some other institution saying, "Yes, we're going to develop this research team and we're going to hire these individuals and bring them together and put the project forward." We can each exist in our own different institutions doing our different jobs. But come together collaboratively on this open source project, across national boundaries, across institutional boundaries, and, and work together on moving that project forward. And that's really a new kind of way of working.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah. That's really interesting. The, the one thing I'm wondering, so I work at Cycling where we're a very distributed company and there are positives to it. I mean, I really like the idea that I can work for Cycling, but live in my evil lair up in the Rocky mountains. Pretty awesome. But, there are times, and especially when it comes to decision-making or having to choose one of two or more paths that is difficult to do over email. How do you guys manage that decision-making process because in a project as big as Jamoma, I imagine, there are some significant decisions that have to be made. How do you go about that? </i>
+    </p>
+
+    <p>
+      <b>Nathan: </b>
+      Yeah, well, so two things: I mean, we've had a lot of it is conversations through Github cause that's where the source code lives. And then we have pretty regular Skype conversations where, we try to get as many people on the Skype call as possible, especially where people that are working on big changes currently and spending a lot of time in the code. It's good to get those. It's not everybody working on it all the time. If it's usually a subset of us that are working on really where the most rapid changes are occurring. And so if we can get those people together on Skype calls to discuss and make decisions, and then just keep minutes, like you would, in any kind of organization, keep minutes to that. We post in a public repository for all of us.
+    </p>
+
+    <p>
+      And then the other thing we do that end up being a fun as well as having these workshops. I mean, we call them workshops, but it's really, one of the programmers posting, and everybody flying to that location and just spending a week working really intensely together, from sun up to pass on down, and then getting up the next day and doing that all over again. Those end up being good bonding opportunities with the other programmers and a lot of decisions get made at those things, a lot happened as we make changes at those meetings basically. And then we go away in each work on a little piece and then come back together basically. But, that's also an opportunity for those of us, because it's distributed across the world, it's an opportunity for us to travel and, visit other parts of the world, which is kind of interesting for me as well.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah. So what is the goal of the Jamoma project? Is it to simplify some aspect of creative development? Is it to make it for easier for the developer to be able to switch platforms? What is the overriding goal that you're trying to accomplish with Jamoma? </i>
+    </p>
+
+    <p>
+      <b>Nathan: </b>
+      I think both of those things that you mentioned, I mean, I think the implementation and Max is there to ease in rapid development. It, maybe the Jamoma modules existed a little bit higher level than some of the MSP objects and those types of things. And having a common way that they speak to each other, through using Open Sound Control messages, helps with the kind of rapid development. And it gives you a platform for someone to plug into the Jamoma project and build their own modules that are then built in a standardized way so they can be shared. And that sort of thing. I think on the developer side, yeah, the idea that my code is abstracted enough away from Max that if God forbid Max were to go away,
+      well...
+    </p>
+
+    <p>
+      ...you've got a little bit of security there and then for the Gramular Toolkit, it was stuff that I did on my own by myself. And part of my thinking and getting involved in a larger project that needs... before I got involved with Jamoma, we didn't have granular operators and that still doesn't have a great set just because I'm still working on them. Because it's getting them right so that it can work in this kind of, I don't know, multi-platform way. That's kind of holding up the process for me. The idea that my code lives in an environment that has other people shepherding the overall project. Does that make sense? So if I get, get pulled away, I mean, there's been times when I've been pulled away and haven't had time - years to work on it, but it's still been out there and people send me bug fixes and I'm like, "Yeah, I'm working on other projects now." At least it would be in an open source repository where there's other people that understand the code. There's other people that I can help and make sure it continues and keeps going on. So thinking more about the longevity of my own work, it's better to be in a collaborative, open source project in it for the Granular Toolkit to continue to be this kind of lone gun, project.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>But lone gun projects are pretty interesting as well. Do you have any in the works right now that you're beating on? </i>
+    </p>
+
+    <p>
+      <b>Nathan: </b>
+      Let's see. Well, I mean, that's been the bulk of my creative time has been dedicated to Jamoma, but I've been trying to get back in since I was in Norway - maybe it's something I haven't addressed basically, but part of what grew out of getting involved with the Jimoma project was actually putting together a Fulbright application, which allowed me, with my family actually, to go spend six months in Norway, in Bergan, working with Trond Lossius where he's based. And, while I was there, I really got the bug back for working in sound installations as a medium, where I had been doing a lot of stuff with live performance and laptop performance. There was a lot of stuff, a lot of cool stuff going on with sound installations and I hadn't really done any sound installations since I was in graduate school.
+    </p>
+
+    <p>
+      And it kind of reignited my interest in that area. So I'm trying to think more, how I'm going to move in that direction creatively, how I'm going to get more opportunities to do that type of work going forward. Not that I think I'm never going to come back to live performance, but I think I want to hit the pause button on that and explore sound installations again for a while. Cause I think - I've got kinda gotten bitten by that bug.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah, it's a different discipline. I really find it interesting in an introspective way where - I like performance for its extroverted nature, but sometimes the sort of like contemplate of study of what you're doing and an installation environment could be really compelling. </i>
+    </p>
+
+    <p>
+      <i>So one of the things that I wanted to ask you about, because it really caught my eye when I went and looked at your website - because I do of course, super detailed research on you. I looked at the contents of your website and then if there's an "About Me", I'll read that page too. But, the very first image on your webpage is something they caught my eye because it happens to be something that I'm interested in as well. You have a picture of teaching a workshop in a Boys and Girls Clubs. So this would be, I would take it, like middle school age children, or even elementary? </i>
+    </p>
+
+    <p>
+      <b>Nathan: </b>
+      No, these were middle school aged kids, at the local Boys and Girls Club here, and, community that's right next to Stetson university in DeLand, Florida. The community right next to that is called Spring Hill. And it's got a Boys and Girls Club. We were looking for a place to partner with, we were really inspired by - well, this was my computer music class. So I try to teach fundamental concepts in computer music one, but then try to pit in my second semester of my core, my topic sequences, I've tried to pitch some big project at the students where it's really impossible to do unless we all work together. Does that make sense? Cause I think those are really good learning opportunities for my college students to have to work as a team, to have to figure out what their roles are, how they're going to contribute to the project overall.
+    </p>
+
+    <p>
+      Those are the kinds of things that I feel very strongly as an educator are, are important at the, at the college level, in, as you get deeper into, into topics sequences. That being said, so we found a way to partner with the Boys and Girls Club. We had seen some of the work that Ico Bukvic was doing up at Virginia tech with PD-lork. So <a href="https://en.wikipedia.org/wiki/Pure_Data">PD</a> lork is a variant on <a href="https://en.wikipedia.org/wiki/Pure_Data">PD</a> but, they had created what, they called the K through 12, a quick K through 12 version of <a href="https://en.wikipedia.org/wiki/Pure_Data">PD</a> Lork that had these very simple objects that kids could drop in. And the idea that they were able to take it into younger age groups and teach them creative coding, give them a creative coding opportunity. And it just happened that they actually did this at their Boys and Girls Club.
+    </p>
+
+    <p>
+      We had a connection through the administration here at my university to the local Boys and Girls Club here. We contacted each other and I said, "Look, we're thinking about replicating your project down here. Are you okay with that?" As, I mean, I will obviously give you credit. And every time I mentioned the project, I've said, totally be sure to mention that this is not - we're basically using what you guys have done and are replicating it. And, to further this goal of teaching creative coding to kids at a younger age - and he was more than happy to have someone else doing it. In fact, I mean, PD Lork is open source, so, he wants as many people sharing and using the software as well. And so there's been other people that have picked up the ball and try to do this in other places.
+    </p>
+
+    <p>
+      But I think so far, we're the only ones that have replicated the Boys and Girls Club aspect of this working with middle school aged kids to do a workshop where they're exploring some concepts of software synthesis and having that kind of connection with a gestural controller using just a Wemote, basically, to talk to these Linux laptops. For my students, it was a great learning opportunity because we're entirely Mac-based in our labs and our computing environments. So this is the first time many of them had ever used Linux. So just getting Linux up and running, getting an open source piece of software up and running on Linux. That was a huge learning outcome for my students that I think they benefited from that they're not as afraid of partitioning the hard drive and creating a different boot drive and that sort of stuff.
+    </p>
+
+    <p>
+      That was a pretty scary thing for them in the beginning of the semester, but walking them through that, I think, was a challenge for me, but also something that they came out the other side with a lot more confidence about how they're using the computer now, rather than just using software, that's prepackaged for them. They're not as afraid now to get their hands dirty on code and make files to the terminal window and those types of things that before they were a little unwell, they, they knew they were out there, but they were nervous about them.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Well, the other thing I like about what you did there is by picking the large scale product project, you do put people in a position that's more like the real world, which is like you see with Jamoma or project or whatever. A lot of times digital media work and digital media artwork is looked at as a sort of a solitary practice done in your mom's basement. It's really good to find opportunities to take students and put them in a place where they have to learn collaborative stuff. They have to learn to work, deeper than they're than they're comfortable working with in a classroom environment. So that's really great. How did the, how did the middle schoolers take to it? </i>
+    </p>
+
+    <p>
+      <b>Nathan: </b>
+      Yeah, they took to it pretty well. I mean, I think they were excited to be doing something a little different, with the day. I mean, in any classroom that size, there's the people that are really into it. And there's people that are just kinda sitting in the back, like counting time basically. But I think the ones that were really into it, I think it was an eye-opener to them that, they could use the computer for something other than just playing a game or surfing - running a thing, basically that this is actually something that I can reprogram. And I can decide what it does. I can decide what the instruction set is and
+      what the, I can imagine what the outcome should be and work toward realizing that. So I think it was
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>What kind of things were they making? </i>
+    </p>
+
+    <p>
+      <b>Nathan: </b>
+      I mean, we were having to make real basic software where they could use the different buttons to play different pitches. So, and having them program those to, like, a pentatonic scale, so that all worked together basically. And then also, adding some of the, it comes with some real simple effects processes. So we had to make decisions about that. But then we, so we had to make their own instruments that we kind of, we knew where we
+      wanted their, their instruments to end up at the end of the session. And then we had written kind of a piece with, almost a handbell choir, like had like three different streams. So the three different laptops, the students had to work together to perform the piece, basically.
+    </p>
+
+    <p>
+      So it so that you could hear the melody in the aggregate basically. And that was cool.
+      I mean, that was a kind of a revelation for my students because this team of students that I was working with, they're not all just digital arts majors. The digital arts is the program that I teach in. I had one student who was a composition major and he just like the digital art stuff kind of, it was a little nervous about basically, but as soon as I told him I need you to compose a piece that could be played by middle schoolers in this fashion. And he was like, all over that task, to compose it like this series of three pieces basically that they could play together. So, ended up programming him, actually, in a senior recital.
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>Wow. That's fantastic. Is that something that you expect to do more of?
+      </i>
+    </p>
+
+    <p>
+      <b>Nathan: </b>Oh yeah, absolutely. I mean, I think if anything, it's been trying to find the right opportunity with the right group of students to come back. The Boys and Girls Club would like to have any back tomorrow, basically, to do this every week, but it's just a matter of balancing it with all my other responsibilities. I think there might be some opportunities the next semester for a student to lead the charge, and do it as a service
+      project. I think what I like about where I am teaching, we have a deep commitment to service learning projects where the students are getting out and doing service projects and learning through that. And there's a real commitment to this type of experiential learning, where you throw a big task or a big topic at them.
+    </p>
+
+    <p>
+      And the students have to work through that. And the faculty member is more of a guide at that point, rather than a Sage just imparting wisdom on them basically. So, I'm much more comfortable with that kind of coaches role, of coaching them through it and being the expert in the room, but tackling a problem that - I mean, I had never done a workshop at the Boys and Girls Club before, and it was kind of exciting for me to think that we're going to be doing something for the first time before this class, basically, that I had never done before. So I get really jazzed about teaching classes, where I don't know what the outcome's going to be.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Right. It's as exciting for you as it is for the students. What about this was the most, nerve-wracking, since you hadn't done it, you were probably building up a whole framework in your head of all the things you were scared that might happen in the end. What was the thing that was the most difficult? </i>
+    </p>
+
+    <p>
+      <b>Nathan: </b>
+      I think just the learning curve, because it was my first time spending a lot of time in Linux as well. So, so just having enough faith that we could take that leap and make it work and that there were enough people out there that we could call on favors to get on Skype with us and talk us through process. I mean, there were a few weeks where we were at a standstill: we had to get certain laptops to run Linux just because, let's say in order to get all the hardware working correctly, the Bluetooth, and there was a couple of hardware dependent features that had to be there. And we removed that. We rely on the Bluetooth that ended up being a pretty big challenge because we didn't have the laptops that were going to be dedicated to this project, but we had a grant that we knew we could go buy them.
+    </p>
+
+    <p>
+      If we identify it, it's actually made that part of the student's project as well. Like, do I need it? We need to identify what laptops we're going to buy. And we were reading this research about, well, now Windows 8 is out, it used to be software - it has now shifted to the hardware and it might not work with Linux and that sort of stuff. So, and then we had to pick a Linux-specific vendor to buy Linux-specific laptops. But they shipped it to us with a busted Bluetooth interface. So we hadto teach them how to pull out the Bluetooth card and ship it back to the company so that they would ship us new ones and reinstall them. I mean, some of them had not cracked open their computers to that point.
+    </p>
+
+    <p>
+      They never had to write. So, yeah, I think was where it got the hairiest was getting
+      the Linux up and running and, working, and getting, <a href="https://en.wikipedia.org/wiki/Pure_Data">PD</a> Lork. We had to work with each other a little bit to get the script, right. Some of the things that were specific to each installation were not the same as our installation. So we had to work through some of those things. So, dependencies and all that sort of stuff. When you're working with open source software, you have to get those right. Otherwise your software will compile so well. It's probably the hairiest part of it.
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>So I'm about to embark on working with the local middle school, late elementary and middle schools, a set of children to do sort of a creative coding, robotics, learn to play with, electricity, all those kinds of things. And, I'm scared to death. So now it'd be a great time for you to give me words of encouragement and, things to look forward to because right now - my jaws clamp tight! </i>
+    </p>
+
+    <p>
+      <b>Nathan: </b>
+      Yeah. I think, the quicker you can get them making sound or making things - we had the Sparkfun Group. They actually just were at, on campus a few weeks ago doing one of their workshops, and doing the little, blinking LED thing. They had us blinking LEDs like within 15, 20 minutes of the start of the workshop. And so the sooner you can get them doing something that looks cool or sounds cool that that hooks them in. And then it's like, okay, now let's dissect what's what's happening here. And that sort of thing. So I think we had a demo ready to show them before we had them dive in and start to make things on their own.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>All right. Well, thanks for that advice - that actually aligns with some of what I hope to do to. What do you think is the future for the digital media digital studies world? I think it's really exciting, but it seems somewhat unclear what direction things are going to go. Is it going to go more performance? Is it going to go more coding oriented? Is it going to be more about gamification? What do you see as sort of the future for the digital arts? Or does it just get normalized to the point where it just gets called art? </i>
+    </p>
+
+    <p>
+      <b>Nathan: </b>
+      Yeah, I don't know. I think there's a lot more movement in the digital arts between people that are working in different media forms. By which I mean in the traditional arts, there's a little bit more, I guess people think of themselves as a painter or a sculptor or a ceramics and digital arts. It's a lot easier to move between different media barriers so that you can be working with video one week, you can be working with hardware another week you can be working with sound the third week. And I really think that that more than anything, this flattening of the fact that look, what's common is that it's a computer and we're doing creative things with it. That is really the norm, basically. And I think we lose these kinds of barriers. And that's not to say that you want to, I guess, approach those different medias from a naive perspective. Cause that doesn't help either. I mean, it gives you the freedom to dive in and learn as much as you can about that different way of working. But it also gives you...
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>The responsibility of, of learning to do a good job on it, right? </i>
+    </p>
+
+    <p>
+      <b>Nathan: </b>
+      Yeah, exactly.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Well, mate, thank you so much for your time. It was a fascinating interview. I really liked the fact that we were able to talk about not only the Jimoma project and the Granular Toolkit, but really talk about this thing with teaching younger kids to work with stuff. I think it's, a big part of having our future be vital. Any parting words? </i>
+    </p>
+
+    <p>
+      <b>Nathan: </b>
+      No, just thanks for having me. I appreciate it. It's been fun to just sit and chat.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Exactly. Thank you so much for your time. I appreciate it. Talk to you soon.</i>
+    </p>
+
+    <p><i>Copyright 2013-2020 by Darwin Grosse. All right reserved.</i></p>
+  </div>
+  <!-- jQuery (necessary for the Bootstrap JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
