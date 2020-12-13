@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Transcription: Podcast 0015 - Liz Larsen</title>
+
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js does not work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+</head>
+
+<body>
+  <div class="container">
+    <h2>Transcription: 0015 - Liz Larsen</h2>
+    <h3>Released: January 19, 2014</h3>
+    <br>
+    <p>
+      <iframe style="border: none" src="//html5-player.libsyn.com/embed/episode/id/2638434/height/90/theme/custom/thumbnail/yes/direction/forward/render-playlist/no/custom-color/000000/" height="90" width="100%" scrolling="no" allowfullscreen
+        webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+    </p>
+    <br>
+    <p>
+      <b>Darwin: </b>
+      <i>Okay today, we're going to be interviewing a real special guest:Liz Larson, who's one of the owners and design engineers with LZX Industries. LZX Industries is doing some phenomenal work. They are creating modular synthesis pieces, but rather than audio synthesis, they're modular analog video synthesis pieces. I find this stuff amazing. I find that it's such a great mirror of some of the original video artwork that, I still find completely entrancing and, I'm really excited to learn more from Liz herself. So hi, Liz, how are you? </i>
+    </p>
+
+    <p>
+      <b>Liz Larsen: </b>
+      I'm doing wonderful. Thank you.
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>
+        Why don't we start this off by having you give us a little bit of background on yourself. </i>
+    </p>
+
+    <p>
+      <b>Liz: </b>
+      Okay. Well I've lived here in Texas all my life. I went to film school here. I was in a lot of bands during school. And that led me into synthesizers synthesizers, led me into electronics and sort of, as I got into electronics, I discovered video art through demo videos that I had found online - of Dan Sandin's Image Processor, and other devices from the sixties and seventies. And I got completely obsessed with the stuff. Mainly because it, it seems like I've always been obsessed with exploration, themes, and parallel universes. And I felt like I had stumbled upon this little pocket universe that had never quite expanded, according to its potential, but rather [been] abandoned. And I got really obsessed with it and educated myself on electronics, and built a lot of synthesizers, trying to get to a point where I could understand, the video signal well enough to begin developing my own devices. And, I teamed up with my partner Ed and together we've been doing this for about four years now.
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>
+        Interesting. Well, I'm certainly looking on your website, which is LZXindustries.net. The list of modules is pretty amazing. But also coming from a music/audio standpoint, some of them are just completely baffling from a functional standpoint. What are some of the unique functions that you have to deal with in terms of doing analog video that had to be extended from the typical analog synthesizer model? </i>
+    </p>
+
+    <p>
+      <b>Liz: </b>
+      Well, live video has a lot more in common with an audio signal than it does with any sort of digital video and, like video, it's a continuous voltage - a single voltage across time, the same way the audio is. The reason why you can't display audio on a TV and you can video is that the video signal has instructions embedded into it to tell the TV what to do with the signal that it's receiving. And that's what we refer to as video sync information. So there needs to be pulses at very specific set times inserted into the signal that tell the TV when to start a new frame, or when to display a new scan line. The first step in setting up an infrastructure for modular video signal processing is to create an interface by which voltages are inserted and, video sync signals are imposed upon them in a way to where, when the signal reaches the television, if displays a stable image and also embeds color information and things of that nature.
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>
+        Sure. Well, I can imagine it just as you were describing it, what I was imagining how some of your early tests must be just incredible messes on the screen. So, now when you're within the modules, do you work with like a single composite video image, or do you have to work with the colors as separate entities? </i>
+    </p>
+
+    <p>
+      <b>Liz: </b>
+      There's two formats of at play inside of the system, the LZX signal standard, everything runs off of DC-coupled control voltages, and they're all in the one-volt signal, amplitude range due to bandwidth concerns. But, I mean, you have three cones in your eye and that enabled, it takes three signals to be able to show you all of the colors, and arrangement of three signals creating a full color image is what we call a colorspace by default. The system runs off of the RGB color space and these just standard one volt DC coupled signals. But there are modules which allow you to do analog transformations and access modulating and mixing within color spaces, such as, YUV, color difference, and HSY - which stands for a hue, saturation and brightness.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Sure. Okay. That makes a lot of sense. Now you say that there's a one volt range that's a consideration for bandwidth. How does reducing the voltage range actually improve the bandwidth? </i>
+    </p>
+
+    <p>
+      <b>Liz: </b>
+      Well, in order to keep the bandwidth at like a 5-volt or 10-volt scale, and still keep it within video bandwidth, the power consumption demands would be outrageous. And none of the chips designed for video rate bandwidths are going to going to like being treated that way, or they won't support quite that same signal range.
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>Of course, that makes perfect sense. So now one, one of the things that strikes me when I look at your system and, and we discuss sort of some of the difficulties or challenges in working with video, is that before you could do anything, you sort of had to do almost everything, or at least it seems like it, because you have different voltage standards because you have these different synchronization and desynchronization mechanisms that had to be in play. And because things were moving around in set in different sets of parallel tracks, you have to have a fairly large number of tools available before any of them were very valuable at all. </i>
+    </p>
+
+    <p>
+      <b>Liz: </b>Yes. We developed six initial modules, which were inspired very much by standing on the shoulders of tthe Sandin IP and the functions were arranged a little differently and it was optimized for an RGB workflow, you know? There are quite a few modules that you need before everything starts to really come together. I mean, like any modular synthesizer, but perhaps compounded even more for video; video and image contains so much more information per the rate of time that you're receiving it than an audio signal does. And as a result, that can be directly translated to the complexity of the signals that you might want to come in. Like with an audio synthesizer you might play a single note or two and adjust a filter cutoff, and it sounds very pleasant to your ear. Whereas on a video signal synthesizer that equate to just showing a blue bar
+      and then turning the blueness up and down. You know, it's not as interesting. You have to have a critical complexity of signals going in.
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>
+        Well, I have to admit that I even this seems like something that is difficult to intellectualize; especially I'm thinking of it in terms of the fact that video has to assemble itself into a two dimensional frame where audio is just a single stream. And so it's a lot easier to take our envelopes and LFO's, and these kinds of things in a stream of audio, it's a little easier to understand what the effect of these things is going to be. It's harder for me to wrap my head around what's going to happen as you do these effects, and then you assemble them into this two dimensional frame space. </i>
+    </p>
+
+    <p>
+      <b>Liz: </b>
+      I couldn't really conceptualize it until I'd already built something. So all the cool stuff started happening once when we started playing. But generally how I explained it is that it comes down to frequency ranges: in audio, you've got two ears, you've got stereo, you've got low frequency control voltage content, and you've got audio range frequency audio content, and generally you things happen within the audio range or they happen in the subsonic range. In video, you just add one more layer on top of that. You've got your low frame rate range, which coincidentally coincides with the audio with the subsonic range. You think a video is 30 frames per second or 25 frames per second. If you're in PAL, signals that are below your frame rate, or that change slower than your frame rate are going to create animation across multiple frames.
+    </p>
+
+    <p>
+      So in modular audio synths, as you would typically refer to LFOs and envelopes is low frequency, control voltage generators, in video they become animators across multiple images. Now once we get above frame rate, the video has scan. We don't have pixels in analog video. We have scan lines, scan lines are the discrete unit. And that's like the TV starting at the left side of the screen and printing the voltage of the video signal from left to right across the display. So we have 525 scan lines in every frame and the 525 times 29.97 translates to a frequency of 15,734 kHz. So things that have happened between the frame rate that 30 Hertz in that 15.734 kHz are what I would call the vertical modulation range and that roughly coincides with the audio range, which is interesting. And so things that happen between frame rate and the scan line rate are things that are going to create horizontal bars, and a square wave within that range is going to create a repeating horizontal bars. And the number of bars is going to be determined by how close you get: more bars as you get closer to 15 kHz and less bars as you get closer to 30 frames per second. And then if you go below the frame rate, you've got strobing animation.
+    </p>
+
+    <p>
+      And then the third range, the one that doesn't coincide with anything your ears can perceive is the actual video range or the horizontal modulation range. These are things that would be digitized into actual pixels - they're things that happened within one scan line. So that's why we have an oscillator that goes over 10 megahertz. Generally, an analog television that is standard definition is going to be able to display the bandwidth is between four and six megahertz, depending on the transmission, before their resolution just gets too fine and gets filtered out. But there are no discrete units within a scan line.
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>
+        Well, it's interesting because certainly within the Max world, I do a lot of work with video, but it's very much pixel oriented and I never really thought of that pixelation as being the equivalent of digital sampling video, but I see where it is in that there is this in the analog video space, there is this sense of a continuum that doesn't really exist when you're working with digital video. </i>
+    </p>
+
+    <p>
+      <b>Liz: </b>
+      Yeah. I mean, within digital video, you're always working with geometric transformations. You know, it's like you have this stable, still image. You can pause the video at any point you want, you can freeze it, you can manipulate a little thing, you can tweak it here and there. Whereas analog video is living and breathing. It's like you're riding along with it and it never stops. This is the same way audio does, you know?
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>
+        Yeah, well that actually brings up an interesting point, which is that it strikes me that this  video system is very much a performative system where to me video has become almost obsessively
+        editing oriented. It seems like this returns video play to a real time and performative kind of thing. Do you find that to be the case, both for your play and, and work as well as what like your customers are doing? Does this push people more into performative mode in how they work with the system? </i>
+    </p>
+
+    <p>
+      <b>Liz: </b>I think so. I think you're definitely, you're performing video when you're working with a modular video synthesizer. You're performing it, you're rehearsing it, you're not editing it. It's more like you have have a bunch of toys on the table that you're playing with rather than manipulating things pixel by pixel. I mean, there's a place for both.
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>Sure. So my question then would be, how, who do you find is most successful in a transition to a modular video system? Like this? Is it people who already have a video background or is it people who have some other background? Cause I would think that sort of the modern video background doesn't really set you up very well to work with this system. </i>
+    </p>
+
+    <p>
+      <b>Liz: </b>Yeah. That's a great question. And I asked myself that same question when I was designing this system initially and obsessed over it a long time about who would want to part with multiple thousands of dollars for this thing that does this. And I didn't really know that there would be anybody. And now we have probably over 150 system owners.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Oh, that's great. That's amazing. Well, I know of some people and it seems like when folks get some facility with this system, and then they like work with musicians or bands or whatever, there's a lot of interest in it because it is very much a different experience. Although, while it's a different experience, I want to go back to something that you talked about earlier, which is the, the Sandin Image Processor - that Sandin, right? ...as being a really influential thing. So to certain extent, while it's exciting and new and very different from what we see in most digital video work, it really is a throwback to the past. And, I'm not sure that I even remember what Sandin Image Processor did. Surely you have, have studied what these systems were. Why don't you give us a an overview of the things that you think are the significant historical systems that led to the LZX system? </i>
+    </p>
+
+    <p>
+      <b>Liz: </b>
+      Sure. Before I answer that, I just wanted to go back to the last question; you had asked what types of people coming at this have really gone really far with it. And I think the answer to that would be artists who are multidisciplinary visual artists - who are usually people who are primarily into video or visual art, but have a background or have experience with  music and music making with audio synthesis. There's a lot of people that have come from to it from the audio world and
+      have gone really far. But the people I think really passionately pushing it as this whole new thing are the visual artists that have come to it from that angle.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah. You know, it's, it's funny because it's hard now to realize how important that is. Interdisciplinary was almost a bad word. You know, it was like, you're only interdisciplinary because you can't buckle down in work hard on whatever art form you should be working on. And I find it really interesting that now because of the access available to all these different art forms in art creation tools, in art disciplines, that interdisciplinary turns out to be where you want to be having skills in and background in music but in video, in art but in coding, in electronics, all these different things allow you to move forward in a way that you couldn't if you had been laser focused on any one of those disciplines. </i>
+    </p>
+
+    <p>
+      <b>Liz: </b>
+      Right. Definitely, if I were to count if I were to like list off in my head the 10 most active members in the LZX community that put out the most work that are, that have spent the most time on a daily basis with their systems and are like constantly turning things out probably seven or eight out of those 10 got into modular synthesis because of video synthesis and because of the LZX system from a visual artists perspective.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>It was the fact that it was available that drew them into modular systems. Interesting. So let's talk a little bit about the history of analog video synthesis, because it's, it's a pretty rich space and it's a pretty amazing space, but it's also a space that I think a lot of people felt was left behind - or that we had grown beyond or whatever you mentioned before the, the Sandin Image Processor as being influential. What, in particular about that system, inspired you - as well as what other systems or what other artists or developers drove you and, and informed you of where to go? </i>
+    </p>
+
+    <p>
+      <b>Liz: </b>
+      From the beginning, I've always been inspired foremost by the devices and the idea behind the devices more than I have by the artwork created by them. I love video art. It's just the devices themselves are what became fascinating to me and what I had to create. The Sandin was my first exposure to modular video synthesizer. There, there weren't a whole lot of modular pieces made - there's probably half dozen. The Sandin IP was developed in the sixties at the University of Chicago, I don't remember the exact university name, but Dan modeled it after the Moog synthesizer that he had seen, he wanted to make a Moog synthesizer that processed images. So that's why he went with a similar format of like patch cords and modular pieces. And, I have to think about it for a second, but I think his was the only truly modular in a way that we would think of like a Eurorack modular today, right.
+    </p>
+
+    <p>
+      I mean, there were, there were under 30 IPS built, and it was open source. Dan distributed the schematics in a big document, I think it was about between 20 and 30 people built them the cost in today's dollars in parts to build a standard Sandin Image Processor was about $17,000 to $18,000 in today's dollars just for the parts, the electronic components to build one back then. Whereas now you can get an LZX system that overlaps to hold the same functional areas for around $5,000. That's why video art didn't take off. And this had to be in a university environment to afford even pieces to build something, but the IP had several different... I mean, you had, an oscillator, you had a
+      mixer, you had VCAs, you had some sort of specific - there was a solarization function called the function generator differentiator, which is like a high pass filter with multiple cutoff inputs an amplitude classifier. We've cloned the function generator and the differentiator.
+    </p>
+
+    <p>
+      And they use created op amps, but they're the exact same circuits. And, those are available in the LZX line up with, with Dan's blessing. I haven't talked to him (Dan) in several months, but, I did a workshop in Chicago, I guess it would have been late 2011 and he attended the workshop. It was, I was shaking. He's a very kind person, but I was very privileged to meet him and talk with him. He said that it being there in that room with all of us, with enthusiasts was like taking a time machine back 30 years to similar rooms and Chicago lofts.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Right. Well, what now, in talking with, with him or with, with others, do you feel like my sense in talking with, with some of the people that introduced video as an art form is that they felt like the world had walked away from their vision of art. Do you get that sense, from Dan? </i>
+    </p>
+
+    <p>
+      <b>Liz: </b>Well, I think Dan has been very active with the electronic visualization lab all the way up through the present. I mean, after the IP, he went on to develop digital animation systems in the eighties and virtual reality systems in the nineties. So I don't get as much of a sense of that from him. Other pioneers that I've talked to definitely seem it's either it's either one of two camps: it's a romanticism for that old style of processing or on the other hand, it's "Why would you want to do that old stuff? Why, why even bother?" They just don't don't get it.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Right? Yeah. That's, that's a good point because I've run into that as well. Why would you want to do that? Haven't we gone past it, besides the Sandin Image Processor. Can you think of any other hardware that you, you remember, like in your research or studying that particularly stood out as important to you? </i>
+    </p>
+
+    <p>
+      <b>Liz: </b>
+      Sure. I'll briefly go through all the important ones. There is, of course the Rutt-Etra, scan processor, which was a device that's a whole other can of video art worms is vector synthesis using an X/Y display that allows you to do geometric transformations. There's also the Scanimate system, which was developed for early computer animation in the sixties. If you've ever seen like an NBC Superbowl logo from like spinning gold text from the early seventies, it was probably done on a Scanamate system, but it was also, it was very much a modular analog computer for manipulating video. I've studied. I don't think there's a video synthesizer that I haven't digested and studied as closely as possible, but there's the Sandin and I would say the EAB video lab, which was inspired by the Buchla system.
+    </p>
+
+    <p>
+      <b>Liz: </b>And there were like two, 4U rec panel modules and used banana jacks, like the Buchla, that it was modular, but there were only two modules like, right. And they weren't meant to be modular as in multiples of them so much. But it, it was very inspirational to me and that that system probably embodies the closest to the way that I try to embrace interface and layout with my modules. And that it's like lots of little functional blocks, but with a big picture in mind at the same time. Then there's the EMS Specter. There are only a few of those built and Richard Monkhouse designed that.
+    </p>
+
+    <p>
+      <b>Liz: </b>
+      I think they had, like, the story goes that they have like, a huge stock of switching ICS that were very expensive at the time leftover from some audio synthesizer run that EMS had designed. So they told Richard to design a video synthesizer, and see if they could do anything with that market using all these expensive switch ICS that they already had. So it's a patch programmable, like, patch matrix, type system. It's all based on hard key shapes. So most of it's all five volt logic running around throughout the system. Very interesting complex instrument, like the Video Lab very modular, but in a preset configuration, lots of that. And some of the territory that the LZX system has
+      not ventured into yet is is noise sources and text regenerators and random sources like random animation. And the EMS had a couple of very inspiring functions along those lines.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>That actually, makes that brings up a question. One of the things I know for myself, in my work, the different systems that I work with - whether it's the modular systems or the standard keyboard systems or digital systems, or in video, that the variety of mechanisms I use there. One of the things I know is that each environment makes certain things very easy and other things almost impossibly difficult. So, for example, in the music world or in the audio world, modular system is really good if you want to play around with mad modulation, or if you want to grab on to things and control them that's something that no other system really does a great job at conversely repeatability, not a big winner in the modular world. What, within an analog video system, what would you say are the things that represent the things that are easier to do than in other systems and what are the things that, that are more difficult to manipulate </i>
+    </p>
+
+    <p>
+      <b>Liz: </b>With video, you can pack so much information into an image that you can't pack as densely into an audio source. I think - not that an audio signal isn't extremely complex, you just have more of a playground to play with. So going back, the really complex modulation schemes that you would find in an audio system translate very well to video because it doesn't have to sound good. So whenever you add a modulation source, you are adding a degree of visual complexity and chances are, it's going to look interesting. Whereas with audio, I mean, we're talking about more digital versus the analog, video is used to being recorded and edited after the fact audio and music performance in general, has this like perception that the performance is the initial art form, the rehearsal and the performance of it. Whereas with video, especially like animation or abstract animation, it has a history of a little bit more like tediously constructing every little bit of it frame by frame. So I don't think there's the same. People are more likely to do collage work with their video synthesizers than they are with their audio synthesizers. I think what you mean by collage work, I mean, a recording pieces and then using the recorded pieces to compose and work.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Right. One of the things, when I look through the forum on Muffwiggler's - where people will post up their video snippets and stuff. One of the things I noticed is... and, I have to say this just knocks on the door of a dear love of mine is, there's a lot of people that really get pulled into feedback mechanisms, which is clearly something that this system would preference, but also the abstract use of spatial color manipulation. That seems to be a real big thing. Is that, is there something that you feel like the system sort of makes easier makes more access accessible? </i>
+    </p>
+
+    <p>
+      <b>Liz: </b>
+      Oh yeah. I mean, absolutely. Like if you're working in Photoshop, you have to have the idea to
+      do something before it happens. Whereas with a complex patch, you might just be a quarter of a knob turn away from something you would have never conceived of before. It's an exploratory process. I mean, the same as it is with an audio synthesizer and it's pleasurable to sit down and use, there's not clicking on menus, there's just this limited pallet of functions in front of you. And you know, I get tired when I'm on the computer editing images or editing video, whereas I can sit in front of a cathode ray tube and the video synthesizer, and you start playing with it and then eventually something happens and then 10 minutes passes and you realize you can just staring right at that screen for 10 minutes.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>That it actually makes me want to know though. Do you actually have a special screen that you use for the output of this rather than digitizing it? Do you use like an old style...</i>
+    </p>
+
+    <p>
+      <b>Liz: </b>
+      Absolutely. It looks completely different, especially when photographed. Oh, sure. It's just way more immediate especially when outputting an analog signal to an analog monitor, it's just going to happen in your eyes a different way. We're so used to seeing web video, and especially when it comes to like a high intensity animation color saturation, abstract images, if you view those on YouTube, it's not going to look anywhere near the experience of sitting right in front of a big cathode and seeing the way the colors just melt off the screen. And you you can turn the saturation up in a way that your LCD monitors never going to look like, or it just happened. It just feels different now. And with vector monitors, that that's even more of a unique experience because it just an analog X/Y display displaying like a rotating 3D shape.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>It's crazy. I've experienced that in the past and it's almost spooky because the vector display, somehow presses through the two dimensional nature of the screen in a way that a lot of three dimensional high-end OpenGL processing doesn't seem to do. There was something magical about a little cube on a vercot screen that would rotate and it just looked, it looked mad. </i>
+    </p>
+
+    <p>
+      <b>Liz: </b>
+      Yeah. I mean, your eyes are picking up on things that you're not gonna see otherwise. I've been working the past several months on something of an analog 3D engine. It's a full X/Y/Z, three dimensional to two dimensional perspective, transform all using analog computing and video rate. So you can rotate, position and size the input X/Y/Z object, anywhere in the 3d space as possible. And then you would display that on a vector monitor for rescanning. I'm really excited about getting some of the vector tools out. I've been reluctant a little bit simply because you have to, if I'm going to sell a product that requires you to hunt down an old vector monitor, it's just a little
+      tricky.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>How difficult are those to find? They must be... </i>
+    </p>
+
+    <p>
+      <b>Liz: </b>
+      Not. I mean, thankfully the community has really cataloged the good models and it was - kind of a rite of passage within our little video synth scene right now is hunting down your vector monitor get
+      your badge of pride when you get your vector scan set up all figured out.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>So where is the video synthesis community hanging out? </i>
+    </p>
+
+    <p>
+      <b>Liz: </b>MuffWiggler.com. There's a Facebook group for Chris King's blog - Video Circuits - the community hasn't been as active this past year as it was the year before. I think, I mean, everybody's still busy doing stuff, or maybe I just haven't been around as much. I've had a pretty crazy year, but yeah, that's generally where we all hang out and share ideas.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Sure. So what's what is next for LZX; you're playing around with these ideas with producing
+        vector content. But do you have things that are going to be adding to the standard lineup that's, going to enhance that world? </i>
+    </p>
+
+    <p>
+      <b>Liz: </b>
+      Well, yeah, I mean, we've had a big hit list so far a lot of the things we've released so far, I've had functional overlap in some ways with each other. But there's certain categories of processing that we haven't gotten to yet that I'm very excited to. One of them is digital frame buffers, which is, I mean, we've shied away from that because the analog stuff has been more important because you can't do the analog stuff on a computer. Whereas the digital transformations you can, but still doing the digital transformation is under a full voltage control of all the parameters will be really cool, and a big source of inspiration. There would be units like the Ampex ADO frame buffer, or the Fairlight CPI. And, so we wanna get into that.
+    </p>
+
+    <p>
+      I want to release some module specifically for driving it back to your monitor and it's on my list. I'm beyond that, I'm redesigning some of the initial concepts behind the system into some more integrated modules. When I first started designing this, it was all about functional blocks, and just getting as many functional blocks available so that people could use them like Legos and build whatever they wanted patch-wise. But I'm working now that I know that people want this thing and that there's a community built around it, and there's potential for it to expand and grow beyond that I'm working on some more integrated devices. So for example, I'm just putting the finishing touches on a module I've been working on for two years now, with Dan, and it's a 2D shape generator.
+    </p>
+
+    <p>
+      It's a primary shape generator with, with eight voltage controllable parameters. But you know, it has controls for things like through-zero degrees symmetry, 45 degrees, symmetry, rotation position logarithmic/exponential shaping over the curve of the edge of the shape, right? The more from like a square to a circle, and, and like size controls, border rekeying, and all these things that it would usually take several modules, across multiple functional blocks, to do something as simple as create a triangle on the screen and make it spin. So basically the past three years, I feel like I've been designing a toolkit to play with, and that these existing designs are going to become the utility modules for a new generation of LZX modules that are more integrated and artistically focused. It's just they're more usable for someone.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Well, it sounds like they're more goal-designed. Do you ever worry about that being a trap though, or not really? </i>
+    </p>
+
+    <p>
+      <b>Liz: </b>
+      Oh, I do. You don't want to defeat the point of having a modular system. And that's why, I mean, I guess so with these designs, I probably... I mean, there's a balance of too outrageously-functional, with every parameter patched out versus too-simple. I mean, you don't want something that just has
+      three buttons "circle", "square", "triangle". The goal with this module was to make it so that any shape could morph into any other shape that the module can create in a visually pleasing symmetrical manner. So it's more about a clever arrangement of processing. It's like an analog computer designed with a very... it's not Liz's super spectacular color organ op art synthesizer. It's not an art piece in itself, right. It's a compositional tool that has voltage control over the parameters. It's just the parameters are contextualized.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Well, I think it's interesting that you say that because one of the things I will say in looking over the work of people that have posted - snippets and stuff - is that you've designed a system that leaves plenty of allowance for the artist's voice. I mean, that's a badge of honor because with something new, in something where you're designing from whole cloth, it has to be scary to worry about saying, "Well, what I've just done is make a Liz's perfect instrument. And everyone else that does work on it is going to make a variation of Liz's work." </i>
+    </p>
+
+    <p>
+      <b>Liz: </b>
+      Right. Yeah. And that's not what I wanted with this system. I wanted to approach re-introducing these modular video tools in a humble way that showed a lot of respect to where this art form originated and what it is trying to continue, rather than capitalize on it. And then that would provide just the functional building blocks, even just a module that can convert any voltage into a video signal is pretty magical, I think. And that's that's where we started nothing like that existed, that video artists could just buy in.
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>Right. I think that's one of the things, whether you talk about the Eurorack systems or modulars in general, if you look back to what you used to have to do to put together a system like this... Like you talked about with the Sandin where it was like, you'd get the book of circuits, then you'd go and buy parts. And that was the path to getting into video video synthesis. I mean, it's pretty amazing now that you can pull together pieces off the shelf and put something, put something useful and interesting together. That's a pretty big swing. </i>
+    </p>
+
+    <p>
+      <b>Liz: </b>
+      Right. You know, and the Eurorack world is just amazing. You know, everybody has very much ownership over their instruments while at the same time supporting this community of effectively folk artists creating these instruments.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Right. So let's take a look at the bigger, in-the-future picture. Where do you see this going? I mean, first of all, it sounds like it was almost a struggle for you to really decode the video signal and be able to work with it in a useful way. Do you think that the domain is so difficult that it defeats the typical DIY hardware hacker kind of thing? Or is there a way to bring those skills to bear on stuff like this? </i>
+    </p>
+
+    <p>
+      <b>Liz: </b>
+      Well, that's why I designed the core modules with an open interface, the way that I did, like, the current modules, that are the core of the system or the ST Generator module and the Encoder module. And once you have those, all the hard stuff is out of the way, you don't have to design a video on NTSC Sync Generator and worry about color sub carriers. You just have to worry about plugging one volt voltages into red, green, and blue. And then you can also translate external video signals into that one volt signal where you can run them to your effects, pedals, or whatever you want to do. So I wanted to create an interface where people could use their hardware hacking skills to do things through a video signal or to the creation of a video signal without having to worry about, the interface or whether they're going to glitch out the projector at their gig or something.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>And so you've developed a standard of interfacing with video. Do you think that there are going to be other developers that are going to embrace the standard and build off of the work that you've done?
+      </i>
+    </p>
+
+    <p>
+      <b>Liz: </b>
+      Well, I hope so. I mean, that's the point of it. After all Nick Ciontea has designed a couple of modules, and they're great.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>The Brown shoes only stuff, right. </i>
+    </p>
+
+    <p>
+      <b>Liz: </b>
+      That's right. And 4MS is working on a version of their Pingable Envelope Generator called a Pingable Animation Generator, that does frame-synchronized envelope animations, and cycling animations. And I've worked with Dan to optimize that design and hopefully we'll see more people getting into designing some more complex mega modules to complete whatever vision they have that the system should be able to do. I think we'll probably see the system really mature into that over the next couple of years. And these more integrated modules will be some you don't have to understand the frequency and the oscillators the way that you previous you currently do, right. Or to create, artwork. It's not as cryptic.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Well, this, it seems like a really exciting thing. It looks like there's another mortgage in my future. Moving into this, this is it's fantastic. It's very exciting. And, I really appreciate the time you took to talk me through what you're doing and what the environment is like. I think our listeners are going to eat this up, but thank you very much for your time, and have a great day. </i>
+    </p>
+
+    <p>
+      <b>Liz: </b>Thanks very much Darwin. It was a pleasure.
+    </p>
+
+    <p><i>Copyright 2014-2020 by Darwin Grosse. All right reserved.</i></p>
+  </div>
+  <!-- jQuery (necessary for the Bootstrap JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

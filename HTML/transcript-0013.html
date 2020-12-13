@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Transcription: Podcast 0013 - Paul Schreiber</title>
+
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js does not work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+</head>
+
+<body>
+  <div class="container">
+    <h2>Transcription: 0013 - Paul Schreiber</h2>
+    <h3>Released: January 6, 2014</h3>
+    <br>
+    <p>
+      <iframe style="border: none" src="//html5-player.libsyn.com/embed/episode/id/2618975/height/90/theme/custom/thumbnail/yes/direction/forward/render-playlist/no/custom-color/000000/" height="90" width="100%" scrolling="no" allowfullscreen
+        webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+    </p>
+    <br>
+    <p>
+      <b>Darwin: </b>
+      <i>Okay. In today's podcast, I'm going to be talking to Paul Schreiber. Paul is the main man behind Synthesis Technology, which is a module maker. He developed the MOTM system way back in the day. And, it was a phenomenal system, groundbreaking in many, many ways. But he also is doing a lot of really interesting work and I thought it would be really great for us to spend a little time talking to him. Hi, Paul, how are you doing? I'm, I'm really pleased that you're willing to take some time from your busy schedule to talk to us. Why don't we kick this off by having you give us a little bit of your background? </i>
+    </p>
+
+    <p>
+      <b>Paul Schreiber: </b>
+      Sure. I, came from a family where my father was a nuclear physicist, so it's always around science stuff, but when I was in high school, I was interested in being a chemistry major. So I didn't do much eletronics except I just like listen to my stereo, but I didn't really do any kind of soldering and stuff like that until I got to college. And that was because I had to change my major from chemistry to electrical engineering, because I had to have a PhD in chemistry to get a job. And my mom had two daughters behind me and she wasn't going to pay for my PhD. So she basically enrolled me in EE because she said, and I quote, "He likes to listen to his stereo." So that was how I wound up being a EE major. And since I didn't have the math background, EE was pretty much of a struggle for me in undergraduate school until I got a copy of Electronotes. So a roommate of mine had a friend who had an extra spare copy of Electronotes. He gave them to me. I started reading them and eventually what got me hooked on thinking about synthesizers was reading through Electronotes. So during my junior and senior year, we had to have design projects. And so I would look through the lecture notes and pick some circuits out and build those in the lab. And that's kind of what got me interested, you know, back in the seventies, I'm showing my age be back in the seventies.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah. It's interesting that Electronotes pulled you in, that was really influential tool. Were you just subscribing, right from the author? </i>
+    </p>
+
+    <p>
+      <b>Paul: </b>
+      Sure. Well, I started subscribing, I believe with issue number 63, which - for people who don't know, Bernie Hutchins was a PhD candidate. It was then when Bernie Hutchins mailed them to you for like - the subscription back then was like $5 a year or something. And he would type your name and address on the cover of every issue if you're a new subscriber. And I will say that me and Bob Moog both have our name on the same page as being new subscribers. So I thought that was cool. I actually had that on my wall for many years. Like, look, we're equals (only in my mind). So, I think Bob and I joined around issues 62 or something like that.
+    </p>
+
+    <p>
+      And then I subscribed all the way to the very end. I never missed an issue. I bought everything he had. I read every page of that thing probably 15 times. He still felt that by the way, I think it's $250 to get everything. And I continually encourage people to buy it. You will not get more bang for your buck than by buying Electronotes. I have to understand that it was done when a lot of the old parts were still available, like CA3080, which she can no longer get. So you have to understand that you just can't copy everything in there, but you, that's not the point. The point is not to treat it as a cookbook. The point is to treat it as a food science book. So I kind of put that aside after I graduated, you know, when I graduated, got married, had children, I work in electronics as an application engineer for companies like Cirrus Logic and Maxim.
+    </p>
+
+    <p>
+      I did analog design, mostly. I did do some digital/DSP work in the telepany business, but I really wasn't into synthesizers until I started MOTM, and that was in the spring of 1998 is what got me interested and I mention that was stumbling across the Analogue Heaven mailing list. And so I was a very internet neophite, okay? I wasn't on the internet all that much until I learned about that list. And I jumped in with both feet. And for those of you who followed my activities on the Analogue Heaven mailing list with people like Mike Peake and Kevin Leitner, it kind of started off, shall we say badly?
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>It was, there was some contention yeah. At that time...</i>
+    </p>
+
+    <p>
+      <b>Paul: </b>
+      Right at that time. But, and I'm partially to blame because I misjudged the people who were on that list. I thought it was more of a technical list, TOPSIS DSP or something on the Usenet group, not a general purpose kind of list. And, so, that kind of ironed itself out over the years. And, but it kind of got me thinking. So what I thought about doing originally for MOTM and of course, people, you know, there's the MOTM stood for Module Of The Month was to do a new version of Electronotes, what you subscribed and what you got instead was you had a blank PC board and that's instructions. And then everybody who subscribed would build their own synthesizer. That's all the vision that the MOTM started. But, unfortunately I didn't have enough time to do that. So I had to go another direction, which was to offer, you know, kits - and not have a subscription model.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>What kind of a job were you doing at that time? Because I remember when, when it came out, you hit those first several months of flying and I was like, wow, is there is a guy really able to do this as a full-time job? And it's clear that that wasn't the case. What were you doing for work at the time? </i>
+    </p>
+
+    <p>
+      <b>Paul: </b>
+      Okay. So at the time I had a job where I was the field application engineer, but I've worked at home. So, it was mainly tech support and all done through email. But I was at home, and what I would do is I would get up in the morning and check my email. And most of my customers at that time were in Asia and in California. And I was based in Texas. And so I would basically be done by one o'clock in the afternoon - I would be done. And so once I was done, I could do my synthesizer
+      work. And, you know, I had the email notification. So when an email came in, it would go ding-ding, I stopped and I was doing, I go over and check the email. But, I was able to do both basically, you know, time sharing between my regular job and doing MOTM.
+    </p>
+
+    <p>
+      Now I started to MOTM - the only feel I had was the people on the Analogue Heaven mailing list. Okay. I didn't - Facebook wasn't around. So I decided to go very cautious. I'm a very conservative, cautious person by nature. Okay. And so I said, well, maybe I'll build a couple of hundred in a couple of years. And, I grossly underestimated the demand, which has been my claim to fame, I guess, for the last 15 years, mostly underestimating the demand versus my free time, which - as my children got older and my jobs changed, my time compressed, but I haven't seen the demand drop off in general in the last 13 years, which is really good. And a lot of people say, "Well, why don't you just stop doing that and do that full time?" And the answer is health insurance, right?
+    </p>
+
+    <p>
+      <b>Paul: </b>Because I'm married and my wife doesn't work and I had two children, I had to have health insurance for four people. And I did look around and I would call the various health insurance people and get quotes. And, they're outrageous. I mean, it's, it's around $2,000 a month, right? Just for the health insurance. And although the demand was high, I priced MOTM not to be sufficient for a full-time job. So people who are interested in getting the business: here's the rule
+      system. If you taste your parts cost and double it, you won't make a penny, right. We'll do this. It's called pinball. If you read the book, The Soul of the Machine, which won the Pulitzer prize, when I worked at Tandy building computers, the phrase was pinball, which means if you do a good job, they let you do it again. And so if you double your price, you're just playing pinball.
+    </p>
+
+    <p>
+      <b>Paul: </b>You won't make a dime. If you triple your price, you have enough money to hire yourself, part-time and buy toys, you to buy a new Oscilliscope, you can buy some new monitors, you can buy some new headphones. If you quadruple the price, you can have one part-time employee and so on. And so for MOTM stuff, it was a doubling, I just took the bill of materials and doubled it. And that's what I sold it for, because I was just interested in keeping doing it. You know, I had enough volume where I could buy a few toys. I took my wife to Hawaii twice and that kind of a thing, but it wasn't enough to stop what I was doing, pay for the health insurance and then still make a reasonable salary. It just wasn't that way, you know, there are, there are times when I daydream when I'm, and I'm certainly jealous of people who are able to do that, you know, like Intellijel and Make Noise. But I personally have not been in a position to be able to do that.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>I think that's a common issue though, too. And, you see, sometimes people get really excited about a new venture, drop everything to run off and do it only to find that perhaps the business isn't there to support them full time. And the problem is, by not being conservative, the business ends up going away, which doesn't really serve anyone's interests. Where you're approach makes it so that you've been able to, maintain a pretty, pretty good business for a long period of time. </i>
+    </p>
+
+    <p>
+      <b>Paul: </b>
+      I do that on the grace of my customer's patience, and I've got the best customers in the world now. I'm sure I'd have my detractors. And some of them have sent me some really entertaining email, including one, you know, recently. But the thing is that I've always been up front about that. I've never tried to hide and stuff like that. Now I do - I break promises. Yes. I'm probably known for breaking more promises than anybody, but generally speaking it's because something has happened, you know, in my personal life; recently in the last five years, I've had three job changes, including having to move from Texas to Arizona. And so I've had some very disruptive things happen to me starting about 2008. And so hopefully I'm going to try to get those behind me, knock on wood. So 2014 looks like I'll be able now I think that more full-time, my children are now in their twenties. I'm a quote, empty nester now. And so hoping to have more free time to do that. My wife will probably want me to, you know, spend time with her. You know, she's not into this at all, by the way, she has absolutely zero interest in what I'm doing.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>But I think that that's probably why... my wife is not into any of this at all. She respects that I like to do it. But, I think by having, having things that are different, it allows the relationship to maintain some enjoyment.  </i>
+    </p>
+
+    <p>
+      <b>Paul: </b>Yeah. My wife understands that the money I've made from Eurorack, I mean, it's really beneficial. The reason that's beneficial is that I went from trying to do everything myself, to having a distribution network and then doing most of the assemblies, you know, how you farm it out, right? And that's the one advice I tell everybody, okay. I say, do not think you are saving any money by doing it all yourself; you lose money because he can't produce it fast enough. You lose money. I said, you get it quoted out, you write checks. Then you go to Sean and you say, Hey, Sean, this is how much it's going to cost you. Sean says fine. You make Sean pay for it. Sorry, Sean. But that's how it works is that you make your distributors pay you for your time and effort.
+    </p>
+
+    <p>
+      Right? Okay. If you think that you can sit there and hand solder 60 kits on the weekend and make yourself miserable. Okay. You're not, you know, you're not helping yourself or anybody else. And I'm surprised - I'm not gonna say names, but there is somebody who's in the upper echelon of Eurorack stuff, who still hand solders stuff, which is silly because there's thousands of people desperate, you know, to bid on your business for doing this surface assembly. And again, you don't pay for it. You make your distributors and your customers pay for it.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Right? Well, I think, I think that people don't understand sort of the difference in the ecosystem now versus what it was like when you were first starting. I remember, when I was working with he-who-shall-not-be-named, it was very difficult to find someone who would do small runs of circuit boards or small runs of faceplates. And if they would do small runs, they would charge an arm and a leg because they were used to getting quotes for things in 5 and 10 thousands. And so when someone would come and say, well, I need like 50 of these. They were not sure what you're even talking about. So the, the kind of background system to help things move forward. And it just wasn't there, but also the idea of there even being modular distributors, like what Sean's doing with Analogue Haven and some of these other folks - the Schneidersboro people, none of that system existed. So the person who was putting together the modules also was having to pack them and ship them and do the bookkeeping and keep the order backlog and all that stuff. There's a tremendous amount of extra work that had to be done in order to pull that stuff together. </i>
+    </p>
+
+    <p>
+      <b>Paul: </b>
+      And I think what happens is people get excited about the fact that they're in the synthesizer business. And it's exciting to be in some size of business, especially if you sell to somebody famous, okay, "Ooh, Zimmer bought something!" Or, you know, in my case, "Trent Reznor bought a bunch of stuff" or something, but the actual synthesize or R&D and building is 5% of the business. I mean, you've got to spend hours in the office keeping my parts tracking stuff on UPS, finding the boxes? Oh my God, what did the boxes go? Oh, I might've typed, I can't tell you how many times I ran out of tape on a Sunday night, you know, that kind of a thing. And it's just, it becomes a job. Okay.
+      It's your hobby that becomes a job. Now. I know, I like David Dixon, from Intelligel, he calls it a "jobbie".
+    </p>
+
+    <p>
+      <b>Paul: </b>
+      The hobby and the job is a jobbie. And what happens that takes time away from everything. But again, you can't really hire somebody to do that. But you're right. I think the biggest single thing, which has been an impact the last three years to, to be able to do this more cheaply and efficiently is the combination of having cheap Asian-sourced circuit boards available and having cheaper PC board CAD alternatives available. When I started doing MOTM, I had to buy a full up version of OrCAD for the schematic capture and a full up version of PCAD 2006 from cadence. And
+      those two things combined were $18,000 dollars,
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Man. That's unbelievable.</i>
+    </p>
+
+    <p>
+      <b>Paul: </b>
+      And I paid $18,000 for that. I paid $16,000 from the [unknown] of precision. I paid $4,500 for a scope. Okay. It's a very expensive business. Okay. Back then. Okay. The other thing, which is cheap is eBay, right? So all these expensive pieces of test equipment, which were literally tens of thousands of dollars you can buy today on anybody for 200 bucks. Okay. It's just
+      jaw-dropping. I mean, my $4,000 analog scope - I saw it on eBay for $225 yesterday.
+    </p>
+
+    <p>
+      It's 5 cents on the dollar to buy this high end Hewlett Packard, Tektronix test equipment. Okay. So the test equipment is cheap. Circuit boards have dropped by a factor of 10, even in low point, even in low quantities. And then the CAD software, I encourage everybody to use a program called Diptrace. It's done by a bunch of crazy Russians over in Russia, but it's a great program. It's free. You can download it. And, and a lot of people use Eagle, but I like to use Diptrace and the capsules are free. They're not $18,000 anymore. And if you actually play out some use of boards, I think, I think I bought the high end of Diptrace. It was $400.
+    </p>
+
+    <p>
+      It's a huge difference. And then you have Metalphoto for your front panels and stuff like that. So it's very easy to be in the module design business today, much easier than it used to be. Another problem is that you kind of alluded to is that if you've had your copy of Electronotes, you use Electronotes as a point of reference or use schematics for the old classic synthesizers as a point of preference. If you don't understand the designs in there, he just tried to basically use them and, and build built them half the parts you can't get anymore. It becomes a real challenge. Today is how do I build something that I actually buy parts for? And the answer is you just can't look at something and trying to cop it. You have to understand, but that you have to understand what it is doing. And if you understand that enough and you can say, well, I don't need that exact FET I can use this FET over here.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Right now, one of the things - and this brings up a really interesting area that I'd like to explore a little bit - right now there's this whole movement really kind of based around Make Magazine and this whole Maker Faire thing, which is sort of oriented towards learning a little bit about electronics, the availability of software and, as you alluded to the test, the test equipment, the availability of this stuff at a reasonable prices is out there. So get out there and hack and play around and do stuff and make stuff. And it really encourages people to go out and break through that initial barrier and try something. And I think that's phenomenal. </i>
+    </p>
+
+    <p>
+      <b>Paul: </b>
+      The barrier of entry to electronics has always been high. I mean, when I was an undergraduate in EE at Texas A&M this is like, you know, say '77, '78, '79. My dream was to have my own scope. And back then a used Tektronix 465 was about $1,800. My father made $1,800 in three months as his salary. Okay. So can you imagine the modern person in a jobs saying "Well, a used scope is three months  salary." Well, you can go on eBay today and get a Tektronix 2465B for $400. Right. When it was new it was $20,000.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>But now with, with all of this stuff available, the one thing that seems to be missing in particularly in the music electronics area, but I think in electronics in general is sort of the next steps. So it's like, Hey, I went in and I soldered some things together and I made an Arduino blink a light or whatever, but now I really want to go through that process of learning to understand. Is there, I mean, do you think that any of that understanding process has gotten easier versus when you were learning? </i>
+    </p>
+
+    <p>
+      <b>Paul: </b>
+      No. And here's the reason why, okay. The process has been the same for 5,000 years. Okay. It all depends on - you have to want to do it, and I didn't ask to do it. And I think that's where a lot of people have had an issue. I know I tell my children that college is hard because it's supposed to be hard and that's true with learning electronics. Okay. It's hard. And it takes a long time. And believe me, when I was switching from chemistry to electronics, I remember one test. I might have five, I mean the number five on a test. Okay. But the difference is I didn't give in, I didn't give up. Okay. And you know, when I graduated, there were 62 people in my graduating class. I was ranked 33rd. So you could say, I was in the bottom half of my graduating class.
+    </p>
+
+    <p>
+      So, I mean, you don't have to be a straight A student. You just have to have the initiative and the drive. And basically what I did was I'm not going to give up, I'm going to say that this stuff out. Right. And what I used was I had Electronotes in my lap and I had the Larry Fast Synergy album on the stereo. And I said, I'm going to figure that out. You know, I don't have to make an A, but I'm going to figure it out. Right. It takes a long time. And I kind of see this a little bit when I look at demos that people do, other systems, okay. "They go, Look, I just got this great patch and here's a little video up, put on Vimeo and watch it go." And I looked at it and I watched every single one. Okay. I mean, I'm like a synth demo junkie and I click on it and it goes [synth noises].
+    </p>
+
+    <p>
+      And I go, "What the hell is that?" Okay. I mean, I'm like, look - that's great. But why don't you think about doing the Bach Two-part Invention? People go "Well, that's boring and stuff." I go, "No, because what you need to do is you have to learn how it sounds that way." And I think that's what a lot of people don't understand is that they need to go from simply looking at everything as a cookbook. So we, in our world, we call that being a technician. Okay. A technician is somebody you can give a schematic to and they will build it. And it will work exactly. And it's nice and pretty... you know, I worked at Microchip, which is a big micro controller. We have some great technicians as they do surface mount work with, you know, 0402 resistors.
+    </p>
+
+    <p>
+      <b>Paul: </b>And they build all these, you know, 10 layer test boards. And they're perfect. I couldn't do it if you paid me. Right. Okay. But those technicians literally have no idea what the building. None, and we have technicians. Who've been there for many, many years, but they haven't learned it. They can do it, but they haven't learned it. And so that's what I encourage everyone to do is have the SDIY, why it's move from doing it to learning it, just to understand it's going to take you years to do it - I've been doing this for 38 years and I'm still learning stuff.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Do you think that still going back to Bernie's electro notes is the best way to kick that off? </i>
+    </p>
+
+    <p>
+      <b>Paul: </b>
+      Yes. There's nothing better. There's absolutely nothing better if you're trying to figure out why is this a filter? Okay. Which is probably the hardest thing to understand, well, why is this a filter? You know, why is this an EGA/VGA? You know, why does this circuit make a high pass and instead of a low pass, you know, why is this opamp better than that opamp and stuff like that. And the other thing is, there's so much stuff on the web now that, for example, MIT has every single EE class undergraduate free on the web. Every single class at MIT is free on the web. Now it's all done a boring PowerPoint and you have no narration, but I'm saying as there's a lot of stuff out there that you can do. And that's how I learned now. Everybody is different, but I think that's how people do it
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Well. And again, it really has to be backed up by that passion of saying, I'm, I'm choosing to learn us and no one can prevent me from doing it. Certain amount of that is really required. So let's go back to the, the creation of MOTM, I really have some questions about, about it because I'm fascinated by what you did. And I'm fascinated for a couple of reasons. First of all, it's very clear when you, when you look at the units or when you, you know, start spec'ing out a system, all of the decisions that you had to make. And I know from, working with artists and technology, people of all different stripes, that one of the things that everyone is interested in is how other people make their decisions. And when I look at the MOTM synthesizer platform, I am overwhelmed by the number of decisions that you had to make in some finite amount of time. How do you decide, how do you make those decisions? How do you approach that decision-making process to say, I'm going to use metal of this thickness, or I'm only going to Switchcraft parts, or I'm going to have things laid out in a certain kind of grid. What was like your internal monologue as you were making those decisions? </i>
+    </p>
+
+    <p>
+      <b>Paul: </b>
+      Okay, well, it's essentially a two-part process. So the first thing I did when I decided to do this was I got a large piece of engineering type, or, you know, we actually used to have drafting, and I actually took drafting in college, and we used to have these pieces of paper that were 24 by 36 inches on grid, very large piece of paper. And I got one of large piece of paper. And at the top of the paper, I wrote what Bob Moog didn't have. Bob Moog made this system in 1968. He was an absolute genius dealing with what he was had at the time, as far as technology.
+    </p>
+
+    <p>
+      The cards she was dealt. I mean, he had to use certain transistors because there wasn't that many to have. You had to use Allen-Bradley Type J pots, because that's all you could buy. He had to use Switchcraft jacks, because you could only get those Switchcraft. That's the only place in America that made jacks and things like that. And so I knew what he had. So I got a big piece of paper and I wrote what he didn't have. The first thing I wrote was LEDs. Everybody knows I hate LEDs, but Bob Moog didn't have LEDs. Then I wrote CAD software. He didn't have CAD software. All right. And so on. Okay. Surface mount 1% resistors. I mean, we think 1% resistors are no big deal. I mean, 1% resistors. Now you can buy them for about a piece or something - in 1968, 1% resistors were about $9 a piece that was $9 in 1968.
+    </p>
+
+    <p>
+      Okay. And even, even when I was at Tandy doing modems and stuff, I needed a 1% position in my filter and high volumes - like millions of pieces - 1% resistors were around 18 cents a piece. Okay. But you need 1% resistors because they're accurate, but they don't drift with temperature. Right. So things like that. And I had this big, long list of what Bob Moog didn't have. That decided to do something like a Heathkit. Now Heathkits for all young people, with a company in the sixties or seventies that made DIY kits, everything from color TVs to shortwave radios. And they were known for these beautiful illustrated manuals. And we had a Heath get catalog. Their schtick was the first page was the color TV with the woman who said, "I'm a housewife. And I build a color TV!" So I want it to be like the Heathkit of the DIY world.
+    </p>
+
+    <p>
+      And so I built many Heathkits in my time. And what they did was they tried to make it fool-proof - when you make something foolproof they cost more. All right. So what I mean by foolproof? Okay. Everything from the size of the holes, the parts go in, you make them bigger than normal. Okay. You make the holes a little bit bigger. And you make the pads a little bit thicker. You make the copper on the board a little bit thicker. You make the parts spread out more. Okay. Because people who've never built before, you know, they're going to get freaky if the parts touch each other. Right.  I made sure that everything pointed the same way? Okay. All the diodes points, same way. I never had one IC point differently. That's because you knew instinctively that if it pointed is in the wrong way, it was wrong.
+    </p>
+
+    <p>
+      Whereas in reality, you put parts all over the board, any which way you want to, because nobody cares, okay; but when we're building it for the first time, you want everything to kind of not, you know, I just stuff like I used the same color wire for things. As far as being on a grid, I used for my basic layout the Aries system, which was on a grid. I had an Aries synthesizer in college. And I liked the way that it looked. And so I said, well, I'm going to put it on a grid because that way I can have the same brackets. I can have the same pots and the same position - I was doing it, not for aesthetics but I was doing it for the ease of people building it. That was my main thing, because what I didn't want to have happen is a nightmare of 400 emails a week, you know, "I built such and such that doesn't work." So I tried to make it - the phrase we like to use is "idiot proof". And I think I did a pretty good job. I've sold over 10,000 MOTM modules and I probably had less than 50 ever come back.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>I was going to say that you must have been successful with it because of the number of things, the number of modules that you sold and the fact that you still will talk to any of us, it's gotta be difficult to do that. And I think that's a really interesting approach to making decisions. Now, the other thing that I would say is that you set sort of a quality standard and, you know, you talk about trying to keep the MOTM items reasonably priced, but they are still high priced. And some of it was because of decisions that you made on parts and decisions that you made in the designs so that you could have what I think you considered exemplary performance. Right? </i>
+    </p>
+
+    <p>
+      <b>Paul: </b>
+      Right. Well, I'd say, you know. Yeah. And, you know, I wanted to have a system that would last for 20 years. Okay. When I was doing most of the design work I was working for a telecommunications company that we sold equipment to, like, to the Bell company and here in the US and the requirement was a 25 year life. Right. When they say 25 years, they mean they buy it, they stick it in an underground concrete vault, and they don't expect anyone to touch it for 25 years. And I kind of wanted that sort of attitude for MOTM. Well, let people say it those over-designed, which I claimed there's no such a thing as being, but yes, it was definitely over-designed. And part of it was in my career prior to that, when I was at Tandy, it was the opposite.
+    </p>
+
+    <p>
+      <b>Paul: </b>
+      Okay. So we would have meetings trying to save 5 cents. And I just, you know, that's an art in itself. Okay. Doing things as cheap as possible. When I, when I was designing the cell phones that we Research In Motion, we would try to save 5 cents over a thousand phones, not 5 cents a phone, 5 cents per thousand phones, because we made 45 million cellphones. Okay. So that's hard to do, but I was tired of doing that. So I wanted to be the opposite. I wanted to design something really work. I wasn't that much worried about the cost. I really wasn't. In other words, if I could get a high end military 0.1%, 10 PTM RN55E resistor for 68 cents. I bought it because, because the other resistors were 5 cents, but this one was 10 times what we were 10 times more accurate. And I could, so I did.
+    </p>
+
+    <p>
+      <b>Paul: </b>
+      And that's why I chose witchcraft tax. That's why I used, you know, the pots I did. That's why I still use the Alco type of knobs with the set screws and the brass inserts, because I wanted to show people that it was an alternative to building synthesizers that wasn't as cheap as I could do. And the reason I could afford to do that was I was not trying to make a living doing it number. I was not trying to support my family with the MOTM. I was trying to build, I was trying to buy a stereo. That was the main reason - I lived down the street from a very high end stereo dealer. Like I'm talking like a hundred thousand dollars speakers and stuff. And I wanted an entry level high-end stereo, which was around $18,000. At this store, entry-level what's around 18 to $20,000. And that's what I was trying to do. I wanted to get one of those high-end systems with speakers that are so big your wife won't let you have them the living room.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Right. Right. So I'm curious what, what brand gear was that you were looking at? </i>
+    </p>
+
+    <p>
+      <b>Paul: </b>Mark Levinson 383 amplifier and B&W 804 speakers.
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>All right. the classic starting point for that. I'm fascinated. I mean, if anyone thinks that the modular synth world is filled with voodoo and magic, they need to spend some time in a high-end stereo environment, because that is some outrageous stuff! </i>
+    </p>
+
+    <p>
+      <b>Paul: </b>Yeah. And that's all our discussion about, you know, at what point does the electronic reality stop and the voodoo start, but in MOTM, you know, you want it to sound good. There are very specific things that you can do that are not voodoo and magic. A lot of it is part selection that you can just say, well, look, this part is going to sound better than that part. It's not really much of a debate. It's just the way it is. Or I can make a low-trust DCO if I use these resistors versus those resistors. And that's not very much to debate. And a lot of people will still debate you about it, but those people don't have Masters in EE okay. Cause I met people who do have Masters in EE like, you know, Jurgen Haible and I we'd never debated anything.
+    </p>
+
+    <p>
+      Okay. So it's just like, there's very specific things you can do. Like with my 440 filter, there are some specific things about why it sounds the way it does, and the Moog ladder filter has various specific thing why it sounds, but what it does, it's not magic. It's very easily pointed out. Okay. You may not understand it if I pointed out, but to me, it's very easily pointed out. So when I did MOTM, I decided to do what I call the anti-Tandy. Okay. I did not look at the bill of materials when I decided that said, what is the best opamp for this job? What are the best capacitors and resistors for this job? And then I just took the price and doubled it and I sold it. Right.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Well, it's, my, my first experience actually touching one was at the Namm show when you were there and you had a big system. And, I have to admit it was, it was just a stunning to put the headphones on and to play around a little bit. Robert was working the booth with you on that one. And, it was an amazing thing because prior to that, I had cobbled together modular gear by whatever broken down university piece or old artists, you know, 20 year old system that it's sitting in his garage. I kind of just like cobbled together a modular system from that. And then, I mean, you know, I'm hearing about the MOTM stuff, but I didn't jump on board right away. And then I was at the Namm show and I was like, "Holy crap!" </i>
+    </p>
+
+    <p>
+      <i>This is, you know, first of all, it's really nice that it's new and it works and it's stable as hell. And it sounds great, but everything about it just felt wonderful and it had a personality and, just in the way that the jacks plugged in and the way that the knobs turned out was I was just amazed. And frankly, I remain amazed at the work you're doing. For example, I'm looking at my, I have a small Eurorack system I use when I'm doing performances and I have an E440 filter in there. Which, my claim is that it's the best filter in Eurorack by a long distance. It's a wonderful piece of work. And so over this whole period of time, these 13 years that you've been working on this stuff, you sort of maintained that - even though when I look at what's behind the panel on an E440, it's very different from what's behind the panel of say an MOTM 440, right? </i>
+    </p>
+
+    <p>
+      <b>Paul: </b>
+      Yeah, sure. And that's because again, the parts aren't available anymore. And so that's a prime example about knowing that I have very intimate knowledge of that circuit, that, you know, Jurgen Haible originally developed and licensed to me. Right. And so when the original parts there in the MOTM version became unavailable about two and a half years ago, it took me about 10 months off and on to find an equivalent set of parts that sounded the same. I mean, it was not easy. It wasn't just, "Oh, pick that." No, no. It was building, you know, eight or nine different versions and having different people listen to it and say, "No, that's not it." "No, that's not it." "Oh God, no, that's not it at all." So it's very difficult to find the right combination. Okay. And I knew, for example, that I had to use the same capacitors, the capacitors that are using the 440 filters are polystyrene. And if you change out those capacitors, it will sound different.
+    </p>
+
+    <p>
+      <b>Paul: </b>
+      And so, so I had to use, if you look real closely, you know, those are hand soldered on the board while the rest is put on by robots. Those are hand soldered and it costs me a dollar a piece for those capacitors, but I don't care. It it's what a big part of that sound is - those capacitors. And the rest of it is getting the gain structures matched. And the OTA is, and that took a long time to do the parts that when they originally budgeted for 42 per very extensive parts, but that were very accurate and those parts are no longer available. So I had to go to cheaper parts, they're cheaper, but they're not as accurate. So I had to do a lot of experimentation. And so that's an example of having the original design go obsolete and not say, "Well, I can't build e40's anymore." Whereas if I didn't know how that circuit works, that's what I would have to say.
+    </p>
+
+    <p>
+      <b>Paul: </b>
+      Right. But I know how it works, so I know what to do. So I just have to do the work. I'm doing that same thing right now on the Yamaha CS-80 filter. And MOTM 480, which uses the CA 3280, which you can no longer get. So me and the original designer are working to build it again was completely new parts, but we have to make it sound the same that we know what the trick is. Okay. There's actually two tricks to make it sound the same. And so we have to replicate those tricks and the new design, that's going to take some time and I'll probably have that out this summer, but it'll sound
+      just like the original 480 when I'm done, but it won't be the same schematic at all.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Well, now this, this raises another question though. Some of the other modules that you're doing, particularly on the Eurorack side are actually computation devices that you have performing audio functions. I'm thinking of the Morphing Terrarium, the Dual Morphing LFO, the Cloud Generator. These are computational devices, right? </i>
+    </p>
+
+    <p>
+      <b>Paul: </b>
+      Yes. They're all based on DSP, you know, circuits on the board.
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>I have to try and figure out how to word this the way I want to word it, because I don't want tosound prejudicial one way or the other. I think it's cool that you can do it. But to what extent did you make the choice to do this DSP-based stuff just to make it practical versus preventing, running down a road that where parts would no longer be available? I mean, is it something where you said, "Hey, I want to do a Cloud Generator, and there's no way to do it realistically in analog hardware.", or do you not care about it one way or the other? I that's kind of convoluted, but I hope you can understand what I'm saying. </i>
+    </p>
+
+    <p>
+      <b>Paul: </b>
+      Well, okay, I'm going to say something. That's going to sound kind of arrogant or strange to a lot of people. But again, if you're a EE you'll know what I'm talking about - there's only so much you can do with resistors, capacitors, transistors, and opamps; it's only so much you can do. And most of it's already been done. There's not going to be any new filter discovered because all the filter transfer functions are known. It's like discovering a new element between #12 and #13. There's not one: it's either 12 or 13. There's not a 12 and a half. And that's somewhat true in analog design is that it's been a focus for so long, since 1968, it's been a focus. And there's really not much room left for pure, true, never before seen completely unheard of, "Oh my God" analog design, okay. Right. But in the DSP world, we're destined the first five years of a 30-year adventure in DSD, right?
+    </p>
+
+    <p>
+      <b>Paul: </b>So we're basically in the DSP, we're at 1972. Now that's what we are. We're at 1972 electronics. If you think in terms of what we can do with DSP. The thing about DSP is, again, up until three or four years ago, it was very expensive. The parts were only grid-array and most people can't deal with grid-array. They consumed a lot of power because they weren't concerned with being, you know, power efficient, but we've all benefited now from the iPhone and the cell phone smartphone revolution, which is all DSP-based. And so now that's the main consumer driver. Okay. I mean, what is the electronic consumer driver and the world itself? It used to be computers. It was computers
+      for 20 years, before that it was home stereo.
+    </p>
+
+    <p>
+      No, it was the home stereo... Oh, and color TV, I guess. They were the drivers. Okay. But now the
+      driver, the cellphone, that's the driver. So what happens from the semiconductor companies is you start putting more R&D into DSP. Well, the thing about DSP is, is that even a low end cheap DSP -
+      I say cheap - I'll say a $5 chip. So let's, let's talk about what's in the 350 and the 340. Okay. It's a microchip $5 part. Okay. That $5 part is running at 72 megahertz running 16 bit calculation, but sometimes 64 bit calculations, 72 million times a second for $5. That's pretty impressive to me. Okay. Because the way DSP works is you have to do all your calculations between your sample time. So if you're going to have a sample rate 44.1 kilowatt Hertz, okay. What does that mean? We have like 22 microseconds to do all your computation. So that doesn't sound very much like time, 22 millionths of a second. That's not a lot of time.
+    </p>
+
+    <p>
+      Well, the thing is you can run a hundred thousand calculations at a time and you can do a lot with a hundred thousand calculations. So that's the advantage. Now it's very difficult to learn. It's very difficult to do what's called an abstraction level, which means how can I look at a bunch of mathematical equations and make the Morphing Terrarium come out at the end? Okay. Again, years of work to do that, you just don't pick up a book and read it in a weekend and then become a DSP expert. Okay. And so you just have to learn how to do this kind of stuff, things like you said, you know, the computational engines. So if you're doing oscillators, that's a computation. All right. And it turns out to do a simple wavetable oscillator. It was a very simple, fast computation. Like the Morphing Terrerium has two outputs, right? So I did an experiment and saw just the pure software experiment where I said, how many different outputs can I compute in a Morphing Terrarium? It's 280. So if I had the hardware, I can have 280 individual outputs in a more country for a $5 chip.
+    </p>
+
+    <p>
+      So here's the deal. Because the driver is cell phones, which is battery powered for one. Okay. Think about cellphones, battery-powered, or tablets, battery-powered. The world has gone away from things that plugged in the wall to get battery-powered. It leaves the old technology behind, because the old technology, if I'm a 36 volt process it's designed, you know, +/- 15 or +/- 12 volts, there's not +/- 15 volts in your cellphone. Right. Okay. If you're lucky you have three volts, most cell phones run at 1.8 volts, some of them run at 0.9 volts now. Okay. You don't have +/- 15 volts in your cell phone. Well, if you look at all the new opamps that come out, what do you think they run on? They don't run on +/- 15 volts, they run on 3 volts. Okay. Are they nice big dip packages?
+      No, the are in teeny-weeny packages. All right. So we have to use what's available to us at the era that we're designed in. And right now the era that we design in is this older stuff slowly going away. Okay. Just to give you an example, a really good opamp okay. That is good for both audio and DC in quantity one right now is $6.
+    </p>
+
+    <p>
+      So I can get an opamp for $6 or I can get a whole DSP or $5, you know, and the pots I use cost $2.50 cents each. Okay. So I can get a whole DSP for the price of two pots. And so the cost of analog is going up in the older technology. If you, if you want to stick the old technology, if you don't understand how to move from designing from +/- 12 volt systems to 0-3.3 volt systems, okay. Then you're forcing yourself to use a subset of available parks in the world, which happened to be the most expensive parts in the world. And so part of the reason I'm doing this is to train myself to move away from the older technology. Okay. Like in the E-375 VCO I'm coming out with working on all the opamps are low voltage opamps in there. Okay. They're not the old technology opamps. You know,
+      it has a 120 megahertz DSP in there.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>And then you're just, you're just, moving the voltage up at the last step for interfacing with the rest of the system. </i>
+    </p>
+
+    <p>
+      <b>Paul: </b>
+      Yes. Then you just have to goose it up at the very, very end. Okay. And then all the internal processing is all done in 3 volts. Everything on the board is three volts, except the very steps coming in, the very steps going out. Okay. And so there, I'm forced to use this old technology opamps. Okay. And which you can still get, but they're not near as good as the newer technology opamps that are single-supply. They're just not as good. And that's because the companies that make them are no longer focusing on that market, the companies like Analog Devices and TI that make these opamps, right. "They don't sit around and say, we need to make the world's best +/- 15..." because Apple is like that "We want this other low voltage opamp. And by the way, we went 10 million a week, 10 million a week."
+    </p>
+
+    <p>
+      And the other high voltage stuff, they sell 10 million in a year. But that part of the deal is, and so you have to always evolve. I mean, that's one of the reasons I think I've done so well on my career is, I've always trained myself about every five years to do something different. And it's hard to do. It's hard to let go of the old stuff because you become familiar with it. But I know a lot of people who just like in their career that to stop and say, "I don't want to learn DSP." Right. "I don't want to learn to program." And ssee, I had a discussion recently with somebody who wanted to do something. And I said, "Well, that's a perfect thing for a little microcontroller." He
+      goes, "Well, I don't know microcontrollers."
+    </p>
+
+    <p>
+      What do you think? I told him, learn, learn, learn. Okay. "Because he was thinking, I can do this with a bunch of 555 timers and a bunch of..." I said, "Look, you're wasting your time. You could do with a microcontroller and 20 lines of code." Right. You know? So sometimes the solution is right in front of you and the excuse that you don't know it to me, it's not an excuse. You learn it. That's what I've done. Okay. I'm a chemistry major. I knew all about TA prep. Okay. And so, you know, in my job at work, you know, I wasn't that familiar with programming in C - I was an assembly language programmer. Well, every day at my work I program in C and nothing but C, right. So I've had to learn. So at the age of 58, I'm taking C classes, which is interesting. Because my, my teacher's 27, but he knows C and I don't. So there you go.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Well, Paul, man, I've, I've got a list of questions. I'd like to ask this as long as my arm, but unfortunately our time is up. I am going to be coming back to you for a follow-up on this, because I think you've given us some incredible ideas. Some just core knowledge and, getting it from you is like magical. I really appreciate the time. And I'm gonna get back to you so we can follow up on this a little bit at some point, too, if that's okay with you. </i>
+    </p>
+
+    <p>
+      <b>Paul: </b>
+      Sure. We'll have parts two, three, and four coming up this summer.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>That sounds fantastic. All right. Thank you very much and have a great day. </i>
+    </p>
+
+    <p>
+      <b>Paul: </b>
+      Bye bye.
+    </p>
+
+    <p><i>Copyright 2014-2020 by Darwin Grosse. All right reserved.</i></p>
+  </div>
+  <!-- jQuery (necessary for the Bootstrap JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

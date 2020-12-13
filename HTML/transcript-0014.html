@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Transcription: Podcast 0014 - Randy Jones</title>
+
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js does not work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+</head>
+
+<body>
+  <div class="container">
+    <h2>Transcription: 0014 - Randy Jones</h2>
+    <h3>Released: January 12, 2014</h3>
+    <br>
+    <p>
+      <iframe style="border: none" src="//html5-player.libsyn.com/embed/episode/id/2627550/height/90/theme/custom/thumbnail/yes/direction/forward/render-playlist/no/custom-color/000000/" height="90" width="100%" scrolling="no"  allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+    </p>
+    <br>
+    <p>
+      <b>Darwin: </b>
+      <i>Okay. In today's interview, we're speaking with Randy Jones of Madrona Labs. Randy is a long time participant in the media arts in general. He's been involved in a lot of projects across landscape, but, in this interview we're specifically going to talk about his work with the Madrona Labs company that he started, and with the balancing work that he does with hardware and software development, Randy, how you doing today? </i>
+    </p>
+
+    <p>
+      <b>Randy Jones: </b>
+      Pretty good.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Why don't we kick this off like we generally do in these interviews by having you give us a little bit of background. </i>
+    </p>
+
+    <p>
+      <b>Randy: </b>
+      Okay. Well you mentioned Madrona Labs, so maybe it's easiest for me to work backwards a little bit. You know, and then maybe I can work forward again. I don't know. Well, we'll find out. Cause currently I'm spending full time, working in the context of Madrona Labs, which is a company I started in 2008. I've been doing my thing full time for three or four years now. And that is, as you said, making hardware and software for electronic music. Right before that, I got the idea to start the company based on where I was at, and the fact that I'd demonstrated a graduate degree at the university of Victoria and I made this thing called the Soundplane, which was in the context, it was a big part of my master's project at USAC.
+    </p>
+
+    <p>
+      And this was a prototype of a multitouch pressure sensitive surface. That Soundplane was an attempt to make a new version, a thing that a couple of people had been chasing. And I knew about these other ideas for making pressure sensitive controllers. And you know - we can get more into detail about it later. But it was a vision that I'd been kind of chasing to put, more directly in instrument. I wanted to have it since at least 2000, when I'd fooled around with some other really  early implementations of that kind of a thing. And I'd been thinking for a long time, it would be such a great controller for electronic music. And before that, I was as you know, working for <a href="https://en.wikipedia.org/wiki/Cycling_%2774">Cycling '74</a> for a little while on the visual projects mainly.
+    </p>
+
+    <p>
+      And I think it was when I was working on Jitter, with Joshua K. Clayton of course, and with Jeremy, mostly; I was responsible for coming on and doing the OpenGL stuff essentially, because I'd been working in the area of trying to combine sounds and visuals - and do realtime performance - for quite some time of electronic sound and images at the same time. And there, culturally there's a real rich history to draw on that I was starting to learn about at the time and excited by, technologically. It was just becoming possible to do that kind of a thing with your own computer, but only if you worked using OpenGL so that the CPU didn't have, because the CPU's were just capable of pushing around enough audio for people's uses at the time.
+    </p>
+
+    <p>
+      So, this was really sort of the birth of people being able to do a lot of cool stuff around that time. And before that, I just had a long standing interest in electronic music for whatever reason, I guess to go into that would be, difficult to understand maybe, but you know, my parents had a cool record collection. That's probably one aspect of it. But I remember I always used to go to the library in Madison, Wisconsin, which is a college town - and my dad worked there. So there was some way I could get into there, he could get me a staff pass to the library. And I remember I was always going and checking out books on electronic music and things like Bernie Hutchins' Electronotes. I guess you'd call them fanzines now almost, but this is a highly technical fanzine
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Interesting that you bring that up, because I just got done interviewing Paul Schreiber and a lot of our discussion there was about how important Electronotes was to his developments as well. And it's really an amazing piece of work and amazing that you can still get them - that Bernie Hutchins is still selling [back issues]. </i>
+    </p>
+
+    <p>
+      <b>Randy: </b>
+      Hmm. Yeah, that's really great that, what can I say? That's great. Yeah.
+    </p>
+
+    <p>
+      I haven't been too active in, in hardware synthesis design because it was... You know, I was interested in all this stuff and made a few circuits or whatever, sort of know enough about electronics now to be dangerous. But around the same time I was checking that stuff out, I got my first personal computer, which was a VIC-20 and made just a ton of weird programs for that to kind of play with sounds and visuals. That was one of my favorite things to do, when I was real
+      small. So, yeah, those software... Of course never really thought about it then in an abstract way, but I guess all along the possibilities of software have seemed more open-ended
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Sure. Did you say, did you say your first computer was a VIC-20? That's outrageous! So you got where you got entranced by very blocky video to begin with? </i>
+    </p>
+
+    <p>
+      <b>Randy: </b>
+      For sure.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Cause that was one of the early computers bouncing around our home as well. And I just remember, it's kind of funny for me at least now to see this enamorment with eight-bit audio and the really crunchy video, when at the time we would do anything to dull the edges of those great big pixels, you know? </i>
+    </p>
+
+    <p>
+      <b>Randy: </b>
+      Yeah. Well, there wasn't even that much you can do, but yes, absolutely. I remember trying to do images on a screen that was - I forget what the resolution was probably like 200 by 80 or something like that. So pretty funny sunny stuff to look at. It sounded great - a great amount of nostalgia for a lot of people around my age.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>So let's talk a little bit about the Soundplane first. My first interaction with it was when I was actually at the <a href="https://en.wikipedia.org/wiki/Cycling_%2774">Cycling '74</a> office and I had heard about it and seen pictures of it; but my first touch on it was one that we had bought from you, I think, and I was blown away. Because, first of all, it was a beautiful instrument, but, additionally, once I plugged it in and kind of attached it to some things, it was also extremely playable in a very instrument-like way now. You said that you had worked with previous touch-based systems. In my past, the one that I think of - I mean there weretwo primary ones that I used, which was the TKB - the Serge Touch Keyboard, as part of the Serge modular system, but then also the Buchla Thunder, which I had for a while and drove me a little bit nuts. </i>
+    </p>
+
+    <p>
+      <i>I, one of the things I found when I first tried Soundplane was that it didn't drive me nuts from the standpoint of it tracking the way that I was touching the instrument. Also, there was something about the design. It drew out my guitar just background, to be able to interact with it in a very comfortable way. What were the design concepts that you brought to that it ended up creating something that I would consider much more of an instrument than a controller? </i>
+    </p>
+
+    <p>
+      <b>Randy: </b>
+      Yeah, I think instrument control versus controller is interesting thing to think about, because ever since people started making music with electronics, really, there's been the ability to divorce the sound generating part of the instrument from the sound controlling part of the instrument and the sound interacting part because it also... instruments give us tactile feedback too. So that's important. And I guess, yeah, I wanted to think about it, not as much as a technical problem, but also a musical one and how a lot of these other instrument designers have done the same thing. But just to approach it in a way that it fulfilled my needs and what I've kind of sketched that out, it seems like it might be general purpose enough that other people would be interested in it too, I guess the main difference between the Soundplane and a lot of the things you're talking about is
+      tactile quality.
+    </p>
+
+    <p>
+      And so when you push on the Soundplane surface, even though it's made of wood, it's all these mechanically separate, bits of wood that have been separated through laser cuts, they're still joined through various layers of adhesive and elastomers inside the instrument. And so when you press on it, there's a very definite give to it, over about a millimeter or so. And I worked on that response really hard. I tried at least 10 different kinds of foam in there and different layers of them and different thicknesses of them. And, the idea is, it feels very different. It gives you tactile feedback, unlike something like an iPad app would, and unlike the capacitive controllers that you're talking about.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Right. Well, one of the things that that little bit of give and, I have to say, the feel of it lives in between the pressing on concrete feel you get on an iPad versus something real super squishy, like a Monome or something like that. It's a very subtle give, but it is one where it seems like - especially from a guitaristic standpoint, it seems to have sort of the level of movement that's kind of reminiscent of how you do string bending or string vibtato on a guitar. I found it really interesting. Now, what is the mechanism that's picking that up? Is it watching the physical movements of the wood or is it actually capacitance tracking of your fingers? </i>
+    </p>
+
+    <p>
+      <b>Randy: </b>
+      So it's a true pressure sensor. It's reading out the forces applied to the surface. So if you put a your phone on it or whatever, it'll pick that up - or you put a rubber ball on it, it'll pick that up. And it does that by internally doing capacitive measurements between a couple of plates. So there's some moveable plates, in a sense they're antennas just behind the wooden surface and between on them, there's a bunch of springy rubber. And then at the back of it, there is another set of metal, pickups that are on circuit boards. So on the front there is flexible antenna material. The kind they use to make circuits in your phone that wrap around or whatever, the bendy stuff, flex circuits.
+    </p>
+
+    <p>
+      And so these in columns and in the back, the pickups are in rows. So, you read it out and you get a matrix. And in the Soundplane case, the matrix is eight by, 64, I believe. And, yeah, so you've got a fairly fine resolution. And it's also read out at a thousand frames a second, which is a lot more than things like iPads. And that's a case where it actually might've been overkill, I think in my experience with it. Because it turns out you're limited in a lot of cases by how fast the material can move and things like that. But, I dunno, it's about right. And that's what a lot of the papers that I read by people I respected, like Matt Wright, wrote about that you need around 1 Kilohertz to do a good kind of percussion musical gesturing, weird.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Well, I approached it guitarist/stick-ly, but I can see where it would be very conducive to a percussion-like interaction as well. But yeah, you need really snappy timeframes for that. </i>
+    </p>
+
+    <p>
+      <b>Randy: </b>
+      Strange kind of a hybrid in the way in terms of the markings that you're talking about and everything on it. And also in terms of the fact that you can slide around on it freely, but it's giving you a kind of playing suggestion in the form of all these different keys, at the heart of it, it's really just, a general purpose sort of X, Y, Z controller, detecting where you put down any number of fingers. So, there's no need to use the keys, but as the design developed, it seems like, well, a significant number of people might want the suggestion of frets. And I don't really even have a guitar background myself, but the guitar markings were more of a design solution because you might want to do things just like with a guitar, like tune a different string or in the case of the Soundplane tune a different row, to a different interval relative to the other ones. And if you put markings say on every row that said, "Okay, this is now a five row keyboard and there is offset by octaves..." or whatever, or use some design that microtonalists use for their keyboard layouts. Then you'd lock everyone into that. So the compromise between complete freedom and between, also having something to look at.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Well, I think that there's some history to that because not everything with fret-like markings are necessarily a guitar-like in their behavior. You know, if you think of a steel guitar or a Dobro, that's very, very much based off of the conceptual basis of a guitar, but not played in that way. </i>
+    </p>
+
+    <p>
+      <b>Randy: </b>
+      Yeah. There's one getting played right now by Alessandro Cortini, who's a synthesis and also a guitar player touring with Nine Inch Nails with a couple of Soundplane instruments. And I was interested to see what he did. He ended up making some Day-Glo stick-ons or night-glow markings, actually above the whole keyboard. So he made the same kind of markings, but above the keyboard area. So his hands are never covering them. So I'm not in a rush to change anything about the instrument, but as different solutions like that evolve, I might think about adopting one or more of them after talking to people about it.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Now, when you talk about the creation of the surface and all it's in, and I mean, you must've had to put together a zillion prototypes to get it to where you had both the feel and the measurable, output that you needed. It must've been insane. </i>
+    </p>
+
+    <p>
+      <b>Randy: </b>
+      Yeah. A zillion is about right. It really took a lot. I still got the first thing I put together out of copper strips, and I was just looking at it the other day, because I was cleaning out my closet sort of the first working prototype, but the first prototype is actually - [there's] still a video of it on YouTube that I took in '08 or something when I was finishing up my master's work and I didn't build any electronics to do it. So it's just got these long cables that run to an external audio interface. But if you have eight ins and eight outs that you don't mind tying up with your prototype, then you can send signals out - like I was talking about before - and then measure them from the audio inputs. And if you're lucky and it's not too noisy, you can make a working Soundplane with an audio interface. So that's what I started. That's what I did for the initial experiments. And it was handy because I'm not a great hardware engineer. So I didn't have to build any hardware to do that.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Right. So how now, with the current shipping Soundplane, how does it interface with the computer? Is it the equivalent of an audio interface or is it some other mechanism? </i>
+    </p>
+
+    <p>
+      <b>Randy: </b>
+      That's a good question. It is a, so the Soundplane plugs into the computer via USB and it's just one USB cable, which is pretty important to me as designer of the instrument. I mean, ideally it would have been no cables, but that wasn't really doable. So the USB provides power and it also sends information back to the computer now. I think maybe what you're asking specifically was does it look like an audio interface to the computer in terms of the USB protocols and all that. And there was sort of a case to be made for doing that because you there's already audio software on the computer and it might've made our job a little easier, but on the other hand, if you have an instrument and it's something you're never ever listening to the audio of, it seems...
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah, it could be confusing to the user, right? </i>
+    </p>
+
+    <p>
+      <b>Randy: </b>
+      Yeah. Or people might plug it in and hear a really bad noise. You know, if they ended up listening to it - and I'd also learned that every audio interface I add to my computer is a possible source of instability and at the very least confusion when you're trying to select between them all, if you do a lot of work that way. So yeah, we went with a special USB where it does the Soundplane, it sees the audio data internally, does a lot of FFTs on it - which is the basic math required to get the pressure measurements out of the device. And then it transmits basically a matrix of the pressure values to the computer. So it doesn't transmit gestures or anything like that. It's a very agnostic kind of... learning from David Z's [Zicarelli's] approach of meaningless numbers and from what
+      people do in Max/MSP, it doesn't try to impose its own limitations on the job. It just gets you the data.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>So, how then do you interface that data to your audio application? Whatever it might be... </i>
+    </p>
+
+    <p>
+      <b>Randy: </b>
+      Right. So the data comes in as a fairly abstract level of being a sort of movie of pressure a thousand times a second. And that's pretty weird stuff. So there's an application, that you run that takes this raw data and turns it into MIDI or Open Sound Control messages. And in this application you can do things like set up zones and say, "This is known as an X/Y slider", or "This one is just a 1-D slider" or "This whole area is going to be mapped to this range of MIDI notes".
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Right. Interesting. So, first of all, how available are the Soundplane? I mean, they look like when I first saw it, I was blown away because it has the kind of build craftmanship of like a violin or something, you know? So it's, it's clearly not a mass produced item. How available are they? </i>
+    </p>
+
+    <p>
+      <b>Randy: </b>
+      Well, I'm making the another run, in February. So just next month here. And maybe this will come back to the discussion of the balance between software and hardware. I've got no desire to make them scarce, certainly, but I'm limited in my ability to make a whole bunch of them. So there's 50 or 60 out in the world right now, actively. And, when I make another run, it might be 30 or 60 more instruments, depending on how many orders I'd get. On the one hand, it's not as easy as like walking into guitar center and grabbing something, but, you know, I think I'm sort of keeping up with demand on the other hand. There might be some more interest shown now that some artists that more people know about are starting to use it. But you know, that's a problem that I'd like to have. And if that happened, I'd probably devote more of my time to making instruments this year, I guess. We'll
+      see.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Well, after this call, we'll have to talk about getting my order in, but certainly having someone like Alessandro visibly using the devices is really important. </i>
+    </p>
+
+    <p>
+      <i>Now simultaneously with the development of Soundplane, you also developed a plugin instrument called Aalto, where you actually have gotten a lot of attention. So when I perform, I perform with a modular synth, and I'll often show up at some random coffee shop somewhere and set up my little rig and people come up and say something - I only talk to other people I think that are into modular stuff. So, only marginal people will be at the coffee shop. But a lot of people come up to me and say, "Well, I haven't really gotten into the hardware modular stuff yet, but have you heard of this thing called Aalto..." and it comes up a lot, surprisingly, certainly if you look at a forum like Muffwiggler - as a software implementation of a modular synthesizer, it's getting a lot of play. It's the most talked about software on the site. </i>
+    </p>
+
+    <p>
+      <b>Randy: </b>
+      Yeah. In that world. It seems really popular.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah. So what, what caused you to go from making a hardware thing based off of copper plates to a software modular system that... I think one of the reasons people are into it is because it has sort of a Buchla-ish sensibility without necessarily being slavish to historical precedence. What caused you to take a swing at that? </i>
+    </p>
+
+    <p>
+      <b>Randy: </b>
+      Well, it's kind of a roundabout trip. So I had the idea for the Soundplane coming out of grad school and the Soundplane came up in the context of physical modeling, the thesis I think was actually called "Intimate Control of Physical Modeling Synthesis". So the idea behind the Soundplane in one sense being how can we make controllers that make our connections with computer music more like our connections with acoustic instruments. And so I had this project underway to actually build the instrument and get it to people on a small, craftsman kind of level - 30 at a time or whatever. And this project I thought would be a reasonable one. When I was leaving school, if it could be completed in six to eight months or something like that, in retrospect, that seems sort of ridiculous given the complexity of the project that I know now, and all the things I had to learn along the way. So it ended up being two or three years of work actually before the Soundplane was done, which isn't too bad, I think in retrospect.
+    </p>
+
+    <p>
+      Yeah. But along the way, something had to happen to fund continued development. And I always had a lot of sketches for Aalto basically on the table. Cause I knew that some software would have to come out with the Soundplane in order for it to be more approachable. And I really had this idea, well, it'd be a great software synthesizer to use with it. And it seems weird that the first one wasn't about physical modeling. But I think that the desire was to make it more general, first to sort of nail the kind of synthetic sounds that a lot of people would want to make with it and maybe be more familiar with, and then get into the physical modeling stuff, which is what I'm working on now.
+    </p>
+
+    <p>
+      But so it also became ready, essentially, halfway into the Soundplane project and allowed it to... it was a success in that it allowed me to keep on making the Soundplane and eventually make that come out. So it was a roundabout trip, but it all worked in a sense and both things are still in active development. I'll be coming out with a new version of - if you look at Aalto, it looks a lot different from the 1.0 version that is almost three years old now. And I've got a whole sort of roadmap of planned changes to it, including a 2.0 version coming out sometime this year.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Interesting. Well, one of the things I'd say about Aalto and I actually use it as a demonstration for people who come up to me and say, "Hey, I'm kinda thinking about getting into this kind of modular stuff, but, you know, I'm thinking of getting like these 450 modules..." and I'm like, "Well, first of all, good for you for having enough money to be able to do that!" At which point they tell me about the debt that they're going to go into instead. But, what I suggest to them is that being more creative with a fewer number of modules actually will allow them to explore the sonic thing a little more completely. And I always get this curious, raised-eyebrow look, kind of the spark thing. And so I will say, "Okay, there's different ways to approach this modular thing..." </i>
+    </p>
+
+    <p>
+      <i>And if you're coming to it from like a Max or a Reaktor view of modular work, there's the sense that I have to have an almost infinite number of everything in order to be able to accomplish all the things I might want to do. But when I show them Aalto and I show them how that environment works and kind of explain the idea that instead what you have is you have this kind of limited thing, but where each item has very broad usefulness or usefulness in many different ways. You can kind of see them say, "Oh, to have a workable modular system doesn't require 400 things. What it requires is a few things and a little bit of savvy in making them interact well." And the savvy comes from playing with modulation amounts and playing with the edges of some of the things. And I find that the Aalto system really has interesting edges. How, from your perspective, when you were putting together the design, obviously you had to make choices about limits and coming from a background where you had access to either raw code or things like Max, how did you make the decisions or how did you come up with decisions that said, "Hey, a sequencer like this, or, an oscillator made like this or a noise source that does this that's sufficient for getting work done." How'd you make those decisions? </i>
+    </p>
+
+    <p>
+      <b>Randy: </b>
+      Wow. Well, that's an interesting question. And it's funny. I think I should start by saying I've never actually had a lot of synthesizers, but I've never actually had a hardware modular one. I mean, I've probably tried most of the different connections you could make on the synthesizers I had. So I've had a few things like an analog sequencer and a couple of SH-101's that you could do weird things like plugging the CV of one to the gate of the other and vice versa and make kind of strange chaotic loops with them. But, I never had a panel with different modules than it all facing one direction. And, so maybe my design was, happily, unhampered by some of the conventions that people use when they're in that realm.
+    </p>
+
+    <p>
+      One, certainly I've done a lot of work with Max. And so that gave me a laundry list of both things I kind of did and didn't want to do with my own setup. And then there was, I'd never had a chance to operate a Buchla Music Easel, but that was definitely an inspiration cause what you're talking about - this gets kind of heavy - but there's a great sort of definition of art, or of complexity, and expression that I think comes from Christopher Alexander - the architect. And the idea is basically, if you're taking one system, let's say in the context of a poem, why is a poem different from a sentence in a newspaper? Right? One reason you could say is in the poem, the words have ambiguous meanings, which say they also kind of simultaneously embody multiple meanings, right?
+    </p>
+
+    <p>
+      You have to go into it and tease it out. And when you're designing a thing - so Alexander talked about this in the context of a building being good in the way that a poem is good. So one part of your building might not just be useful as a column that holds up the roof in a certain place. It might also be a nice shade structure. And so when you start thinking about design, in with that idea in mind, you think, well, how could my office later be also a shade structure for how could, how can my sequencer be... and so, you, if you use an analog sequencer, you can turn it up and it becomes a pretty good oscillator, right? And with its own characteristics. So yeah, Buchla definitely took advantage of this, unhampered by convention worldview, I think, into some of his designs and a real design sense of this in this kind of multiple meetings. And, yeah, I was trying to let those inspirations guide me.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Right. So now as, as if the things you've done haven't been difficult enough already, with an upcoming project you started - you showed it at Decibel and a couple of other festivals - you've done a little tidbits of information here and there about your next software product, which is called Kaivo, correct? </i>
+    </p>
+
+    <p>
+      <b>Randy: </b>
+      That's correct.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>And this is going to be Aalto for physical modeling, I guess. Right? </i>
+    </p>
+
+    <p>
+      <b>Randy: </b>
+      Yeah. So the interface from Kaivo keeps the basic setup from Aalto that people seem to like, and most of the sound made at [inaudible] is pretty different. So instead of fairly simple, equations for things like filters and envelopes and oscillators, it's running a lot of physics equations in real time that, modeled vibrating objects like strings and pipes and even 2D vibrating surfaces, and then reading out the numbers from those equations and playing in the sound in real time. And this kind of idea of synthesis has been around for a while. There've even a couple of commercial products, like there was the Yamaha VL-1 synthesizer, I think, which was some incredibly expensive late eighties or early nineties thing. And, I have a timer on there as I saw often do, but it was definitely expensive and not sort of a flagship, not widely used thing. And there've been a few other since based on it and it gets used here and there, but, yeah, I'm not sure why it's not more
+      widespread. It seems like a good area to put out some work I'm interested in.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>The two places where I've interacted with physical modeling myself was first of all, both working with Perry Cook's original, published algorithms, as well as the thing that he and Luke DuBois did. It was called Percolate, I think: the objects that they had that ran in MSP. But then also Applied Acoustics had the Tassman software, but in both of those cases, what I found was that it was difficult for me to find a musical way of using it. I could make tremendous noises. But I was not able to very often find things that were musically satisfying. And I think I must not be the only one with this case because TasSman or Applied Acoustics subsequently, instrument-ized some of their stuff to make it more, so now it's like, "Here's an analog model!" or "Here's a bang on a can model!" and here are all the pieces that turn it into an instrument-like device. </i>
+    </p>
+
+    <p>
+      <i>So, on the one hand, physical modeling is presented as a completely open-ended thing. It can be hard to really grasp the musical musical use of it. Conversely, if it's completely wrapped up into "this is a model of X", it seems like it kind of constrains it to the point of just being a Sampler++. And my question is, given how you took - to me Aalto was an interesting way of taking an analog model conceptual model and finding a really unique way of making him musical, but also very expansive. How do you do that same thing with physical models? </i>
+    </p>
+
+    <p>
+      <b>Randy: </b>
+      Hmm. I guess I'm trying to figure out how to do it. Almost as we speak. I mean, I'm about to get the first beta out of Kaivo and it's gonna be real interesting to hear what feedback people have about it around this very issue that you're talking about. Physical modeling has a fairly well-deserved reputation for being this form of synthesis that's sort of hard to control because they're often these huge parameter spaces where - they're huge multi-dimensional parameters spaces, so you've got maybe nine dimensions that you're trying to control together. And if all the knobs are just in the right place, it sounds like a piano for a second. And, you turn one of them just too much and then it all flies apart. So, my goal into making it accessible, making it more user-friendly is to identify these little islands in the parameter space and then, put labels on them.
+    </p>
+
+    <p>
+      So say, okay, if you change the mode menu for the resonator and it, it puts you in, let's say the piano like space, and then the put reasonable combinations of those parameters that are musically meaningful somehow. So you can go from there. So that's the kind of stuff I've been doing and we'll be doing over the next month more and it's fun. Because it's easy to get lost in, if you have a task on your to-do list, like finishing the labels on the knobs, when that's done, it's really hard to know when something sounds acceptable for release, when you've got a limitless,ocean of possibility, right? Where do I draw the line? So that's hard for me sometimes. So, it's hard because it's super fun getting lost in these spaces and just listening to sounds and thinking, "Wow, this is my work." It's great. But I have to reign it in at some point.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>How did you personally get drawn into the physical modeling, world? Was it part of your study or is it just something you tripped over? </i>
+    </p>
+
+    <p>
+      <b>Randy: </b>
+      Hmm. Really first encounter, well, I've always been kind of a synth-head and trying to be on the lookout for new things. So I'm sure I was aware probably from some long ago Keyboard Magazine article, that physical modeling existed as an idea. And, probably tried writing it a Karplus strong string by reading about it in Computer Music Journal at some point. But I guess it seemed when I was - it really comes back to the thesis topic again and playing around with people at the laboratory at UVic and thinking: Well, how do I find interesting problems in the area of computer music to do something about it, or say something about; and this loss of connection between the body and the sound seemed to be something - maybe if you were asking me: "What's the most unsatisfying thing to you about a lot of current computer music performance?", it would be that.
+    </p>
+
+    <p>
+      So the idea of physical modeling seems like a natural marriage to a controller that was very sensitive at picking up what your body is doing. Because at least you could start to think about... it's by no means the only thing to try, but if you have a model of vibrating object, you can think, "Well, how am I going to hook the surface up to it?" And I can do things by hooking the surface up to it. That makes sense in the metaphor of the synthesis itself. And so maybe that will provide, playing experiences, that come from people's understanding of the natural world somehow and how normal objects respond when you bang on them.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Sure. Well, this is fascinating and I'm really anxious to see Kaivo in action because, if it has the personal resonance that Aalto and the Soundplane here of, I don't know, you seem to have sort of like a unique insight into my soul or something, because I find your work really compelling and very inspirational. I really want to thank you for the time that you've been able to spend with us this morning. And, we certainly will keep in touch maybe after Kaivo is released, we'll have a follow-up interview or something, but otherwise, I just want to say: I really appreciate your time and appreciate the fantastic work that you're doing. </i>
+    </p>
+
+    <p>
+      <b>Randy: </b>
+      Well, it's been my pleasure. Thanks for the good questions. Nice talking to you too.
+    </p>
+
+    <p><i>Copyright 2014-2020 by Darwin Grosse. All right reserved.</i></p>
+  </div>
+  <!-- jQuery (necessary for the Bootstrap JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
