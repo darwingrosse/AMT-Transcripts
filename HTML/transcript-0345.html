@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Transcription: Podcast 0345 - Tlacael Esparza</title>
+
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js does not work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+</head>
+
+<body>
+  <div class="container">
+    <h2>Transcription: 0345 - Tlacael Esparza</h2>
+    <h3>Released: December 20, 2020</h3>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        Okay, today, I have the great pleasure of getting to speak to Tlacael Esparza. He is sort of the mastermind behind a system called Sensory Percussion. My friend Dave Hill turned me on to what he was doing. Dave's a drummer. One day we're talking and he started gibbering on about how he's got a completely new approach to how he's attacking the drums and he's having so much fun and it's all this. I took a look at it and I found it very intriguing. He kind of set up this discussion and now we get a chance to talk. With that, let me stop talking. Let's start talking about the system. Hey man, how's it going?
+      </i>
+    </p>
+
+    <p>
+      <b>Tlacael Esparza:</b>
+      Great. Thanks so much for having me on, I've been a big fan for a couple of years now. I had a chance to visit the Ableton offices in Berlin and hang out with a bunch of their engineers and they turned me on to it. It's an honor to be included on this among some of the amazing guests you've had. So, thank you.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        I really appreciate that. That's cool. Let's start off, first of all, the company that you run is it called Sunhouse?
+      </i>
+    </p>
+
+    <p>
+      <b>Tlacael:</b>
+      Yeah.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        Okay. And Sunhouse produces something called Sensory Percussion. When it was first introduced, I was like, "That sounds like something like a goat yoga or something." It sounds more like a technique than a product, but what I checked out the website, I got a quick introduction into what you're doing which is a unique sensing system for drums. I'm sure that you've got a good couple minute pitch for what you call it. Let me have you make the quick explanation.
+      </i>
+    </p>
+
+    <p>
+      <b>Tlacael:</b>
+      Sure. I'll do my best. It's changed and evolved over the years, when we first came up with this, we didn't really have any very good language to talk about it. And it's been something we've worked on quite a bit because it's hard to describe musical things with language. It's a skill for sure, and it's kind of intersection of technology and music and instruments. There's a lot of language that's been used up that way.
+    </p>
+
+    <p>
+      Essentially, what it is, we make a sensor that attaches to the side of any typical drum set drum with a rim. The pickup is just designed to get a very clean, clear audio signal from the drum, and we sense the movement of the drum head directly and vibrations from the rim. It's essentially a microphone, but it's a kind of close mic designed to isolate the drum. You could imagine it's direct parallel to electric guitar string and guitar pickup. The guitar string doesn't necessarily need to produce that much sound, but the pickup senses the movement of the string. That's the sensor part, and it's really just to get that clean analog audio signal into the computer.
+    </p>
+
+    <p>
+      From there, what we really do and what we really spend a lot of our time doing is designing software that can interpret and understand the nuances of that signal coming in. This the way a drum sounds when you hit it, to allow you to use that, to control essentially, whatever computer processes you want. Our software, really what it's doing is it's reverse engineering drumming through the audio signal, using various machine learning and music information retrieval techniques on audio processing. What that allows us to do is turn actual drumming, the technique of drumming, this kind of thing that is built into our bodies and this relationship between our bodies and these vibrating instruments, turn that into a control signal that you can then use to power complex sampling, effects controls per any parameter controls, send out complex MIDI messages, control lighting and all these kinds of things.
+    </p>
+
+    <p>
+      <b>Tlacael:</b>
+      Our software is really designed to allow you to do these things easily. Just some specifics on what the system capabilities are, we can take a single drum and break up the drum into 10 independent timbre zones. If you're familiar with the basic drum trigger, you get just some philosophy sensing and it's a single kind of message. There are two zone triggers that have two sensors in them, and you can get a center and a rim, right? Like the drum head and the drum rim. But what we do is we have a single sensor and based on the content of the signal coming through, we can tell where and how you hit the drum with a high degree of accuracy. If you're hitting the drum in the very center with the drum stick like a normal center stroke, and then if you move out towards the edge of the drum head, you're moving from one area to another and we can sense to a high degree of accuracy where you are in that range. So, we can tell the difference between hitting the drum in the center with the drum stick tip, or doing a stick shot right in the center, because they produce a different timbre response. It's not a position sensing, it's a timbre sensing.
+    </p>
+
+    <p>
+      <b>Tlacael:</b>
+      What that does is it relates directly to what the drummer is doing on the instrument itself, because drumming is really about manipulating and drawing out all these different timbre from this acoustic object, right? The reason you would hit a drum in two different ways is to produce two different sounds, right? The reason a jazz drummer would do a buzz roll out towards the edge of the drum is because it produces a different texture or hits the rim of the drum... The drum is this rich timbre environment and it's all a single object. We can kind of abstract the sounds it makes into a kind of spatialized place where we can measure distance between things. You could think of a big map where you're traveling around to the different timbre areas.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        That's remarkable though, I have to tell you that when I first saw what you were doing, I couldn't tell what technology you were doing. Because at first I was like, "Oh, these are sensitive microphones." Then I saw an image of what the software looks like with your multi zone mapping and stuff, I was like, "Oh, there's no way that that can be just a microphone because that map is way too complex for the kind of things you'd actually be able to capture with microphone." But you're telling me that's how it's done. I mean, so then I was imagining, "Did they come up with some kind of affordable sonar system?" I was having trouble wrapping my head around what exactly you were doing. What you've been able to basically identify in the system is the things that make different parts of the drum head unique and are able to map that out virtually into your software.
+      </i>
+    </p>
+
+    <p>
+      <b>Tlacael:</b>
+      Yeah. All the information is in the audio, with humans our ears are really good at picking up these kinds of timbre differences and our brains can process it and identify, "Oh, you hit the center of the drum. You hit the rim." There's a different sound from hitting the tip of the stick to the shoulder of the stick, all that is in the sound and that's how we process that information.
+    </p>
+
+    <p>
+      The idea is, the information's in the audio signal, we just need to process it and extract it, and then we can turn it into a symbolic level language in the same way that our brains do, although with different results in different end goals, I suppose. That's the kind of engine side where we're translating an acoustic instrument into this control language, but as the systems evolved over the last four or five years, we've really focused on what you then do with those control signals. Because
+      that ultimately is where the...
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        Where the music comes from, right.
+      </i>
+    </p>
+
+    <p>
+      <b>Tlacael:</b>
+      ... where the music happens. That has been my kind of focus in terms of thinking hard about what we do in that space, because there's been a lot done in that space. You're well aware and we've been very inspired by the work of Cycling '74 and the work that Ableton has done and what you can do with the DAW and just synthesis in general. These are precedents that, of course, we've been building on. But I came to technology and to building technology relatively late, I guess in my life, I didn't really start using computers in this way until grad school. I was in my late '20s, early 30's. I had just been a musician for a long time. So, I had this difficulty in kind of introducing myself to these kinds of music software and how it works, and why things are designed a certain way and how the language of it evolved. As a musician coming to it, I didn't really understand why things were designed the way they were. They felt very unintuitive to me. The last five years or longer, we've just been really focused on, now that your instrument is a controller, how can we make the stuff that you control still fundamentally about making music and performing and composing not just in the end result but in the processes and in the metaphors used in how the software's design and things like that. So it's where we spend a lot of our time thinking.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        That's make a lot of sense. One of the things I'll say that I found really super interesting was in watching a number of the people that were doing streams that you have in your site. For anyone that's interested in this, I suggest you go and take a look at the various streams that they've done. They've got a number of artists that are kind of like showing themselves playing the system as well as talking about their system. But one of the things that I thought was really interesting was the extent to which people found different ways to interact with technology, right?
+      </i>
+    </p>
+
+    <p>
+      <i>
+        In some cases, people use your software and the sample triggering that's in there, and the effects that you have available. And they build sort of a performance system that's really docked into that being the tool or that being the extension to their instrument and then they perform with that as a combo. Other people use that as sort of a gateway to also connect into a DAW world and to be able to control that stuff in real time. I thought it was interesting that the design decisions that you made about the software and the implementation really did allow people to choose to either focus more on their drum as the instrument with this as just a little sidecar or as the drum's just a front end for a bigger electronic system. I thought it was pretty interesting that you could kind of embrace both with a single effort.
+      </i>
+    </p>
+
+    <p>
+      <b>Tlacael:</b>
+      Yeah. This software that you've seen in these videos, the initial design was conceptualized a very long time ago, it feels like. We've been working a lot on, now that we have a better understanding both just abstractly but also in practice how we want to use it, but also how our artists have been using it, kind of redesigning it to really expand on that idea. Because, I think there's something really interesting that happens when you connect the capabilities of a computer to the capabilities of an instrument like a drum set, any acoustic instrument. For me as a drummer, I've played drums for quite a while, I think I was okay for a bit, maybe I'm not so good anymore, that was my window into making music.
+    </p>
+
+    <p>
+      Playing any instrument really is such a physical thing. The body is so involved. A lot of the cognition that happens is really happening through the body. If I sit still and think about drumming, I can only go so far. If I try to sequence a drum pattern on a computer screen, I can only get so far. But if I'm holding sticks in my hand and I'm sitting in front of the drum set, that's when the history of everything I've learned becomes engaged and I can really start thinking
+      musically. That was this wall I ran into was like, "I play the drums and now I want to make it an electronic beat. How do I do that if I can't play the drums," and there was this real disconnect for me.
+    </p>
+
+    <p>
+      This thing happens when you hook up this instrument to a computer, where suddenly all these doors start opening. It happened when we first released the software. The first piece of software it was pretty good. I think, it was the first piece of software I'd ever made. I had some help, but it needed a lot more work. But what was very apparent was that users got it and it did something genuinely new that no other system like this had done before. Then immediately we got just a million feature requests because it was like...
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        Of course.
+      </i>
+    </p>
+
+    <p>
+      <b>Tlacael:</b>
+      "Oh, now that I can do this, I want to do a million other things with this. Now that I can use my body to play the computer, now I have a million ideas." When you unlock that door, then people's individuality comes out. You're not forcing them onto the tracks of kind of a pre-designed system that is expecting you to think about music in a particular way, you're tapping into their history which is very personal with their instrument, which has just all this room for all these different musical directions. So, we were able to really tap into those ideas that people brought to us and expand the software and really push what the software was for in a lot of new directions.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        Right. Well, I think that one of the things that people have to remember is that, probably, until the release of Ableton Live, a lot of the DAW software up to that point was really driven by people whose primary instrument was a tape recorder. Right? So it's not surprising that it's not very instrument-like. I think I can see where, what you're doing unlocks opportunity. Now you dropped some nuggets there and I want to kind of follow them up because they'll be revealing a little bit. One of the things I like doing in my podcast is talking to people about their backgrounds and how they got to be both the artists and the technology wizards that they are. I am curious, because especially when you talk about having been kind of a lifelong drummer, but then coming to technology at a later time, how that meshed for you? First of all, what were you going to school for that got you into the technology? How did you get there?
+    </p>
+
+    <p>
+      <i>
+        Frankly, a lot of times once people get onto the technology bug and the start either wanting to start businesses or starting to work for business or something, the music goes away. They put it in the closet. You have found a way to basically embrace what you were doing and tie it into the technology work in a pretty unique way. I'm kind of curious how you got there as well.
+      </i>
+    </p>
+
+    <p>
+      <b>Tlacael:</b>
+      Sure. I'm very grateful to have kind of found this path because it is an extremely fun and exciting place to be able to be. Still, I don't play drums on stage like I used to, but I still play drums and to really be able to kind of make music in a very different ways is really fun.
+    </p>
+
+    <p>
+      I moved to New York City when I was 18. I chose New York because I was obsessed with jazz music and jazz drumming and this is where all of my heroes lived in. At that time, Brian Blade was here and I was obsessed with him, and Nasheet Waits was here and Bill Stewart and just this huge list of amazing drummers. The jazz scene was really concentrated in New York, and still largely is, although - I'm from Los Angeles and back then we would catch them on tour. It was really here. So, I had to move to New York City and under certain parental stipulations, I had to go to a real school. I was prevented from going to Manhattan School of Music and I went to Columbia instead. I lived here and my goal was really to play the drums, but I studied math at Columbia. I had that a little bit of background, and just being able to not be afraid of an equation, I suppose.
+    </p>
+
+    <p>
+      I was not on a PhD track. I double majored in music and math at Columbia, and that was nice. When I say I came to technology later in life, that's part true but also not totally true. I was at work-study at the CMC, Computer Music Center with
+      Brad Garton and ...
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        Brads folks...
+      </i>
+    </p>
+
+    <p>
+      <b>Tlacael:</b>
+      Yeah. The Mark II was there and I hung out and did my homework right next to it. I met a lot of really great people like Paul Hogan and Luke DuBois and Jeff Snyder who you had on the show.
+    </p>
+
+    <p>
+      <b>Tlacael:</b>
+      Still I conceptualize myself as a drummer and I didn't really get into it outside of just hanging out there. Then I graduated and I was a drummer and I played a lot of indie rock bands in Brooklyn, a band called Francis with Paul Hogan from CMC, and a band called Friend Roulette. Then I played a lot with this band called ARMS. With those experiences, that was kind of what kicked my brain into a different way of thinking about music, because it was indie rock music and playing rock drums. The history of that genre is so tied into the music studio and in the way drums sound amplified and against other amplified instruments and the way they sound when recorded through microphones and mixed and compressed.
+    </p>
+
+    <p>
+      There's so much more of a feedback loop between the studio art and the performance arts side of things. I really started thinking about what that meant for how I approach the drums as an instrument, and then made a lot of records in recording studios and kind of started piquing my interest. Then I got really into electronic music. I had a really amazing opportunity to play a few shows with Nicolas Jaar, who's an incredible electronic musician and with my really great and longtime friend, Dave Harrington, who's an amazing guitarist. That is when I started really listening to electronic music and hearing how much of all the musical language that I had really kind of valued in jazz drumming, all of the nuance of sound and phrasing and articulation, could be translated and express through electronic sound in really interesting ways.
+    </p>
+
+    <p>
+      It's like I was hearing drumming, but there was no drummer. I was hearing the kind of textual control that someone like Nasheet Waits would be able to wield, but I was hearing it through samples and effects and manipulations of those things. I started getting really jealous of like, "I hear these musical concepts and these ideas, and I can't feel them on the drums but they sound totally different." The ability to manipulate the range in that way it's extremely powerful. To be able to produce subs and highs at will, at those frequency ranges that you can do with the synthesizer with samples and effects is a really powerful tool to tap into. It just elicits these emotional responses in people because it's...
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+       <i>
+        Well, is powerful, but as a player, one of the things that was really jarring for me when I first started watching people playing your system is because your system really kind of works around drums. It was really odd to see people with a system layout, where it was like several drums, but they'd be playing the drums and cymbal sounds will be coming out of them. Or extraordinarily, really sound designerly stuff will be coming out of the drum. It was just like really jarring at first to see someone like hitting a floor tom and hearing a high-hat, for example, like an 808 high-hat. How long does it take to even incorporate that into the feel of your playing? As a viewer, it's kind of jarring, I'm wondering though as a player, how long does it take to make the adjustment to where that feels right?
+      </i>
+    </p>
+
+    <p>
+      <b>Tlacael:</b>
+      That's been a really fun aspect of bringing this out into the public, is to see that happen in real time and to see this kind of the expressions of drummers when they sit down on it for the first time. We've done a lot of trade shows, we've done NAMM many times. We did Moogfest many, many times, and we'd have a live set up and anybody could come sit down and try it. This is really why I felt this system was compelling enough to really dedicate a lot of, basically, all of my time to, is because there's the computer there and it's potentially - the software, we're working on making it easier to use and more powerful and do other things. But when you sit down under the first time, you don't look at the computer and you're just sitting at the drums and playing.
+    </p>
+
+    <p>
+      The experience is this strange... It depends what kind of drummer you are. If you're very kind of, well versed in improvisation, maybe you're a jazz drummer or you're a producer and you're already focused on sounds. There's almost no time that needed to make the jump, because they're so used to manipulating sound and to playing the drums in a way where they can kind of, at will kind of, refashion the way they are kind of approaching the instrument. Because that's the improvisational skill, right? To be able to kind of feel that you can move freely around the instrument, exploring sounds and doing these things.
+    </p>
+
+    <p>
+      It literally takes a few seconds to like, "Oh, this sound is here. This is there." Then they're just playing, and it's like this instant thing of, you were making a beat that would take someone at least several hours to produce with any other system and you were just playing it on the spot. There are, who knows, how many knobs, turning and automations happening and hundreds of samples being triggered in different combinations with different velocities and all of these extremely complex output is being produced instantly because you know how to play the drums already.
+    </p>
+
+    <p>
+      That's really why it's a compelling system. I don't feel like I'm boasting to say that just because it's the instrument itself, and that's really what our goal was, was to say, "It's still the drums, but now the drums can sound like whatever you want, basically."
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        Well, that's interesting because you're able to find a way to sort of jump that interface. I'm a guitarist. I was a guitarist for most of my life, and boy, talk about something that hasn't made that jump is guitar synth connections, right?
+      </i>
+    </p>
+
+    <p>
+      <i>
+        Some people do some things where it's a really tight connection to the synth, but it doesn't play like a guitar. So, now your guitar fill really works. There's other people who basically say, "Just play the guitar and we'll turn it into a synth." You can play the guitar, but it sounds like crap, they just haven't been able to jump that. What it does seem like is that you've kind of found a way to allow for the subtlety of playing. It's funny because a lot of the people that I saw using your system also have something like a Roland SPD, because it has a particular way of interacting with samples, so they'll use that.
+      </i>
+    </p>
+
+    <p>
+      <b>Tlacael:</b>
+      It has its' place, for sure.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        I noticed that in some of your setup articles, it's like, "Well, you can use regular drums and kind of blend the acoustic sound. Or you can use a mesh drum." Which I don't know how does the microphone pick up anything off of a mesh drum.
+      </i>
+    </p>
+
+    <p>
+      <b>Tlacael:</b>
+      Well, that's the electric guitar equivalent. There's no sounding board, it's not pushing air, but it's moving a piece of metal that we can sense.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        I see. All right. But in any case, there's just different ways of approaching how you integrate these things in it. Because you work directly with an existing drum, it's interesting to see the different ways that people can integrate this into their playing. I thought that was pretty impressive.
+      </i>
+    </p>
+
+    <p>
+      <b>Tlacael:</b>
+      Thanks.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        What I also see is that oftentimes the people that were using your system, they'll have this beautiful drum kit on a beautiful rack. They'll have maybe their SPD, which they've had for a long time is on an arm that comes over and it's in the right spot. And then the computer is sitting on a chair next to them because it's almost like, "I don't even want to think about there being a computer as part of this, I'm a drummer, I'm playing drums. Don't make me have to think about the computer." Right?
+      </i>
+    </p>
+
+    <p>
+      <i>
+        Again, it's kind of interesting to see that, that really happens for people. They're playing, and even though there is a lot happening in the software, because of the zone-mapping that you do, it's all controlled by the location and the way that they hit the drum instead of manipulation of the software. I think that that's really powerful.
+      </i>
+    </p>
+
+    <p>
+      <b>Tlacael:</b>
+      It is, there's so much information in the music. In the act of playing the drums there's the velocity, which is the one thing we've been able to measure for a long time. Right. But then this timbral movement, but then also the speed of hits, the movement between instruments, the tempo, the certain cues. If we think about the way musicians communicate with each other through music, there's these different levels of abstraction. A band might have a certain musical phrase that cues a section, right? There's so much room to grow when it comes to computers understanding what musicians do and how they communicate with each other that would enable software to play this more supportive role of listening and to allow musicians to really integrate their musical ideas into their workflows on a computer.
+    </p>
+
+    <p>
+      That's really where we want to go farther, is like how can we really integrate? So, we think about the way a musician makes music and plays with other musicians without technology in mind, what are the tools, the metaphors, the language, the actual actions that occur in those levels of communication. It's everything from the way you're hitting your instrument to the agreed upon number of bars or cues, or just feeling or texture that is kind of communicated between people. There's just a lot of room to grow here in terms of like creating software that really responds in this intuitive way to a musician. Not everybody, when they sit down and feels comfortable on the kit.
+    </p>
+
+    <p>
+      There are drummers who are extremely used to having cymbals and they play a certain way. It's like pulling the rack out from under them, if they're not ready for that kind of different approach. Now, we can make the drum sound like a normal drum set, that's not really where our interests lie...
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        I would imagine for some people it's almost better if they have that kind of a hang-up is to just do something completely different, like say, "Hey, we're just going to put two mesh drums. You're not going to have a kick, you're not going to have anything, just play on these. Think of it as a totally different instrument that just happens to use sticks as the interface," maybe...?
+      </i>
+    </p>
+
+    <p>
+      <b>Tlacael:</b>
+      Those drummers who they want that classic drum set, they often will incorporate mesh drums into their normal case. That's like an extra thing, kind of the way you would put in SPDs. Sorry, go to the back to the question of the software.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        Yes. I'm curious about this software development. Obviously, there was the hardware development in making a highly sensitive microphone that is your sensor. I'm sure that a part of it is making it so that it's directional way that's useful for the software to be able to do this help with this mapping process and stuff like that. But I'm curious on the software side, what the development of that look like. My first question is, when did you first release the software and when did you first start working on it?
+      </i>
+    </p>
+
+    <p>
+      <b>Tlacael:</b>
+      Sure. It was an idea in grad school, which I haven't talked about, which is a big part of the development of this project which I can come back to. But it was in spring of 2014, which is when I started the code base, I guess, and then kind of work on the first proof of concept. It took me a year to make it functional. I had one developer, Patrice who had done a lot of VST development, who we found on a forum, guy in New York, really great. Worked on a lot of projects for AKAI and various other companies. But helped me build the software because I was not an experienced programmer at that point, but I wrote all the algorithms and the kind of engine.
+    </p>
+
+    <p>
+      It took a year to get it to function at all, and then another year until we shipped. We did a kickstarter in 2015, and it was July - right before my wedding, actually, it was very stressful. That was successful, that was kind of the first like, "We're actually really doing this." We raised a decent amount of money and then we shipped a year later. It took two years from starting the github project to releasing something. Then it took another, well, we're still making it, it's been on going nonstop.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        How did that mess with grad school? What was the relationship there?
+      </i>
+    </p>
+
+    <p>
+      <b>Tlacael:</b>
+      Well, after the indie rock bubble burst, sometime around, I don't know, 2010 or so, I didn't know what I was doing. I went to Mexico for a couple months and just tried to figure out what I was doing next and came back and had some part-time jobs and I was like, "I should just go to grad school." So, I applied to NYU Music Technology program at Steinhardt. I really didn't know what I was doing when I applied. I didn't know why, or what I had wanted to do. I thought it was going to be like recording technology, which you can do there, but as soon as I got there, and as soon as I took my first DSP class with this guy, Aron Glennon, who was a great grad student there who taught me my first DSP code snippets.
+    </p>
+
+    <p>
+      As soon as I took that and a C programming class and I was addicted. I was like, "This is a totally different world that I didn't realize I felt excited by and comfortable in." Then it really kind of jelled when I took my first Music Information Retrieval class with Juan Bale, who's one of the luminaries of the field. At that point, they were really focused on the transition a bit ahead of the curve from the rest of the MIR field, transition from kind of more classical MIR methods and hand tuned algorithms to machine learning. In 2011, they were putting convolutional nets on audio signals. That had a lot to do with the influence of Yann LeCun, who was across the street at the current Institute, who's now Facebook's AI guy.
+    </p>
+
+    <p>
+      I joined his group and did an independent project with him, looking at trying to use rhythm descriptors to identify genre. A lot of MIR is really driven by companies like Spotify and the task of organizing the world's recorded music. That really was not that interesting to me, because I wanted to make music. I wanted to figure out how can we... I was programming, I figured out how to use a real time call back and manipulate audio threads and stuff. I was like, "I want to
+      use MIR in here. This is where it belongs. This is where the future is."
+    </p>
+
+    <p>
+      <b>Tlacael:</b>
+      Exactly. I don't want to get too deep into my critiques of capitalism, but where capital lands and where it pushes technology, and where it had been focusing capital was not on creating new interesting things for musicians. It was on, how do we sell more music? How do we organize these catalogs so we can squeeze more money out of them. I really didn't want to spend my time working on those. I wanted to make stuff for musicians and for myself.
+    </p>
+
+    <p>
+      It's still a problem today. There's not enough capital focused on creative endeavors and on people who have actual ideas.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        Well, the flip side of is not only the capital side of it, it's the technology side of it, too. The amount of technology that's expended trying to find ways to compel you to purchase something or vote in a certain way versus the amount that's actually used towards being creative. I mean, it's pretty disturbing and kind of sad.
+      </i>
+    </p>
+
+    <p>
+      <b>Tlacael:</b>
+      Absolutely. I mean, we've been operating as a startup, we've done accelerators and all this stuff. We're very well versed in that world. It's not that I have a lot of critiques of VC scene, and what their priorities are. Let me just put it that way. That program really sent me on a new direction. Juan Bale was really like a big influence on just showing me what can be done in MIR field. I was like, "There's a million things that we could do here. And there's so many possibilities." Not
+      that many people are working on it, and more people should be working on it.
+    </p>
+
+    <p>
+      There could really be a lot of interesting things that could be done if we can get more people interested in, and focused on leveraging, pushing this direction to a new place. Certainly, if you look at the VC world and what their conception of music technology is, and the future of music, there's so many fluff pieces and just bullshit, excuse my language, articles about music AI, replacing musicians and giving record deals to a new music AI, and, "Oh, this music AI composed this
+      pop song." This kind of very thin understanding of AI and machine learning, and fundamentally thin understanding of music and its place in society and culture and what it's for. And the fact that it is a fundamentally human thing that we will always need.
+    </p>
+
+    <p>
+      <b>Tlacael:</b>
+      They can try as hard as they want to create a dystopia, but, I just feel like we should keep trying to build stuff for humans and for making music and making things interesting and fun and connecting people and learning how to turn this stuff into tools for emotional and intellectual communication, which music fundamentally is.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        Well, one of the things I especially like about your system, and this is going to be revealing of some of my personal critiques of both capitalism and the music technology world is that you're one of the few people who took a look at machine learning and didn't say, "Oh, I can take this and make it so that people who've never drummed before can drum."
+      </i>
+    </p>
+
+    <p>
+      <b>Tlacael:</b>
+      Thank you for noticing that.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        Instead, what you did was you said, "Hey, we can take people who are really good at their instrument and expand the things that they can do with their instrument." I have to really appreciate that. Of course, as you can imagine, coming from Cycling '74, sort of this idea of not just totally being a beginner-focused, is something that maybe is too dear to my heart. But the fact of the matter is that, I think it's really important to not just look at modern technologies as being gateways for beginners tools.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        Again, I feel like you've done something kind of unique other than just for your own interests. This is where you being a drummer makes it, so that you're kind of fulfilling some of your own interests in doing this, right. What were some of the things that proved to be things that accomplished drummers really wanted or really needed out of your system? You mentioned that once you sort of gave the affordance of being able to do it at all, you got a million and a half requests for new features. What were some of the things that you found people were most drawn into once they realized that their facility on the drums could open up these doors?
+      </i>
+    </p>
+
+    <p>
+      <b>Tlacael:</b>
+      Well, first of all, thank you for that comment, because that is a big part of our pitch actually. And it's something that we've been very intentional about building stuff for, just a quicker side, there's a lot of music software that's designed for audio engineers that is complicated to use that if you're good at thinking in that way, you can use Max and build whatever you want. I was not good in that way. Then there's a bunch of stuff that says, "If you have never touched an instrument and you don't know what you're doing, try this out, it might be fun and there's a lot." Then for musicians who are very skilled, there's almost nothing so there's this huge gap that we are hoping to work towards filling. It's a core part of what we are doing, I appreciate the comment.
+    </p>
+
+    <p>
+      It's been really interesting what drummers have asked for, I'm not sure there's a way to summarize it in any way. Because it's all very specific. For instance, Ian Chang, he's been a close friend of mine for a long time and he was one of the first beta testers of the software. He's the one, I don't know if you've seen the YouTube video where he's on stage and there's these lights and he's controlling the lights and the production stuff. Incredible. He's known for a really long time and he plays the drums like I wish I could play the drums. He was one of the first to have a bunch of requests and it was things like, "I want to be able to put samples in a sequence and sequence through them or randomize them." So, that was like, "Oh, we definitely need to add that. That sounds cool." It was just a bunch of little things like that. Mason Self, who does a lot of work with modulars and Sensory Percussion. Modular synths had a lot of feature requests around MIDI output and little things. But I think it's been really interesting working with jazz drummers because they don't have a lot of specific feature requests. Like, "I need this thing so I can do this thing." It's, they run into musical problems with the software. They're like, "I have this musical idea. I'm trying to accomplish this idea and the software can't do it."
+    </p>
+
+    <p>
+      Then we're like, "How did we build this limitation into the software with this musical idea that conceptually makes sense and is simple from a musical perspective." The only way to accomplish it in our software is through some complex hacky connection of a bunch of stuff. It's like, "This is a problem with the design of software," right? That has been one of the most important kind of feature requests, they haven't been actual requests, but just realizing that if the UX and the design of the software and the audio engine is not designed around musical goals, then in order to accomplish those musical goals, you have to go through all these complex routing and all this stuff. If we focus on how do we design it so that the musical goals are centered, then using the software to do musical things become simple, even though it might not look anything like any other piece of software. That's not true of this current version that's out, but not announcing anything right now, but we are working on a new version that kind of incorporates a lot of these ideas.
+    </p>
+
+    <p>
+      So it's if a musician has an idea and they can't do it easily in the software, that's a problem to me. A lot of the additions to the software to allow people to accomplish musical ideas, that's like dealing with chord changes, dealing with melody on the drums, allowing you to move in between... People started performing with it, and when you go to the next kit, the audio engine would stop and then it would start again and there'd be the same. So people were using reverb pedals to get around it. I was like, "I have to fix this." Right. So, things like that, people are actually performing with this and there's like a click where you go to the next thing. I mean, there's some basic stuff like that, but the more interesting ones to me is there are musical goals that make sense, and that are easily expressible his music ideas, but are not expressible through this software in any kind of easy way.
+    </p>
+
+    <p>
+      <b>Tlacael:</b>
+      And the only way to do it is by hacking it. That's really driven our redesign.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        Interesting. We unfortunately are already out of time because I had a bunch of additional questions, like how you actually accomplish some of the things you do? Again, watching people play this thing and seeing sort of the lack of latency and all this stuff, it's clearly tweaked to the limits. I wish...
+      </i>
+    </p>
+
+    <p>
+      <b>Tlacael:</b>
+      It's a negotiation.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        I bet it is. Before we go, I have a feeling that among my listeners there's going to be a quite a few people for whom this is kind of new, and I want to get them looking at it in a useful way. When you introduce people to the Sensory drum system, who do you point them at from an artist standpoint?
+      </i>
+    </p>
+
+    <p>
+      <b>Tlacael:</b>
+      Oh, when I'm telling someone to check out.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        If you're saying, "Hey, watch this person do it." Right.
+      </i>
+    </p>
+
+    <p>
+      <b>Tlacael:</b>
+      Sure. Well, there's a few different directions. Like I mentioned, a few already Ian Chang is a power user and he does really amazing stuff. He's written two records now using the system that are both incredible. Mason Self does a lot of really interesting and beautiful, but complicated stuff connecting it to modulars, and he's a fantastic drummer. Destin Johnson does some of the most fun performances, remixing songs and kind of deejaying behind the drums where he can do a seamless
+      set of hip hop and pop. But manipulating samples like a MPC kind of thing. But then also using Sensory to get really nuanced sounds out of the drum. So, he's playing the drum beats while he's doing the MPC stuff. It's really fun to watch. Greg Fox has put out a few records using Sensory, and he's a really great example of using the system on acoustic drums. He's like a black metal drummer played with Liturgy and he does kind of jazz, transcendental metal kind of music that's
+      really beautiful. It's all on acoustic drums and it's these rich textures that he moves through using the system.
+    </p>
+
+    <p>
+      <b>Tlacael:</b>
+      Eli Keszler is other incredible artists who does kind of a similar thing, but it's much more kind of delicate and composed. He used the system with Oneohtrix on their last tour and that was really fun to watch.
+    </p>
+
+    <p>
+      <b>Tlacael:</b>
+      There's Val Jeanty who's a Brooklyn drummer. She does really amazing kind of more, what would you call it? She uses more hand drum sounds and synth sounds and kind of more, I don't know how you describe it, but it's all very improvisatory, very beautiful. She's done some performances with the system and there's some videos of her on our Instagram. I could keep going on and on. There's a lot.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        That gives us some good touch points for people to not only get names and stuff off your website, but also kind of get a tap into some of your favorites as well, that's super helpful. Tlacael, I want to thank you for spending the time. This is really interesting. Again, I have 50 more questions I could've asked, but we'll have to save it for the next time around. I want to thank you so much for taking the time and having this chat with me.
+      </i>
+    </p>
+
+    <p>
+      <b>Tlacael:</b>
+      Great. Thank you so much for having me on and I would love to have another talk.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        All right. Sounds good. We'll catch you soon.
+      </i>
+    </p>
+
+    <p>
+      <i>Copyright 2013-2020 by Darwin Grosse. All right reserved.</i>
+    </p>
+
+  </div>
+  <!-- jQuery (necessary for the Bootstrap JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
