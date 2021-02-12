@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Transcription: Podcast 0349 - Joshua Hodge</title>
+
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js does not work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+</head>
+
+<body>
+  <div class="container">
+    <h2>Transcription: 0349 - Joshua Hodge</h2>
+    <h3>Released: February 14, 2021</h3>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        Okay, today, I have the great opportunity to talk to someone I got to know recently, but whose work I've followed for quite a while. His name's Joshua Hodge, and he's the mastermind behind the site theaudioprogrammer.com. If you go over there, you'll see there's a lot of interesting stuff, from audio programming meetups to a set of courses that Joshua's been putting together, as well as links to a bunch of YouTube stuff. There's a lot of interesting information there. The site's kind of growing in its reach in what it's trying to do, so I thought it'd be a great opportunity to meet with Joshua and find out a little bit more, so with no more ado, let's say "Hi!" to Joshua. Hey, Josh, how's it going?
+      </i>
+    </p>
+
+    <p>
+      <b>Joshua Hodge:</b>
+      I'm great. Yeah, thank you very much for having me on the podcast and...
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        Yeah, well, thanks a lot for taking the time. You seem to be the busy cat, so I'm glad we were able to pull together the time to do this.
+      </i>
+    </p>
+
+    <p>
+      <b>Joshua:</b>
+      Yes, thank you very much.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        Why don't we start off by having you give your elevator pitch on what you're doing with theaudioprogrammer.com?
+      </i>
+    </p>
+
+    <p>
+      <b>Joshua:</b>
+      Yeah, so we started in 2017 and started off very simply with me trying to teach myself how to develop audio apps and plug-ins while I was still at university, so I went to Goldsmiths University from 2015 to 2018. What happened is I started off with these YouTube tutorials that I was giving, mostly using the JUCE Framework and C++, and the idea was really to teach myself how to develop these apps and to hopefully get a job after I graduated.
+    </p>
+
+    <p>
+      I did the YouTube channel as a way for me to kind of keep myself disciplined to actually learn a new skill every week that I could teach to somebody else, but it surprisingly grew into this thing that became a community and people started asking each other questions and eventually I created a Discord room for people to ask each other questions. It started just snowballing into this big community and now it's one of the largest audio developer communities on the web. We have three main areas that we work in, so our core is our community, so we do the tutorials, we do audio programmers meetups. We also interface with the Audio Developer Conference - ADC - and then we have two other business sides that spring forth from the community side. We have a development side where we actually help clients to develop audio plug-ins and products from start to finish, and we have a recruitment side, so we do both temp and permanent recruitment placements for developers with a number of companies.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        Very interesting. It's a pretty big growth curve for just a couple of years. That's pretty wild. I'm curious. You said that you started this off hoping to learn C++ and audio programming to get a gig. Did it work?
+      </i>
+    </p>
+
+    <p>
+      <b>Joshua:</b>
+      Yeah, definitely. Well, this has kind of become my gig and it's funny because the other day somebody asked me if I actually develop for a living, which is actually an interesting kind of question because I do in a way because I still do tutorials in C++ and I still try to code every day, but in a sense, I don't because I don't actually code for a company. Well, I have my own application that I'm working on at the moment, but in the kind of truest sense, I don't actually develop for a company, but I'm more of a manager/facilitator.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        Right, right. That's pretty interesting. Now, I took a peek at some of the YouTube videos that you're doing and your series are pretty interesting that you have one that is really kind of traditional working with JUCE, learning the Projucer and all of that kind of stuff, but there's also this spinoff of learning C++, and it's, "I'm going to teach my son how to use switch statements and stuff like this," right? It's really kind of interesting, but it's a unique approach in one that I think... I don't know, it strikes me as pretty smart because audio programming is... it's kind of sexy, right? It's kind of fun. It has a certain fun level built into just the discussion, but it's pretty significant programming tasks, and so I think that it's a neat area to work on. From your perspective, how hard was it to dive into audio programming form wherever you were coming from?
+      </i>
+    </p>
+
+    <p>
+      <b>Joshua:</b>
+      For me, it was there were definitely significant challenges because there's this intersection that audio programming comes into where you have, of course, the programming aspect of it, you have audio, and then from there, it really branches out and it's impossible to be an expert in all areas. Some people, they specialize in spacial audio, some people specialize more in synthesis and digital signal processing and that side of things. I chose to go more towards the deejaying side because I come from a deejaying and music production background, so I knew quite a bit about deejaying applications and plug-ins and that side of things.
+    </p>
+
+    <p>
+      But I wasn't so interested in the synthesis aspect, and so that's the challenge of being an audio programmer, I think, is that everybody is coming from their own experience. I think that it's important to have some level of experience with interfacing with creating music or being a musician. It's very tough to say, "I have no experience with music, but I'm going to be an audio software developer." You have to have something that you spring from.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        Yeah, that makes a lot of sense because that experience level, it's sort of the foundation of not only why you get into it, but what you end up pursuing, right?
+      </i>
+    </p>
+
+    <p>
+      <b>Joshua:</b>
+      Yeah, yeah, and there are so many challenges. Even in teaching, there could be a lot of challenges that you have to really make a certain amount of assumptions in terms of what the level of experience of the person that's watching the tutorial is going to have because if you try to cover every single aspect, the DSP aspect, the mathematical aspect, the programming aspect, then the tutorials would end up being two or three hours long. I would say that a lot of the challenges that I see for people, especially if you're starting off using a framework like JUCE, tend to be programming related, so it really stems from there.
+    </p>
+
+    <p>
+      Once you have a solid programming foundation and you have a good understanding of C++, then you can move to the next level, which is trying to read the API and really trying to understand how to actually instantiate objects and how classes are meant to be used. Then, you can move into kind of the audio DSP realm and start using that and putting that together with your programming knowledge to actually start building things. When you don't have the programming background, it can be very tough to get started.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        In a way, programming has kind of gotten to be normalized for artists to kind of cross over and get involved in programming, but there is an awful lot of like engineering concepts that are endemic. Once you get beyond a certain level of complexity, there's kind of this engineering understanding that it needs to exist as well. How hard is it for you to communicate that to people who maybe are coming from a more artistic perspective?
+      </i>
+    </p>
+
+    <p>
+      <b>Joshua:</b>
+      I find that that's actually my favorite part, the explaining the engineering aspect that I really enjoy conveying to others because the big thing that people don't understand or, I think, the big thing that a lot of teachers don't really convey is the, "Why are you doing this?" Or, "What is the reasoning behind you doing things this way versus another way?" I think that there are definitely certain challenges when it comes to C++ in particular for musicians because really - musicians, they just want to make some sound, don't they? They want to get to the creative aspect, and the quicker that we can get people into the creative aspect and getting them using their creativity, the better.
+    </p>
+
+    <p>
+      I think that C++ certainly presents a certain threshold, a pretty high threshold for doing that. It's tough to get away from the engineering aspect and getting into the creativity aspect. That's why I think it was actually kind of a blessing to be going to a university such as Goldsmiths because they really took us away kind of from the engineering aspect and they really just kind of threw us in there and they said, "Here are the basics. Don't be afraid to make mistakes and just feel free to just throw things around and see what happens."
+    </p>
+
+    <p>
+      I think that that was very helpful and that's what I try to teach other people as well because I think there's a culture in C++ where people try to be very careful and think about the most efficient way to do things and about the "right way" to do things. Whereas, what I try to do is I really try to say... When people come to me with questions and they say, "Well, what about this? Or what about that?" I say, "Well, try it. Try it and see if it works, and if it doesn't work, then move to the next step."
+    </p>
+
+    <p>
+      I think maybe wrongly there's been this culture created of, "No, that's not the right way to do it, you need to do it this way," or, "You need to do it that way." I mean, I've seen code of products that have been pretty successful commercially and the code looks absolutely atrocious. It looks absolutely terrible. I think sometimes we get a little bit caught up in the aesthetic of the code but we get a little bit away from what the bottom line is, [which] is that we want to create something that people are going to use and people are going to enjoy.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        That's a cool perspective. I want to come back to that in a minute, but before we go there, you talk about Goldsmith and it's clear that that was really an influential place for you to go. I'm kind of curious. In order to do the things you're doing, you sort of have to balance a lot of things and you kind of dropped a few hints at where you're coming from having kind of a deejaying interest background and stuff like that, but also going to Goldsmith. You're having to balance this thing of an artistic approach to the world as well as an engineering-like approach. Also, because of what you're doing, you also have to have a teacher's vision of the world, too, right? You have to be able to kind of approach things from that perspective as well. I'm curious a little bit about your background. How did you come to have this breadth of capabilities and interests and willingness to pursue these different kinds of adventure all simultaneously? Where are you coming from, man?
+      </i>
+    </p>
+
+    <p>
+      <b>Joshua:</b>
+      Yeah. Well, it all stems from, I think, my want and maybe my need, my drive to help others. That's really where everything originates from. I grew up pretty rough in a very dysfunctional home, very dysfunctional family. Even as a teenager, I was really thinking about counseling and helping others and teaching others. Then, from there, I actually did that in a professional capacity for the Air Force, so I actually enlisted in the U.S. Air Force and I was working in mental health as a mental health technician.
+    </p>
+
+    <p>
+      From there, I was doing that, but I was also very fascinated by music, by DJ culture and hip hop culture. I was doing deejaying as a second job, so I would do my day job for the Air Force working on an inpatient psychiatric ward, and then I'd come back and then I'd use all of my paycheck on buying vinyl and going home and deejaying and just practicing until I fell asleep. No TV or anything in my apartment, just deejaying and working. Everything kind of stemmed from there.
+    </p>
+
+    <p>
+      Then, when my contract with the Air Force was up, I ended up deejaying and then eventually producing music for a living for about 12 years. That was really amazing because I got to travel throughout the world for my deejaying, so I toured throughout about 25 countries throughout the world deejaying. That was very fascinating because that really gave me a love of other cultures and other perspectives, but as many people know, sometimes the music industry can go up and down and there's no stability or very little stability in it.
+    </p>
+
+    <p>
+      What I decided to do was I had some money left over from my Air Force time that was... It's called The Montgomery G.I. Bill. That allowed me to go to university and that's where I used that money and I thought, "What am I going to do with my life from now? I've deejayed, I've done mental health." I didn't really want to do mental health anymore in the strictest sense, so I had this money that was left over if I wanted to go to university.
+    </p>
+
+    <p>
+      I had never written a lot of code in my life and this was in 2015 and I just thought... I think I typed in "music computing," or, "audio computing," something like that because I thought, "Computing, that sounds like a legitimate way to make a living. Audio is something I know about." It never occurred to me, "Hey, maybe make audio products, maybe make plug-ins." It threw me into this world that I'd never experienced before. Going to Goldsmiths and experiencing the things that I saw there and meeting some of my professors like Rebecca Fiebrink, who's one of the world's foremost experts in machine learning, Mick Grierson, people like that had a very strong influence on me.
+    </p>
+
+    <p>
+      I just thought, "How is it that the whole world doesn't know about this?" That's really where I just thought, "These people should just be like household names." That's the way that I felt. They're like superstars to me. That wasn't really where the original vision for The Audio Programmer came from. That was just something that I kind of thought about along the way, but as I progressed along, I just thought, "I really want to just try to shine a light on other people and like this amazing work that these other people are doing." I think that eventually just kind of fit into the other things that The Audio Programmer was doing and how it kind of manifested itself eventually.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        Sure, that's really interesting, though. What did you study at Goldsmith?
+      </i>
+    </p>
+
+    <p>
+      <b>Joshua:</b>
+      The course was Music Computing. So that was divided between the Computing Department and the Music Department.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        Interesting. They're like notorious, at least in my end of the world, as doing a fabulous job of knitting the two together because they're sort of uncomfortable cousins, I guess. They're both very much technology-oriented, but again, one side tends to be very engineering-oriented, one tends to be very musically-oriented, and so, again, you see that kind of attempt to bifurcate. Then, places like Goldsmith working hard to stitch them together. You really had no programming experience before showing up there?
+      </i>
+    </p>
+
+    <p>
+      <b>Joshua:</b>
+      No, none whatsoever, no.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        How did you get started? I mean, was it diving right into C++? Or did you use something... Goldsmith, I know that they do a lot of stuff with things like Csound and MAX and Pd. Did you play around with any of those intermediate tools?
+      </i>
+    </p>
+
+    <p>
+      <b>Joshua:</b>
+      Yeah, so we did... The Music Computing 101 course was actually MAX/MSP and then you had the actual programming side, programming basics. It wasn't anything really like data structures and algorithms or anything like that. It was just really learning like, "What's an if statement? What's a for loop?"
+    </p>
+
+    <p>
+      <b>Joshua:</b>
+      That was actually in a language called Processing, which is a Java library that's like kind of watered down. Excellent language to learn if you're just getting started and you're creative and you want to build amazing things that people can see and hear. I think it's an awesome language to get started with, I think, especially... Well, you have Daniel Shiffman, who's on YouTube who gives tutorials using Processing. Daniel Shiffman was a very, very big inspiration to me in terms of my approach to teaching and helping others, so yes, Processing and Max/MSP.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        Yeah. Well, working off of Shiffman as an inspiration, that's a good starting point because he's inspired an awful lot of people to get involved in coding. That's really cool. Why did you end up in C++?
+      </i>
+    </p>
+
+    <p>
+      <b>Joshua:</b>
+      Well, it was I knew from the start that C++ was the industry standard for developing these things and that we also did study C++ in our second year, so we started off with C++. They really just threw us in the deep end. I mean, we had a C++ course that we were taking, but as you know, it can be such a challenge to really get to know the language well enough to build anything of significance. We did C++ in our second year and I concentrated in that area like from that point on and with things like JUCE because I knew that it was the industry standard. It was kind of interesting because Goldsmiths is very much an arts industry, isn't it?
+    </p>
+
+    <p>
+      So it's very much about, "We aren't industry. We're drawing outside of the lines. We're trying to think of things on the far reaches of new ways of interfacing with music and with audio." I felt in some ways that I was a little bit against the grain because I came from a deejaying background, so I had had the industry experience, so I was really thinking about, "How can I get a job in this industry?" I wasn't really thinking about, "How can I create sound art and things like that?" I just thought, "How can I create something that people want to use?" I knew that C++ was the way that people were doing it, and so I knew that that's where I needed to dive in.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        Right, interesting. Now, C++ is one thing, JUCE is really another. That's almost like a discipline on top of C++, but it also provides a pretty interesting entry point for people who want to get into audio. When you got started, JUCE hadn't been around for that long. What made you kind of identify it as a winner to be showing people?
+      </i>
+    </p>
+
+    <p>
+      <b>Joshua:</b>
+      I think it was really looking at job postings and seeing what places like Native Instruments, Focusrite, Ableton were really posting for their jobs. Also, at the time, JUCE was holding their JUCE Summit, which became The Audio Developer Conference, and that was also held at Goldsmiths at the time. There was a lot of activity that was happening around the University seeing names like ROLI, JUCE and happening in Goldsmiths and really wondering what that was about. They didn't teach us JUCE at the University, but looking deeper into it, I saw that this is really one of the only cross-platform frameworks that you could use to really build VSTs and build audio apps and it had all of these abstractions that made it "easy" to build something quickly, even though it's not easy. It's not easy at all, but it was one of those things that I just really thought, "What's the thing that's going to get me closest to building my own plug-in?"
+    </p>
+
+    <p>
+      JUCE really seemed to be the answer for that because you could compile different plug-in formats and do it cross-platform just from one code base. I didn't even really have a good understanding of what that actually really meant at the time when I first started using it, but yeah.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        Well, I think the cross-platform aspects of it is something that really draws people in because when you start playing around with the differences in Windows versus Mac programming environments, they're pretty significant in even like drawing routines and stuff like that are like mind-numbingly different, and so having a framework like JUCE to sort of smooth the edges between the two seems to be pretty valuable. You mentioned that you had been doing some programming, but now, you're kind of managing The Audio Programmer thing, but that you're also kind of still keeping your fingers in programing. What kind of program are you writing?
+      </i>
+    </p>
+
+    <p>
+      <b>Joshua:</b>
+      I've actually been working on a DJ application for a couple of years and it's really interesting because right out of... One of my final projects for university was this machine learning DJ application and there were two sides to it. One was that in deejaying you have different scratch techniques and there was this question of, "Well, can we identify what a scratch technique is using machine learning?" I got a prototype of that running, and then I also created a game. It's almost like Guitar Hero, but for DJs, and I did that as a final project.
+    </p>
+
+    <p>
+      Shortly after university was finished, I actually just put a very short video, maybe it was like 30 seconds, of the prototype of this application, which was kind of a patchwork thing between Max and JUCE. It went viral right away and it was really interesting because then one of the leading scratch DJs in the world got in touch with me and they said, "We want to do a showcase with this application." We actually ended up doing a showcase with Intel, so Intel brought us over and we actually did two shows with Intel, one in San Francisco and one in New York that was absolutely huge. I mean, we had DJ setups that were set up throughout the venue and people could come up and they could actually try out the application and just try to learn scratching.
+    </p>
+
+    <p>
+      It was a pretty phenomenal experience for me because it just felt like, "Here is this thing that I made in university, and now I'm in New York with Intel and people are actually using this and enjoying this." It was really just a...
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        Well, that had to be a freakout. I just think about the kind of projects I did when I was in school, even in grad school. I'd do these projects, but I knew underneath the covers it was kind of held together with Band-aids and duct tape, right? I can't imagine hauling that and like plopping it in the middle of something that Intel is putting on. That had to be a little unnerving.
+      </i>
+    </p>
+
+    <p>
+      <b>Joshua:</b>
+      Yeah, it was, it was, and once I was out of the University, I got a little help along the way to actually make it into something that people could actually use. We ended up... Like I was saying, it was originally kind of a Frankenstein of Max/MSP and JUCE, so we ended up porting it all over to JUCE and C++. That actually made it where other people could actually use it on their computers, but it was a complete whirlwind. It was a complete whirlwind because I just, "Here's this thing that I made in university and now the best scratching DJ in the world is actually using this on stage. Wow, what an incredible experience."
+    </p>
+
+    <p>
+      Since then, I've been working on it mostly by myself. I work on it in my spare time, but I love it. I have such a deep passion for development and for coding and for learning. I really feel like sometimes the business aspect of what we're doing at The Audio Programmer, it really kind of pulls more towards the paperwork, the meetings, these other things, but it's really that passion for learning that, I think, is really at the core of what we do. That's why I enjoy teaching my son C++ as well because I just enjoy and I think more than anything, I could honestly say that over the past three years that hundreds of people have come to me and told me that they've got opportunities and that they've actually got jobs from the tutorials that I gave from the channel.
+    </p>
+
+    <p>
+      That more than anything is really amazing seeing people take my terrible C++ tutorial, I don't want to say terrible C++ tutorials, but obviously I was just starting with C++ when I was creating the tutorials. Seeing people who have taken that little seed and they've grown it and they've taken it much further than I could have on my own, say people that work for some of the bigger companies in the world, Apple, Bose, all kinds of companies that say, "Oh yeah, but the way that I started off was with these tutorials." I mean, what's better than that?
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        That's pretty cool. That's got to feel great. Now one of the things I'm curious about, C++ especially is very much a formal... There's a lot of formulism into it, right?
+      </i>
+    </p>
+
+    <p>
+      <b>Joshua:</b>
+      Mm-hmm (affirmative).
+    </p>
+
+    -----
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        Both in the way that the code is structured, but even as you get into more and more like "modern" C++, and certainly the JUCE framework takes advantage of a lot of the modern C++ aspects, it also has a lot of formalization in the way that you
+        define functions and the way that you define prototyping and the way that you deal with template parameters and all this kind of stuff.
+        It's a little overwhelming I think sometimes to deal with the formulism, especially if you're coming from an arts standpoint where what you're really trying to do is find a way to be experimental and to play around when things that maybe
+        aren't available from commercial companies or aren't something that other people are even going to be aware of or going to pay much notice to. How do you tiptoe on the border between things being overly formal while still being able to be
+        experimental?
+      </i>
+    </p>
+
+    <p>
+      <b>Joshua:</b>
+      Yeah. I think a lot of it just goes in your initial approach. Like I was saying before, I think in C++ especially that they're maybe a culture of, "Don't do certain things and don't experiment things until you've learned the 'right' way to do
+      it." I'm very much a person that likes to build in iterations, so I always try to say to people, "Just try to start with something simple and try to work on that. Try to get something that makes a sound before you try to create a full
+      synthesizer. I think that C++ still presents significant challenges to that ability to create anything of special significance without a significant amount of coding behind it.
+      That's where, I think, other tools like MAX MSP and other ones like SuperCollider and Sonic Pi really come in because they just allow the user to express some creativity and do it quite quickly, especially when you're starting off. I just
+      wouldn't advise to try to start people off with C++ because I think a lot of people would just get frustrated because you're just thrown into the deep in right away. You're just thrown into straight engineering right away. Whereas, I think when
+      you start with other tools like MAX MSP, it gives you the chance to really say in 30 seconds, "Here's how you make a sound." You can get a sound up and running in like probably less than 30 seconds, probably 10 seconds.
+      That is very fascinating, I think, to people because you want to really draw them in. When you're teaching others, you really want to like try to lower the threshold at the beginning to say, "It is easy, it is possible, it is achievable." I
+      think that's really what we try to do with The Audio Programmer is that we really try to simplify things down in a lot of ways and say, "Well, here's," because it's like an onion, isn't it? When it comes to C++ or when it comes to coding, the
+      first state is you do something because somebody told you that that's the way that it's supposed to be done.
+      You don't inherently understand all of the layers of why you need to inherit from this class or what inheritance actually is. You just know that that's the way to do it, but then, eventually as you gain experience, you start to peel off layers
+      of that onion and you start to realize, "Oh, that's what inheritance is." You start to get these epiphanies. I think that's really what it's about, but it's really about trying to lower it enough where people don't get frustrated right away and
+      they're able to create something and then give them the ability to stay in there, stay on the field of play so that they're able to continually have those epiphanies and continually learn those new things and have those new experiences.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        Yeah, that's actually very interesting. You talk about like the hard-line, "This is the way to do things," and I think that some of that is because a lot of the concepts of digital audio programming happened 30 years ago when it
+        was really unlikely to get a computer to make a sound at all. It was hard. You had to have highly, highly optimized code in order to even make it happen at all.
+        Now, you can for like five cents get a CPU that can run circles around what was used back then, so some of the resource requirements are certainly lowered, but I think you bring up a great point, too, which is that finding ways to sort of
+        simultaneously learn C++, but also kind of the fundamentals of audio programming, to kind of do those things simlui;tamepis;u os a great way of going and kind of growing into the craft. Something like MAX MSP is definitely useful for learning
+        about the fundamentals of computer audio, the fundamentals of the math behind audio and stuff like that. I can see where getting into C++ really opens the doors for some interesting other experimentation.
+        When you are introducing people into this stuff using the JUCE framework, do you tend to have people move or have people make standalone applications? Or is it easier to draw them into making plug-ins?
+      </i>
+    </p>
+
+    <p>
+      <b>Joshua:</b>
+      People really enjoy making plug-ins, so I think that's a great way to get people to interface into the actual industry is a lot of people really think of things, especially if they're doing C++, they're thinking of things in terms of plug-ins a
+      lot of the time. When you start getting towards making standalone applications, I think there are a lot of other considerations that maybe the DAW is taking care of you, things like, "What sound card are you running?" Input and output, things
+      like that that come into play that maybe add another layer of complexity into the mix.
+      A lot of the people that we speak to, they like to create plug-ins. I personally am not a big fan of plug-ins. I actually prefer the standalone application over plug-ins, but most people that we have in our community, they prefer to make
+      plug-ins.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        Right, yeah. Yeah, it's a curious thing because the idea of making the standalone is cool because you can kind of control what your environment presents, but on the other hand, it's a little intense to all of a sudden have to start thinking
+        about, "Oh, okay, I'm responsible for audio card selection. I'm responsible for possibly hosting things like plug-ins and stuff like that." That gets to be, again, a little bit overwhelming.
+        Now, tell me a little bit about the virtual aspects of what you're doing with The Audio Programmer. On your site, it looks like you actually in addition to doing your videos, you have a course that's available for people to learn
+        kind of in a more formal situation or formal way to learn programming. What's the difference between what you're doing on YouTube than what's in the course?
+      </i>
+    </p>
+
+    <p>
+      <b>Joshua:</b>
+      I think the big difference is just structure mainly. When we did the course, so I did the course as a collaboration with another developer out of France named Ivan Cohen, who's a leading DSP developer. One of the questions that I think people
+      had is, "Okay, now, I've done the tutorials through the YouTube channel. How do we take things to the next level? What are the best practices for actually creating a plug-in?" You have this next level that happens that goes from, "Okay, we've
+      hacked something together. We've created something that makes sound or does a delay. Now, how do we do it this "right way," the industry way where we're actually going to talk about thread synchronization and using Atomix instead of just using
+      regular variables?"
+      Thinking about the things that the music tech companies think about when they're creating plug-ins and they're creating their products. This is all... I would say when it comes to The Audio Programmer, the biggest thing that we do is we really
+      think about, "How can people make a living from this?" I think other people, they really come from maybe an artistic or from maybe like a scholarly perspective where they're thinking of making sound art or thinking of things in a creative way.
+      I think for me, maybe because it was just my angle, I really thought about, "How can I teach somebody where when they watch these tutorials, they can actually go out and they can eventually make this into a job? Make this into a way where they
+      can actually put a roof over their head and make a living from coding?"
+      I say that because I've spent so much time as a DJ, as kind of an artist in a way, and used to when I was touring sometimes I'd tour in Third World countries, places like Kenya. I remember going through the streets of Nairobi and seeing the
+      poverty there and there was part of me that felt like with music, we're able to definitely provide hope and provide a place of mutual kind of language that is understood around the world, but I always felt like, "I want to be something like a
+      doctor or somebody that can like really go in and actually change somebody's life in a very-
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        Changes lives [crosstalk 00:37:33] yeah, yeah.
+      </i>
+    </p>
+
+    <p>
+      <b>Joshua:</b>
+      ... yeah, in a very tangible way. That's really where the ethos of The Audio Programmer is I've really thought of it like I really want people to come away from this and come away from these tutorials and feel like now they have the power or
+      the springboard to actually go get an actual job or actually create their own plug-in company where they're actually able to sell their own products. I mean, what's better than that? Seeing somebody get opportunity from a little seed that you
+      planted? To me, that's one of the best feelings in the world.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        Right on, yeah. That's cool. That really ties into sort of the way that you're expanding the community through The Audio Programmer, too, doing meetups, doing that Discord server, stuff like that. How has that allowed you to
+        connect with the world of developers and wannabe developers?
+      </i>
+    </p>
+
+    <p>
+      <b>Joshua:</b>
+      Well, I think one thing that's been very helpful is that the community and the ecosystem of our community is very helpful and really supportive of each other. I think that maybe what's happened in the past is that developers have gone into
+      forums and we've seen them throughout the net in the past where maybe they weren't the most welcoming or maybe they were a little bit condescending in the way that they treat newcomers.
+      One of the cores of what we wanted to do with The Audio Programmer is that I wanted it to be a place that no matter what level you were at, even if you weren't coding, even if you hadn't run your first line of code, you could come here and you
+      would feel welcomed and you would feel like no question is too dumb to ask. You could ask anything. You can ask how to download the JUCE framework, or you could ask how to download MAX MSP, and that somebody would be able to answer and do it in
+      a noncondescending way.
+      Really, what I have to do is I have to really commend the community at large for the way that they support each other and the way that we're able to create a sense of belonging. That's really what's at the core and what attracts other people is
+      that there's certain magic there of belonging and of welcoming, where people who come in, I think, a lot of times are taken aback by, "Wow, this is a really welcoming community." Some people have told me that they've never really quite seen a
+      community like the one that we have, but it's not a one-person show, though. It's not just me, it's other people, some people who are in our Discord each and every day and people who interface with us that really make it possible.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        Right on. That's so cool. Well, unfortunately, our time is up, but just one question before we go, I'm just curious. I know that you talk a lot about kind of growing up and going to being in the U.S. Air Force and stuff like this. You are now
+        based out of London, right?
+      </i>
+    </p>
+
+    <p>
+      <b>Joshua:</b>
+      Yeah, that's right. I live right outside of London. That's correct.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        What caused you to decide to land there?
+      </i>
+    </p>
+
+    <p>
+      <b>Joshua:</b>
+      It was actually the Air Force. I was stationed here in England with the Air Force. Then, once my contract was up, I thought, "Oh, I could just go back to my small town in Pennsylvania or go back to the U.S.," but there is so many things out in
+      the world to go and see and experience, I just felt like if I go back to the U.S., it could... I think when you're in the U.S., it could be quite difficult to get out of the U.S., whereas being in London, you really have Paris, which is just a
+      couple of hours of train ride. You really have Berlin that's only an hour and a half, two hours by plane, and it is really that that excites me, the different cultures, the opportunity to see things that most of the other people who I grew up
+      with in the States have never had the opportunity to experience.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        Right.
+      </i>
+    </p>
+
+    <p>
+      <b>Joshua:</b>
+      That's really what it is is the culture that really keeps me staying over here, but I do miss it in the States, yeah.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        Well, Josh, I want to thank you so much for taking the time to have this chat. It was really great, but with that, I'm going to let you go and have the rest of your day. Thank you so much.
+      </i>
+    </p>
+
+    <p>
+      <b>Joshua:</b>
+      Yeah, thank you very much, Darwin.
+    </p>
+
+    <p>
+      <b>Darwin:</b>
+      <i>
+        All right.
+    </p>
+
+  </div>
+  <!-- jQuery (necessary for the Bootstrap JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
