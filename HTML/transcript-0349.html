@@ -198,7 +198,7 @@
 
     <p>
       <b>Joshua:</b>
-      Yeah, so we did... The Music Computing 101 course was actually MAX/MSP and then you had the actual programming side, programming basics. It wasn't anything really like data structures and algorithms or anything like that. It was just really learning like, "What's an if statement? What's a for loop?"
+      Yeah, so we did... The Music Computing 101 course was actually Max/MSP and then you had the actual programming side, programming basics. It wasn't anything really like data structures and algorithms or anything like that. It was just really learning like, "What's an if statement? What's a for loop?"
     </p>
 
     <p>
@@ -290,120 +290,102 @@
       Mm-hmm (affirmative).
     </p>
 
-    -----
-
     <p>
       <b>Darwin:</b>
       <i>
-        Both in the way that the code is structured, but even as you get into more and more like "modern" C++, and certainly the JUCE framework takes advantage of a lot of the modern C++ aspects, it also has a lot of formalization in the way that you
-        define functions and the way that you define prototyping and the way that you deal with template parameters and all this kind of stuff.
-        It's a little overwhelming I think sometimes to deal with the formulism, especially if you're coming from an arts standpoint where what you're really trying to do is find a way to be experimental and to play around when things that maybe
-        aren't available from commercial companies or aren't something that other people are even going to be aware of or going to pay much notice to. How do you tiptoe on the border between things being overly formal while still being able to be
-        experimental?
+        Both in the way that the code is structured, but even as you get into more and more like "modern" C++, and certainly the JUCE framework takes advantage of a lot of the modern C++ aspects, it also has a lot of formalization in the way that you define functions and the way that you define prototyping and the way that you deal with template parameters and all this kind of stuff.
+      </p>
+
+      <p>
+        It's a little overwhelming I think sometimes to deal with the formulism, especially if you're coming from an arts standpoint where what you're really trying to do is find a way to be experimental and to play around when things that maybe aren't available from commercial companies or aren't something that other people are even going to be aware of or going to pay much notice to. How do you tiptoe on the border between things being overly formal while still being able to be experimental?
       </i>
     </p>
 
     <p>
       <b>Joshua:</b>
-      Yeah. I think a lot of it just goes in your initial approach. Like I was saying before, I think in C++ especially that they're maybe a culture of, "Don't do certain things and don't experiment things until you've learned the 'right' way to do
-      it." I'm very much a person that likes to build in iterations, so I always try to say to people, "Just try to start with something simple and try to work on that. Try to get something that makes a sound before you try to create a full
-      synthesizer. I think that C++ still presents significant challenges to that ability to create anything of special significance without a significant amount of coding behind it.
-      That's where, I think, other tools like MAX MSP and other ones like SuperCollider and Sonic Pi really come in because they just allow the user to express some creativity and do it quite quickly, especially when you're starting off. I just
-      wouldn't advise to try to start people off with C++ because I think a lot of people would just get frustrated because you're just thrown into the deep in right away. You're just thrown into straight engineering right away. Whereas, I think when
-      you start with other tools like MAX MSP, it gives you the chance to really say in 30 seconds, "Here's how you make a sound." You can get a sound up and running in like probably less than 30 seconds, probably 10 seconds.
-      That is very fascinating, I think, to people because you want to really draw them in. When you're teaching others, you really want to like try to lower the threshold at the beginning to say, "It is easy, it is possible, it is achievable." I
-      think that's really what we try to do with The Audio Programmer is that we really try to simplify things down in a lot of ways and say, "Well, here's," because it's like an onion, isn't it? When it comes to C++ or when it comes to coding, the
-      first state is you do something because somebody told you that that's the way that it's supposed to be done.
-      You don't inherently understand all of the layers of why you need to inherit from this class or what inheritance actually is. You just know that that's the way to do it, but then, eventually as you gain experience, you start to peel off layers
-      of that onion and you start to realize, "Oh, that's what inheritance is." You start to get these epiphanies. I think that's really what it's about, but it's really about trying to lower it enough where people don't get frustrated right away and
-      they're able to create something and then give them the ability to stay in there, stay on the field of play so that they're able to continually have those epiphanies and continually learn those new things and have those new experiences.
+      Yeah. I think a lot of it just goes in your initial approach. Like I was saying before, I think in C++ especially that they're maybe a culture of, "Don't do certain things and don't experiment things until you've learned the 'right' way to do it." I'm very much a person that likes to build in iterations, so I always try to say to people, "Just try to start with something simple and try to work on that. Try to get something that makes a sound before you try to create a full synthesizer. I think that C++ still presents significant challenges to that ability to create anything of special significance without a significant amount of coding behind it.
+    </p>
+
+    <p>
+      That's where, I think, other tools like Max/MSP and other ones like SuperCollider and Sonic Pi really come in because they just allow the user to express some creativity and do it quite quickly, especially when you're starting off. I just wouldn't advise to try to start people off with C++ because I think a lot of people would just get frustrated because you're just thrown into the deep in right away. You're just thrown into straight engineering right away. Whereas, I think when you start with other tools like Max/MSP, it gives you the chance to really say in 30 seconds, "Here's how you make a sound." You can get a sound up and running in like probably less than 30 seconds, probably 10 seconds.
+    </p>
+
+    <p>
+      That is very fascinating, I think, to people because you want to really draw them in. When you're teaching others, you really want to like try to lower the threshold at the beginning to say, "It is easy, it is possible, it is achievable." I think that's really what we try to do with The Audio Programmer is that we really try to simplify things down in a lot of ways, because it's like an onion, isn't it? When it comes to C++ or when it comes to coding, the first state is you do something because somebody told you that that's the way that it's supposed to be done.
+    </p>
+
+    <p>
+      You don't inherently understand all of the layers of why you need to inherit from this class or what inheritance actually is. You just know that that's the way to do it, but then, eventually as you gain experience, you start to peel off layers of that onion and you start to realize, "Oh, that's what inheritance is." You start to get these epiphanies. I think that's really what it's about, but it's really about trying to lower it enough where people don't get frustrated right away and they're able to create something and then give them the ability to stay in there, stay on the field of play so that they're able to continually have those epiphanies and continually learn those new things and have those new experiences.
     </p>
 
     <p>
       <b>Darwin:</b>
       <i>
-        Yeah, that's actually very interesting. You talk about like the hard-line, "This is the way to do things," and I think that some of that is because a lot of the concepts of digital audio programming happened 30 years ago when it
-        was really unlikely to get a computer to make a sound at all. It was hard. You had to have highly, highly optimized code in order to even make it happen at all.
-        Now, you can for like five cents get a CPU that can run circles around what was used back then, so some of the resource requirements are certainly lowered, but I think you bring up a great point, too, which is that finding ways to sort of
-        simultaneously learn C++, but also kind of the fundamentals of audio programming, to kind of do those things simlui;tamepis;u os a great way of going and kind of growing into the craft. Something like MAX MSP is definitely useful for learning
-        about the fundamentals of computer audio, the fundamentals of the math behind audio and stuff like that. I can see where getting into C++ really opens the doors for some interesting other experimentation.
+        Yeah, that's actually very interesting. You talk about like the hard-line, "This is the way to do things," and I think that some of that is because a lot of the concepts of digital audio programming happened 30 years ago when it was really unlikely to get a computer to make a sound at all. It was hard. You had to have highly, highly optimized code in order to even make it happen at all.
+      </p>
+
+      <p>
+        Now, you can for like five cents get a CPU that can run circles around what was used back then, so some of the resource requirements are certainly lowered, but I think you bring up a great point, too, which is that finding ways to sort of simultaneously learn C++, but also kind of the fundamentals of audio programming, to kind of do those things simlui;tamepis;u os a great way of going and kind of growing into the craft. Something like Max/MSP is definitely useful for learning about the fundamentals of computer audio, the fundamentals of the math behind audio and stuff like that. I can see where getting into C++ really opens the doors for some interesting other experimentation.
+      </p>
+
+      <p>
         When you are introducing people into this stuff using the JUCE framework, do you tend to have people move or have people make standalone applications? Or is it easier to draw them into making plug-ins?
       </i>
     </p>
 
     <p>
       <b>Joshua:</b>
-      People really enjoy making plug-ins, so I think that's a great way to get people to interface into the actual industry is a lot of people really think of things, especially if they're doing C++, they're thinking of things in terms of plug-ins a
-      lot of the time. When you start getting towards making standalone applications, I think there are a lot of other considerations that maybe the DAW is taking care of you, things like, "What sound card are you running?" Input and output, things
-      like that that come into play that maybe add another layer of complexity into the mix.
-      A lot of the people that we speak to, they like to create plug-ins. I personally am not a big fan of plug-ins. I actually prefer the standalone application over plug-ins, but most people that we have in our community, they prefer to make
-      plug-ins.
+      People really enjoy making plug-ins, so I think that's a great way to get people to interface into the actual industry is a lot of people really think of things, especially if they're doing C++, they're thinking of things in terms of plug-ins a lot of the time. When you start getting towards making standalone applications, I think there are a lot of other considerations that maybe the DAW is taking care of you, things like, "What sound card are you running?" Input and output, things like that that come into play that maybe add another layer of complexity into the mix.
+    </p>
+
+    <p>
+      A lot of the people that we speak to - they like to create plug-ins. I personally am not a big fan of plug-ins. I actually prefer the standalone application over plug-ins, but most people that we have in our community, they prefer to make plug-ins.
     </p>
 
     <p>
       <b>Darwin:</b>
       <i>
-        Right, yeah. Yeah, it's a curious thing because the idea of making the standalone is cool because you can kind of control what your environment presents, but on the other hand, it's a little intense to all of a sudden have to start thinking
-        about, "Oh, okay, I'm responsible for audio card selection. I'm responsible for possibly hosting things like plug-ins and stuff like that." That gets to be, again, a little bit overwhelming.
-        Now, tell me a little bit about the virtual aspects of what you're doing with The Audio Programmer. On your site, it looks like you actually in addition to doing your videos, you have a course that's available for people to learn
-        kind of in a more formal situation or formal way to learn programming. What's the difference between what you're doing on YouTube than what's in the course?
+        Right. Yeah, it's a curious thing because the idea of making the standalone is cool because you can kind of control what your environment presents, but on the other hand, it's a little intense to all of a sudden have to start thinking about, "Oh, okay, I'm responsible for audio card selection. I'm responsible for possibly hosting things like plug-ins and stuff like that." That gets to be, again, a little bit overwhelming. Now, tell me a little bit about the virtual aspects of what you're doing with The Audio Programmer. On your site, it looks like you actually in addition to doing your videos, you have a course that's available for people to learn kind of in a more formal situation or formal way to learn programming. What's the difference between what you're doing on YouTube than what's in the course?
       </i>
     </p>
 
     <p>
       <b>Joshua:</b>
-      I think the big difference is just structure mainly. When we did the course, so I did the course as a collaboration with another developer out of France named Ivan Cohen, who's a leading DSP developer. One of the questions that I think people
-      had is, "Okay, now, I've done the tutorials through the YouTube channel. How do we take things to the next level? What are the best practices for actually creating a plug-in?" You have this next level that happens that goes from, "Okay, we've
-      hacked something together. We've created something that makes sound or does a delay. Now, how do we do it this "right way," the industry way where we're actually going to talk about thread synchronization and using Atomix instead of just using
-      regular variables?"
-      Thinking about the things that the music tech companies think about when they're creating plug-ins and they're creating their products. This is all... I would say when it comes to The Audio Programmer, the biggest thing that we do is we really
-      think about, "How can people make a living from this?" I think other people, they really come from maybe an artistic or from maybe like a scholarly perspective where they're thinking of making sound art or thinking of things in a creative way.
-      I think for me, maybe because it was just my angle, I really thought about, "How can I teach somebody where when they watch these tutorials, they can actually go out and they can eventually make this into a job? Make this into a way where they
-      can actually put a roof over their head and make a living from coding?"
-      I say that because I've spent so much time as a DJ, as kind of an artist in a way, and used to when I was touring sometimes I'd tour in Third World countries, places like Kenya. I remember going through the streets of Nairobi and seeing the
-      poverty there and there was part of me that felt like with music, we're able to definitely provide hope and provide a place of mutual kind of language that is understood around the world, but I always felt like, "I want to be something like a
-      doctor or somebody that can like really go in and actually change somebody's life in a very-
+      I think the big difference is just structure mainly. When we did the course, so I did the course as a collaboration with another developer out of France named Ivan Cohen, who's a leading DSP developer. One of the questions that I think people had is, "Okay, now, I've done the tutorials through the YouTube channel. How do we take things to the next level? What are the best practices for actually creating a plug-in?" You have this next level that happens that goes from, "Okay, we've hacked something together. We've created something that makes sound or does a delay. Now, how do we do it this "right way," the industry way where we're actually going to talk about thread synchronization and using Atomix instead of just using regular variables?"
+    </p>
+
+    <p>
+      Thinking about the things that the music tech companies think about when they're creating plug-ins and they're creating their products. This is all... I would say when it comes to The Audio Programmer, the biggest thing that we do is we really think about, "How can people make a living from this?" I think other people, they really come from maybe an artistic or from maybe like a scholarly perspective where they're thinking of making sound art or thinking of things in a creative way. I think for me, maybe because it was just my angle, I really thought about, "How can I teach somebody where when they watch these tutorials, they can actually go out and they can eventually make this into a job? Make this into a way where they can actually put a roof over their head and make a living from coding?"
+    </p>
+
+    <p>
+      I say that because I've spent so much time as a DJ, as kind of an artist in a way, and used to when I was touring sometimes I'd tour in Third World countries, places like Kenya. I remember going through the streets of Nairobi and seeing the poverty there and there was part of me that felt like with music, we're able to definitely provide hope and provide a place of mutual kind of language that is understood around the world, but I always felt like, "I want to be something like a doctor or somebody that can like really go in and actually change somebody's life in a very tangible way. That's really where the ethos of The Audio Programmer is I've really thought of it like I really want people to come away from this and come away from these tutorials and feel like now they have the power or the springboard to actually go get an actual job or actually create their own plug-in company where they're actually able to sell their own products. I mean, what's better than that? Seeing somebody get opportunity from a little seed that you planted? To me, that's one of the best feelings in the world.
     </p>
 
     <p>
       <b>Darwin:</b>
       <i>
-        Changes lives [crosstalk 00:37:33] yeah, yeah.
+        Right on, yeah. That's cool. That really ties into sort of the way that you're expanding the community through The Audio Programmer, too - doing meetups, doing that Discord server, stuff like that. How has that allowed you to connect with the world of developers and want-to-be developers?
       </i>
     </p>
 
     <p>
       <b>Joshua:</b>
-      ... yeah, in a very tangible way. That's really where the ethos of The Audio Programmer is I've really thought of it like I really want people to come away from this and come away from these tutorials and feel like now they have the power or
-      the springboard to actually go get an actual job or actually create their own plug-in company where they're actually able to sell their own products. I mean, what's better than that? Seeing somebody get opportunity from a little seed that you
-      planted? To me, that's one of the best feelings in the world.
+      Well, I think one thing that's been very helpful is that the community and the ecosystem of our community is very helpful and really supportive of each other. I think that maybe what's happened in the past is that developers have gone into forums and we've seen them throughout the net in the past where maybe they weren't the most welcoming or maybe they were a little bit condescending in the way that they treat newcomers.
+    </p>
+
+    <p>
+      One of the cores of what we wanted to do with The Audio Programmer is that I wanted it to be a place that no matter what level you were at, even if you weren't coding, even if you hadn't run your first line of code, you could come here and you would feel welcomed and you would feel like no question is too dumb to ask. You could ask anything. You can ask how to download the JUCE framework, or you could ask how to download Max/MSP, and that somebody would be able to answer and do it in a noncondescending way.
+    </p>
+
+    <p>
+      Really, what I have to do is I have to really commend the community at large for the way that they support each other and the way that we're able to create a sense of belonging. That's really what's at the core and what attracts other people is that there's certain magic there of belonging and of welcoming, where people who come in, I think, a lot of times are taken aback by, "Wow, this is a really welcoming community." Some people have told me that they've never really quite seen a community like the one that we have, but it's not a one-person show, though. It's not just me, it's other people, people who are in our Discord each and every day and people who interface with us that really make it possible.
     </p>
 
     <p>
       <b>Darwin:</b>
       <i>
-        Right on, yeah. That's cool. That really ties into sort of the way that you're expanding the community through The Audio Programmer, too, doing meetups, doing that Discord server, stuff like that. How has that allowed you to
-        connect with the world of developers and wannabe developers?
-      </i>
-    </p>
-
-    <p>
-      <b>Joshua:</b>
-      Well, I think one thing that's been very helpful is that the community and the ecosystem of our community is very helpful and really supportive of each other. I think that maybe what's happened in the past is that developers have gone into
-      forums and we've seen them throughout the net in the past where maybe they weren't the most welcoming or maybe they were a little bit condescending in the way that they treat newcomers.
-      One of the cores of what we wanted to do with The Audio Programmer is that I wanted it to be a place that no matter what level you were at, even if you weren't coding, even if you hadn't run your first line of code, you could come here and you
-      would feel welcomed and you would feel like no question is too dumb to ask. You could ask anything. You can ask how to download the JUCE framework, or you could ask how to download MAX MSP, and that somebody would be able to answer and do it in
-      a noncondescending way.
-      Really, what I have to do is I have to really commend the community at large for the way that they support each other and the way that we're able to create a sense of belonging. That's really what's at the core and what attracts other people is
-      that there's certain magic there of belonging and of welcoming, where people who come in, I think, a lot of times are taken aback by, "Wow, this is a really welcoming community." Some people have told me that they've never really quite seen a
-      community like the one that we have, but it's not a one-person show, though. It's not just me, it's other people, some people who are in our Discord each and every day and people who interface with us that really make it possible.
-    </p>
-
-    <p>
-      <b>Darwin:</b>
-      <i>
-        Right on. That's so cool. Well, unfortunately, our time is up, but just one question before we go, I'm just curious. I know that you talk a lot about kind of growing up and going to being in the U.S. Air Force and stuff like this. You are now
-        based out of London, right?
+        Right on. That's so cool. Well, unfortunately, our time is up, but just one question before we go, I'm just curious. I know that you talk a lot about kind of growing up and going into the U.S. Air Force and stuff like this. You are now based out of London, right?
       </i>
     </p>
 
@@ -421,22 +403,7 @@
 
     <p>
       <b>Joshua:</b>
-      It was actually the Air Force. I was stationed here in England with the Air Force. Then, once my contract was up, I thought, "Oh, I could just go back to my small town in Pennsylvania or go back to the U.S.," but there is so many things out in
-      the world to go and see and experience, I just felt like if I go back to the U.S., it could... I think when you're in the U.S., it could be quite difficult to get out of the U.S., whereas being in London, you really have Paris, which is just a
-      couple of hours of train ride. You really have Berlin that's only an hour and a half, two hours by plane, and it is really that that excites me, the different cultures, the opportunity to see things that most of the other people who I grew up
-      with in the States have never had the opportunity to experience.
-    </p>
-
-    <p>
-      <b>Darwin:</b>
-      <i>
-        Right.
-      </i>
-    </p>
-
-    <p>
-      <b>Joshua:</b>
-      That's really what it is is the culture that really keeps me staying over here, but I do miss it in the States, yeah.
+      It was actually the Air Force. I was stationed here in England with the Air Force. Then, once my contract was up, I thought, "Oh, I could just go back to my small town in Pennsylvania or go back to the U.S.," but there is so many things out in the world to go and see and experience, I just felt like if I go back to the U.S., it could... I think when you're in the U.S., it could be quite difficult to get out of the U.S., whereas being in London, you really have Paris, which is just a couple of hours of train ride. You really have Berlin that's only an hour and a half, two hours by plane, and it is really that that excites me, the different cultures, the opportunity to see things that most of the other people who I grew up with in the States have never had the opportunity to experience. So that's really what it is is the culture that really keeps me staying over here, but I do miss it in the States, yeah.
     </p>
 
     <p>
@@ -449,12 +416,6 @@
     <p>
       <b>Joshua:</b>
       Yeah, thank you very much, Darwin.
-    </p>
-
-    <p>
-      <b>Darwin:</b>
-      <i>
-        All right.
     </p>
 
   </div>
