@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Transcription: Podcast 0025 - Olivier Gillet</title>
+
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js does not work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+</head>
+
+<body>
+  <div class="container">
+    <h2>Transcription: 0025 - Olivier Gillet</h2>
+    <h3>Released: March 30, 2014</h3>
+    <p>
+      <b>Darwin: </b><i>Okay. This week, we are going to have a really special guest. His name is Olivia chalet and he is the man behind the mutable instruments systems. Now, if you're not familiar with them, you should be, they are amazing. I have
+        one of his Eurorack modules in my small performing system. It's called the braids and it represents so many unique methods of synthesis that I couldn't not own it. He also, in addition to making Eurorack modules, he also is involved in
+        developing and, offering a hardware device scandal and hardware devices. There are synthesizers, there's a mini processor that's available, but he also has a really interesting background, in, doing some software development. So let's say hi
+        to Olivia. Hi. Hi. It's always, that's always an awkward transition, but, I hope that you don't mind, me gushing over you a little bit. I find your work fascinating and inspiring every time I, every time I use it. Let's start off our
+        conversation by having you give us a little bit of your background, tell us, how you got to where you are. </i>
+    </p>
+
+    <p>
+      <b>Olivier Gillet: </b>Okay. So one thing I can say that, as far as I can remember, the first time I, learned to, to program computer, so it was in, in the 1990s and the first thing I remembered that, so we started, programming in, in, basic.
+      So you do this first program, like, input, what is your name and then print your name. And, so we are these, this classes at school, when we learned basic programming, as a first question I asked the teacher was, can we program it to make
+      music? Of course. So, who, who, remember, basic programming. So at the time you had, this, statement in the programming language called play and you had to type a string yeah. With the, notes. So are you type a C, C E F it played a middle D
+      with this shitty, beep sound and, so I was really fascinated by that and I started thinking, okay, can we, make, can we make it play a random strings or, can you make here strings at, interesting middle of <span style="color:red"
+        data-ts="178.58" data-end_ts="179" title="178.58" id=c_"178.58">__this__</span>?
+    </p>
+
+    <p>
+      <b>Olivier: </b>So really, I think, the thing that got me interested in programming and, later mathematics, was, music.
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>Sure. What was the, what was this first computer system that you were using? </i>
+    </p>
+
+    <p>
+      <b>Olivier: </b>I think at school we <span style="color:red" data-ts="199.23" data-end_ts="199.65" title="199.23" id=c_"199.23">__had__</span>, <span style="color:red" data-ts="201.2" data-end_ts="202.05" title="201.2"
+        id=c_"201.2">__Amstrad__</span>, <span style="color:red" data-ts="202.86" data-end_ts="203.67" title="202.86" id=c_"202.86">__pieces__</span>, or maybe it was the, CPC something, but, I did not have a computer at home and, in fact it took me,
+      four or five years during which I was interested in programming, but did not have a computer at home. So I was, using the computers at school or, staying, staying at some friend's house just to play with the computer. And I was writing the
+      program and just the paper at home and then trying it at school. So, I did not have my own computer.
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>Oh, that's, that's incredible. Would you say then that, like you were hooked by programming immediately? </i>
+    </p>
+
+    <p>
+      <b>Olivier: </b>Yeah.
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>The place where I inadvertently first met you, I didn't know you at the time was through a program that you wrote for Palm operating system for small handheld devices. You had two programs. Well, first of all, I don't even
+        know how to say the name of the company. It was like Chaco poop, poop, right? Well, good. But, there were two programs that you had written for that one called microbe and one called Bhajis loop that were, were incredibly important to me at,
+        at that time I was traveling a lot. I spent a lot of time on in airports and on airplanes, and there's probably no less creative place in the world than an airplane. And so, I found myself sitting on the airplane, wondering how can I turn
+        this time into creative time? And, I, I did some searching around and talking to some people and they were all like, you got to take a look at this Bhajis loops and <span style="color:red" data-ts="324" data-end_ts="324.18" title="324"
+          id=c_"324">__these__</span> micro programs, you might find them interesting. </i>
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>And so I looked at them and I saw that they required a Palm or S device. And I actually went out and bought a Palm specifically to run these two programs. And I had a blast. It was amazing, but it was also completely unlike
+        anything else in the world. I mean, it was so much more advanced than anything I had seen on certainly on handheld devices at that time. And in a way there's of this is like more advanced than most of what you even still find on an iPhone.
+        How did you wedge that much music making into a small device, like a Palm system? </i>
+    </p>
+
+    <p>
+      <b>Olivier: </b>So, I got interested in, these devices because, I got an internship in a company, developing, software development tours, four times. So, my project, there was a, a competitor for <span style="color:red" data-ts="392.5"
+        data-end_ts="392.98" title="392.5" id=c_"392.5">__Byron__</span>. So the, the, the boss of this company told me, okay, if you want to, develop any application in your spare time, you can, you can do it, or you can even do it on company time,
+      try to make it, as advanced as possible. And it will be <span style="color:red" data-ts="409.57" data-end_ts="409.66" title="409.57" id=c_"409.57">__your__</span> kind of tests to exercise the competitor. And I think the, this, development,
+      tool we were working on was quite good. And it allowed me to really push the limit of what I was, making on this system.
+    </p>
+
+    <p>
+      <b>Darwin: </b><i><span style="color:red" data-ts="427.93" data-end_ts="428.2" title="427.93" id=c_"427.93">__Oh__</span>, that's, that's really interesting because you see a lot of programs that are people's labors of love, but they often
+        don't have this kind of complexity, for those of you listening. It was, shackle poop and the Cho C O P O O L P, which the website for that still exist. In fact, it looks like you are giving away free copies of this to anyone who can still
+        find a Palm five device. Huh? Yeah. Well, it's really interesting because, the complexity is there, but also it reveals some of your clear interests. So like a microbe very much had a, had an orientation towards, kind of an, an analog feeling
+        type, type device. And certainly the synthesizer tool inside of Bhajis loop allowed you to explore some ideas with sort of like virtual analog type devices. So I thought that was really interesting because at that time, I guess, I would say,
+        especially on these small mobile devices, people were all about samples and your system not only did samples, but it did this synthesis. It did, sequencing. I mean, it was a pretty much a full fledged DAW. Really what experience had you had
+        with sort of like analog systems and analog synthesizers prior to working on this software? </i>
+    </p>
+
+    <p>
+      <b>Olivier: </b>I started, making, electronic music, since I was a teenager. Yeah, 15, 16. So, progressively I bought a couple of, since, I got an, a Sage then I got, then so they, yes, she won one, which is not <span style="color:red"
+        data-ts="548.88" data-end_ts="549.12" title="548.88" id=c_"548.88">__probably__</span> purely analog, but it was, <span style="color:red" data-ts="551.68" data-end_ts="551.76" title="551.68" id=c_"551.68">__a__</span> <span style="color:red"
+        data-ts="551.85" data-end_ts="552.09" title="551.85" id=c_"551.85">__red__</span> <span style="color:red" data-ts="552.09" data-end_ts="552.63" title="552.09" id=c_"552.09">__cent__</span>. And then, I bought a Sempra. I bought some, early,
+      drum machine. So, I, I got some experience with, music year.
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>Sure. Now, at what point did you make the transition from doing the work on the Palm system to the development of the mutable instruments devices? </i>
+    </p>
+
+    <p>
+      <b>Olivier: </b>So there is a big, black hole between, 2007 and, 2009. So in fact, platform just died
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>To superior, right? </i>
+    </p>
+
+    <p>
+      <b>Olivier: </b>2000, 2007, it was already dead. Then the iPhone came and I thought for a while, okay. Maybe, it's time to make a move to the iPhone platform. And at the beginning, it was still, a closed system because the API to, to develop
+      apps, it was not open at the beginning. The first few days of the iPhone. You couldn't relate to a web apps right then, I had <span style="color:red" data-ts="624.11" data-end_ts="624.17" title="624.11" id=c_"624.11">__the__</span> development
+      SDK was released, I don't know, around the end of, 2007 or beginning 2008, but somehow, it did not feel right. I think that I was not interested in this, platform the same way I got, excited about the Palm. Maybe it was because it was closed or
+      I don't know. And, I was looking for a better platform to, to continue, developing <span style="color:red" data-ts="656.93" data-end_ts="657.29" title="656.93" id=c_"656.93">__something__</span>.
+    </p>
+
+    <p>
+      <b>Olivier: </b>And then, I remember some things, so, when I did this internship on, time software development stuff, one of my teacher asked me, so are you going to, continue your studies and work on compiler or embedded systems? And I, I told
+      him, no, I'm not sure I will probably focus on signal processing, but then I, I remember that, this teacher thought that, I would be good at that system. And I started, wondering that, okay, maybe what I'm looking for is not a smartphone or a
+      computer platform. Maybe what I'm looking for is one level done. Maybe what I'm looking for is, algebra platform electronics. So I started thinking, okay, maybe, you have to, learn electronics. And I was not sure, how to start, because I had
+      absolutely no prior experience with electronic.
+    </p>
+
+    <p>
+      <b>Olivier: </b>And then in summer, 2009, I saw online, an article about a hack, using an Arduino. This is a point, at which I thought, okay, maybe this is what I should try to learn. So I bought that <span style="color:red" data-ts="743.17"
+        data-end_ts="743.41" title="743.17" id=c_"743.17">__widow__</span> board and, immediately I was instantly hooked, <span style="color:red" data-ts="748.42" data-end_ts="748.66" title="748.42" id=c_"748.42">__like__</span>, just like when I
+      started programming, it was this kind of, wow, this is what I had been looking for. So just in a couple of days, I started, created, simpler, media devices. The first thing I did was a MIDI to a civic <span style="color:red" data-ts="768.67"
+        data-end_ts="768.91" title="768.67" id=c_"768.67">__gate__</span> interface, and then I started creating simple, sound generators and, basic, digital synthesizer and this project, ultimately the, big games as a shorty,
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>These in these early experiments where you actually using the Arduino for sound generation, or did you have it controlling others? </i>
+    </p>
+
+    <p>
+      <b>Olivier: </b>Just for sound generation,
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>My goodness, having done some work with the Arduino, <span style="color:red" data-ts="804.3" data-end_ts="804.81" title="804.3" id=c_"804.3">__I'm__</span> aware of that, getting that to run well enough to make sound is
+        actually quite, quite an accomplishment now. W when you first developed these products, they were sold as kits, right? Yeah. And how did you, how did you like doing, kit sales? I mean, you got excited by the Arduino. Did you find that, that
+        the community for that sort of, kit building a synthesizer environment that that was growing also? Or was it already pretty big? </i>
+    </p>
+
+    <p>
+      <b>Olivier: </b>I think I was quite isolated at the time I did this because, when I announced that, I had built my first, <span style="color:red" data-ts="848.88" data-end_ts="850.14" title="848.88" id=c_"848.88">__***<inaudible>***__</span> on
+      the, Bhajis <span style="color:red" data-ts="851.31" data-end_ts="851.55" title="851.31" id=c_"851.31">__lips__</span> forum. Okay. So, when I started this project, I did not even look at, what kind of projects other people were doing, or, I
+      think, for example, if you look at the Synth DIY community, you see that most people are bidding, modules. I just, I did not want to look at that because, I thought that it would, push me in one direction or another. So I just, close my eye on
+      everything. Other people were doing and just, did my, my stuff in my, in my corner and published it on the Bhajis lips forum. And there are a couple of people interested in it, so I decided, okay, I will make, kids, <span style="color:red"
+        data-ts="902.21" data-end_ts="902.3" title="902.21" id=c_"902.21">__how__</span> many people I want one, two, three, four, five, okay. I would make 10 kids. And that's it. I did not plan to, I did not want it to become a business or whatever.
+      It was just, it's in that some people might enjoy bidding it, so, okay. I will sell kids
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>Well, but it obviously became a business business because you followed that initial kit up with your first scaled up item was at the shrews. I have to get the pronunciation that's Sruthi the Sruthi one. So that's, that's like
+        the first big project and I think that's still available. Right. </i>
+    </p>
+
+    <p>
+      <b>Olivier: </b>Okay. So, there was a transition at one point. So, when I started the <span style="color:red" data-ts="951.25" data-end_ts="951.7" title="951.25" id=c_"951.25">__fatigue__</span>, I wanted it to have an analog <span
+        style="color:red" data-ts="954.61" data-end_ts="955.15" title="954.61" id=c_"954.61">__printer__</span>. I had a dad, and Sonic has Q1. So I decided to use, some of the chips from, since, since it was, eight <span style="color:red"
+        data-ts="968.02" data-end_ts="968.5" title="968.02" id=c_"968.02">__void__</span>, eight, eight voice, since, I got eight chips. So it was, I must enough for my first batch of kids, 10 people, 20 people that people came and wanted one too. So
+      I tried to, find, smart stocks of the fitter chips from the <span style="color:red" data-ts="987.49" data-end_ts="988.09" title="987.49" id=c_"987.49">__***<inaudible>***__</span>. And then I had to, to give, because, it's quite a difficult to
+      find parts. Sure. There was this very small, initial run. And then I had to stop because of this part. And I redesigned, entire project from scratch, this time taking into account the fact that I should be able to sell 100 or 200 of them if
+      there is demand. So I restricted myself to only, easy to find parts.
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>Okay, sure. That makes sense. So you had hoped to sell one or 200, but my, I don't know, I'm thinking that you sold more than that? Yes, because the, I see them around a lot and, I also see that you're still selling them. So
+        that's, that's pretty impressive. Now I have to ask, because I am fascinated by this. So you, you didn't have any formal training in electronics. You just learned this by yourself. </i>
+    </p>
+
+    <p>
+      <b>Olivier: </b>Yeah, but so I had a training in, signal processing and, statistics. So, it was sort of, easy to learn.
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>I see. So because you have the DSP background, then that kind of, that kind of points to the idea that you're using these microprocessors as the, sound generation tool that makes, that makes a lot of sense. And it also helps
+        me understand how you're getting such good performance out of relatively low powered processors. When is, when is it that you transitioned from doing standalone instruments to deciding you were going to, start doing modules? </i>
+    </p>
+
+    <p>
+      <b>Olivier: </b>Yeah, at the beginning of, 2012, I, I wanted to purchase, a bit of test equipment to, design, analog circuits. So I needed a function generator, amplifiers, and so on, and I looked at the market at what you can, what you could
+      buy, as a regular artistic equipment. And it was quite expensive and it was not really, targeted to, to, or do application. And then I considered, buying some, modular stuff, not to use it to, to make music, but, just to have like a good, <span
+        style="color:red" data-ts="1147.04" data-end_ts="1147.25" title="1147.04" id=c_"1147.04">__wave__</span> generator. So two through eight generator and so on. And, yeah, it was, it was a good idea. So I bought a <span style="color:red"
+        data-ts="1155.98" data-end_ts="1156.43" title="1155.98" id=c_"1155.98">__small__</span>, Iraq with, VCO, <span style="color:red" data-ts="1161.02" data-end_ts="1161.41" title="1161.02" id=c_"1161.02">__another__</span> for this term, just a
+      bare minimum. And, once I, switched it on, I started patching it and, Oh my God, I love it. So I think I just did as a test equipment, maybe, just, twice and, really, to the <span style="color:red" data-ts="1187.18" data-end_ts="1188.27"
+        title="1187.18" id=c_"1187.18">__batching__</span>, the sun creation. I really loved it so immediately. Okay. I want to make one years now, right.
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>That's, that's hilarious. I have to admit that. I mean, I, I understand where you're coming from, because in fact, it seems like so much test equipment now is really made to work on like cell phones or something. And so, but
+        thinking of a case of <span style="color:red" data-ts="1215.89" data-end_ts="1216.16" title="1215.89" id=c_"1215.89">__Def__</span> for material as, or deffer modules as being a test equipment and then falling in love with it as an
+        instrument, that is a wonderful story. Your F was the braids, your first module. Yes. I'll tell you a little story. I, when I first saw a demo of it, I, first of all, whatever I was holding, I dropped because I thought I was fascinated by it.
+        As you probably can guess from my email address, I do a lot of things in sort of like software DSP design. And, I had always felt like, you know, a lot of that activity, I was, I was shut out of that on the, it, with my modular system, I have
+        a small modular system and I was shut out of doing some of those processes because they just either weren't available or would have taken so many modules that it wasn't practical for my, for wanting to keep my systems small. </i>
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>Then I saw, I saw a demo of the braids and I was blown away because not only did it do a lot of different processes, you have physical modeling in there. You have sort of the full SIM process. You have a really cool FM
+        implementation. You have multi, multi oscillator implementations. <span style="color:red" data-ts="1305.31" data-end_ts="1305.43" title="1305.31" id=c_"1305.31">__It's__</span> <span style="color:red" data-ts="1305.43" data-end_ts="1305.73"
+          title="1305.43" id=c_"1305.43">__just__</span> a playground of sound generating stuff. But the other thing I really noticed was how musical it was in designing this, how do you, how do you put together a module and say, I'm gonna make a
+        module and it's going to have like 15 different sound generating, mod, processes in it. I mean, first of all, how did you know that the system could support that much? And secondly, what is, what is it in your background that makes you
+        comfortable with working with all these different kinds of sound generating models? </i>
+    </p>
+
+    <p>
+      <b>Olivier: </b>Okay. So if you look at the, oscillator section in the Shruti, you only see that, it tries to cover, as much ground as possible in terms of, synthesis technique. But, of course, when I wrote, when I wrote on the, <span
+        style="color:red" data-ts="1365.36" data-end_ts="1366.86" title="1365.36" id=c_"1365.36">__***<inaudible>***__</span>, there are many, technical <span style="color:red" data-ts="1369.56" data-end_ts="1370.69" title="1369.56"
+        id=c_"1369.56">__limitations__</span>, you have, a budget of, 400, <span style="color:red" data-ts="1377.27" data-end_ts="1377.66" title="1377.27" id=c_"1377.27">__speed__</span>. You cite <span style="color:red" data-ts="1378.2"
+        data-end_ts="1378.59" title="1378.2" id=c_"1378.2">__your__</span>, first sunburn, and then you have to divide it by two because you have to assimilate or running <span style="color:red" data-ts="1382.97" data-end_ts="1383.18" title="1382.97"
+        id=c_"1382.97">__under__</span> <span style="color:red" data-ts="1383.27" data-end_ts="1383.63" title="1383.27" id=c_"1383.27">__routine__</span>. So when I started working on <span style="color:red" data-ts="1386.03" data-end_ts="1386.47"
+        title="1386.03" id=c_"1386.03">__Brays__</span>, I decided to use, a small, armor CPU. It's almost like, 10 times, more <span style="color:red" data-ts="1398.66" data-end_ts="1399.05" title="1398.66" id=c_"1398.66">__full__</span> than, the
+      Arduino. And then it will be running on the, one voice of synthesis once later, suddenly I got 20 times as much processing power as what I had been working on for the past three years. Right. So the leads like everything is possible.
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>Well now you've been active in, in continuing to change what the braids does too. I know that since I got my system, there has been some upgrades that have included, you know, first it included some built in envelopes, and
+        then it, and then some new routing options, were made available, which is really interesting. And, the question is at what, where do you see the point being reached where now, there's not enough user interface controls to really support the
+        many things you're doing cause already with, isn't it a little hard to, sort of imagine working with built-in envelopes when they don't have their own controls? </i>
+    </p>
+
+    <p>
+      <b>Olivier: </b>Well, I think, at the beginning, these, the built-in <span style="color:red" data-ts="1475.32" data-end_ts="1475.8" title="1475.32" id=c_"1475.32">__envelope__</span> envelope was just, that Tinder, it was acquired by the
+      physical synthesis mothers because, when you do physical simulation, you, simulate, next station, propagating through a major <span style="color:red" data-ts="1492.12" data-end_ts="1492.24" title="1492.12" id=c_"1492.12">__on__</span>, so,
+      there had to be this, initial, expectations, or this is why, I put this, envelope and then, since it's available in this mode, I thought about extending it to a Delta mode. So we could <span style="color:red" data-ts="1509.97"
+        data-end_ts="1510.15" title="1509.97" id=c_"1509.97">__have__</span> some consistency between, this model. And then when people asked me, okay, okay, turn it into a VCA, can you turning it to a modulation envelope? So it's some new code, so
+      it's possible. Yeah. I agree that in terms of a user interface, it's not really, that's not really pretty to have this extra option, hidden in menus, but the thing that, so when I implement this feature, for example, also the quantize, I say to
+      myself, to myself, okay, it's just, 10 lines of code or 29, of <span style="color:red" data-ts="1554.4" data-end_ts="1554.7" title="1554.4" id=c_"1554.4">__course__</span>, that's it. If you want to pretend it's not there in the module, and if
+      you don't want to look at the menu, just don't find. Yeah.
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>And in fact, that's, that's maybe the beauty of the braids is that there's a lot more complexity there that you can choose to use, but you don't have to. Yeah, exactly. And, you know, about even the only way that, you know,
+        that there's an envelope involved at all is because of the trigger input. And it makes perfect sense. The first time you use like the, the pluck to model and you trigger it, you're like, Oh, of course it has to have that, you know, that's
+        what makes it not be a sample. Right. But, otherwise I think it's just brilliantly designed and, the implementation is nice. It's also a beautiful looking module. It's one of the few modules that has what I would say has like an artistic, . I
+        mean, it has like, is, is that an imprint or is that, I think that's just the printing right. </i>
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>Of sort of like the Paisley shape on there. And, but just like all of, even your, your logo, you have like little, little edging on the tops and the bottoms, your choice of muted, but nice colors makes it so that there, there
+        seems to be as much of your you're as concerned about the tastefulness of the, and the expression of the instrument as you are about how it sounds. And I noticed this about your standalone units as well. You have plexiglass glass cases, but
+        it's not just a square box where it sits in. It'll have interesting cutouts, it'll have, it'll have interesting printing on it. What about that part of instrument building? What about that is important to you? Why do you think it's important
+        to have sort of like beauty in the <span style="color:red" data-ts="1682.07" data-end_ts="1682.37" title="1682.07" id=c_"1682.07">__IX__</span> in the device itself? </i>
+    </p>
+
+    <p>
+      <b>Olivier: </b>So, when it comes to, when it comes to, I looked at, what the, the, manufacturers and designers did. And, I thought that, there wasn't much variety in term of the theme or the, universe of, of the <span style="color:red"
+        data-ts="1712.74" data-end_ts="1713.23" title="1712.74" id=c_"1712.74">__modular__</span>. It was either, really, test equipment, like, maybe, one confined, influences from a science fiction, like yours with, planet names or lightning bolts.
+      Yeah, yeah. A very, fancy, device from a scientific, experiment, by the name of this, <span style="color:red" data-ts="1743.59" data-end_ts="1744.22" title="1743.59" id=c_"1743.59">__Medallia__</span>, the morphing <span style="color:red"
+        data-ts="1747.37" data-end_ts="1747.58" title="1747.37" id=c_"1747.37">__that__</span> I like it, I understand it, but I wanted to, to do something different. So, I started doing some sketches and I, so I started collecting some,
+      documentation, pictures of, things I liked and did not like, but, not, I not a good graphic designer.
+    </p>
+
+    <p>
+      <b>Olivier: </b>I'm interested in graphics and design, but, I don't think I'm good enough. So, I gave, <span style="color:red" data-ts="1782.28" data-end_ts="1782.43" title="1782.28" id=c_"1782.28">__all__</span> stuff, other pictures <span
+        style="color:red" data-ts="1787.62" data-end_ts="1787.76" title="1787.62" id=c_"1787.62">__of__</span> the photos, Semper's of, Indian textiles, really, everything I wanted to, to <span style="color:red" data-ts="1796.47"
+        data-end_ts="1796.65" title="1796.47" id=c_"1796.47">__have__</span> in one way or no, the, the design of the majority to a graphic designer. So, his name is, <span style="color:red" data-ts="1803.7" data-end_ts="1804.24" title="1803.7"
+        id=c_"1803.7">__harness__</span>, that's quite unique so far, during, two or three months, he rock, he worked on the design language for the module and, we met a lot about, fonts <span style="color:red" data-ts="1819.75" data-end_ts="1819.99"
+        title="1819.75" id=c_"1819.75">__got__</span> <span style="color:red" data-ts="1819.99" data-end_ts="1820.23" title="1819.99" id=c_"1819.99">__off__</span> everything and, really happy with the reasons.
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>Yeah, well, it's, it's, it's funny because, I like, you tend to think of modules as being very much like lab equipment at first, you know, when I, when I bought the braids, I was like, well, I don't, I don't care what graphics
+        it has. I'll just bring it in. But when it's, when it's sitting in my system, because it has kind of like this depth of look and stuff, it actually inspires me to use it more, which is kind of a funny thing. Because with modules, modular
+        systems, you tend to think, well, I'm going to connect this process with another process. You don't tend to think of sort of like the visual nature of it being inspiring, but, I find the style of the mutable instrument stuff to be very
+        inspirational to me now, you, since the braids you've come out with a number of, of different modules on the edges, which I've not used Norville used the grids I have used the ripples, which I think is a pretty phenomenal, phenomenal little
+        module. Are all of these, DSP based or are some of them pure analog? </i>
+    </p>
+
+    <p>
+      <b>Olivier: </b>Not the filter repairs is surely <span style="color:red" data-ts="1901.13" data-end_ts="1901.39" title="1901.13" id=c_"1901.13">__another__</span>. Okay.
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>Okay. I'm still amazed that, that all of your, circuit billing, knowledges, you know, you self learn that stuff. Where did I have to ask a question, because I'm curious about this, where w where did you go to learn about
+        electronics to learn about music electronics, particularly? </i>
+    </p>
+
+    <p>
+      <b>Olivier: </b>So, I found, one absolutely excellent set of, class material online. It's from, okay. Let me, his name is Aaron, long <span style="color:red" data-ts="1937.16" data-end_ts="1937.37" title="1937.16" id=c_"1937.16">__term__</span>
+      man, and he's a professor at the Georgia Institute of technology. And I think the, a new guy, in the U S teaching a university, a class about, analytics synthesizers. Okay. So, you can find on his website, class material, yours, problems, the,
+      even the video was the <span style="color:red" data-ts="1965.48" data-end_ts="1965.67" title="1965.48" id=c_"1965.48">__other__</span> classes. And so really, is, is stitching, Oh, to make a VCO or to make a VCF. And so on. I really liked this
+      stuff because, it's made for, students in, electronic electrical engineering. So there's not, there's not a lot of, hand-waving, it's pretty, writing down the questions for waiting and, it was something I could process. Sure.
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>Well, it seems like your background in DSP probably set you up to deal with that pretty well also. So it makes a lot of sense. Now, one of the things that I think is pretty, Oh, well, before I talk with that, I want to talk
+        about one more thing with, with modules. So right now, currently available is the braids to edges, the ripples and the grids, but there are some new ones I know there's one called frames that's coming out, which is like a, that's like an
+        animation sequencer for CV. Right. And then, is there it's peaks, I think, which is sort of like an envelope. What, is there any others that I'm forgetting? </i>
+    </p>
+
+    <p>
+      <b>Olivier: </b>So, there is a <span style="color:red" data-ts="2045.74" data-end_ts="2046.16" title="2045.74" id=c_"2045.74">__moodier__</span> card module card, tides, which is attack decay or attack release, <span style="color:red"
+        data-ts="2052.52" data-end_ts="2052.88" title="2052.52" id=c_"2052.52">__Evolent__</span> generator. It's also, an LFO. And also, did he tell us he later got it right. It's, it might sound a bit strange to have, all these, different,
+      features, in one module, because usually people are, breakdown, but years into function, like, this is going to be an oscillator. This is going to be, an electro and this is going to be in Europe and for <span style="color:red"
+        data-ts="2083.51" data-end_ts="2083.87" title="2083.51" id=c_"2083.51">__ties__</span>, the process for tides, the process was a bit different. So I thought, okay, I will make with your, with the thing that go up and down.
+    </p>
+
+    <p>
+      <b>Olivier: </b>So I explored, a different way in which we can make a way from go up and down, so it can have a different ratio for the, downtime. It can have a different curve, for the, up and down section under, so you can, add liter Wiggers
+      on the, on the way farmer. And so if it does a single cycle, it's going to be an envelope issue that does, it's if it's, and Leslie repeating, it's going to be another phone. And depending on this frequency, it's going to be a severe ruffle or
+      later. So it's really this, basic concept of, something going up and down, but with all the variation of this concept, you have a <span style="color:red" data-ts="2143.65" data-end_ts="2144.01" title="2143.65" id=c_"2143.65">__manure__</span>
+      that can, do, different functions. And then there is also a MIDI interface.
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>Ah, yes. Okay. Well, that's, that's pretty impressive when it, when is this new set of modules going to be available? </i>
+    </p>
+
+    <p>
+      <b>Olivier: </b>I got the, factory on the phone, this morning and, they are finishing the testing of, frames, yarns and <span style="color:red" data-ts="2175.41" data-end_ts="2175.77" title="2175.41" id=c_"2175.41">__dyes__</span>. So I'm going
+      to get them, next week.
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>Oh, great. I'm looking forward to that. One of the things that I find that's really interesting about both your instruments in your modules is that you have pretty completely embraced the open source community, such that your,
+        your stuff is, you publish the hardware, the hardware circuits, you publish the software. And you, in fact, even in your, project, Sarah, you go so far as to offer, some of the libraries that you use to, do, to do the work. What is it about
+        the open source community that has you embracing them? That, that's significantly because a lot of, a lot of other modules out there that do have a, digital basis and certainly all of the hardware modules, very few of them have this open
+        source mentality. What about, what about open source compelled? You compelled you to do that? </i>
+    </p>
+
+    <p>
+      <b>Olivier: </b>So there are two things. The first one is that, for many, many years, I worked for, companies, were really, secretive about what they were doing. And I did not like the fact that everything I was working on was, kind of, hidden
+      BI <span style="color:red" data-ts="2265.15" data-end_ts="2265.29" title="2265.15" id=c_"2265.15">__and__</span>, NDAs or <span style="color:red" data-ts="2267.84" data-end_ts="2268.5" title="2267.84" id=c_"2267.84">__pateints__</span> or
+      things like that. And, when I started developing this, <span style="color:red" data-ts="2274.5" data-end_ts="2275.31" title="2274.5" id=c_"2274.5">__***<inaudible>***__</span>, it was the first project I was really doing for myself. I said,
+      okay, well, this time, you are on your own. So if you want to share it, please do it because, you won't add the, opportunity at another point in your life. So,
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>Right. Well, that's, that's interesting. That's actually really amazing because I think a lot of the things that you're putting out there for the next generation of people like you, they're going to be able to look at that at
+        that code, or look at that hardware and use that to learn how to do their work and do the next generation of, hardware and software modules and great stuff. </i>
+    </p>
+
+    <p>
+      <b>Olivier: </b>The secondary reason is that many times I got very frustrated with the gear was your thing. For example, I remember that, on the, medieval Europe, <span style="color:red" data-ts="2330.23" data-end_ts="2330.34" title="2330.23"
+        id=c_"2330.23">__I__</span> felt unit from, for example, there are some, diameters, which were, constraint in a, in a given the range. The delay could not go below, such a millisecond or the feedback, could not go beyond, such percentage. And
+      I really wanted to, you know, to, change it. And <span style="color:red" data-ts="2355.54" data-end_ts="2355.63" title="2355.54" id=c_"2355.54">__there__</span> was really for stated that, there were some limitation in the, India, India as
+      well, probably for some good reason, maybe because it's not perform well or did not sound good if it's a parameter range were extended, but still I wanted to, to be able to make this change. Since at the time I was, already, programming, music
+      software.
+    </p>
+
+    <p>
+      <b>Olivier: </b>I knew that it was really just a smoke change. It was just a constant somewhere in the code, or just why now I've got to, turn the instrument into something I really wanted to play with. And I did not want people who, bought my
+      instrument to feel the same frustration about them. So, there must every day, by email or on the forum, some people, ask me, I love you. I never <span style="color:red" data-ts="2410.48" data-end_ts="2410.76" title="2410.48"
+        id=c_"2410.48">__synthesize__</span> synthesizer, but it would be even better if it had this, smart option or, <span style="color:red" data-ts="2416.17" data-end_ts="2416.49" title="2416.17" id=c_"2416.17">__set__</span> setting was
+      available, or if the UI worked in a slightly different way. And because the <span style="color:red" data-ts="2421.96" data-end_ts="2422.26" title="2421.96" id=c_"2421.96">__code__</span> is, open source, it's possible to, to do this kind of
+      customization.
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>Yeah. That's, that's really interesting. And certainly, I, I know what you mean about the frustration you would feel with, with closed systems because often, you know, someone like Elisa's was making a reverb that would sound
+        good on pop music. And those of us doing electronic music sometimes wanted things that would sound ugly in pop music. Right. But for us, it would sound good and not having the ability to experiment like that was, is, was quite frustrating.
+        Yes. Well, obviously, I, I appreciate so much your time. I feel like I've, sort of like used up your time and you're a busy guy. I want you to get back in there and make those modules up so I can buy some more. But thank you very much for
+        your time. One last question. What do you think is in the future for you and mutable instruments? What do you see coming in the future? </i>
+    </p>
+
+    <p>
+      <b>Olivier: </b>CYA this, huge list of, module ideas. And, I want to, continue, you know, implementing, everything on this list since the beginning of the year, I have, started work on, four concepts of, matures and I think I will, do, three
+      more before the end of the year. So, there will be, seven new modules, finished, at the end of the year, probably, four or five more for the next year. So one thing I haven't done so far is <span style="color:red" data-ts="2539.52"
+        data-end_ts="2540.39" title="2539.52" id=c_"2539.52">__a__</span> standalone, complete, standard and sent, of course you have the equity, but it's a DIY kit. So probably at one point or another, get it back to, to doing, a standalone <span
+        style="color:red" data-ts="2556.38" data-end_ts="2556.8" title="2556.38" id=c_"2556.38">__since__</span>.
+    </p>
+
+    <p>
+      <b>Darwin: </b><i>Sure. Well, thank you so much for your time. I appreciate you taking your time out of the schedule to talk to me and, have a great day. Okay, bye.</i>
+    </p>
+
+    <p><i>Copyright 2014-2021 by Darwin Grosse. All right reserved.</i></p>
+  </div>
+  <!-- jQuery (necessary for the Bootstrap JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
