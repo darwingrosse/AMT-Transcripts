@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Transcription: Podcast 0366 - Paula Maddox</title>
+
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js does not work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+</head>
+
+<body>
+  <div class="container">
+    <h2>Transcription: 0366 - Paula Maddox</h2>
+    <h3>Released: October 10, 2021</h3>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Okay. Today, I get a chance to talk to somebody. This person came up in a discussion I was having with my friend Mark Mosher about synth designs and synth designers. When I reached out, I got the big positive, which was very exciting. With no further ado, I'm going to introduce today's guest, Paula Maddox. Hey Paula, how are you?</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      I'm good, thanks. Yourself?
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>I'm great. Now, I know of you primarily through your synth designs or I know you because of your synth designs, which are all over the place. You have had a really robust career in synth design. But relatively recently, you started your own company, Dove Audio, right?</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Yeah, that's right.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>What kind of work are you doing there?</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Dove Audio is basically just me. I started it as a sort of self-funding hobby and it's kind of ballooned into a small business which is great. It's modular stuff at the moment. I'm looking to do other bits and pieces but for the moment, it's primarily modular because it's easier to develop, takes less time to develop a single simple module rather than a very big polysynth or something like that.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah, I would imagine especially for if you're responsible for all the manufacturing, it kind of helps to not have to worry about power supplies and cases and shipping huge...
+      </i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Yeah, there's a lot to it whereas... I mean modular for example, it's a panel on a PCB. It's quite simple. Whereas if you're doing a polysynth or desktop mono synth or something, you're looking at a case, the manufacturing, the power supply, you've got all the certifications, you've got the safety testing, programming, the marketing and running the business. It's a lot for one person.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Well, you're making my stomach hurt just mentioning all of that. Stop. Yeah, I get it. So the module that you did that just lit up my neck of the woods was the WTF. When I actually went and looked at it, I think I know what it did - which is it looked like you were using a pulse width modulator square wave or rectangle wave to switch between two waveforms. Am I reading that right?</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      It's kind of. Yeah, sort of. Originally, the idea was that you could swap between two waveforms to get different tones, to get a mix of the two tones. And the other idea was that if you imagine you have a sawtooth, you start counting up and you normally for a normal one, you go from the bottom all the way up to say 100, naught to 100, and then back down and restart and you get your sawtooth. So the idea was that say position 25, I would switch to a sine wave. And then at position 75, I would switch back to the sawtooth.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Okay.</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      What you do is you get a little bit of sawtooth and a little bit of sine wave and then the rest of the sawtooth. So you get this sort of hybrid sound. You can change the width of that gap, where you swap it and the waveforms. I thought it would just sound like I'd mixed the two waveforms together, but it doesn't. You get a whole bunch of extra harmonics. It's quite an interesting sound.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah. When I heard it, when I first heard the demos, I thought it was remarkably... It sounded remarkably like the old, old school Waldorf synths.</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Cool. Thank you.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>But with a completely different technology because I know how those things work and it's different than what you were doing. But somehow, it really just called out to those sounds. I know that you have kind of a background of chasing that Waldorf and PPG style kind of wave-tablely kind of thing, right?</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Yeah, I'm a huge fan of wave tables. One of my earliest inspirations was an album called Tangram by Tangerine Dream and it was full of PPG. For me at the time, it stuck out as there's nothing in the world that sounds like this. What is it? How is it done?
+    </p>
+
+    <p>
+      It's become a little bit of an obsession. The WTF has wave table for the front wave and wave table for the rear wave. Yeah, if you close the window, you can just sweep the waves and you get those classic PPG wave table style sounds.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Got it. It's really interesting. Well, it's interesting that you make a callout to Tangram because I have a real personal but odd connection to that - which is my whole experience with Tangerine Dream has always been one of like fits and starts.
+    </p>
+
+    <p>
+      <i>I was a fan of Phaedra and Stratusphere, were the two that I listened to a lot and I didn't listen to anything else. And all of a sudden, a bunch of my friends are, "You have to listen to Tangram! Tangram!" And so I got it and I was like, "This doesn't sound anything like those other ones." It took me a while to wrap my head around the fact that this is even Tangerine Dream because sonically or tambrally, it was just so different.
+      </i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Yeah. I think Tangram I found when I was 13, 14-years-old in the mid '80s. Tangerine Dream definitely had for me sort of two eras. They had the sort of '70s, which was the Berlin School, very traditional stuff. And then everything from Tangram up to sort of kind of Optical Race was a very different beast altogether. It was chock full of bright digital sounds. To me, that sounded like the future.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah. Well, I think the current world has sort of proved you prescient because now, you can barely turn a corner without tripping over at least two wavetable synthesizers or plugins or whatever. The wavetable thing has kind of really caught people's attention.</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Yeah, I think like a lot of things, stuff goes round in circles. They say that about fashion and I think it's the same with music. It wasn't so long ago, the be all and end all was analog synthesis. And then now, it's coming back round to the hybrid.
+    </p>
+
+    <p>
+      After that, I suspect we'll go back to virtual analog and full digital and then there's a sort of loop round again in this endless cycle. I'm just waiting for the day when flares come back in.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah, I'm not sure I want to see that again.</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Nor me for the record, nor me.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Well, that's awesome. Well, can you help me out a little bit with your product line for Dove Audio? So you actually have two oscillators. First of all, is the WTF still available?</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      It's not at the moment. Chip-ageddon is biting me as well as many other manufacturers. I'm not sure if you're aware of Chip-ageddon, I think most people are by now. Basically, worldwide shortage of chips. That's biting me. Yeah, the WTF is not available at the moment or the Wave Plane. I'm working on other projects or modules, but I'm kind of stopped.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>I see. Yeah. Boy, that has been a crushing blow for a lot of people. Is it one specific chip? Is it like a lot of the components?</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      It's generally anything microcontroller-based. So anything that you would get in a car. For some reason, it seems to be car focused. So small microcontrollers, the sort of processes you get in your laptops and PCs aren't so much affected. But some of the support chips for those are; much smaller parts and those have also been affected. It's having an impact sort of on every industry.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah. Crazy. In addition, though, you also have a VCF, right?</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Yeah. I did the WTF first and the Wave Plane and then I did a VCF basically. I don't know if people remember the Korg DW-8000, Poly-800, Those kind of things.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>One of my favorite. The DW-8000 has always been one of my favorite synths.</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Great sounding synth. They had these filter chips made by Korg, the NJM2069's. I was just browsing eBay and came across some guy selling a whole pile of new old stock, like 35-40 of them. And I thought great, I can turn those into modules because I love the sound of them. Got them working. Yeah.
+    </p>
+
+    <p>
+      I did a very limited run of those modules. And it's nice because you get a great filter, which you can switch between 12 and 24 db, which not a lot of people know, put a VCA in it and you've got a voltage controlled mixer. I wish the Korg would make them again.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Boy, that's a nice combo. That sounds pretty easy to take advantage of. Now, in addition to your work as a synth designer, the other place that you actually showed up on my radar was doing little Berlin School jams that they would feature on Synthtopia.</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Yeah.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Which were beautiful.</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Thank you.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>I'll first of all say they're beautiful, but secondly, shows you sort of like in the middle of a 5U modular heaven. I noticed that with your modular creations, most modular companies are sort of like Euro or bust. Eurorack or bust. But you also do your designs in 5U as well. Is it just again, sort of like a connection to Tangerine Dream and sort of these historical thing, or is there something about that format that you particularly like?</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      There's two things I like about that format, both of which will probably make you laugh. The first one is I'm pretty sure I have mild OCD and having a modular full of different colored modules with different sockets in different places and different knobs drives me insane.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>I hear you. Sure.</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      I like the fact that everything's black and it's got the little silver lines down the side and they've all got the same knobs and the same jacks and that keeps that part of me happy. The other bit is I've got sausages for fingers and I just can't work with the Eurorack stuff.
+    </p>
+
+    <p>
+      People want stuff smaller and smaller, which I get, but it makes it more and more difficult for me to work with sausages for fingers that I just can't get in and turn the little knobs and pull the jacks out.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>I hear you. My first synth was a pretty massive 5U rig, mainly because I found it very performative. I could get my hands in there. With Euro stuff, especially if they intermix the jacks with the knobs, it can get...</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Yeah.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>If you have a tightly or if you have a heavily packed rig, it can get to be a real problem getting in there and turning those knobs.</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Yeah. That was the main reason I decided for myself to have the 5U as my main rig.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah. Now most of these gems are very much Berlin School and we've already kind of talked about your odes to Tangerine Dream. My question is, is that sort of like your musical voice in general? Or is that just what you happen to capture on tape and get sent out?</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      I wouldn't classify myself as a musician. I can tinker. What I tend to do is start with a simple sequence or a loop and build up with that. The Berlin School stuff tends to be when I'm doing something live or if I've got a quick idea, I'm just going to start noodling for a bit and I'll slap the camera and the recorder on just for good measure.
+    </p>
+
+    <p>
+      I do have an album on Bandcamp, which is quite different. It's a bit more like the sort of '80s Tangerine Dream. That's when I sort of have an idea and I sit down and I think and I go through the process of composing. So they're two very different processes for me.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>I see. It's interesting, but it also is interesting to me that you started that off by saying, "I don't think of myself as a musician," because listening to your work, I would say I think you really are.</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Thank you. I think of myself more as like a luthier. I like making instruments. That's what makes me tick. I can play them well enough to know when something's right, when something's wrong and be able to demonstrate stuff. But a musician, I leave that up to people to judge. But thank you.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah. So one of the things I like doing on my podcast is talking to people about how they got to be the creator that they are. I know if anybody wants to take a quick scan of sort of like your history, they can go to dove-audio.com, to the about page and you kind of have a history of the work we do. We'll talk about some of those things too.
+    </p>
+
+    <p>
+      <i>But prior to that, somehow you got an interest in knowledge and electronics and an interest in knowledge enough at least about sound and DSP and all this stuff to be able to combine those two things. I'm curious about how you get to be the person you are.</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      I grew up in the '80s. I was born in 1970. In the early '80s, when I was 10-11, sort of '80-'81, I was fixing televisions for grandparents and relatives just because I loved electronics and I knew my way around them by then. And then sort of '81-'82, if you listened to anything on the radio, it was all electronic. You had Depeche Mode, Kajagoogoo, Erasure, all the big electronic synth bands and that's kind of what got me interested in synthesizers.
+    </p>
+
+    <p>
+      And then as I say, a friend played me Tangram and that was it. From that moment on, it's like, "Okay, that's all electronic. There's no singing." I can't sing to save my life. So it's all electronic. I can play keyboards and I can build them. It seemed like the perfect combination of the two. I did, I wouldn't say, it was not a degree course, it's equivalent to a couple of A-levels in electronics. And then I kind of got sucked into the whole '80s ethos and got a job that was in computers and I got stuck in computers for 25 years or so.
+    </p>
+
+    <p>
+      But still tinkering with electronics in the background. I build a VCO in... It's about 2000, 1999 or 2000. Called a PPG VCO, which was a little module in a different format. It wasn't 5U, it wasn't Eurorack. Yeah, it all kind of just grew from there and that was just in my spare time, evenings, weekends, that kind of thing.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Boy, I think you left out an awful lot of stuff there. Because first of all, you started off, "I'm fixing TVs for my grandparents and stuff." Short of trying not to electric yourself, how did you develop even the interest and enough knowledge to be able to do that? Did you have like a relative or something that was like, "Hey, here's the parts you touch and here's the parts you don't touch." Or how did you get there?</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      I found out the hard way.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>A lot of busted TVs at your grandma's house before they actually started getting fixed?</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Yeah. Yeah, yeah. It's very definitely... I had an interest in making things and I had an interest in electronics. I had a little organ with a fan blower and it was little reed organ and it had electrical fan that you could change the speed on. I opened that up and figured out how it worked. That got me into electronics, so when I was like 9-10, I had some electronics kits and was building flashing lights and simple AM radio, those kinds of things. That taught me all the basics.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>All right, that helps, that helps, that precursor stuff. You talk about sort of getting stuck in computers for 25 years. I had a similar sticking thing in my life. But the one nice thing about it is, is it was a relatively well paying thing. As long as you were doing something in computers that didn't represent a passion project, it did leave openings for passions, right?</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Yeah.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>But in order to get from like fixing TVs to making a PPG-based VCO, there was a couple of things that had to happen. One of those things is you had to figure out DSP, right?</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Well...
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Sort of?</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      No, not really. The PPG VCO was very simple. I took a normal VCO circuit that generated a square wave. Instead of running it at say one kilohertz to generate a square wave, I ran it 128 kilohertz and then that fed a counter which looked up an EEPROM and then turned into a DAC. I didn't really learn DSP at that stage. It just kind of... Bits I gleaned from finding schematics online about how EEPROMs work and how DACs work and putting it all together.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>All right. Well, that's cool. The connection to the... Again, going from the connection of a PPG, to something you heard on Tangram, to something that you would... How did you get attached to here are the waveforms that represent PPG waveforms and here are other parts. Because the timeframe you're talking about would also have been sort of like the nascent internet/news groups/maillists and all those kinds of things, which is where I think a lot of us made our first connections.
+    </p>
+
+    <p>
+      <i>We all started as the weirdos in town that nobody understood. And then the internet came along and we found another email list, which was like the other weirdos in all the other towns.</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      We found other weirdos in other towns.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Exactly.</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Yeah, totally. I think it was the dawn of the internet age. I started little online e-zine, where I started sharing schematics and stuff. I was on a couple of maillists. Yeah, it all kind of just grew from there. Yeah, I managed to get hold of some schematics for PPG.
+    </p>
+
+    <p>
+      I had a friend, John, who had a broken PPG Wave 2.2, which he very kindly said to me do I want to have a go at fixing it? So I spent a lot of time, that was sort of mid to late '90s, a lot of time getting my head around how it worked and fixed it for him eventually. That taught me a lot about how things are done.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>All right. Well, eventually then you ended up making something called the MonoWave, which is... It actually has its own Wikipedia page.</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      I know. I found that a few years ago and had a good chuckle to myself.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>It's really... It's sort of impressive and scary at the same time. Because if you haven't done anything else, it would have looked like the culmination of an obsessive compulsive. It blows it out as a MonoWave and then it's like a mic drop at that point. Because it was impressive, but also, it looks like it was a lot of work to get there.</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      It was. The MonoWave came out of me having... I had to go into hospital for an operation and basically it laid me flat from work. I wasn't allowed to drive or do anything for about six to eight weeks. I'm not one of those people who can sit and watch television. The MonoWave came out of that. I thought well, I've built a digital oscillator, I've built an analog filter and I can find an envelope and I taught myself microcontroller programming, so I could read the MIDI and control the oscillators and start the envelopes. It all just blew up out of there.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Interesting.</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      I made I think 25 plus a few BT units. I think there was 30 in total. The first one was all stripboard and lots and lots of wires. How it ever worked, I don't know. It was a 2U 19-inch rack and it was literally full of circuit board and wires. And then from there, I designed a PCB for it and it all just moved from there.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Interesting. Had you ever worked with microprocessors before?</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Nope.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Did that come up? So that was... Okay.</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      The MonoWave was how I taught myself. I had a friend, a guy called Herman Cyb, who I still chat to occasionally who helped me with some of my C programming and corrected me with some of the things I was doing wrong. It was a lot of fun.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah. Well, that's... Boy, talk about a productive downtime. That's pretty impressive. But from there, according to the history on your website, you ended up working with Hartmann on something that wasn't released but that was kind of... Was that your first entree into commercial MI design?</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Yeah, I think so. Axel is a lovely guy. I still have most respect for him and admiration for him and I got to know him through the Neuron, which I had one for a while and loved it. It was just an awesome synth. We got chatting at one event, I'm not sure if it was Frankfurt Music Messe or just online. And I said, "I've got this kind of idea. Do you fancy working together on it?" We came up with this idea.
+    </p>
+
+    <p>
+      In the end, it would have just cost too much money to make at the time. I think the retail price would have been $6-7,000. It was just insane.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Well, Axel was never one to cut corners exactly either.</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Yeah, I don't like doing it either as an engineer. If I'm going to do something, I want it done properly.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Sure. There you go. From that, then you kind of... You never stopped designing at that point. It was game on for you at that point, right?</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      I don't think I could stop designing synths if I wanted to. I'm sure on my deathbed, I'll still be designing a synthesizer.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Well, I remember when the Gorf came out, I assume that's...</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Wow. You remember that?
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>I do. I remember it because it came up on one of my Looney Tune email groups or whatever. It was hard to not remember it because of the name. It was in a way... I think you have like this knack for inadvertently naming things in a memorable way. So calling it the Gorf was something that stuck in my brain in the way that "Generalized MIDI Sequencer" would not have. Similar to the WTF oscillator...</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      The name came from the fact I had, excuse me, four seven-segment displays. So I had four characters, so I had to come up with a name that fit it in four characters. It had to be displayable on the seven segment display. So you kind of wipe out things like Zs and Ss quite quickly. And then it was just going back to my childhood and it's like, "I can do Gorf. That works."
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>That's awesome. That's great. But after doing a bunch of small designs, this is where you end up in doing the designs for Modal. The 002 was the first synth that was developed, right?</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      That's right. Yep. It was called 002 because we decided the first one was the MonoWave.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Okay. Got it.</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Yeah, that's where that came from. We were struggling for names.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>I'm pretty sure that this is the machine that I saw at the NAMM show.</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      That was the first one we showed, yeah.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah. I was walking through Hall A which is where our booth was. But you were kind of on these rows a couple ways down. I would just like kind of walk up and down the aisles. I did one of these things where I walked past and I looked to my right and I kept walking and I just kind of like hit the brakes and moved back. Because here's the thing that was...
+    </p>
+
+    <p>
+      <i>It spoke to me just because of the layout and the availability of all the controls and stuff. It looked like something that was physically controllable, which is really important to me. But I slipped the headphones on and I listened to it. That's where it kind of spoke to me again in that Waldorf-y way that has such a call out to my heart in some way. It was phenomenal. But it also again, I see, I guess, where your previous work had sort of led to this, but this seemed like orders of magnitude larger and more complex.</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Yeah, there was... It started life as a Mono Synth and we built one. We said, "You know what? This sounds really good." If we put eight of these together, we'd have a polysynth and it just kind of rolled up from there. It was a big project. There was a lot of people involved with it. I think at the peak, we had sort of 14-15 people working with us.
+    </p>
+
+    <p>
+      There was a lot of stuff that went into that. I can't remember off the top of my head, I think it had something like 48 processes in it. There was a lot of code, there was a lot of hardware. We wanted to build something that was the best, because at the time, there was a lot of very cheap, very plasticky type products out there. We wanted to build something that people would remember, people would love and treat. You know like you when you buy a nice, really nice, expensive Gibson Les Paul guitar.
+    </p>
+
+    <p>
+      You buy it, you love it, you play it, you feel at one with it. We felt that was missing from the market, which is why we did 002. It's got a beautiful interface. It was designed to be very tactile and drag you in.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah, it really did. But also, the only other people that were doing sort of like that high end synth stuff at the time was Sequential and Moog and both of them were solidly in the analog world, solidly in the call-outs to history world. This was like... If they were coming from Old Earth, this thing was coming from Saturn.</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      I love and I respect the things that have gone past. But I don't want to recreate the past. I want to make something new. I want to make something that people go, "Wow, that's totally different to everything else." I think we did that with 002.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Sure. From your perspective and your part of the work, like you said, you were part of a big team that developed this, what were the advances that you personally had to make in sort of the development of the 002?</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      I think the big thing for me was learning to do what's called design for manufacture. When you're designing electronics, you come up with an idea and you design it, you build it and you go, "Yeah, that's great. It works." And you run away. But when you give it to a company and say, "Please, can you make 400 of these."
+    </p>
+
+    <p>
+      They go, "Yeah, but this is wrong." That's going to make that really difficult to assemble and it's going to be hard to do this. That's one of the key things that I had to step up in my sort of skill game was right, how do I design something so it's easy to manufacture? And Also my coding skills had to radically improve as well.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah. Because at that point, the 002, that was all digital oscillators.</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Yeah, it was digital oscillators with digital envelopes and digital LFOs. But analog filter.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Got it. Did you do the development of all that code?</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      I did the oscillator code and I did the start bit of the sort of envelopes and LFOs and bits and pieces and then there was just too much work for me. So we got somebody else in to help with that. And we got somebody else in to help with the front panel and somebody to help with the control and patch storage and stuff. It was quite quickly, there was sort of six of us doing various bits and pieces.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Sure, sure. That got followed up. The other things you were involved with at Modal was... Were you involved in the 008?</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Yep. 008, yeah. A guy called George Herr who people now know from UDO, who is doing his own thing now at Super Six. So basically 008, we reused a lot of the things we learned from 002. The main control board was the same, the output was the same. The internal structure and the way things talked to each other was the same. It made it quite easy to drop in. There was a lot of challenges around doing an all analog VCO design and keeping everything in tune. But yeah, it was good. Came out as a great product.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Were you involved in the 001 or was that after you'd left?</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      No. 001 was another one I was involved with. We wanted to bring something that was cheaper, more affordable, but we also wanted to include CV-ins and outs for the the modular market. I think it's four CV-ins and four CV outs on it.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Interesting. Yeah. Well, that was you interacting with modular world a bit. Now, by that time in the world, modular is starting to come back, were you always kind of maintaining a connection, a personal music connection with modular synths and stuff?</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Yeah, I think so. We did debut at NAMM one year, some prototype Eurorack modules. I think there was an oscillator, there was a filter... I think it was two filters and a couple of other bits and pieces. Basically, for one reason or another, they ended up not be going into production.
+    </p>
+
+    <p>
+      But yeah, I think there's still that connection there. I still like modular because it's a great way of exploring what happens if I do this crazy thing that you can't do with a lot of polysynths or a lot of sort of desktop mono synths. Sometimes they sound good, and sometimes they sound terrible but that's how you learn.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>One of the things I'm curious about, I've always had a fascination with wavetables. Enough so that I've got like this little online site where you can design single cycle waveforms and stuff by doing weird mixing functions and stuff like that.
+    </p>
+
+    <p>
+      <i>Because it was something that I love doing. I worked with Grant Richter on the development of his Waveform City and all those waveforms and stuff like that. I just love playing with wave tables and wave systems like that.</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Funny, you should mention that modular because the thing that I use to generate the wave forms is the Wave City and the Wave 256 software.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah, that's my software. I wrote that.</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Yes, I use that for creating the wave table.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Unbelievable. That's hilarious. Go figure. That's something else. But I'm curious though, one of the things that I remember from doing that with Grant is that the selection process and the sequencing in EEPROM process is similar painful decisions because once you burn them in, they're going to be in there for the duration, right?</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      If you release a product with them, then you can't change them.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>You can't change them, because people depend on it being like that. Exactly. Yeah, the last thing you want is an artist saying, "Okay, I'm going to get that second oscillator," and it comes and it doesn't have... It's not the same, that's going to be a problem.
+    </p>
+
+    <p>
+      <i>How do you make decisions about that? Because it really is... It ends up being like one of the most defining characteristics about any wave table, bass synth. It's the waveforms that you embrace.</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Yeah. I think it is difficult, there is no short answer. Sometimes it can take weeks to sort out a wave table. I think a lot of people think that creating a wave table is quite a simple process. It's not. It's easy to create one, but it's difficult to create one that sounds good and sounds interesting.
+    </p>
+
+    <p>
+      One of the things with a WTF, apart from the sine, the saw and the square, I had to recreate all the waveforms from scratch and a lot of that was going back to what do I like in a synth. There are a lot of knobs to PPGs and that sort of early '80s digital hybrid sense, because that's the sort of sound that I like.
+    </p>
+
+    <p>
+      So yeah, it just takes time.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah, one of the things that kind of is also though a characteristic of some of those things is the aliasing you get with it and the fact... And maybe this is something you can embrace. What's nice is making anti-aliasing oscillators can be kind of a pain in the neck. It's kind of nice if you embrace a sound that says, no, aliasing is part of it.</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Yeah, so I don't... A lot of oscillators use a fixed sample rate. You get the 44.1 or the 48 kilohertz sort of oscillators. I don't use that because I don't like the sound of it, because you end up with very smooth, clean edges. If you do a sawtooth, that's two or three kilohertz up and you've got a 44 kilohertz sample rate, you start shaving off harmonics which kills the sound to me.
+    </p>
+
+    <p>
+      So I use a variable sample rate technique. It's a little difficult for people to wrap their heads around, sometimes I think.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>But it's kind of old school. Isn't that like Emulator-style?</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      How the Emulators and the Fairlights and the PPGs did it. I think that's what gives the oscillators the special sound is that they're not the same as anybody else's. They're not pure DSP.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Interesting. Well, that makes a ton of sense. That makes a ton of sense about why this stuff you do sounds different.</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Yeah. If you slow down my sine wave low enough, you can hear the steps in it. You won't get that with a modern DSP synth because they'll smooth it out to get a perfect sine wave. That's great if you want a perfect sine wave, but that's not what I like about digital synthesizers. I like the harshness and the edge that you get from that.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>But you've also always had a tendency to match up your harsh digital wave shapes with nice, creamy analog filters.</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Yeah, I think, for me, there are a lot of really good filter emulations in software. But I still think you can't beat the sound of a really good analog filter. It's one of the things if I'm designing a synth, like I'm working on a poly at the moment, I've spent months on the filter because I want it to sound good. I don't just want to pull out a standard off the shelf filter and use that.
+    </p>
+
+    <p>
+      For me, the filter is - if you imagine... The oscillators the thing that gives it its voice, the filter is the thing that gives it its character. That for me is a really important part of the sound.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Again, that just hearkens back to so many things that I've loved over the years that happened, they have kind of gone out of currency for a while and seem to be coming back. I noticed that it was just earlier this week that Waldorf announced this new, very expensive [Waldorf] M box.</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Yeah, it looks great. Sounds great as well.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah, yeah. If I can convince my wife that we'll never need another car, then I may have one of those too.</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Beautiful sounding box.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah, yeah. Do you imagine yourself getting into box-building at some point rather than continuing working on modules?</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      I'd like to do a polysynth as I've sort of hinted out, I'm working on one. But the problem is, for a team of sort of eight, 9, 10 people, which is what we had at Modal, you're talking two, three years. For me, it's sort of a four or five-year process.
+    </p>
+
+    <p>
+      Modular stuff is a lot quicker turnaround, because you're just doing an oscillator or a filter. Whereas you're doing a polysynth, you've got to not just do the oscillators, the filters, but you've also got to figure out all the interconnects, you've got to do the front panel, you've got to figure out how to do MIDI patch storage, how everything interacts with the user. There's a lot more to it than just an oscillator.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Do you have anything else? This whole chip thing has got to really be preventing you not only from shipping the stuff you've already designed and developed, but also it's got to be kind of getting in the way of you developing new stuff as well, right?</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Yeah, I'm working on a sequencer for MU format, the 5U stuff. Thankfully, I've managed to cobble together enough bits from various suppliers that I've got five. I'm going to be sending them to beta testers fairly soon.
+    </p>
+
+    <p>
+      In a way, the Chip-ageddon thing is kind of helping me because I can send these units out to beta testers and I can't go into production for another six to eight months. I've got six or eight months to get the software-
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>It's forcing you to slow your roll, right? Yeah.</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      It is. Yeah. Which is frustrating because my accountant is constantly nagging me saying, "You're not selling anything." It's like, well, I can't make anything so I can't sell it. But I can carry on doing the development. So it's not all bad news.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah, good. That's great. Well, I love to hear that your work on a sequencer. That's the one area where I think 5U, MU world really could use more variety is in the sequencers that are available...</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      There's not many out there which seems is a real surprise given a lot of people associate, as you say, the 5U with a sort of Berlin School and the sequencing, you would think every manufacturer would have a sequencer. There's not many.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>In the videos that you do, all of it is like highly sequenced. What are you using for a sequencer on your current MU rig?</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      I'm actually, I got rid of... I had Dotcom sequencer, the three channel/eight step - I forget what number it's called. But I'm currently using a pair of my prototype sequences, which I've called MUSEQ, as in M-U-S-E-Q. So I'm currently using a couple of those.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Oh, okay.</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      I think in that video, I actually had one running alongside the Dotcom sequencer.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>There was something running there that I didn't recognize and-</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      It goes down, yeah.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah, right. Exactly. You're solely using those and you're not using the... Did you have the 960? Or did you have their bespoke one?</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      It was their own brand. It wasn't a 960. It was 3x8 steps or 1x24?
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah. Anything else that you can talk about or is that sort of like the full workshop desktop?</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      That's kind of it at the moment, the focus is on the sequencer, getting that out, getting it tested and then also the polysynth but I think that's going to be a while yet. Chip-ageddon is really messing that up.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Interesting. All right. Well, I just looked at the clock and our time is up. For people that are interested in learning more about your work, is the Dove Audio site the best option?</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Yeah, yeah. Have a look at the about page, you can see sort of things I've done.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Right. That's dove-audio.com, right?</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Yeah, that's the one.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>All right, awesome. Well, I want to thank you so much for taking the time out of your schedule and have this chat. It was really great.</i>
+    </p>
+
+    <p>
+      <b>Paula: </b>
+      Yeah, thank you. It's really been good fun, Darwin. Thank you.
+    </p>
+
+    <p><i>Copyright 2021 by Darwin Grosse. All right reserved.</i></p>
+  </div>
+  <!-- jQuery (necessary for the Bootstrap JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
