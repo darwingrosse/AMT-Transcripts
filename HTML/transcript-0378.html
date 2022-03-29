@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Transcription: Podcast 0377 - Udit Duseja</title>
+
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js does not work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   <![endif]-->
+
+</head>
+
+<body>
+  <div class="container">
+    <h2>Transcription: 0378 - Jean-François Charles</h2>
+    <h3>Released: April 3, 2022</h3>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Okay today, I get a chance to talk to somebody who I have been fascinated with him for as long as I've known him, his name is Jean-Francois Charles, and he is, he's an academic currently at University of Iowa, I think, right? But I got fascinated by him first, when I was at a Cycling '74 expo in New York. He came and did a presentation on auto chopping of sounds that just blew me away. And then I did some more digging and I ran across some of his work about some of his descriptions of spectral processing, kind of an accessible way to attack spectral processing, blown away again. And every time I run across his stuff, I'm blown away again. Why it's taking this long to have a discussion with him, I don't know. But I happened to, just about a week and a half ago, I was doing some research on shepherd tones and I ran across a great max for live device that qua had put together. And I was like, not only did I see the device, but I was like, ah, I got to talk to him, reached out everything lined up. So here we are. So with no further ado, let me welcome Jean-Francois. Hey man, how's it going?</i>
+    </p>
+
+    <p>
+      <b>Jean-François:</b>
+      Thank you for the introduction.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah. Well-</i>
+    </p>
+
+    <p>
+      <b>Jean-François:</b>
+      Nice to meet you.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah, it's funny because I've gotten a chance to talk to so many interesting people over the years, but there are some people that are kind of like heroes to me. And you're one of those people because what... And the reason I say that is because you take things that are highly, highly technical and kind of put them within reach for a lot of people. And I can really appreciate that because it's not easy to do it, first of all. But it also, it takes a real sharing mentality to go through that.</i>
+    </p>
+
+    <p>
+      <b>Jean-François:</b>
+      Well, thanks. If I manage to do that sometimes it's great. But, yeah.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>So let's start off, first of all, by having you just tell us a little bit about some of the work. Luckily, I was able to spend a little time listening to your most recent release Electroclarinet, which was gorgeous. But also you're currently teaching. I know you're doing a lot of kind of performance related stuff related to your teaching work. You're doing a bunch of stuff. So why don't you kind of fill us in on what you think of as your current body of work?</i>
+    </p>
+
+    <p>
+      <b>Jean-François:</b>
+      Yeah. And well, thank you. I think basically I've been lucky to study both scientific matters. So I've been in school of engineering. So I have a degree, although I've never worked as an engineer because at the time I already did a lot of music all the time. And I also studied that in Strasbourg in France, both clarinet and composition. For a very long time, I never mixed electronics and music. I was doing the science and mathematics as a school matter and I was doing music because I loved it. And I never mixed both of them until maybe 2003, '04, when I really started using Max a lot more. So the Max software. And from there on, I really did both. And I really try to mix technology and music in many ways, as many ways as I can find. Luckily I'm still learning stuff.
+    </p>
+
+    <p>
+      Electroclarinet was this project where it's basically a set of pieces for clarinet and live electronics. Different clarinets from very small E-Flat clarinet to the Contrabass clarinet. But here at the University of Iowa, I teach digital arts composition. And this semester I'm teaching a new course, which is really about modern production techniques. So it's called Electronic Music Production. And my students produce music in genres, going from hip hop songs to rock to lo-fi beats, as they say. So we also have great composition students. And one of our PhD students here, for instance, he's from Iran and he's training Persons classical music. And one thing leads to another and we do a concert together. And then we finally did an album. But basically in that project, we are mixing classical acoustic music and live electronic processing. Yeah, I'm really at the crossroads of music and technology as much as I can.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah, yeah. Well, it's a real fascinating story to kind of hear that you were pursuing both scientific endeavors and musical endeavors, but in parallel and non touching paths, right? And you found a way to combine them. Now, you said you first got into doing kind of mixing the two in 2003, 2004. By 2008, is when you put out that spectral processing article in the computer music journal, right?</i>
+    </p>
+
+    <p>
+      <b>Jean-François:</b>
+      Yeah, yeah. So this kind of tutorial for spectral processing with max and jitter. So yeah. And since it was published in 2008, it means the bulk of the work and especially the programming work was basically done in 2006.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Right, right. Yeah. Because of the turnaround time, right?</i>
+    </p>
+
+    <p>
+      <b>Jean-François:</b>
+      Yeah. For a while, for me, music and technology were like opposites. When I was at this school of engineering, I was playing clarinet to kind of go into freedom land compared to mathematical land. Which was [crosstalk 00:06:07] as well. But it was very opposite. And actually at that time I was not a fan. Although I looked and I opened my ears, but I was not a fan of electroacoustic or acoustic music. That was kind of interesting.
+    </p>
+
+    <p>
+      So there are some things I learned to like and to appreciate later. But yeah, I've been lucky to work with great musicians who taught me. Actually I learned my first steps with spectral processing were actually in the summer of 2000 when I was at this summer course, [Sunticant Avenue 00:06:45] in France. And that's where I met with Hans Tutschku and [Irekhem 00:06:51] and also Benjamin Tippen. And so a number of great musicians and composers who introduced me to those, in a way, technical concepts. But their interest was music. So I was introduced to spectral processing as something to do with sound and with music. So, that was interesting.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Got it. I mean, because you started off not a fan, was there any piece that actually was the turning point for you or was it more the concept of things that Ben and these other people provided that made you more interested in electroacoustic music?</i>
+    </p>
+
+    <p>
+      <b>Jean-François:</b>
+      I think, to me, the most interesting was to try to do things live. So I guess it was my interest in performing, in playing the clarinet myself, but also in listening. I'm still a fan at core. And already at the time, with some friends of mine, and trumpet player friend of mine, we would go to concerts as much as we could. And we would try to see all of the jazz musicians that would stop in Lyon. That's where I was. Basically, I'm a fan of live performance and that's why fixed media is not my first interest, in a way. I still think it's fascinating when it's well done and it's actually quite hard to do well. But, I really like to see a performing musician.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah. Well, and I noticed practically everything you do is oriented towards live performance. In fact, that whole Electroclarinet thing that was all recorded live performances, right?</i>
+    </p>
+
+    <p>
+      <b>Jean-François:</b>
+      Let's say I record it the six pieces in two days. So it was a studio recording let's say, but all of the music, like the electronic music was recorded live. What I did not do was record the clarinet and then apply a Max patch and do the electronics later.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>After the fact, correct?</i>
+    </p>
+
+    <p>
+      <b>Jean-François:</b>
+      No, I wanted to do it live myself, hearing the electronics at the same time as I'm playing. So I could... That's the idea of the interaction, right? You don't play the same if you hear the live electronics or if you don't hear them. But it's really like a jazz band, if you want. You don't play the same if you don't play with the same musician. Or chamber music, if there's the pianist there, you don't play the Sonata the same way. So, that was the idea. I really wanted to record those electronics listening to them and reacting to them, yeah.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah. That's really fascinating. I already have like 900 questions. But before we do it, one of the things I like talking to people about is their background and how they got to be the musician and technologists and everything that they are. You've already talked about having these kind of two interests. But I'm wondering, growing up, what was it that drew you into music? What was it that drew you into science? And how do those things still influence you today? Who are the biggest influences then and who influences you today?</i>
+    </p>
+
+    <p>
+      <b>Jean-François:</b>
+      Well, I can tell you a huge influence is that I come from a very small village in the French Alps, a village that has basically 800 inhabitants. At the time, what you could do as extracurricular was either soccer maybe, or the band, the local village band. And I was not very much into sports. So I did music. That's how things came. Then another thing in France, if you're good at math, it's just logical you just continue with it. And so it's almost logical if you don't think too much about it, you're going to go to kind of engineering school if you... Yeah, something like that, if you're good at math. So I actually did a choice after high school, I had applied to a couple of places, but late when it was exactly the point of choosing, I actually chose this school in Lyon, which is called INSA.
+    </p>
+
+    <p>
+      But anyway, it's a large engineering school, but there was a specific sections of 24 students every year who do more music. During our free time, we could access studios. We could have music lessons, we could organize concerts. So I chose this school kind of almost last minute, but I learned a lot there. We really did a lot of things with some friends of mine. Actually, a friend of mine at this school, his name is Nicolas and he's a trumpet player and a composer and also an educator. But I performed with him live in 1993, live to a silent movie. He had written an arrangement to what he had written a score basically to the great train robbery, the first Western of the history of cinema. And a professor there was a really a film buff and he had a film, not a DVD.
+    </p>
+
+    <p>
+      He had a film, a physical film. So we performed live to the film and that was 1993. And things happened. And we did other projects with that friend of mine. We actually scored the man with the movie camera that's Dziga Vertov's masterpiece, 1929. And this we did in 2008. And the most recent project we did with him, with that same friend, was last summer with a third musician. So in the end we were on like clarinet, live electronics, trumpet objects, and modular synthesizer. And we did a new score to actually News Wheels from Dziga Vertov from 1922. And we performed them live and recorded them. Yeah, that was in August, last August. I don't know they are strands. You can be go far back to find the origins of why do you do that.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Right. That's hilarious. That's great. Now, one of the things I'm curious about is when you started to combine your interests in science and your interests music, what drew you into Max and what drew you into the computer side of things rather than hardware and synthesizers or recording technology? What drew you to Max?</i>
+    </p>
+
+    <p>
+      <b>Jean-François:</b>
+      Yeah, I think things actually happened because of the people you meet in a way, right? So really, it comes back to meeting with this Ircam community of musicians, including Hans Tutschku including Ben Tippen and they were using Max and they seemed happy about it. And it was basically when Max started to work as a DSP, as a MSP on a laptop, it could work at the time on a PowerBook G3, I think. It was the start of, you can actually do it yourself, whereas previously you couldn't.
+    </p>
+
+    <p>
+      And so it's basically because I met with these people and the idea of having live processing, I think that's what I was really after. I think a lot of other techniques that are actually quite important. But that more into sound engineering, I've been learning them actually much more recently and I'm still learning. But yeah, it's interesting. But it really worked with what I wanted to do. I tried to remember what would be an early composition of mine with live electronics now. Yeah, I think one early one was really for basset horn. So this kind of alto clarinet and live electronics and at the time with the Spat, so Ircam Spat, but also with spectrum processing, that was an early composition of mine.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>What was it about spectral processing that caught your attention? Because that's really... It seems like you saw that and you jumped on it, right?</i>
+    </p>
+
+    <p>
+      <b>Jean-François:</b>
+      Yeah.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>What was it about spectral work and time domain work that was particularly interesting to you?</i>
+    </p>
+
+    <p>
+      <b>Jean-François:</b>
+      Well, I think I can't find one explanation. Maybe it's too logical, so maybe it's not exactly the only reason. But I've also been, at some point, very interested in the music of [Stockhausen 00:16:03], and I've attended even his summer courses and I even recorded in one of his CDs. So at some point I really tried to analyze some of his compositions and he's been very much doing some kind of time stretching as a score, writing a short melody. That would be two lines of melody and then stretching that melody. So the melody becomes the scheme for the form of the piece. And that's at the core of his composition technique since maybe '77 or maybe a little earlier. But so he was very much into time stretching with a kind of a, in his case, it was the logical idea that if you compose melody and the form of the piece should be related to it. So you could time stretch that 22nd melody. You time stretch it over two hours and that's going to give you the form and then et cetera.
+    </p>
+
+    <p>
+      So whether it's a good idea or not is another question. But that idea of time stretching as when you compose notes on a piece of paper is basically as soon as I was introduced to the four year transform, it was basically described to me as, oh, you can disconnect time and pitch. So I think that's why I just thought, oh, I should look into that.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>It sounds like the thing to do.</i>
+    </p>
+
+    <p>
+      <b>Jean-François:</b>
+      Actually I thought, oh, we could... And also there was at the time, one of the best tools maybe at the time to do time stretching was AudioSculpt where you could actually time stretch audio, but not in real time. So as soon as I had that Audio Scope presentation a couple of days later, I had that Max presentation going to FFT and it's like, oh, we could do maybe that Audio Scope thing, but live.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Right.</i>
+    </p>
+
+    <p>
+      <b>Jean-François:</b>
+      That was my first interest. I was like, let's do that thing that AudioScript does, but let's do it live.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Well, one of the things that I felt like when I listened to that Electroclarinet release, first of all, I think clarinet is just an incredible instrument to combine with live electronics. Because it does have such an organic feel to it that it really does mesh well with live electronics. I think it's a such a great combination. Additionally, though, in that release, it was kind of amazing to hear the things that you were doing in real time. First of all, you hear some things in my mind, the first thing I think of is, oh, that sounds like pulse stretch, except, you're doing it in real time. So that's kind of strange, you're doing a lot of freezing of audio, but also you're doing things like making little percussive bits out of live capture and stuff. And I just felt like that was a release that really showed the versatility of working in the frequency domain and working with that spectral pull apart, that was really artistically done.</i>
+    </p>
+
+    <p>
+      <b>Jean-François:</b>
+      Well, what can I say? Actually one interesting thing is to think about trying to find different sounds maybe with a single tool. Actually some guitar players, if you think about electric guitar and using a delay. You could listen to some very interesting examples with a very long nodes into a delay, and it becomes a texture if you play long. And then the same delay, you start playing attacks and tick, tick, tick, and then you build chords and you build [alpagers 00:20:10], basically. I think that has been definitely an influence thinking. Actually, the electric guitar is one example.
+    </p>
+
+    <p>
+      So I would say that was my goal with Electroclarinet and some of my research. One goal is that is electric guitar players, when you listen to some of them, you just hear music, you don't hear an instrument plus live processing and technology helping the instrument. You're just like, oh, it's great music. Whereas, for new music, let's say contemporary classical music, sometimes you listen to some technology prowess. But how can you get to the level of authenticity that those guitar players get? They get there, they just make everything they play an instrument plus live electronics, but they play it in a very organic way. So I think that's what I'm still trying to achieve.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah. Well, the thing with an electric guitar is that tonally we've come to be used to the idea that tamber is completely malleable. It's almost like the electric guitar doesn't have a sound. What electric guitar is the sound of the guitar, plus all the pedals, plus the amp, plus the room it's in, right? Using the clarinet as that instrument in a way you're kind of hamstrung because when people hear a clarinet, immediately, they're like that's clarinet, it fits in the clarinet box. And it has to be harder than to say, well, I'm going to meld this processing into a whole.</i>
+    </p>
+
+    <p>
+      <b>Jean-François:</b>
+      Yeah. And also another kind of problem is that it's really acoustic. If you are in a room, you will hear the [crosstalk 00:22:08].
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>You will hear the instrument, yeah.</i>
+    </p>
+
+    <p>
+      <b>Jean-François:</b>
+      You can't force it just into the cable that gets out. It will speak. So whatever you compose, it has to take that into account. Especially actually the live processing is not the same, if you can hear already the live direct sound, then you have to do something else with.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Have you ever tried anything like a mini controller or something that was based off of wind instruments? I'm just curious. I imagine it probably, given what you do, maybe it wasn't that conducive to your work, but I'm just curious if you ever tried it.</i>
+    </p>
+
+    <p>
+      <b>Jean-François:</b>
+      I did try, I actually know own a Yamaha...
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>WX or something?</i>
+    </p>
+
+    <p>
+      <b>Jean-François:</b>
+      Yeah. WX5, I guess that's the thing. And at some point I had a recital. I had a seven clarinet recital where I played six different clarinets plus the mini one. But I must say, I can't say that I produced... That I was happy enough with the music I was doing with it. In the end, for instance, I didn't compose a specific elecroclarinet piece for that one. I think it's really hard.
+    </p>
+
+    <p>
+      What happens with a, an instrument like clarinets, saxophone or flute or violin, there are so many things that you touch in the sound, so many parameters and it's so quick. And so it gives you a complexity just by playing it. Which I think is really hard to do with a media controller. I think that some players, some keyboard players... Actually, I'm fascinated sometimes I see a keyboard player from the 1980's or 90's playing in a, I don't know, fusion jazz band. And then they play a solo and sometimes it's so good and so organic and that they're just playing on those keys and maybe they're using a little bit of pitch band.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah. The mod wheel or the pitch band wheel. Yeah. I've seen that too, which it's mind blowing because you're like, wow. Somehow they're getting a lot more than just note information out of that thing.</i>
+    </p>
+
+    <p>
+      <b>Jean-François:</b>
+      Yeah. You could say, oh, it's a bad instrument and it's midi and it's only 128 steps resolution or anything, but then you listen to it. You're like, it's great.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah. Yeah. I hear that. So my question is, and actually, if I was super curious, I could find out for myself because you have a Gumroad site where you actually sell not only your Max for live devices, but you actually sell the scores and the live processing tools for people to do their own Electroclarinet performances, right?</i>
+    </p>
+
+    <p>
+      <b>Jean-François:</b>
+      Yeah. When something is really ready to share, I will share it there. I composed many pieces that actually don't have a score available, really nice and really polished. So what I decided to do actually two years ago I guess, I opened that Gumroad thing. And just it's a way to yeah to sell a couple of things that have been requested from me. And the way it works is the software is then open source. So, the people who get it, they can really mess up with it and-
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Dig into it.</i>
+    </p>
+
+    <p>
+      <b>Jean-François:</b>
+      Incorporate it in their own way, creations. And yeah, it looks like some people found it useful to get that code and to use it themselves. So it's useful to some things.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Sure. So my question about the software, like the software that's part of the Electroclarinet scoring system, do you have it to where there's a lot of physical management of it or is it a system that kind of watches and responds to your plane? Because I think, again, I had this great interview with, with Andrew [Pasks 00:26:34] some time ago and we were talking about... He does a lot of live electronics and we spent a lot of time actually talking about the fact that if you're using an instrument... He plays both clarinet and saxophone. If you're using an instrument like that, it's really difficult to completely integrate yourself with electronics because your two hands are already busy. And in a lot of cases you can't even afford to take one of the hands off because the balance of the instrument becomes compromised.</i>
+    </p>
+
+    <p>
+      <i>And so then you're having to deal with maybe using foot controllers. But then if you're standing to get a better posture, whatever, it's harder to use the foot controllers. There are so many problems related to using an instrument like a clarinet and interacting with machine, even something that can be as smart as a laptop. How do you manage that with the software that you use?</i>
+    </p>
+
+    <p>
+      <b>Jean-François:</b>
+      Yeah. Well, so actually it's kind of in the specific case of those electric clarinet compositions, I was also interested in exploring different ways of interacting with the electronics. So actually one score is published. The one that's published is Electroclarinet number 5, it's an amage to Stravinsky. So there are some Stravinsky quotes inside. This one is absolutely interactive. The computer is listening to you and the computer is routing the live sound. The live input is routing it to four different sound processing channels and the routing is chosen according to what you play, so. And you can even train the computer to listen. You could try to say, okay, when I play more air breath, shh, route that kind of sound to that processing line, which is maybe a long reverb or... And when I play in that register or maybe try to route it more to this reverse delay composite.
+    </p>
+
+    <p>
+      So it's not perfect of course, but it's trying to do that. And in that case, there is almost no need for pedals. And I played it recently with pedals because the pedals, you can retrain the computer. That's one thing I've done. So yeah, in other cases I know in one other piece that I have in mind, I have basically 25 cues in a more classical way with different cues going on through the score. And I would have a pedal to move from one cue to the next. Actually, some of those other pieces are not released because for some of them I used Max plus other stuff. For instance, Max plus at some point I looked into Reactor. At some point of the pieces, I used an Eventide hardware processor. For those, I had Max connected to my pedal, helping me with management, but some sound processing is actually made by a hardware processor. And then it's hard to translate and to share.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah, well, and I think that I know of a lot of other people that have had a similar problem because their software, they will also be using VST plugins for reverbs that they happen to really like or distortion sound that they really like. That can be difficult to have to make up on your own when you already have something that is perfect for your own use. It's great for your own performance, but it can be really hard to share then after the fact.</i>
+    </p>
+
+    <p>
+      <b>Jean-François:</b>
+      Yeah. So talking about that, actually one piece I shared, I worked on it to share it as best as best I could. So what I did for this piece called Petrified, I made a version of the patch that is using only Apples reverb, built in reverb and distortion and compression. So if you have a Mac which is absolutely not everyone, but for people who have a Mac, then the patch works. There's no external, it's only Max and audio units that come with the OS, with the operating system. And then actually I took the party now to say that you can play this piece, you can absolutely modify the electronics for this piece. In some pieces of mine. When the instrumental part is quite research in some way, there's details in the instrumental part.
+    </p>
+
+    <p>
+      And this piece I'm talking about with the version with double base and live electronics, the double base is quite involved, we could say. I'm perfectly fine if someone takes my patch and performs it with it, or if someone decides they want to use different electronics. Because maybe they have another vision, they have better tools. They have a great reverb they like, or even the processing of it. Maybe they want to apply some delays differently shaped or something, something more new in a way. For that piece, I put it in the score. You are free to do your own electronics if you want. So in a way it's more of a written music approach. What would Bach say if he had listened to Glen Gould playing the Goldberg Variations. Would have he liked it or not? Who knows?
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah. Who knows? So in my mind, I know that you have a very active instructional life. I know just from reading your blog, you are involved in a lot of student performance work. You have a laptop orchestra there. I wish we could've got into that more because you made some statements about that. That sounded really interesting. But I want to just stick with... Because we're already running out of time. I knew this would happen because I had so many things I wanted to talk to you about. But I'm curious about what are you researching for the future version of Jean-Francois developments, right? I mean, in some ways when I think about... Even going back to your...</i>
+    </p>
+
+    <p>
+      <i>    Well, just with your continued interest in spectral processing, in a way spectral processing kind of opens doors to some machine learning or artificial intelligence things. But not everybody is very interested in that. There are a lot of things that still are kind of struggling to transfer from post-processing into live processing. I'm just wondering what are the things that you are researching, exploring for not only your own artistic sense, but your own science sense as well?</i>
+    </p>
+
+    <p>
+      <b>Jean-François:</b>
+      Yeah, well actually I guess there's always a mix of all the new in what I'm interested in. Right now, like today, today, I've been working on a piece for [Viola Demora 00:34:19] and live electronics. So I learned a lot about what is a Viola Demora and what are all of those things.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>I don't know what it is.</i>
+    </p>
+
+    <p>
+      <b>Jean-François:</b>
+      Yeah. What are all of those things doing in this instrument? And so that's one thing. I actually I'm most interested in still having musicians on stage. I mean, I have a kind of a distant interest today in machine learning, as in am I interested in having the computer compose and make choices too many, I'm not too interested in that today. But I'm very interested in improving basic skills as audio engineering skills in the teaching of it as well. There's a school of teaching electroacoustic music and acoustic music that, in some ways, ignores the progresses of the industry, in terms of post-production, in terms of using delay, using reverb, using compression.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Compression, yeah especially that.</i>
+    </p>
+
+    <p>
+      <b>Jean-François:</b>
+      It's tools that are actually part of the tools we have as musicians. And I think it's still interesting to explore how to improve those kind of skills as well.
+    </p>
+
+    <p>
+      What I mean is even for any musician today, it's important to be aware of technology. Just to know, to have basic skills, any musician needs that today. So it's what I tried to transmit to teach my students and also always a link to history. Recently, I've learned a lot about one of the interfaces brought to us by the 20th century. So I think the 20th century brought us the electric guitar. So it's a very important. It brought us the two deck turntable interface, which is actually very interesting, parting for touching music, manipulating music, and having a very tactile contact with the sound. When you put your fingers on the turntable, whether it is analog or digital controller. And then actually there's another piece, which is the sampling and which is actually the MPC. And today in [DAS 00:36:52] when you see all of those drum machine designer, or-
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>The grids, yeah.</i>
+    </p>
+
+    <p>
+      <b>Jean-François:</b>
+      From track in [Abuton 00:37:00] or any, all of that actually comes from the MPC. And from early producers, like I have one in front of me right now, which is an album by Pete Rock. But I mean, people who really spend time slicing and making music out of samples. And I think that my role as an educator is to teach maybe the technology to some students, but that they can get it on YouTube, right? Everything is everywhere now in terms of skill or using software, that's not what I teach. I don't teach using software. But if I can connect them to the roots of artists who came up with new ways of interacting with technology and that led to new art, basically new ways of making art. And yeah, that's what I'm still excited about.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>So cool. Well, Jean-Francois, I want to thank you so much for the time that you spent with us. This was a fabulous opportunity for me to talk with you. I thank you so much.</i>
+    </p>
+
+    <p>
+      <b>Jean-François:</b>
+      No, thank you very much. And I hope someday there's another Max expo and we'll meet again in person then.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>I hope so too. Thank you so much. Have a great day.</i>
+    </p>
+
+    <p>
+      <b>Jean-François:</b>
+      You too. Bye. Thanks.
+    </p>
+
+    <p><i>Copyright 2022 by Darwin Grosse. All right reserved.</i></p>
+  </div>
+
+  <!-- jQuery (necessary for the Bootstrap JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+
+</body>

@@ -1,214 +1,452 @@
-Darwin:
-Okay. Today, I have something a little special. This is episode number 374. And as I've said in the past, like all the way back at podcast number 74, there's some numerology involved in number 74, mostly related in my work with Cycling '74. And so to honor the 74ness of the day, I reached back out to David Zicarelli and wanted to see if he would kind of do a catch up interview, and he pretty much said, "Yeah, no, instead let's play a game." And so our game is that we've selected some questions to ask each other, and we're just going to carry on a Q&A of each other for a while, and you can post them in. So that's the story for this podcast. So with no further ado, hey, David, how's it going?
+<!DOCTYPE html>
+<html lang="en">
 
-David:
-Hello, Darwin and everyone. How are you doing today?
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Transcription: Podcast 0374 - Q&A with David Zicarelli</title>
 
-Darwin:
-I'm doing great. Thanks a lot for doing this. This should be kind of interesting. I've had a couple of people wanting to do non-traditional discussions, but this is completely new, so let's see how it goes.
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
 
-David:
-Trivial, non-traditional, that's me.
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js does not work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   <![endif]-->
 
-Darwin:
-All right. Why don't we start off with one of your questions first.
+</head>
 
-David:
-The census is your number 374, you must have talked to 300 other people who are kind of in our space of the world, and so one of the things that I wonder about is, what gets someone from a baby to doing this kind of work? What's the story? Is there anything that people have in common? And in particular I was thinking about this because I will reveal that you and I have something in common, which is that you grew up near where my mother's from. And so then I think, it's Northern Wisconsin, that's what you'd call it probably, it's not the most likely hotbed of digital media art kind of people that I would... I wouldn't put a pin in the map saying people from this part of the world are likely to end up in this. So have you figured anything out from either your own experience or talking to all these people that leads people to be interested in this kind of stuff?
+<body>
+  <div class="container">
+    <h2>Transcription: 0374 - Q&A with David Zicarelli</h2>
+    <h3>Released: February 6, 2022</h3>
 
-Darwin:
-Well, I'll tell you, what I feel like I have cornered on that is that actually the lack of options kind of makes you, first of all, dive deeper into the things that you do get into, and secondly, it allows you to be kind of your own kind of weird. I guess I would say it's probably to music and music technology what ice fishing is to fishing. Ice fishing was really big where I grew up. Now, if you had any better kind of options of fishing other than ice fishing, you probably wouldn't stand on a frozen lake and go ice fishing, but that's what there is, so that's what they do. So I think that that's I think some of it. I think also there's something about sort of the isolation of it, that if you are a particular kind of person who is willing to dive, who wants to go deep into things, or who wants to sort of squirrel away and do something different, it's kind of convenient to do so. If I would've grown up in a place that had tons...
-I'll tell you, I remember talking with Terry Pender once, and he was talking about how growing up around New York, he was always going to clubs and getting to see people play, and that was super inspiring to him. I think that would've made me a complete non-participant, because I would've been so overwhelmed with the opportunity to see and observe things that I'm not sure that I would've dove into doing it. So that's kind of the short answer. I think that there are other more subtle things.
-I think it's the old school [inaudible 00:04:40] culture. So church was deeply embedded in everybody's lives, and so everybody was hearing church organ or pianos and all this kind of stuff all the time. And as a young person, if you had any kind of musical bent at all, you're always kind of pushed to a stage to perform. So that was another part of the music part of it, but I think actually that there's a lot to be said for sort of the isolation and the ability to kind of be weird. I mean, you'd still get beat up, but somehow there was a different kind of allowance for just being an oddity, and I embraced that.
+    <p>
+      <b>Darwin: </b>
+      <i>Okay. Today I have something a little special. This is episode number 374. And as I've said in the past, like all the way back at podcast number 74, there's some numerology involved in the number 74, mostly related in my work with Cycling '74. And so to honor the 74-ness of the day, I reached back out to David Zicarelli and wanted to see if he would kind of do a catch up interview, and he pretty much said, "Yeah, no, instead let's play a game." And so our game is that we've selected some questions to ask each other, and we're just going to carry on a Q&A of each other for a while, and you get to listen in. So that's the story for this podcast. So with no further ado - Hey, David, how's it going?</i>
+    </p>
 
-David:
-Have I shared my story about how experimental sound and the church organ intersect? I can't remember.
+    <p>
+      <b>David Zicarelli:</b>
+      Hello, Darwin and everyone. How are you doing today?
+    </p>
 
-Darwin:
-No.
+    <p>
+      <b>Darwin: </b>
+      <i>I'm doing great. Thanks a lot for doing this. This should be kind of interesting. I've had a couple of people wanting to do non-traditional discussions, but this is completely new, so let's see how it goes.</i>
+    </p>
 
-David:
-So I don't know what my dad was thinking, but I didn't know this, but apparently when I was very young, my dad was out in LA, and he went to a recording studio, and the recording studio had wanted to get rid of these refrigerator size Altec Lansing Voice of the Theater speakers, and he's like, "I'll take them." We're in Minneapolis. I don't know how he gets the speakers to Minnesota, but they end up in our church, and they're basically part of the amplification system for the church organ. I guess he put two and two together, was like, I can solve this problem. I don't know what he's thinking. So then when I'm about eight or nine years old, the church gets a new electronic organ or something like that, and they don't need the speakers anymore, and they come home and they're in our basement now.
-These are way too big for anybody's basement. So my dad sets them up. He built this weird cabinet for all the stereos. He was kind of a hi-fi buff, so he had reel-to-reel tape recorders and would record my relatives, and we have these amazing interviews of my family history and stuff like that. But so he sets them up, hooks them up to the stereo, and then one day when my parents are out of town, my brothers are like, "Okay, we're going to take two tape recorders and record back and forth with the tape recorders until we get incredibly low sound out of the... Keep changing the speed up higher and higher until the sound gets lower and lower, and then we're going to play them through these speakers and see if we can blow the windows out of the house."
-Did not succeed, but I'll tell you, they can play very loud. And to this day, I love the way those speakers sound. I once was in Japan, and a friend took me to a coffee shop, and they had a vintage hi-fi set up with those speakers in it, and I was just like, "This is amazing." It just brought me back to the... I don't know what we did with those speakers, but...
+    <p>
+      <b>David:</b>
+      Trivial/non-traditional, that's me.
+    </p>
 
-Darwin:
-Well, my recollection, I remember them, and I'm trying to remember what from, and I think it was also a church scenario, but I just remember the size of them and that peculiar shaped-
+    <p>
+      <b>Darwin: </b>
+      <i>All right. Why don't we start off with one of your questions first.</i>
+    </p>
 
-David:
-Yeah. There's a horn, a big horn-
+    <p>
+      <b>David:</b>
+      Since this is your number 374, you must have talked to 300 other people who are kind of in "our space" of the world, and so one of the things that I wonder about is, what gets someone from a baby to doing this kind of work? What's the story? Is there anything that people have in common? And in particular I was thinking about this because I will reveal that you and I have something in common, which is that you grew up near where my mother's from. And so then I think, it's Northern Wisconsin, that's what you'd call it probably, it's not the most likely hotbed of digital media art kind of people that I would... I wouldn't put a pin in the map saying people from this part of the world are likely to end up in this. So have you figured anything out from either your own experience or talking to all these people that leads people to be interested in this kind of stuff?
+    </p>
 
-Darwin:
-The horn part of it. Right. Yeah.
+    <p>
+      <b>Darwin: </b>
+      <i>Well, I'll tell you, what I feel like I have cornered on that is that actually the lack of options kind of makes you, first of all, dive deeper into the things that you do get into, and secondly, it allows you to be kind of your own kind of weird. I guess I would say it's probably to music and music technology what ice fishing is to fishing. Ice fishing was really big where I grew up. Now, if you had any better kind of options of fishing other than ice fishing, you probably wouldn't stand on a frozen lake and go ice fishing, but that's what there is, so that's what they do. So I think that that's I think some of it. I think also there's something about sort of the isolation of it, that if you are a particular kind of person who is willing to dive, who wants to go deep into things, or who wants to sort of squirrel away and do something different, it's kind of convenient to do so. If I would've grown up in a place that had tons...</i>
+    </p>
 
-David:
-And then the woofers are 15 inches.
+    <p>
+      <i>I'll tell you, I remember talking with Terry Pender once, and he was talking about how growing up around New York, he was always going to clubs and getting to see people play, and that was super inspiring to him. I think that would've made me a complete non-participant, because I would've been so overwhelmed with the opportunity to see and observe things that I'm not sure that I would've dove into doing it. So that's kind of the short answer. I think that there are other more subtle things.</i>
+    </p>
 
-Darwin:
-And I just remember it having just some wooly sounds that was just gorgeous. That's interesting.
+    <p>
+      <i>I think it's the old school Germanic culture. So church was deeply embedded in everybody's lives, and so everybody was hearing church organ or pianos and all this kind of stuff all the time. And as a young person, if you had any kind of musical bent at all, you're always kind of pushed to a stage to perform. So that was another part of the music part of it, but I think actually that there's a lot to be said for sort of the isolation and the ability to kind of be weird. I mean, you'd still get beat up, but somehow there was a different kind of allowance for just being an oddity, and I embraced that.</i>
+    </p>
 
-David:
-Yeah. Designed for a big auditorium, but they did use them in recording studios. And as home entertainment speakers, they're awesome.
+    <p>
+      <b>David:</b>
+      Have I shared my story about how experimental sound and the church organ intersect? I can't remember.
+    </p>
 
-Darwin:
-Yeah. Yeah. Right. Yeah. It's kind of hard to imagine them being good studio speakers, because I think that they were pretty colored. I think they were meant to be a theater speaker, so I would think that that would be kind of a funny studio monitor.
+    <p>
+      <b>Darwin: </b>
+      <i>No.</i>
+    </p>
 
-David:
-Oh, but playing a Blue Note record from the '60s on a turntable through those, man, can't get any better than that.
+    <p>
+      <b>David:</b>
+      So I don't know what my dad was thinking, but I didn't know this, but apparently when I was very young, my dad was out in LA, and he went to a recording studio, and the recording studio had wanted to get rid of these refrigerator size Altec Lansing "Voice of the Theater" speakers, and he's like, "I'll take them." We're in Minneapolis. I don't know how he gets the speakers to Minnesota, but they end up in our church, and they're basically part of the amplification system for the church organ. I guess he put two and two together, was like, "I can solve this problem." I don't know what he's thinking. So then when I'm about eight or nine years old, the church gets a new electronic organ or something like that, and they don't need the speakers anymore, and they come home and they're in our basement now.
+    </p>
 
-Darwin:
-Now, speaking of turntables, both you and I recently have had some discussions about turntables in our own exploits into the stereo world. First of all, when you go out and if you're buying yourself vinyl, what do you buy? And secondly, given that you work around music and experimentalism and all this kind of stuff, how do you separate your work from music so that you can enjoy music? So two part question.
+    <p>
+      These are way too big for anybody's basement. So my dad sets them up. He built this weird cabinet for all the stereo... He was kind of a hi-fi buff; he had reel-to-reel tape recorders and would record my relatives, and we have these amazing interviews of my family history and stuff like that. But so he sets them up, hooks them up to the stereo, and then one day when my parents are out of town, my brothers are like, "Okay, we're going to take two tape recorders and record back and forth with the tape recorders until we get incredibly low sound out of the... Keep changing the speed up higher and higher until the sound gets lower and lower, and then we're going to play them through these speakers and see if we can blow the windows out of the house."
+    </p>
 
-David:
-Okay. So the vinyl question, I don't go out and buy it as a hobby. So I guess maybe, and he still does, but my son, Bruno, works at a vintage vinyl store in Denver called Recollect. He's not working there too much anymore, but so he's really into the whole collecting aspect of vinyl, and he's pretty particularly interested in jazz from the '60s and '70s. And so when I go out to a store, I would go with him, and then I'd be just looking through, and I'm looking for stuff that essentially brings me back to when I was first interested in that type of music. So I'd be looking for avant-garde things from the '70s and '80s. And let's see, what did I get recently? I'll just go look here. Okay. I found this record. Joanne Brackeen was one of my favorite jazz pianists when I was growing up, and I did get the opportunity to see her once, and she was just completely amazing. Just the technique is, the precision is just amazing.
-So I found this record, I never heard it, on this label called Choice, called Tring-a-Ling. And the recording is just terrible, the quality of the recording, but you can kind of get something out of it. But that's what I would be interested is. Like oh, I've never heard this, but I know the label or the artist, and then I'm almost always disappointed with the recording quality. Because you can kind of get anything that people have a digital file of now on the internet, so you're always... The special thing would be to find something that isn't what you would normally encounter. I have no idea whether this is available on streaming or not, but definitely the experience of listening to it, and I'm like, oh, okay. This is the dark side of vinyl or something like that. And then of course the other thing that's great about vinyl is the liner notes. So this thing is full of weird liner notes. You're just listening to the music now, and-
+    <p>
+      Did not succeed, but I'll tell you, they can play very loud. And to this day, I love the way those speakers sound. I once was in Japan, and a friend took me to a coffee shop, and they had a vintage hi-fi set up with those speakers in it, and I was just like, "This is amazing." It just brought me back to the... I don't know what we did with those speakers, but...
+    </p>
 
-Darwin:
-Yeah. Boy, that's true. And when you said that, that just made me remember the number of goofy things that I've been introduced to over the years because I ran across them in vinyl mode. I remember at one point I got into reading all of the... I never read his books, but I read a lot of books about Wilhelm Reich, because it was mentioned on an album cover of somebody I loved, and I was like, well, this has got to be weird, and so I went off on this weird tangent as a result. So many things would be open. The other I remember loving about album covers, especially from the area of jazz that I too loved, you would see sort of the crosspollination of players.
-When you're on streaming, if you're listening to a jazz quintet, you'll know who the primary musician is, but a lot of times the people that are playing along, it's not convenient to see who's playing with them. And unless you're so attuned that you can just pick people out of the crowd, you don't get that sense of the crosspollination from groups to groups. So that's something I miss about album covers too. So for you, is part of enjoying music, is it listening to old jazz and acoustic instrumentation as sort of an anecdote to electronics, or do you not think of it that way?
+    <p>
+      <b>Darwin: </b>
+      <i>Well, my recollection, I remember them, and I'm trying to remember what from, and I think it was also a church scenario, but I just remember the size of them and that peculiar shaped...</i>
+    </p>
 
-David:
-I think my personal interest in electronics is probably about the sound. And if I had to be honest, the most electronic sounds aren't doing a lot for me musically, but the older I get, more of the nature of sound, it's become more mysterious a bit. So for example, I was mentioning the recording quality of this record, I remember reading some program notes from a performance by Curtis Rhodes, and he said this thing that really had a big influence on me, which was that he was inspired by the Starn twins who are some experimental photographers, and they had this idea that quality is a parameter, and I had never thought about that before. So back in the days when you and I first met and I was working on [Plug O 00:15:02], I actually thought about this a lot.
-At that point, I had thought that all of the audio plugins that people were making, they all are trying to sound good, and I was like, actually, there's this other parameter, which is how messed up it is. This parameter, it's not orthogonal to cool sounds or richer, more interesting sounds, it actually is weirdly non-linearly related in some way. So for example, there's this one Plug O plugin that, my understanding is a lot of people secretly are really into it, called [Noise Kipper 00:15:45]. I think that's... I don't even know how to pronounce it, even though I made it, but what it does is, it multiplies a input signal by noise, and then clips the hell out of it, and you can sort of filter it. And whatever the sounds, it's totally wrong from all what you're supposed to do from the proper DSP perspective. It makes no sense whatsoever, but the thing sounds both good and bad in a really interesting way, or at least that's...
-Even people who, they can put a acoustic instrument through it, and they seem to think it's interesting. It's just a complete arbitrary... I was probably at the... The whole idea of that project was to make 74 plugins, which was sort of ridiculous. So I probably was on number 72 at that point, I was like, what do I do? I don't have anymore ideas-
+    <p>
+      <b>David:</b>
+      Yeah. There's a horn, a big horn...
+    </p>
 
-Darwin:
-You're just chucking them out the door.
+    <p>
+      <b>Darwin: </b>
+      <i>The horn part of it. Right. Yeah.</i>
+    </p>
 
-David:
-Yeah. And it's one of those things where maybe the 72nd idea you have is actually the one that's worthwhile, and it kind of relates back to the thing that you said earlier about your background, which was maybe once you get to number 72, you're pretty constrained by circumstance, and constraint actually is enabling in this case. But anyway, this idea of what I would relate to, I think about this. I become kind of interested in this notion of quality and how it is sort of mixed together. Normally you think, oh, you could separate out how something "sounds," what speakers you're listening to it on, or what headphones you're listening to it on, what kind of system you have to the content, and I don't think I believe that anymore.
-It's almost like everything is colored. There is no original. It's not completely true, but it's sort of like... But it's also kind of disturbing. It's like saying, oh, I'm going to put on some glasses that actually make the world foggy, and then I'm going to walk around and experience the world or something. I don't think people want to do that intentionally, but why not?
+    <p>
+      <b>David:</b>
+      And then the woofers are 15 inches.
+    </p>
 
-Darwin:
-Right. That's actually interesting. And it's kind of funny, because when you talk about it that way with quality not necessarily being completely aligned with value, if I think about that, it also makes me realize that a lot of my listening to vinyl, a little bit of it has to do with the quality of the sound, but oftentimes it's as much about the poor quality of the sound. I find the little clicks and pops of the surface noise or the sound of the... I use a semi-automatic turntable on purpose. And so at the end of the record, it kind of lifts that needle up, and there's something satisfying about that being the sound of, okay, I'm done. There's a lot of these little satisfaction things that would probably be considered flaws, but they represent things that make me happy or make me enjoy the experience more, which is kind of interesting.
+    <p>
+      <b>Darwin: </b>
+      <i>And I just remember it having just some wooly sounds that was just gorgeous. That's interesting.</i>
+    </p>
 
-David:
-Do you feel like if you were to put your professional hat on that basically all of this is wrong?
+    <p>
+      <b>David:</b>
+      Yeah. Designed for a big auditorium, but they did use them in recording studios. And as home entertainment speakers, they're awesome.
+    </p>
 
-Darwin:
-I wouldn't say wrong, I would more say curious. It's really curious. And especially for me, because back when vinyl was the only option, I remember how pissed off all that stuff made me when I had a record that I loved. I was actually a really big ECM fan too, but because of the nature of the soundscapes on those things, even the tiniest flaw in the vinyl, it just seemed like it reverberated through your head, and I would get so frustrated by that. But I don't know, maybe I'm more interested in enjoying things, and less interested in analyzing the goodness or the greatness of something at this point. Again, it's funny, because for you and I both, kind of this idea of, as I get older... Seems to be coming up.
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah. It's kind of hard to imagine them being good studio speakers, because I think that they were pretty colored. I think they were meant to be a theater speaker, so I would think that that would be kind of a funny studio monitor.</i>
+    </p>
 
-David:
-Here would be one place with all vinyl where I would draw the line, and I just can't... All the stuff I'm saying, I would have to say, okay, it stops at this point, which is that phenomenon where the last song on any record, the one that's closest to the inner label always sounds distorted. And there are some of my favorite... I know this record's probably certainly one of my favorite records of all time, which is Native Dancer by Wayne Shorter. There's a song on the first side called Miracle of the Fishes, I want to say, and at least on the copy that we had when I was growing up, I was like, it's so distorted. And so the idea that I can now listen to the original... That whole record is messed up the way it was recorded. So it's still a little bit distorted if you listen to the streaming one or the CD version or whatever, but oh my God, compared to the vinyl one, it's so much better. That just pissed me off so much.
-So I guess what's the line that's being drawn there is, okay, so there's an inherent sound of the vinyl, but then if one song on it, because of the nature of the technology, sounds worse than the other songs, then it's pretty hard to accept that. So I have a question that's sort of related to this. How do you think about technical problems? So in particular, let's say you or someone else is doing some complicated, highly technical live performance that involves computer technology, the software crashes, there's a connectivity issue, whatever. It feels like it's kind of in the same space. The reason I ask this is, I wonder where the line of, well, I'm just here experimenting in front of you, versus I'm here to entertain you. We've all gone to events where the setup between the two people, it takes two hours or whatever, or all these things that... Personally, it makes me feel a certain way, and I'm just wondering what's your emotion around those things.
+    <p>
+      <b>David:</b>
+      Oh, but playing a Blue Note record from the '60s on a turntable through those, man, can't get any better than that.
+    </p>
 
-Darwin:
-My emotion is extreme irritation. And the reason is because of the way that I prepare for performances or for shows, which I am obsessive compulsive about making sure that things are going to work and of having spares of anything that'll break down. And I have done some really risky stuff. I'll never forget this show I did at the Denver Botanical Gardens, it was a network set of either nine or 11 computers all running-
+    <p>
+      <b>Darwin: </b>
+      <i>Now, speaking of turntables, both you and I recently have had some discussions about turntables and our own exploits into the stereo world. First of all, when you go out and if you're buying yourself vinyl, what do you buy? And secondly, given that you work around music and experimentalism and all this kind of stuff, how do you separate your work from music so that you can enjoy music? So a two-part question.</i>
+    </p>
 
-David:
-Oh my God. You're already giving me an anxiety attack.
+    <p>
+      <b>David:</b>
+      Okay. So the vinyl question: I don't go out and buy it as a hobby. So I guess my son, Bruno, works at a vintage vinyl store in Denver called Recollect. He's not working there too much anymore, but so he's really into the whole collecting aspect of vinyl, and he's pretty particularly interested in jazz from the '60s and '70s. And so when I go out to a store, I would go with him, and then I'd be just looking through, and I'm looking for stuff that essentially brings me back to when I was first interested in that type of music. So I'd be looking for avant-garde things from the '70s and '80s. And let's see, what did I get recently? I'll just go look here. Okay. I found this record. Joanne Brackeen was one of my favorite jazz pianists when I was growing up, and I did get the opportunity to see her once, and she was just completely amazing. Just the technique is, the precision is just amazing.
+    </p>
 
-Darwin:
-Yeah. All running both jitter and MSP patches for their local. It was this huge room, and there were dancers flying all over the room, and each computer was running one portion of the show, and then I had them all networked to be... I had that network of computers set up and tweaking and testing everything all the time. And I had redundancies built in the software, so it was always making sure it was connected and all that kind of stuff. I probably spent three times as much time on technical problem prevention than I did on the artwork itself.
-The art was beautiful, and it helped that there were the great dancers that made it... That was really the beautiful thing happening. But I know for myself how much of what I do is making it so that, when I present something, that it's working. Now, I recognize that things can happen, I do, but a lot of times when I see technical problems, the way that the artists will talk about it is sort of like, well, this is a goof anyway, so sorry that you have to wait, and that kind of bugs me. It bugs me because somehow in my mind there's a direct correlation between preparedness and a lack of problems.
+    <p>
+      So I found this record, I never heard it, on this label called Choice, called Tring-a-Ling. And the recording is just terrible, the quality of the recording, but you can kind of get something out of it. But that's what I would be interested is. Like oh, I've never heard this, but I know the label or the artist, and then I'm almost always disappointed with the recording quality. Because you can kind of get anything that people have a digital file of now on the internet, so you're always... The special thing would be to find something that isn't what you would normally encounter. I have no idea whether this is available on streaming or not, but definitely the experience of listening to it, and I'm like, "Oh, okay. This is the dark side of vinyl..." or something like that. And then of course the other thing that's great about vinyl is the liner notes. So this thing is full of weird liner notes. You're just listening to the music now, and not...
+    </p>
 
-David:
-That's interesting. I feel like this thing that you just said about the three times as much time, on one level, it makes me feel bad, like isn't it part of my professional work to not make that the case, and then I feel like, okay, well I've failed, because I've actually made this worse or something like that. Then on the other hand, I think there's something inherent in doing things that are experimental or technical where it's like you're willfully blind to this. So in the process of trying to get something to work, you're focused on getting it to work, and you're not thinking about its reproducibility for all people in all situations. And in fact, if you were conscious of that, you would never get anything done.
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah. Boy, that's true. And when you said that, that just made me remember the number of goofy things that I've been introduced to over the years because I ran across them in vinyl notes. I remember at one point I got into reading all of the... I never read his books, but I read a lot of books about Wilhelm Reich, because it was mentioned on an album cover of somebody I loved, and I was like, well, this has got to be weird, and so I went off on this weird tangent as a result. So many things would be open. </i>
+    </p>
 
-Darwin:
-Or you would choose such conservative stuff. The reason I would say that you don't have to feel bad because it's your job to not have things break, is because part of the... Especially with media artwork, the job of the artist is to sort of be right at the edge of the envelope. I mean, this thing I did with the... I'm pretty sure it was nine computers, plus then the laptop I used to control everything. The thing I did with that, I mean, if that wouldn't have been viable, I would've done a less complicated work. That was the edge of what I felt like could happen, but it could happen, and the result was very exciting because of it. So I think that that's where...
-That's my own obsession though too, and I recognize that not everybody wants to take on that kind of feel about prepping for a gig or a presentation. And what's interesting is, if we do talk about my podcast, I listen to them now, and there's no ends of technical problems to them, but the issue there is that, in reality, interviews are one shot, there's no way to have the second show of an interview. Over the course of the 374 podcasts, I've had two instances where I've had to redo the interviews, and both of them were because of my recorder failures. There are others I wish I could have done. The worst one by far was when I interviewed Miller.
-I went to this guy's house in Boulder. He happened to be doing a performance in town. I went, and I had a recorder, I set it down, and we started recording. I was like, well, the meters look funny, but it's [inaudible 00:29:04], what do they know? Well, the left channel, somehow the gain staging got blown out, and so I only had one channel that was viable, and so I ended up having to do these minute volume edits to just make it so that both sides of the conversation could have been heard. It was terrible, and it got me started thinking about how do I have even backup systems in those cases. It's not always possible, but I try and take more precautions now than I used to.
+    <p>
+      <i>The other I remember loving about album covers, especially from the area of jazz that I too loved, you would see sort of the cross-pollination of players. When you're on streaming, if you're listening to a jazz quintet, you'll know who the primary musician is, but a lot of times the people that are playing along, it's not convenient to see who's playing with them. And unless you're so attuned that you can just pick people out of the crowd, you don't get that sense of the cross-pollination from groups to groups. So that's something I miss about album covers too. So for you, is part of enjoying music, is it listening to old jazz and acoustic instrumentation as sort of an anecdote to electronics, or do you not think of it that way?</i>
+    </p>
 
-David:
-That's interesting that you said you can't go back. So I would imagine as you're working on preparing a podcast or a presentation, there are two things that you're thinking, one is this technical problem evaluation, and then there's that answer is kind of lame, or there's a content...
+    <p>
+      <b>David:</b>
+      I think my personal interest in electronics is probably about the sound. And if I had to be honest, the most electronic sounds aren't doing a lot for me musically, but the older I get, more of the nature of sound, it's become more mysterious a bit. So for example, I was mentioning the recording quality of this record, I remember reading some program notes from a performance by Curtis Rhodes, and he said this thing that really had a big influence on me, which was that he was inspired by the Starn Twins who are some experimental photographers, and they had this idea that quality is a parameter, and I had never thought about that before. So back in the days when you and I first met and I was working on Pluggo, I actually thought about this a lot.
+    </p>
 
-Darwin:
-Yeah. Well, I'll tell you though to me, people often ask me when we talk about the podcast, they'll ask me what's my favorite and what's my least favorite, and my least favorites are always the same actually. In most cases, my least favorite podcasts are with people who give the most interviews, because they already have answers for all the questions I'm going to ask. And so really I serve up the questions, and they... it's like a game of slow table tennis, just getting the ball, hit right back, and it's not enjoyable, it doesn't feel like a conversation. It feels like, okay, I'm fulfilling my role of being the top line of the question/answer thing, and they're fulfilling their role of the second, and it feels really unfulfilling. What are great interviews are when we just have a discussion.
-So actually the podcast that's going to run right before this is with Elainie Lillios, and it was great because we're talking and I'm asking her about her compositional thing, and she kind of knows how to describe that, but then I was like, "Yeah, but you left a hole talking about this thing. You just kind of glossed over this part of it." And she stopped and she's like, "Wow, I realized I just did." And it swung a door open to talk about, in a very new way, a certain portion of her compositional process. Now, if I goof something up and we would go back, we couldn't relive that dynamic of having a description and saying, hey, could we go deeper into this part of it, because it would be a very artificial feeling. A lot of times those kinds of things, when they come up in the course of a conversation, make for the best part of the interviews.
+    <p>
+      At that point, I had thought that all of the audio plugins that people were making, they all are trying to sound good, and I was like, actually, there's this other parameter, which is how messed up it is. This parameter, it's not orthogonal to cool sounds or richer, more interesting sounds, it actually is weirdly non-linearly related in some way. So, for example, there's this one Pluggo plugin that, my understanding is a lot of people secretly are really into it, called Noyzckippr. I think that's... I don't even know how to pronounce it, even though I made it, but what it does is, it multiplies a input signal by noise, and then clips the hell out of it, and you can sort of filter it. And whatever the sounds, it's totally wrong from all what you're supposed to do from the proper DSP perspective. It makes no sense whatsoever, but the thing sounds both good and bad in a really interesting way, or at least that's...
+    </p>
 
-David:
-So it's like you're trying to skate on the edge of some kind of prepared spontaneity?
+    <p>
+      Even people who, they can put a acoustic instrument through it, and they seem to think it's interesting. It's just a complete arbitrary... I was probably at the... The whole idea of that project was to make 74 plugins, which was sort of ridiculous. So I probably was on number 72 at that point, I was like, what do I do? I don't have anymore ideas-
+    </p>
 
-Darwin:
-Well, I prepare very little anymore. What I do is, if it's somebody whose work I don't know, I'll spend time listening to their work or reading about their work, but I will not prepare questions any longer. Because the way that the podcast goes, I have the first 10 minutes we talk about your work, which I presumably have been just listening to or watching or whatever, and then the second 10 minutes is about people's background. And man, if out of that 20 minutes I can't come up with another 25 minutes of interesting conversation, well, I probably wasn't listening very well.
+    <p>
+      <b>Darwin: </b>
+      <i>You're just chucking them out the door!</i>
+    </p>
 
-David:
-Yeah. It's interesting when we were talking about what we were going to do, and I said, "Well, should we send the questions to each other in advance?" And you said, "Absolutely not." I was like, "oh, okay." Now I can see where your agenda is coming from.
+    <p>
+      <b>David:</b>
+      Yeah. And it's one of those things where maybe the 72nd idea you have is actually the one that's worthwhile, and it kind of relates back to the thing that you said earlier about your background, which was maybe once you get to number 72, you're pretty constrained by circumstance, and constraint actually is enabling in this case. But anyway, this idea of what I would relate to, I think about this. I've become kind of interested in this notion of quality and how it is sort of mixed together. Normally you think, oh, you could separate out how something "sounds," what speakers you're listening to it on, or what headphones you're listening to it on, what kind of system you have to the content, and I don't think I believe that anymore.
+    </p>
 
-Darwin:
-Yeah. Well, because if people get the questions, including myself, if the questions come ahead of time, then you think of the answer ahead of time, and it's... I don't know. To me, it's sort of like then when you go back to your 20th high school reunion and they're like, okay, send us a paragraph about what you're doing now, you don't send them the stuff about, well, I skinned my knee putting a flowerbed in, and I have this car that keeps on falling apart. You never talk about those kind of things. You give the really glossy version of what you do, and I don't know, I think I like hearing about more real stuff about people. And so yeah, I don't prepare at all on purpose.
-I think the other thing you is... And you've known me for long enough that you would know this to be true. If you listen to the first 20 podcasts or so, you can really hear how I had kind of a set of questions I was working my way through, and I found myself having that kind of preparation actually really did something that I'm bad about anyway, which is while the person I'm talking to is talking, instead of listening, I'm formulating the next question, and how am I going to strategically move to the next question, and that's devastating for me actually hearing what the person says.
+    <p>
+      It's almost like everything is colored. There is no original. It's not completely true, but it's sort of like... But it's also kind of disturbing. It's like saying, "Oh, I'm going to put on some glasses that actually make the world foggy, and then I'm going to walk around and experience the world", or something. I don't think people want to do that intentionally, but why not?
+    </p>
 
-David:
-It reminds me of that thing. In a classroom, if you do something where everyone has to say something, and you're going around in a circle in the room, then the person who is next is not listening to what the person right before them is saying at all, because they're completely obsessed with preparing what they're going to say. So in a two person conversation, then basically no one's listening to the other person, if that's in fact-
+    <p>
+      <b>Darwin: </b>
+      <i>Right. That's actually interesting. And it's kind of funny, because when you talk about it that way with quality not necessarily being completely aligned with value, if I think about that, it also makes me realize that a lot of my listening to vinyl, a little bit of it has to do with the quality of the sound, but oftentimes it's as much about the poor quality of the sound. I find the little clicks and pops of the surface noise or the sound of the... I use a semi-automatic turntable on purpose. And so at the end of the record, it kind of lifts that needle up, and there's something satisfying about that being the sound of, "Okay, I'm done." There's a lot of these little satisfaction things that would probably be considered flaws, but they represent things that make me happy, or make me enjoy the experience more, which is kind of interesting.</i>
+    </p>
 
-Darwin:
-Right. Yeah. Luckily in a podcast, there's other people listening, I guess, but yeah, that's true. But that's the kind of funny part of it. And it leads sometimes to taking wrong turns. Probably the interview I feel worst about was Pauline Oliveros, whose work I love and who, as a person, I respect more than almost anybody in the art world. And I actually edited this out of the interview that was posted, because I was so unhappy with where I went with it. But I went down a path in talking with her that made her angry and made her upset, and I was really embarrassed by what I had done. But there again, going in, I definitely knew what I would like to ask her, but I went in willing to kind of go with the flow, and the flow took me a place that wasn't very awesome.
+    <p>
+      <b>David:</b>
+      Do you feel like if you were to put your professional hat on that basically all of this is wrong?
+    </p>
 
-David:
-I think that's a risk you have to take, though.
+    <p>
+      <b>Darwin: </b>
+      <i>I wouldn't say wrong, I would more say curious. It's really curious. And especially for me, because back when vinyl was the only option, I remember how pissed off all that stuff made me when I had a record that I loved. I was actually a really big ECM fan, too, but because of the nature of the soundscapes on those things, even the tiniest flaw in the vinyl, it just seemed like it reverberated through your head, and I would get so frustrated by that. But I don't know, maybe I'm more interested in enjoying things, and less interested in analyzing the goodness or the greatness of something at this point. Again, it's funny, because for you and I both, kind of this idea of, "As I get older..." seems to be coming up.</i>
+    </p>
 
-Darwin:
-It seems like it. In the general case, it feels right for me, but there are some of those things... And again, especially since it was Pauline, that one kind of hurt. So I'm going to take a swing with the next question. We're going to bring it back to the technology side, because I'm really curious about something, and that is how long you've been doing the thing you're doing. You have been working with a C compiler on Max since forever, since the early '90s at least, right?
+    <p>
+      <b>David:</b>
+      Here would be one place with all vinyl where I would draw the line, and I just can't... All the stuff I'm saying, I would have to say, "Okay, it stops at this point." Which is that phenomenon where the last song on any record, the one that's closest to the inner label always sounds distorted. And there are some of my favorite... I know this record's probably certainly one of my favorite records of all time, which is Native Dancer by Wayne Shorter. There's a song on the first side called Miracle of the Fishes, I want to say, and at least on the copy that we had when I was growing up, I was like, it's so distorted. And so the idea that I can now listen to the original... That whole record is messed up the way it was recorded. So it's still a little bit distorted if you listen to the streaming one or the CD version or whatever, but oh my God, compared to the vinyl one, it's so much better. That just pissed me off so much.
+    </p>
 
-David:
-1988.
+    <p>
+      So I guess what's the line that's being drawn there is, okay, so there's an inherent sound of the vinyl, but then if one song on it, because of the nature of the technology, sounds worse than the other songs, then it's pretty hard to accept that.
+    </p>
 
-Darwin:
-1988. Okay. Well, there we go. How do you continue to challenge yourself?
+    <p>
+      So I have a question that's sort of related to this. How do you think about technical problems? So in particular, let's say you or someone else is doing some complicated, highly technical live performance that involves computer technology, the software crashes, there's a connectivity issue, whatever. It feels like it's kind of in the same space. The reason I ask this is, I wonder where the line of, well, I'm just here experimenting in front of you, versus I'm here to entertain you. We've all gone to events where the setup between the two people, it takes two hours or whatever, or all these things that... Personally, it makes me feel a certain way, and I'm just wondering what's your emotion around those things.
+    </p>
 
-David:
-I think the way I want to answer the question is, imagine that you're writing a soap opera like The Days of our Lives, so the premise... I don't know what the premise of The Days of our Lives is. I've never really watched soap operas. When I was little and they would be on TV, I'd just turn them off, because I didn't understand. The whole idea doesn't make any sense to me, makes even less sense. But it's like, okay, so something happened last time, and now that's an enabling constraint on what you can do in the next episode. I think that's all I think about. That's the only answer I can give you, is that it never feels done. There's always you can take the story in a new direction.
-It's like a... And particularly if you get other people involved, then you can play off those people, and some of them may be taking it in a direction I wouldn't personally have gone in, and I can kind of do parallel play, and I could do my thing, and hopefully it won't interfere with their thing and maybe we can do something together or whatever, but that's kind of how I think of it is just, it's a story, rather than a math problem. If you thought of it as a math problem, then you could imagine that you've solved it and there's nothing else to do. I don't think of making a big computer program as a... It just continues to unfold in a way, like a story. And so maybe my interest in... When I was little, I did this multiyear exquisite corpse... Before we even knew what they were called, experiment with these friends of mine.
-So starting in fifth grade, we instead of doing our school work, we were in this experimental classroom where they would put fourth, fifth and sixth graders in one giant room, and it was not a traditional classroom of where the arrangement was chairs facing the teacher or desks facing the teacher, it was everyone sat at a table. So my friends and I would sit at a table, and we would pass this notebook around and just write the next thing in the story, and we did this for years. Eventually I found out that... I moved to a different school district, so I wasn't with these people, but apparently because of this experimental school, once they got to seventh grade, they had nothing for my friends to do for a year.
-So they basically just allowed them to do whatever they wanted so that they got behind all the other students, and then by eighth grade, they could go back into the normal school strategy or whatever. So I guess for a year, they just did this kind of stuff, and they kept it going. But that experience, I don't think that is responsible for why it's continued to be interesting for me, but it reflects the possibility that you can look at any work that way, I think.
+    <p>
+      <b>Darwin: </b>
+      <i>My emotion is extreme irritation. And the reason is because of the way that I prepare for performances or for shows, which I am obsessive compulsive about making sure that things are going to work and of having spares of anything that'll break down. And I have done some really risky stuff. I'll never forget this show I did at the Denver Botanical Gardens, it was a networked set of either nine or 11 computers all running...</i>
+    </p>
 
-Darwin:
-No, I know that part of some of the things that you do is, you're involved with I think particularly the Guthman Musical Instrument Competition where you've been involved in going there and sometimes acting in a role as a judge, but paying attention to what they're doing, does seeing those people come up with innovations like that, or the kinds of things you see at a [inaudible 00:41:28] conference or something like that, is that also part of the thing that reveals the next part of the story, or do you find that it's your own imagination that actually is the next part of the story? Are you drawn into things externally, or do you kind of internally motivate yourself?
+    <p>
+      <b>David:</b>
+      Oh my God. You're already giving me an anxiety attack.
+    </p>
 
-David:
-I tend to think that the things I would come up with doing come from my observations of what other people are doing. So I can think of some stuff I saw at the last time I went to the Guthman Competition and I'm like, it's way too hard to do what that guys are doing, I could make that easier. So that would be a common response. It's like, oh, I see what someone's trying to do. Clearly it's a cool idea, but it's a dead end the way they did it, and is there a way to make it less of a dead end.
-So there are probably a bunch of tricks like that. Like, oh okay, that's a cool thing that you can do on musical instrument A... One of the things I think about a lot right now is, as a piano player, there are stuff that people can do on a guitar which is really hard to do on a piano, and I'm trying to figure out how could I translate what I hear people do on a guitar, in particular people who use alternate tunings on a guitar, and then suddenly you have this highly-constrained system that just invites the exploration that you would never do...
-The piano keyboard, no one ever does this kind of remapping of the grid or whatever, but why not? So if you're just trying to build a new system for yourself, an alternate tuning of the guitar is this amazing approach to that. It translates similar physical actions into different outcomes. So that would be an example, like, okay, so you take something in one domain and see if you can translate it into another domain, or all those kinds of things. Once you have a few of those things, you'll never run out of stuff to do.
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah. All running both Jitter and MSP patches for their locale. It was this huge room, and there were dancers flying all over the room, and each computer was running one portion of the show, and then I had them all networked to be... I had that network of computers set up and tweaking and testing everything all the time. And I had redundancies built in the software, so it was always making sure it was connected and all that kind of stuff. I probably spent three times as much time on technical problem prevention than I did on the artwork itself.</i>
+    </p>
 
-Darwin:
-So that makes me wonder, one of the things that you worked on for the most recent version of Max is this MC system, which is a multiple channel patch cord that allows much more complicated routing of parallel audio tracks. That sounds to me like something where you were somewhere and you saw somebody having to move 40 patch cords, and you were like, there has to be at a better way. Is that true?
+    <p>
+      <i>The art was beautiful, and it helped that there were the great dancers that made it so that was really the beautiful thing happening. But I know for myself how much of what I do is making it so that, when I present something, that it's working. Now, I recognize that things can happen, I do. But a lot of times when I see technical problems, the way that the artists will talk about it is sort of like, "Well, this is a goof anyway, so sorry that you have to wait" - and that kind of bugs me. It bugs me because somehow in my mind there's a direct correlation between preparedness and a lack of problems.</i>
+    </p>
 
-David:
-No.
+    <p>
+      <b>David:</b>
+      That's interesting. I feel like this thing that you just said about the three times as much time, on one level, it makes me feel bad, like isn't it part of my professional work to not make that the case? And then I feel like, okay, well I've failed, because I've actually made this worse or something like that. Then on the other hand, I think there's something inherent in doing things that are experimental or technical where it's like you're willfully blind to this. So in the process of trying to get something to work, you're focused on getting it to work, and you're not thinking about its reproducibility for all people in all situations. And in fact, if you were conscious of that, you would never get anything done.
+    </p>
 
-Darwin:
-Really?
+    <p>
+      <b>Darwin: </b>
+      <i>Or you would choose such conservative stuff. The reason I would say that you don't have to feel bad because it's your job to not have things break, is because part of the... Especially with media artwork, the job of the artist is to be right at the edge of the envelope. I mean, this thing I did with the... I'm pretty sure it was nine computers, plus then the laptop I used to control everything. The thing I did with that, I mean, if that wouldn't have been viable, I would've done a less complicated work. That was the edge of what I felt like could happen, but it could happen, and the result was very exciting because of it. So I think that that's where...</i>
+    </p>
 
-David:
-I mean, probably that would've been a post-conceptual justification, like, okay, yeah, it also solves that problem, but the genesis of that idea was actually I needed to come up with an example for Alex Harker of how to make a patch cord do something that it doesn't normally do in Max. And I was like, oh, what if I made a patch cord that transmitted four channels of audio instead of just one? And it had nothing to do with a system or anything like that. It was just like, what can I come up with here to demonstrate a concept that illustrates how to write software? So I would say in the space of two hours on a Sunday morning when I was doing this, I was like, oh wait, I could do this, and then this whole thing would just work.
-So that's another thing that often happens, is you suddenly realize there's an impossible problem, and you can solve it. And you're not thinking about whether the idea is even valuable. You're starting backwards from what you would normally think, which is how can I actually make this work, and I don't know whether it's even cool or not. But the thing that really inspired me about that particular idea, and I was like, this is really cool, and now I was evaluating the worth of it was, okay, so I make this example, I have this patch cord going between these two things that has these four channels of audio in one patch cord, I select the patch cord, and then I delete it, and all the sounds stops, and I'm like, "That is so cool. Oh my God, I can make four channels of audio go away all at the same time by doing this thing that I could never do before."
-So it was actually the stopping of the sound that was inspiring, not any particular application, and then just sort of one idea led to another. And actually, I'm still, I walk around all day thinking of what I can do with this idea. So one of those things, for example, was take a value, take another value and say 440 Hertz plus or minus 10 Hertz generate a bunch of random values in that space. To do that individually, you'd never have the patience for that, but if you could just describe it in some higher level way, it makes a cool sound. But that's the general thought, was what is the high level knob you can turn to get lots of things to happen.
-So it all is like cheating, is the word that I always think about, is as a person who wants to play music on a real instrument and is somewhat dedicated to that, I feel a little guilty about all this cheating stuff, and maybe because I understand the discipline that it takes to play a real instrument, but then I can't help myself. I just think that way, I think. So I think the things that have always inspired me in this field are people who think in that sort of systemic way.
-And you think, okay, so it's cheating to build a system, and then push a button and let the system run and do all your work for you, but on the other hand, you get stuff that you wouldn't be able to do because it's just too hard. So that idea of trading off effort and cheating, that's what kind of inspires me I think in other people's work, is as we talked about quality being a parameter, effort can be a parameter, or cheating, or how much deception or laziness you want to put into the thing can be a parameter.
+    <p>
+      <i>That's my own obsession though too, and I recognize that not everybody wants to take on that kind of feel about prepping for a gig or a presentation. And what's interesting is, if we do talk about my podcast, I listen to them now, and there's no ends of technical problems to them, but the issue there is that, in reality, interviews are one shots: there's no way to have the second show of an interview. Over the course of the 374 podcasts, I've had two instances where I've had to redo the interviews, and both of them were because of my recorder failures. There are others I wish I could have done. The worst one by far was when I interviewed Miller [Puckette].</i>
+    </p>
 
-Darwin:
-That's really fascinating.
+    <p>
+      <i>I went to this guy's house in Boulder. He happened to be doing a performance in town. I went, and I had a recorder, I set it down, and we started recording. I was like, well, the meters look funny, but it's Tascam, what do they know? Well, the left channel, somehow the gain staging got blown out, and so I only had one channel that was viable, and so I ended up having to do these minute volume edits to just make it so that both sides of the conversation could have been heard. It was terrible, and it got me started thinking about how do I have even backup systems in those cases. It's not always possible, but I try and take more precautions now than I used to.</i>
+    </p>
 
-David:
-Okay. Do we have time for me to ask a question again?
+    <p>
+      <b>David:</b>
+      That's interesting that you said you can't go back. So I would imagine as you're working on preparing a podcast or a presentation, there are two things that you're thinking, one is this technical problem evaluation, and then there's "That answer is kind of lame", or there's a content...
+    </p>
 
-Darwin:
-Let's do one more. Yeah.
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah. Well, I'll tell you though to me, people often ask me, when we talk about the podcast, they'll ask me what's my favorite and what's my least favorite, and my least favorites are always the same actually. In most cases, my least favorite podcasts are with people who give the most interviews, because they already have answers for all the questions I'm going to ask. And so really I serve up the questions, and they... it's like a game of slow table tennis, just getting the ball hit right back, and it's not enjoyable, it doesn't feel like a conversation. It feels like, okay, I'm fulfilling my role of being the top line of the question/answer thing, and they're fulfilling their role of the second, and it feels really unfulfilling. What are great interviews are when we just have a discussion.</i>
+    </p>
 
-David:
-Okay. How do you think about the nature of creative work in terms of its social existence? The question would be, is it okay to make work for your own enjoyment, versus making work that is somehow put out in the world for other people? Are there questions of validity or whatever that you've thought about there?
+    <p>
+      <i>So actually the podcast that's going to run right before this is with Elainie Lillios, and it was great because we're talking and I'm asking her about her compositional thing, and she kind of knows how to describe that, but then I was like, "Yeah, but you left a hole talking about this thing. You just kind of glossed over this part of it." And she stopped and she's like, "Wow, I realized I just did." And it swung a door open to talk about - in a very new way - a certain portion of her compositional process. Now, if I goof something up and we would go back, we couldn't relive that dynamic of having a description and saying, "Hey, could we go deeper into this part of it?", because it would be a very artificial feeling. A lot of times those kinds of things, when they come up in the course of a conversation, make for the best part of the interviews.</i>
+    </p>
 
-Darwin:
-That's a really great question. And I will tell you that I struggle all the time with that, because I am trying to put out work, but I also want to be thoughtful about it, and I want put it in the right social context for me. And I think, as everyone listening to this podcast is already going to get, that you and I both tend to speak in metaphors a lot. My metaphor for this is sort of like, I feel like I'm a person who is trying to raise really nice vegetables in the backyard that I can share with my friends, share with my neighbors, and every once in a while have a party where I make a nice salad and share it and people can enjoy it. I don't have a desire to run the world's largest tomato plant, nor do I want to be that neighbor who has zucchini, and every two days comes with 40 pounds of zucchini and dumps it on your front porch. Anybody who has a neighbor with zucchini plants will know what I'm talking about.
+    <p>
+      <b>David:</b>
+      So it's like you're trying to skate on the edge of some kind of prepared spontaneity?
+    </p>
 
-David:
-It's a beautiful metaphor.
+    <p>
+      <b>Darwin: </b>
+      <i>Well, I prepare very little anymore. What I do is, if it's somebody whose work I don't know, I'll spend time listening to their work or reading about their work, but I will not prepare questions any longer. Because the way that the podcast goes, I have the first 10 minutes we talk about your work, which I presumably have been just listening to or watching or whatever, and then the second 10 minutes is about people's background. And man, if out of that 20 minutes I can't come up with another 25 minutes of interesting conversation, well, I probably wasn't listening very well.</i>
+    </p>
 
-Darwin:
-But from that perspective then, it's like I choose carefully... The few things that I've released and the few times that I perform, I choose them for purposes, I guess. Some beautiful experiences just in the last year. Andrew Pask came here, and we did a performance. There were practically as many people in the audience as there were on stage, but it didn't matter, because it was an opportunity to do something with Andrew, it was an opportunity... We did a live stream for some people that couldn't leave their homes, and it was an opportunity to share that with them. This last summer, I did a live performance in a park. I had a little modular system, another person brought a little set of quirky instruments, but a third person just had kind of a Casio piano and just played kind of some neoclassical compositions that she had written, and it was every bit, if not more beautiful than everything else, but the combination of the three was great.
-And all of a sudden there was the sense, oh, this isn't just about the wider and modular crowd, this was about sharing music with friends outdoors, and it was just a really special experience. And when those things can happen, I'm as happy as I can be. But I too have found myself in situations where it's like, the only reason everyone's coming to this show... I remember I did one show. I was the first person in the state to have an Ableton Push, the first version of the Push, and so everybody that came to show didn't care to see me play anything, they just wanted see and touch the Push. And I was like, okay, well that's not what I was shooting for here. So that's my view of it, how about yourself? What do you think?
+    <p>
+      <b>David:</b>
+      Yeah. It's interesting when we were talking about what we were going to do, and I said, "Well, should we send the questions to each other in advance?" And you said, "Absolutely not." I was like, "Oh, okay." Now I can see where your agenda is coming from.
+    </p>
 
-David:
-I love the vegetable garden thing, there's so many things I can draw on that, but the thing that I was thinking was, how hard against your current reality are you pushing one way or the other? So I am kind of a shy person. I don't put myself out into the world socially. Live performances of work happen once a decade maybe, something like that, but they're all very powerful and memorable. Maybe that's okay to just do something once every 10 years. I don't know. On the other hand, if I found myself in a context of more sharing, maybe then I wouldn't be pushing against that, if that makes any sense. So I think of this beautiful phrase that my teacher, Bill Dixon, used once in college, mutual admiration society. I mean, it's so deep if you think about it. I'm like, if I were in a mutual admiration society, maybe that would be kind of awesome, and maybe I will move in that direction somehow, but if the mutual admiration society were about vegetables coming out of my garden, that might be enough too.
+    <p>
+      <b>Darwin: </b>
+      <i>Yeah. Well, because if people get the questions, including myself, if the questions come ahead of time, then you think of the answer ahead of time, and it's... I like hearing about more real stuff about people. And so yeah, I don't prepare at all on purpose.</i>
+    </p>
 
-Darwin:
-That's really cool. And I think that's a beautiful place to wrap it up too. David, thanks a lot for doing this. Thanks for kind of pushing me into doing something different. This was a interesting way to go about this. We talked about stuff that would've never have come up, so it was a beautiful way to do.
+    <p>
+      <i>I think the other thing you is... And you've known me for long enough that you would know this to be true. If you listen to the first 20 podcasts or so, you can really hear how I had kind of a set of questions I was working my way through, and I found myself having that kind of preparation actually really did something that I'm bad about anyway, which is while the person I'm talking to is talking, instead of listening, I'm formulating the next question, and how am I going to strategically move to the next question, and that's devastating for me actually hearing what the person says.</i>
+    </p>
 
-David:
-I appreciate it, Darwin. And thanks for the opportunity to have a little conversation.
+    <p>
+      <b>David:</b>
+      It reminds me of that thing. In a classroom, if you do something where everyone has to say something, and you're going around in a circle in the room, then the person who is next is not listening to what the person right before them is saying at all, because they're completely obsessed with preparing what they're going to say. So in a two person conversation, then basically no one's listening to the other person, if that's in fact...
+    </p>
 
-Darwin:
-Yeah. Right on...
+    <p>
+      <b>Darwin: </b>
+      <i>Right. Yeah. Luckily in a podcast, there's other people listening, I guess, but yeah, that's true. But that's the kind of funny part of it. And it leads sometimes to taking wrong turns. Probably the interview I feel worst about was Pauline Oliveros, whose work I love and who, as a person, I respect more than almost anybody in the art world. And I actually edited this out of the interview that was posted, because I was so unhappy with where I went with it. But I went down a path in talking with her that made her angry and made her upset, and I was really embarrassed by what I had done. But there again, going in, I definitely knew what I would like to ask her, but I went in willing to kind of go with the flow, and the flow took me a place that wasn't very awesome.</i>
+    </p>
 
+    <p>
+      <b>David:</b>
+      I think that's a risk you have to take, though.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>It seems like it. In the general case, it feels right for me, but there are some of those things... And again, especially since it was Pauline, that one kind of hurt. So I'm going to take a swing with the next question. We're going to bring it back to the technology side, because I'm really curious about something, and that is how long you've been doing the thing you're doing. You have been working with a C compiler on Max since forever, since the early '90s at least, right?</i>
+    </p>
+
+    <p>
+      <b>David:</b>
+      1988.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>1988. Okay. Well, there we go. How do you continue to challenge yourself?</i>
+    </p>
+
+    <p>
+      <b>David:</b>
+      I think the way I want to answer the question is... Imagine that you're writing a soap opera like The Days of our Lives, so the premise... I don't know what the premise of The Days of our Lives is. I've never really watched soap operas. When I was little and they would be on TV, I'd just turn them off, because I didn't understand. The whole idea doesn't make any sense to me, makes even less sense. But it's like, okay, so something happened last time, and now that's an enabling constraint on what you can do in the next episode. I think that's all I think about. That's the only answer I can give you, is that it never feels done. You can take the story in a new direction.
+    </p>
+
+    <p>
+      And particularly if you get other people involved, then you can play off those people, and some of them may be taking it in a direction I wouldn't personally have gone in, and I can kind of do parallel play, and I could do my thing, and hopefully it won't interfere with their thing and maybe we can do something together or whatever, but that's kind of how I think of it is just, it's a story, rather than a math problem. If you thought of it as a math problem, then you could imagine that you've solved it and there's nothing else to do. I don't think of making a big computer program as a... It just continues to unfold in a way, like a story. And so maybe my interest in... When I was little, I did this multiyear exquisite corpse - before we even knew what they were called - experiment with these friends of mine.
+    </p>
+
+    <p>
+      So starting in fifth grade, we instead of doing our school work, we were in this experimental classroom where they would put fourth, fifth and sixth graders in one giant room, and it was not a traditional classroom of where the arrangement was chairs facing the teacher or desks facing the teacher, it was everyone sat at a table. So my friends and I would sit at a table, and we would pass this notebook around and just write the next thing in the story, and we did this for years.
+    </p>
+
+    <p>
+      Eventually I found out that... I moved to a different school district, so I wasn't with these people, but apparently because of this experimental school, once they got to seventh grade, they had nothing for my friends to do for a year. So they basically just allowed them to do whatever they wanted so that they got behind all the other students, and then by eighth grade, they could go back into the normal school strategy or whatever. So I guess for a year, they just did this kind of stuff, and they kept it going. But that experience, I don't think that is responsible for why it's continued to be interesting for me, but it reflects the possibility that you can look at any work that way, I think.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>I know that part of some of the things that you do is, you're involved with I think particularly the Guthman Musical Instrument Competition where you've been involved in going there and sometimes acting in a role as a judge, but paying attention to what they're doing, does seeing those people come up with innovations like that, or the kinds of things you see at a NIME conference or something like that, is that also part of the thing that reveals the next part of the story? Or do you find that it's your own imagination that actually is the next part of the story? Are you drawn into things externally, or do you kind of internally motivate yourself?</i>
+    </p>
+
+    <p>
+      <b>David:</b>
+      I tend to think that the things I would come up with doing come from my observations of what other people are doing. So I can think of some stuff I saw at the last time I went to the Guthman Competition and I'm like, "It's way too hard to do what that guys are doing, I could make that easier." So that would be a common response. It's like, "Oh, I see what someone's trying to do." Clearly it's a cool idea, but it's a dead end the way they did it, and is there a way to make it less of a dead end.
+    </p>
+
+    <p>
+      So there are probably a bunch of tricks like that. Like, oh okay, that's a cool thing that you can do on musical instrument A... One of the things I think about a lot right now is, as a piano player, there is stuff that people can do on a guitar which is really hard to do on a piano, and I'm trying to figure out how could I translate what I hear people do on a guitar, in particular people who use alternate tunings on a guitar, and then suddenly you have this highly-constrained system that just invites the exploration that you would never do...
+    </p>
+
+    <p>
+      Like, on the piano keyboard, no one ever does this kind of remapping of the grid or whatever, but why not? So if you're just trying to build a new system for yourself, an alternate tuning of the guitar is this amazing approach to that. It translates similar physical actions into different outcomes. So that would be an example, like, okay, so you take something in one domain and see if you can translate it into another domain, or all those kinds of things. Once you have a few of those things, you'll never run out of stuff to do.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>So that makes me wonder, one of the things that you worked on for the most recent version of Max is this MC system, which is a multiple channel patch cord that allows much more complicated routing of parallel audio tracks. That sounds to me like something where you were somewhere and you saw somebody having to move 40 patch cords, and you were like, there has to be at a better way. Is that true?</i>
+    </p>
+
+    <p>
+      <b>David:</b>
+      No.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Really?</i>
+    </p>
+
+    <p>
+      <b>David:</b>
+      I mean, probably that would've been a post-conceptual justification, like, okay, yeah, it also solves that problem, but the genesis of that idea was actually I needed to come up with an example for Alex Harker of how to make a patch cord do something that it doesn't normally do in Max. And I was like, oh, what if I made a patch cord that transmitted four channels of audio instead of just one? And it had nothing to do with a system or anything like that. It was just like, what can I come up with here to demonstrate a concept that illustrates how to write software? So I would say in the space of two hours on a Sunday morning when I was doing this, I was like, oh wait, I could do this, and then this whole thing would just work.
+    </p>
+
+    <p>
+      So that's another thing that often happens, is you suddenly realize there's an impossible problem, and you can solve it. And you're not thinking about whether the idea is even valuable. You're starting backwards from what you would normally think, which is how can I actually make this work, and I don't know whether it's even cool or not. But the thing that really inspired me about that particular idea, and I was like, this is really cool, and now I was evaluating the worth of it was: okay, so I make this example, I have this patch cord going between these two things that has these four channels of audio in one patch cord. I select the patch cord, and then I delete it, and all the sounds stops, and I'm like, "That is so cool. Oh my God, I can make four channels of audio go away all at the same time by doing this thing that I could never do before."
+    </p>
+
+    <p>
+      So it was actually the stopping of the sound that was inspiring, not any particular application, and then just sort of one idea led to another. And actually, I walk around all day thinking of what I can do with this idea. So one of those things, for example, was: take a value, take another value and say 440 Hertz plus or minus 10 Hertz generate a bunch of random values in that space. To do that individually, you'd never have the patience for that, but if you could just describe it in some higher level way, it makes a cool sound. But that's the general thought, was what is the high level knob you can turn to get lots of things to happen.
+    </p>
+
+    <p>
+      So it all is like cheating, is the word that I always think about, is as a person who wants to play music on a real instrument and is somewhat dedicated to that, I feel a little guilty about all this cheating stuff, and maybe because I understand the discipline that it takes to play a real instrument, but then I can't help myself. I just think that way, I think. So I think the things that have always inspired me in this field are people who think in that sort of systemic way.
+    </p>
+
+    <p>
+      And you think, okay, so it's cheating to build a system, and then push a button and let the system run and do all your work for you, but on the other hand, you get stuff that you wouldn't be able to do because it's just too hard. So that idea of trading off effort and cheating, that's what kind of inspires me, I think, in other people's work, is as we talked about quality being a parameter, effort can be a parameter, or cheating, or how much deception or laziness you want to put into the thing can be a parameter.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>That's really fascinating.</i>
+    </p>
+
+    <p>
+      <b>David:</b>
+      Okay. Do we have time for me to ask a question of you?
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>Let's do one more. Yeah.</i>
+    </p>
+
+    <p>
+      <b>David:</b>
+      Okay. How do you think about the nature of creative work in terms of its social existence? The question would be, is it okay to make work for your own enjoyment, versus making work that is somehow put out in the world for other people? Are there questions of validity or whatever that you've thought about there?
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>That's a really great question. And I will tell you that I struggle all the time with that, because I am trying to put out work, but I also want to be thoughtful about it, and I want put it in the right social context for me. And I think, as everyone listening to this podcast is already going to get, that you and I both tend to speak in metaphors a lot. My metaphor for this is sort of like: I feel like I'm a person who is trying to raise really nice vegetables in the backyard that I can share with my friends, share with my neighbors, and every once in a while have a party where I make a nice salad and share it and people can enjoy it. I don't have a desire to run the world's largest tomato plant, nor do I want to be that neighbor who has zucchini, and every two days comes with 40 pounds of zucchini and dumps it on your front porch. Anybody who has a neighbor with zucchini plants will know what I'm talking about.</i>
+    </p>
+
+    <p>
+      <b>David:</b>
+      It's a beautiful metaphor.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>But from that perspective then, it's like I choose carefully... The few things that I've released and the few times that I perform, I choose them for purposes, I guess. Some beautiful experiences just in the last year. Andrew Pask came here, and we did a performance. There were practically as many people in the audience as there were on stage, but it didn't matter, because it was an opportunity to do something with Andrew, it was an opportunity... We did a live stream for some people that couldn't leave their homes, and it was an opportunity to share that with them. This last summer, I did a live performance in a park. I had a little modular system, another person brought a little set of quirky instruments, but a third person just had kind of a Casio piano and just played some neoclassical compositions that she had written, and it was every bit, if not more beautiful than everything else, but the combination of the three was great.</i>
+    </p>
+
+    <p>
+      <i>And all of a sudden there was the sense, oh, this isn't just about the Wire-and-Modular crowd, this was about sharing music with friends outdoors, and it was just a really special experience. And when those things can happen, I'm as happy as I can be. But I too have found myself in situations where it's like, the only reason everyone's coming to this show... I remember I did one show. I was the first person in the state to have an Ableton Push, the first version of the Push, and so everybody that came to show didn't care to see me play anything, they just wanted see and touch the Push. And I was like, okay, well that's not what I was shooting for here. So that's my view of it, how about yourself? What do you think?</i>
+    </p>
+
+    <p>
+      <b>David:</b>
+      I love the vegetable garden thing, there's so many things I can draw on that, but the thing that I was thinking was, how hard against your current reality are you pushing one way or the other? So I am kind of a shy person. I don't put myself out into the world socially. Live performances of work happen once a decade maybe, something like that, but they're all very powerful and memorable. Maybe that's okay to just do something once every 10 years. I don't know. On the other hand, if I found myself in a context of more sharing, maybe then I wouldn't be pushing against that, if that makes any sense. So I think of this beautiful phrase that my teacher, Bill Dixon, used once in college: "mutual admiration society". I mean, it's so deep if you think about it. I'm like, if I were in a mutual admiration society, maybe that would be kind of awesome, and maybe I will move in that direction somehow, but if the mutual admiration society were about vegetables coming out of my garden, that might be enough too.
+    </p>
+
+    <p>
+      <b>Darwin: </b>
+      <i>That's really cool. And I think that's a beautiful place to wrap it up too. David, thanks a lot for doing this. Thanks for kind of pushing me into doing something different. This was a interesting way to go about this. We talked about stuff that would've never have come up, so it was a beautiful way to do.</i>
+    </p>
+
+    <p>
+      <b>David:</b>
+      I appreciate it, Darwin. And thanks for the opportunity to have a little conversation.
+    </p>
+
+    <p><i>Copyright 2022 by Darwin Grosse. All right reserved.</i></p>
+  </div>
+
+  <!-- jQuery (necessary for the Bootstrap JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
